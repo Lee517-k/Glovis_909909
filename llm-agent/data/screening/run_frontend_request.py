@@ -153,6 +153,9 @@ def _build_route(scenario, used_ids):
         }
         if leg.get("contract_expiring_soon"):
             entry["contract_expiring_soon"] = True
+        if leg.get("rate_stale"):
+            entry["rate_stale"] = True
+            entry["rate_stale_reason"] = leg.get("rate_stale_reason")
         if "available_capacity" in leg:
             entry["available_capacity"] = leg["available_capacity"]
         legs.append(entry)

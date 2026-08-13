@@ -260,7 +260,13 @@ class CarrierAgent:
         """No negotiation — this leg belongs to Glovis itself, so there's no
         counterparty to bargain with, just an internal capacity check. Costs
         zero LLM calls, which is itself realistic: a company doesn't need an
-        LLM negotiation round to decide whether to use its own truck."""
+        LLM negotiation round to decide whether to use its own truck.
+
+        Rate freshness is still checked, unlike negotiate() an expired quote
+        here doesn't REJECT the leg (there's no counterparty to reject —
+        that's a negotiation outcome, not a pricing one) — it's flagged as
+        stale via rate_stale/rate_stale_reason and the booking proceeds on
+        the numbers on file, same as always."""
         cache_key = (leg.service_id, request["quantity"])
         if cache_key in self._deal_cache:
             return self._deal_cache[cache_key]
@@ -276,6 +282,10 @@ class CarrierAgent:
             result["reason"] = "own_capacity_exhausted"
         else:
             self.capacity_ledger[leg.service_id] = max(0, remaining - qty)
+        stale_reason = _check_contract_expired(leg, self.today)
+        if stale_reason is not None:
+            result["rate_stale"] = True
+            result["rate_stale_reason"] = stale_reason
         self.log.append({"leg_service_id": leg.service_id, "carrier_id": leg.carrier_id,
                           "self_operated": True, "final": result})
         self._deal_cache[cache_key] = result
@@ -475,6 +485,9 @@ class GlovisAgent:
                 }
                 if not d.get("deal_reached"):
                     detail["deal_failure_reason"] = d.get("reason")
+                if d.get("rate_stale"):
+                    detail["rate_stale"] = True
+                    detail["rate_stale_reason"] = d.get("rate_stale_reason")
                 if leg.days_until_expiry is not None:
                     detail["contract_expiring_soon"] = leg.days_until_expiry < CONTRACT_EXPIRY_WARNING_DAYS
                 if leg.available_capacity is not None:
