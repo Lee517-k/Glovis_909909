@@ -1,0 +1,5342 @@
+{
+  "meta": {
+    "note": "국가쌍 통관 요건 지식베이스. 캐리어 서비스와 조인하지 않고 화주 에이전트·오케스트레이터가 origin/destination 국가쌍으로 조회해 참조한다.",
+    "usage": "origin_country + destination_country 로 정확 검색 → required_documents 와 notes_text 만 프롬프트에 주입",
+    "disclaimer": "실제 관세율·인증 요건은 수시로 변경된다. 목업 기준값이며 실무 적용 전 관세청·EU TARIC 등 1차 자료 확인 필요.",
+    "pair_count": 306,
+    "countries": [
+      "AT",
+      "BE",
+      "CN",
+      "CZ",
+      "DE",
+      "ES",
+      "FR",
+      "GB",
+      "HU",
+      "IT",
+      "JP",
+      "KR",
+      "NL",
+      "PL",
+      "RO",
+      "SE",
+      "SI",
+      "TR"
+    ]
+  },
+  "rules": [
+    {
+      "origin_country": "AT",
+      "destination_country": "BE",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "CN",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "CZ",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "DE",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "ES",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "FR",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "GB",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "HU",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "IT",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "JP",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "KR",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "NL",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "PL",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "RO",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "SE",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "SI",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "AT",
+      "destination_country": "TR",
+      "origin_name_ko": "오스트리아",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "AT",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "CN",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "CZ",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "DE",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "ES",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "FR",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "GB",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "HU",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "IT",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "JP",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "KR",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "NL",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "PL",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "RO",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "SE",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "SI",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "BE",
+      "destination_country": "TR",
+      "origin_name_ko": "벨기에",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "AT",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "오스트리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "BE",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "벨기에",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "CZ",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "체코",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "DE",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "독일",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "ES",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "스페인",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "FR",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "프랑스",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "GB",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "영국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "HU",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "헝가리",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "IT",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "이탈리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "JP",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "KR",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "NL",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "네덜란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "PL",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "폴란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "RO",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "루마니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "SE",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "스웨덴",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "SI",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "기본 10% + 중국산 전기차 추가관세 (제조사별 상이)",
+      "fta_applicable": null,
+      "notes_text": "EU는 중국산 배터리전기차에 제조사별 추가 상계관세를 부과한다. 플러그인하이브리드와 내연기관차는 추가관세 대상이 아니다. EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "CN",
+      "destination_country": "TR",
+      "origin_name_ko": "중국",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "AT",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "BE",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "CN",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "DE",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "ES",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "FR",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "GB",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "HU",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "IT",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "JP",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "KR",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "NL",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "PL",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "RO",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "SE",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "SI",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "CZ",
+      "destination_country": "TR",
+      "origin_name_ko": "체코",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "AT",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "BE",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "CN",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "CZ",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "ES",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "FR",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "GB",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "HU",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "IT",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "JP",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "KR",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "NL",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "PL",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "RO",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "SE",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "SI",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "DE",
+      "destination_country": "TR",
+      "origin_name_ko": "독일",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "AT",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "BE",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "CN",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "CZ",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "DE",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "FR",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "GB",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "HU",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "IT",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "JP",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "KR",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "NL",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "PL",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "RO",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "SE",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "SI",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "ES",
+      "destination_country": "TR",
+      "origin_name_ko": "스페인",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "AT",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "BE",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "CN",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "CZ",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "DE",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "ES",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "GB",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "HU",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "IT",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "JP",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "KR",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "NL",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "PL",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "RO",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "SE",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "SI",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "FR",
+      "destination_country": "TR",
+      "origin_name_ko": "프랑스",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "AT",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "BE",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "CN",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "CZ",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "DE",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "ES",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "FR",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "HU",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "IT",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "JP",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "KR",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "NL",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "PL",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "RO",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "SE",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "SI",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "GB",
+      "destination_country": "TR",
+      "origin_name_ko": "영국",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "AT",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "BE",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "CN",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "CZ",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "DE",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "ES",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "FR",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "GB",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "IT",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "JP",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "KR",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "NL",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "PL",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "RO",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "SE",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "SI",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "HU",
+      "destination_country": "TR",
+      "origin_name_ko": "헝가리",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "AT",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "BE",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "CN",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "CZ",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "DE",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "ES",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "FR",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "GB",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "HU",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "JP",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "KR",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "NL",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "PL",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "RO",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "SE",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "SI",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "IT",
+      "destination_country": "TR",
+      "origin_name_ko": "이탈리아",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "AT",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "오스트리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "BE",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "벨기에",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "CN",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "CZ",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "체코",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "DE",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "독일",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "ES",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "스페인",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "FR",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "프랑스",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "GB",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "영국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "HU",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "헝가리",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "IT",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "이탈리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "KR",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "NL",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "네덜란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "PL",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "폴란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "RO",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "루마니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "SE",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "스웨덴",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "SI",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "일-EU EPA 적용 시 승용차 관세 단계적 철폐",
+      "fta_applicable": "JPEU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "JP",
+      "destination_country": "TR",
+      "origin_name_ko": "일본",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "AT",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "오스트리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "BE",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "벨기에",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "CN",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "CZ",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "체코",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "DE",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "독일",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "ES",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "스페인",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "FR",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "프랑스",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "GB",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "영국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "HU",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "헝가리",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "IT",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "이탈리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "JP",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "NL",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "네덜란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "PL",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "폴란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "RO",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "루마니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "SE",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "스웨덴",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "SI",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "EU Customs Declaration (SAD)",
+        "CoC / WVTA 형식승인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.5,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "EU 수입 시 수입자의 EORI 번호가 필수이며, 차량은 유럽 전체형식승인(WVTA) 또는 개별승인 절차를 거쳐야 등록 가능하다. 전기차는 EU Battery Regulation에 따른 배터리 정보 제출이 요구될 수 있다."
+    },
+    {
+      "origin_country": "KR",
+      "destination_country": "TR",
+      "origin_name_ko": "대한민국",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "AT",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "BE",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "CN",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "CZ",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "DE",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "ES",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "FR",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "GB",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "HU",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "IT",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "JP",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "KR",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "PL",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "RO",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "SE",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "SI",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "NL",
+      "destination_country": "TR",
+      "origin_name_ko": "네덜란드",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "AT",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "BE",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "CN",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "CZ",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "DE",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "ES",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "FR",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "GB",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "HU",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "IT",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "JP",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "KR",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "NL",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "RO",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "SE",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "SI",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "PL",
+      "destination_country": "TR",
+      "origin_name_ko": "폴란드",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "AT",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "BE",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "CN",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "CZ",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "DE",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "ES",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "FR",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "GB",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "HU",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "IT",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "JP",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "KR",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "NL",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "PL",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "SE",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "SI",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "RO",
+      "destination_country": "TR",
+      "origin_name_ko": "루마니아",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "AT",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "BE",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "CN",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "CZ",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "DE",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "ES",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "FR",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "GB",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "HU",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "IT",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "JP",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "KR",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "NL",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "PL",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "RO",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "SI",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SE",
+      "destination_country": "TR",
+      "origin_name_ko": "스웨덴",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "AT",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "오스트리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "BE",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "벨기에",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "CN",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 기본 15% 수준",
+      "fta_applicable": null,
+      "notes_text": "중국 수입 시 CCC 강제인증 또는 면제 확인이 필요하다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "CZ",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "체코",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "DE",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "독일",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "ES",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "스페인",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "FR",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "프랑스",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "GB",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "영국",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "HU",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "헝가리",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "IT",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "이탈리아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "JP",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "승용차 관세 0%",
+      "fta_applicable": null,
+      "notes_text": "일본은 승용차 수입관세가 없으나 형식지정 또는 병행수입 절차가 필요하다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "KR",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin",
+        "수입신고서",
+        "제작자 확인서"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.2,
+      "duty_note": "한-EU FTA 원산지증명 시 승용차 관세 0%",
+      "fta_applicable": "KOREU",
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "NL",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "네덜란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "PL",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "폴란드",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "RO",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "루마니아",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "SE",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "스웨덴",
+      "customs_required": false,
+      "required_documents": [
+        "Commercial Invoice",
+        "CMR Consignment Note"
+      ],
+      "hazmat_extra_requirements": "EU 역내 이동 시 ADR 규정에 따른 운송서류만 필요하다.",
+      "typical_clearance_days": 0.0,
+      "duty_note": "면제 (EU 단일시장 역내 이동)",
+      "fta_applicable": null,
+      "notes_text": "EU 회원국 간 이동은 통관 절차가 없으며 부가가치세 역내거래 규정이 적용된다. 완성차 이동 시 CMR 운송장과 차대번호 목록을 소지해야 한다."
+    },
+    {
+      "origin_country": "SI",
+      "destination_country": "TR",
+      "origin_name_ko": "슬로베니아",
+      "destination_name_ko": "TR",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "AT",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "오스트리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "BE",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "벨기에",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "CN",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "중국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "CZ",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "체코",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "DE",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "독일",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "ES",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "스페인",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "FR",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "프랑스",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "GB",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "영국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "HU",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "헝가리",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "IT",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "이탈리아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "JP",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "일본",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "KR",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "대한민국",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "NL",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "네덜란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "PL",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "폴란드",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "RO",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "루마니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "SE",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "스웨덴",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    },
+    {
+      "origin_country": "TR",
+      "destination_country": "SI",
+      "origin_name_ko": "TR",
+      "destination_name_ko": "슬로베니아",
+      "customs_required": true,
+      "required_documents": [
+        "Commercial Invoice",
+        "Packing List",
+        "Bill of Lading",
+        "Certificate of Origin"
+      ],
+      "hazmat_extra_requirements": "위험물 신고서(DG Declaration) 제출. 전기차는 UN38.3 시험성적서와 SOC 30% 이하 유지 확인서가 추가로 요구될 수 있다.",
+      "typical_clearance_days": 1.0,
+      "duty_note": "양자 협정에 따름",
+      "fta_applicable": null,
+      "notes_text": "표준 통관 절차가 적용된다."
+    }
+  ]
+}
