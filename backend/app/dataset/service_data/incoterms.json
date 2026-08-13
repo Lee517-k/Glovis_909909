@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "dataset_id": "incoterms_2020_kb_v1",
+    "record_count": 11,
+    "knowledge_base_type": "contract_reference",
+    "structured_filter_fields": [
+      "incoterm",
+      "applicable_transport"
+    ],
+    "llm_context_fields": [
+      "risk_transfer_point",
+      "cost_responsibility_seller_until",
+      "clause_summary_text"
+    ],
+    "legal_notice": "법률 자문 또는 공식 조항 원문이 아닙니다."
+  },
+  "incoterms": [
+    {
+      "incoterm": "EXW",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "매도인의 지정 장소에서 인도 준비가 완료될 때",
+      "cost_responsibility_seller_until": "매도인 지정 장소까지",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "buyer",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "EXW 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "FCA",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "지정 장소에서 매수인이 지정한 운송인에게 인도할 때",
+      "cost_responsibility_seller_until": "운송인 인도까지",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "FCA 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "CPT",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "최초 운송인에게 인도할 때",
+      "cost_responsibility_seller_until": "지정 목적지까지 운송비",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "CPT 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "CIP",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "최초 운송인에게 인도할 때",
+      "cost_responsibility_seller_until": "지정 목적지까지 운송비와 약정 보험",
+      "insurance_obligation": "seller",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "CIP 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "DAP",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "지정 목적지에서 하역 전 도착 운송수단 위에 둘 때",
+      "cost_responsibility_seller_until": "지정 목적지 도착까지",
+      "insurance_obligation": "seller_optional",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "DAP 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "DPU",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "지정 목적지에서 하역해 둘 때",
+      "cost_responsibility_seller_until": "지정 목적지 도착 및 하역까지",
+      "insurance_obligation": "seller_optional",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "DPU 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "DDP",
+      "version": "Incoterms 2020",
+      "applicable_transport": "모든 운송수단",
+      "risk_transfer_point": "지정 목적지에서 수입통관 완료 후 하역 전 인도할 때",
+      "cost_responsibility_seller_until": "수입통관과 지정 목적지 도착까지",
+      "insurance_obligation": "seller_optional",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "seller",
+      "clause_summary_text": "DDP 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "FAS",
+      "version": "Incoterms 2020",
+      "applicable_transport": "해상·내수로",
+      "risk_transfer_point": "지정 선적항에서 본선 옆에 물품을 둘 때",
+      "cost_responsibility_seller_until": "본선 옆 인도까지",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "FAS 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "FOB",
+      "version": "Incoterms 2020",
+      "applicable_transport": "해상·내수로",
+      "risk_transfer_point": "지정 선적항에서 본선에 적재될 때",
+      "cost_responsibility_seller_until": "본선 적재까지",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "FOB 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "CFR",
+      "version": "Incoterms 2020",
+      "applicable_transport": "해상·내수로",
+      "risk_transfer_point": "지정 선적항에서 본선에 적재될 때",
+      "cost_responsibility_seller_until": "지정 목적항까지 운송비",
+      "insurance_obligation": "buyer",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "CFR 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    },
+    {
+      "incoterm": "CIF",
+      "version": "Incoterms 2020",
+      "applicable_transport": "해상·내수로",
+      "risk_transfer_point": "지정 선적항에서 본선에 적재될 때",
+      "cost_responsibility_seller_until": "지정 목적항까지 운송비와 약정 보험",
+      "insurance_obligation": "seller",
+      "export_clearance_responsibility": "seller",
+      "import_clearance_responsibility": "buyer",
+      "clause_summary_text": "CIF 조건은 인도 지점, 위험 이전, 운송비와 통관 책임을 구분한다. 실제 계약에는 지정 장소 또는 항구를 함께 기재해야 한다.",
+      "legal_notice": "ICC 공식 원문의 대체물이 아니며 계약 전 최신 공식 규칙 검토가 필요합니다."
+    }
+  ]
+}

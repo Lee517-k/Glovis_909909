@@ -5,9 +5,7 @@ import { YpCarrierNetworkPanel } from "./YP_CarrierVisualizationPanel";
 import "./YP_glovis_primitives.css";
 import "./YP_data.css";
 
-const API_BASE = (
-  import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api"
-).replace(/\/$/, "");
+const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? "/api").replace(/\/$/, "");
 
 type UploadAnalysis = {
   upload_id: string;

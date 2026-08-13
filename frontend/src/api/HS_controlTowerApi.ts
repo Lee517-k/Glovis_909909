@@ -3,7 +3,8 @@
 // 일부러 동일하게 맞춰 두었다. 따라서 각 페이지에서 demoData import 를 아래 함수 호출로
 // 바꾸기만 하면 렌더링 코드를 고치지 않고 실데이터로 전환할 수 있다.
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api";
+// 기본값은 같은 origin 기준 상대 경로. vite dev server의 /api 프록시가 백엔드로 넘긴다.
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "/api";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {

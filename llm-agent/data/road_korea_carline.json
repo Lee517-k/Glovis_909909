@@ -1,0 +1,3943 @@
+{
+  "metadata": {
+    "dataset_id": "carrier_road_korea_carline",
+    "description": "완성차 전용 캐리어. 공장-항만 셔틀 특화",
+    "record_count": 36,
+    "currency": "USD",
+    "synthetic_demo_data": true
+  },
+  "carrier": {
+    "carrier_id": "KOREA_CARLINE",
+    "carrier_name": "한국카라인",
+    "group": "road",
+    "role": "PARTNER",
+    "service_scope": "DOMESTIC_KR",
+    "note": "완성차 전용 캐리어. 공장-항만 셔틀 특화"
+  },
+  "services": [
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRPUS-01",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 58,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.29,
+        "driving_hours_total": 1.0,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.69,
+        "transit_days_p90": 0.77,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 210.4,
+        "cost_usd_per_vehicle": 26.3,
+        "cost_usd_per_vehicle_all_in": 29.2,
+        "min_charge_usd": 24.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 6.3
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRPUS-01-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 58,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.23,
+        "driving_hours_total": 1.0,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.47,
+        "transit_days_p90": 0.71,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 265.2,
+        "cost_usd_per_vehicle": 33.1,
+        "cost_usd_per_vehicle_all_in": 36.8,
+        "min_charge_usd": 31.3,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 6.3
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRPTK-02",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 351,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.5,
+        "driving_hours_total": 6.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.9,
+        "transit_days_p90": 1.01,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 556.2,
+        "cost_usd_per_vehicle": 69.5,
+        "cost_usd_per_vehicle_all_in": 79.1,
+        "min_charge_usd": 67.2,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 38.2
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRPTK-02-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 351,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.4,
+        "driving_hours_total": 6.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.64,
+        "transit_days_p90": 0.9,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 700.8,
+        "cost_usd_per_vehicle": 87.6,
+        "cost_usd_per_vehicle_all_in": 99.7,
+        "min_charge_usd": 84.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 38.2
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRINC-03",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 411,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.55,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.95,
+        "transit_days_p90": 1.06,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 627.0,
+        "cost_usd_per_vehicle": 78.4,
+        "cost_usd_per_vehicle_all_in": 89.4,
+        "min_charge_usd": 76.0,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 44.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRUSN_YARD-KRINC-03-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRUSN_YARD",
+        "name": "KRUSN_YARD",
+        "country": "KR",
+        "node_type": "vehicle_yard",
+        "location_id": "KRUSN"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 411,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.44,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.68,
+        "transit_days_p90": 0.94,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 790.0,
+        "cost_usd_per_vehicle": 98.8,
+        "cost_usd_per_vehicle_all_in": 112.6,
+        "min_charge_usd": 95.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 44.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRUSN-04",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 370,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.52,
+        "driving_hours_total": 6.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.92,
+        "transit_days_p90": 1.03,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 578.6,
+        "cost_usd_per_vehicle": 72.3,
+        "cost_usd_per_vehicle_all_in": 82.3,
+        "min_charge_usd": 70.0,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 40.3
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRUSN-04-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 370,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.42,
+        "driving_hours_total": 6.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.66,
+        "transit_days_p90": 0.91,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 729.0,
+        "cost_usd_per_vehicle": 91.1,
+        "cost_usd_per_vehicle_all_in": 103.7,
+        "min_charge_usd": 88.1,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 40.3
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRPUS-05",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 387,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.53,
+        "driving_hours_total": 6.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.93,
+        "transit_days_p90": 1.04,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 598.7,
+        "cost_usd_per_vehicle": 74.8,
+        "cost_usd_per_vehicle_all_in": 85.2,
+        "min_charge_usd": 72.4,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 42.1
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRPUS-05-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 387,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.42,
+        "driving_hours_total": 6.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.66,
+        "transit_days_p90": 0.92,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 754.3,
+        "cost_usd_per_vehicle": 94.2,
+        "cost_usd_per_vehicle_all_in": 107.4,
+        "min_charge_usd": 91.2,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 42.1
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRPTK-06",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 33,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.27,
+        "driving_hours_total": 0.6,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.67,
+        "transit_days_p90": 0.75,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 180.9,
+        "cost_usd_per_vehicle": 22.6,
+        "cost_usd_per_vehicle_all_in": 24.9,
+        "min_charge_usd": 21.2,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 3.6
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRPTK-06-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 33,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.22,
+        "driving_hours_total": 0.6,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.46,
+        "transit_days_p90": 0.69,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 228.0,
+        "cost_usd_per_vehicle": 28.5,
+        "cost_usd_per_vehicle_all_in": 31.4,
+        "min_charge_usd": 26.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 3.6
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRINC-07",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 43,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.28,
+        "driving_hours_total": 0.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.68,
+        "transit_days_p90": 0.76,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 192.7,
+        "cost_usd_per_vehicle": 24.1,
+        "cost_usd_per_vehicle_all_in": 26.7,
+        "min_charge_usd": 22.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 4.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRHWA_PLANT-KRINC-07-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRHWA_PLANT",
+        "name": "KRHWA_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRHWA"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 43,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.22,
+        "driving_hours_total": 0.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.46,
+        "transit_days_p90": 0.7,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 242.9,
+        "cost_usd_per_vehicle": 30.4,
+        "cost_usd_per_vehicle_all_in": 33.6,
+        "min_charge_usd": 28.6,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 4.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRUSN-08",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 291,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.46,
+        "driving_hours_total": 5.0,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.86,
+        "transit_days_p90": 0.96,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 485.4,
+        "cost_usd_per_vehicle": 60.7,
+        "cost_usd_per_vehicle_all_in": 68.9,
+        "min_charge_usd": 58.6,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 31.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRUSN-08-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 291,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.37,
+        "driving_hours_total": 5.0,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.61,
+        "transit_days_p90": 0.86,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 611.6,
+        "cost_usd_per_vehicle": 76.5,
+        "cost_usd_per_vehicle_all_in": 86.8,
+        "min_charge_usd": 73.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 31.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRPUS-09",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 259,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.44,
+        "driving_hours_total": 4.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.84,
+        "transit_days_p90": 0.94,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 447.6,
+        "cost_usd_per_vehicle": 56.0,
+        "cost_usd_per_vehicle_all_in": 63.5,
+        "min_charge_usd": 54.0,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 28.2
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRPUS-09-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 259,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.35,
+        "driving_hours_total": 4.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.59,
+        "transit_days_p90": 0.84,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 564.0,
+        "cost_usd_per_vehicle": 70.6,
+        "cost_usd_per_vehicle_all_in": 80.0,
+        "min_charge_usd": 68.0,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 28.2
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRPTK-10",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 258,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.44,
+        "driving_hours_total": 4.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.84,
+        "transit_days_p90": 0.94,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 446.4,
+        "cost_usd_per_vehicle": 55.8,
+        "cost_usd_per_vehicle_all_in": 63.3,
+        "min_charge_usd": 53.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 28.1
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRPTK-10-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 258,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.35,
+        "driving_hours_total": 4.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.59,
+        "transit_days_p90": 0.84,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 562.5,
+        "cost_usd_per_vehicle": 70.3,
+        "cost_usd_per_vehicle_all_in": 79.8,
+        "min_charge_usd": 67.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 28.1
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRINC-11",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 328,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.49,
+        "driving_hours_total": 5.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.89,
+        "transit_days_p90": 1.0,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 529.0,
+        "cost_usd_per_vehicle": 66.1,
+        "cost_usd_per_vehicle_all_in": 75.2,
+        "min_charge_usd": 63.9,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 35.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRGJU_PLANT-KRINC-11-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRGJU_PLANT",
+        "name": "KRGJU_PLANT",
+        "country": "KR",
+        "node_type": "plant",
+        "location_id": "KRGJU"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 328,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.39,
+        "driving_hours_total": 5.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.63,
+        "transit_days_p90": 0.89,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 666.6,
+        "cost_usd_per_vehicle": 83.3,
+        "cost_usd_per_vehicle_all_in": 94.8,
+        "min_charge_usd": 80.5,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 35.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRUSN-12",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 410,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.54,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.94,
+        "transit_days_p90": 1.05,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 625.8,
+        "cost_usd_per_vehicle": 78.2,
+        "cost_usd_per_vehicle_all_in": 89.1,
+        "min_charge_usd": 75.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 44.6
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRUSN-12-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 410,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.43,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.67,
+        "transit_days_p90": 0.93,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 788.5,
+        "cost_usd_per_vehicle": 98.5,
+        "cost_usd_per_vehicle_all_in": 112.3,
+        "min_charge_usd": 95.4,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 44.6
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRPUS-13",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 431,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.56,
+        "driving_hours_total": 7.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.96,
+        "transit_days_p90": 1.08,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 650.6,
+        "cost_usd_per_vehicle": 81.3,
+        "cost_usd_per_vehicle_all_in": 92.7,
+        "min_charge_usd": 78.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 46.9
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRPUS-13-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 431,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.45,
+        "driving_hours_total": 7.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.69,
+        "transit_days_p90": 0.95,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 819.7,
+        "cost_usd_per_vehicle": 102.4,
+        "cost_usd_per_vehicle_all_in": 116.8,
+        "min_charge_usd": 99.3,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 46.9
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRPTK-14",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 83,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.31,
+        "driving_hours_total": 1.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.71,
+        "transit_days_p90": 0.8,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 239.9,
+        "cost_usd_per_vehicle": 30.0,
+        "cost_usd_per_vehicle_all_in": 33.5,
+        "min_charge_usd": 28.5,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 9.0
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRICH_WH-KRPTK-14-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRICH_WH",
+        "name": "KRICH_WH",
+        "country": "KR",
+        "node_type": "warehouse",
+        "location_id": "KRICH"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 83,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.25,
+        "driving_hours_total": 1.4,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.49,
+        "transit_days_p90": 0.73,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 302.3,
+        "cost_usd_per_vehicle": 37.8,
+        "cost_usd_per_vehicle_all_in": 42.2,
+        "min_charge_usd": 35.9,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 9.0
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRUSN-15",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 393,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.53,
+        "driving_hours_total": 6.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.93,
+        "transit_days_p90": 1.04,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 605.7,
+        "cost_usd_per_vehicle": 75.7,
+        "cost_usd_per_vehicle_all_in": 86.3,
+        "min_charge_usd": 73.4,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 42.8
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRUSN-15-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRUSN",
+        "name": "KRUSN",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRUSN"
+      },
+      "distance_km": 393,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.42,
+        "driving_hours_total": 6.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.66,
+        "transit_days_p90": 0.92,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 763.2,
+        "cost_usd_per_vehicle": 95.4,
+        "cost_usd_per_vehicle_all_in": 108.7,
+        "min_charge_usd": 92.4,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 42.8
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRPUS-16",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 417,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.55,
+        "driving_hours_total": 7.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.95,
+        "transit_days_p90": 1.06,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 634.1,
+        "cost_usd_per_vehicle": 79.3,
+        "cost_usd_per_vehicle_all_in": 90.4,
+        "min_charge_usd": 76.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 45.4
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRPUS-16-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRPUS",
+        "name": "KRPUS",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPUS"
+      },
+      "distance_km": 417,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.44,
+        "driving_hours_total": 7.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.68,
+        "transit_days_p90": 0.94,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 798.9,
+        "cost_usd_per_vehicle": 99.9,
+        "cost_usd_per_vehicle_all_in": 113.9,
+        "min_charge_usd": 96.8,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 45.4
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRPTK-17",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 87,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.31,
+        "driving_hours_total": 1.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.71,
+        "transit_days_p90": 0.8,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 244.7,
+        "cost_usd_per_vehicle": 30.6,
+        "cost_usd_per_vehicle_all_in": 34.2,
+        "min_charge_usd": 29.1,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 9.5
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRPTK-17-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRPTK",
+        "name": "KRPTK",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRPTK"
+      },
+      "distance_km": 87,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.25,
+        "driving_hours_total": 1.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.49,
+        "transit_days_p90": 0.73,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 308.3,
+        "cost_usd_per_vehicle": 38.6,
+        "cost_usd_per_vehicle_all_in": 43.1,
+        "min_charge_usd": 36.6,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 9.5
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRINC-18",
+      "service_type": "car_carrier",
+      "service_tier": "STANDARD",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 43,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.28,
+        "driving_hours_total": 0.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 0.68,
+        "transit_days_p90": 0.76,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 192.7,
+        "cost_usd_per_vehicle": 24.1,
+        "cost_usd_per_vehicle_all_in": 26.7,
+        "min_charge_usd": 22.7,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.96,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 4.7
+      },
+      "carries_finished_vehicle": true
+    },
+    {
+      "service_id": "KOR-KR-KRSEL-KRINC-18-EXP",
+      "service_type": "car_carrier",
+      "service_tier": "EXPRESS",
+      "origin": {
+        "node_id": "KRSEL",
+        "name": "KRSEL",
+        "country": "KR",
+        "node_type": "distribution_center",
+        "location_id": "KRSEL"
+      },
+      "destination": {
+        "node_id": "KRINC",
+        "name": "KRINC",
+        "country": "KR",
+        "node_type": "seaport",
+        "location_id": "KRINC"
+      },
+      "distance_km": 43,
+      "service_area": {
+        "countries": [
+          "KR"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.22,
+        "driving_hours_total": 0.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 0.46,
+        "transit_days_p90": 0.7,
+        "border_crossings": 0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 8
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.2
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 242.9,
+        "cost_usd_per_vehicle": 30.4,
+        "cost_usd_per_vehicle_all_in": 33.6,
+        "min_charge_usd": 28.6,
+        "rate_validity_type": "QUARTERLY",
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-09-30",
+        "days_until_expiry": 54
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.07,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV",
+          "LIGHT_COMMERCIAL"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": false,
+        "gps_tracking": true
+      },
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 15
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.054,
+        "reliability_source": "measured",
+        "on_time_sample_size": 380
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 64,
+        "co2_kg_per_vehicle": 4.7
+      },
+      "carries_finished_vehicle": true
+    }
+  ]
+}

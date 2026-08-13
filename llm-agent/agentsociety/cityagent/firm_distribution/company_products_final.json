@@ -1,0 +1,1323 @@
+[
+  {
+    "name": "东方银星",
+    "location": "上海证券交易所",
+    "fullname": "河南东方银星投资股份有限公司",
+    "time": "1996-09-27",
+    "main_products": [
+      {
+        "product_name": "原油",
+        "related_products": [
+          "燃料油",
+          "柴油",
+          "天然气"
+        ]
+      },
+      {
+        "product_name": "燃料油",
+        "related_products": [
+          "原油"
+        ]
+      },
+      {
+        "product_name": "柴油",
+        "related_products": [
+          "原油"
+        ]
+      },
+      {
+        "product_name": "天然气",
+        "related_products": [
+          "原油"
+        ]
+      },
+      {
+        "product_name": "焦煤",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "焦煤"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "鹏欣资源",
+    "location": "上海证券交易所",
+    "fullname": "鹏欣环球资源股份有限公司",
+    "time": "2003-06-26",
+    "main_products": [
+      {
+        "product_name": "电解镍",
+        "related_products": [
+          "硫酸"
+        ]
+      },
+      {
+        "product_name": "乙二醇",
+        "related_products": [
+          "甲醇"
+        ]
+      },
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "乙二醇"
+        ]
+      },
+      {
+        "product_name": "硫酸",
+        "related_products": [
+          "电解镍"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "华鲁恒升",
+    "location": "上海证券交易所",
+    "fullname": "山东华鲁恒升化工股份有限公司",
+    "time": "2002-06-20",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "醋酸"
+        ]
+      },
+      {
+        "product_name": "醋酸",
+        "related_products": [
+          "尿素"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "泰山石油",
+    "location": "深圳证券交易所",
+    "fullname": "中国石化山东泰山石油股份有限公司",
+    "time": "1993-12-15",
+    "main_products": [
+      {
+        "product_name": "汽油",
+        "related_products": [
+          "燃料油"
+        ]
+      },
+      {
+        "product_name": "燃料油",
+        "related_products": [
+          "汽油"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "阳煤化工",
+    "location": "上海证券交易所",
+    "fullname": "阳煤化工股份有限公司",
+    "time": "1993-11-19",
+    "main_products": [
+      {
+        "product_name": "聚氯乙烯",
+        "related_products": [
+          "乙烯"
+        ]
+      },
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "丙烯",
+          "乙二醇"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "复合肥",
+          "三聚氰胺",
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "复合肥",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "三聚氰胺",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "丙烯",
+        "related_products": [
+          "甲醇"
+        ]
+      },
+      {
+        "product_name": "乙二醇",
+        "related_products": [
+          "甲醇"
+        ]
+      },
+      {
+        "product_name": "乙烯",
+        "related_products": [
+          "聚氯乙烯",
+          "聚氯乙烯"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "江化微",
+    "location": "上海证券交易所",
+    "fullname": "江阴江化微电子材料股份有限公司",
+    "time": "2017-04-10",
+    "main_products": [
+      {
+        "product_name": "氢氟酸",
+        "related_products": [
+          "硫酸"
+        ]
+      },
+      {
+        "product_name": "硫酸",
+        "related_products": [
+          "氢氟酸"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "宝泰隆",
+    "location": "上海证券交易所",
+    "fullname": "宝泰隆新材料股份有限公司",
+    "time": "2011-03-09",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "重油",
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "ST安通",
+    "location": "上海证券交易所",
+    "fullname": "安通控股股份有限公司",
+    "time": "1998-11-04",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "尿素",
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "金圆股份",
+    "location": "深圳证券交易所",
+    "fullname": "金圆环保股份有限公司",
+    "time": "1993-12-15",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "水泥"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "ST云维",
+    "location": "上海证券交易所",
+    "fullname": "云南云维股份有限公司",
+    "time": "1996-07-02",
+    "main_products": [
+      {
+        "product_name": "电石",
+        "related_products": [
+          "水泥",
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "纯碱",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "焦炭",
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "纯碱",
+          "尿素",
+          "甲醇",
+          "电石"
+        ]
+      },
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "水泥",
+        "related_products": [
+          "电石"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "云天化",
+    "location": "上海证券交易所",
+    "fullname": "云南云天化股份有限公司",
+    "time": "1997-07-09",
+    "main_products": [
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素",
+          "磷酸二铵"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "磷酸二铵",
+        "related_products": [
+          "液氨"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "云煤能源",
+    "location": "上海证券交易所",
+    "fullname": "云南煤业能源股份有限公司",
+    "time": "1997-01-23",
+    "main_products": [
+      {
+        "product_name": "煤气",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "煤气"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "泸天化",
+    "location": "深圳证券交易所",
+    "fullname": "四川泸天化股份有限公司",
+    "time": "1999-06-03",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "二甲醚"
+        ]
+      },
+      {
+        "product_name": "二甲醚",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "四川金顶",
+    "location": "上海证券交易所",
+    "fullname": "四川金顶(集团)股份有限公司",
+    "time": "1993-10-08",
+    "main_products": [
+      {
+        "product_name": "石灰石",
+        "related_products": [
+          "水泥"
+        ]
+      },
+      {
+        "product_name": "水泥",
+        "related_products": [
+          "石灰石"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "上峰水泥",
+    "location": "深圳证券交易所",
+    "fullname": "甘肃上峰水泥股份有限公司",
+    "time": "1996-12-18",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "水泥"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "藏格控股",
+    "location": "深圳证券交易所",
+    "fullname": "藏格控股股份有限公司",
+    "time": "1996-06-28",
+    "main_products": [
+      {
+        "product_name": "乙二醇",
+        "related_products": [
+          "聚酯切片"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "青海春天",
+    "location": "上海证券交易所",
+    "fullname": "青海春天药用资源科技股份有限公司",
+    "time": "2001-05-08",
+    "main_products": [
+      {
+        "product_name": "铁精粉",
+        "related_products": [
+          "水泥"
+        ]
+      },
+      {
+        "product_name": "水泥",
+        "related_products": [
+          "铁精粉"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "ST天润",
+    "location": "深圳证券交易所",
+    "fullname": "湖南天润数字娱乐文化传媒股份有限公司",
+    "time": "2007-02-08",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "复合肥",
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "复合肥",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "金发科技",
+    "location": "上海证券交易所",
+    "fullname": "金发科技股份有限公司",
+    "time": "2004-06-23",
+    "main_products": [
+      {
+        "product_name": "丙烯",
+        "related_products": [
+          "液化气"
+        ]
+      },
+      {
+        "product_name": "液化气",
+        "related_products": [
+          "丙烯"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "金鸿控股",
+    "location": "深圳证券交易所",
+    "fullname": "金鸿控股集团股份有限公司",
+    "time": "1996-12-10",
+    "main_products": [
+      {
+        "product_name": "天然气",
+        "related_products": [
+          "液化气"
+        ]
+      },
+      {
+        "product_name": "液化气",
+        "related_products": [
+          "天然气"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "华锦股份",
+    "location": "深圳证券交易所",
+    "fullname": "北方华锦化学工业股份有限公司",
+    "time": "1997-01-30",
+    "main_products": [
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "液氨"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "沈阳化工",
+    "location": "深圳证券交易所",
+    "fullname": "沈阳化工股份有限公司",
+    "time": "1997-02-20",
+    "main_products": [
+      {
+        "product_name": "聚乙烯",
+        "related_products": [
+          "液化气"
+        ]
+      },
+      {
+        "product_name": "汽油",
+        "related_products": [
+          "液化气"
+        ]
+      },
+      {
+        "product_name": "液化气",
+        "related_products": [
+          "聚乙烯",
+          "汽油"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "驰宏锌锗",
+    "location": "上海证券交易所",
+    "fullname": "云南驰宏锌锗股份有限公司",
+    "time": "2004-04-20",
+    "main_products": [
+      {
+        "product_name": "电解镍",
+        "related_products": [
+          "硫酸"
+        ]
+      },
+      {
+        "product_name": "硫酸",
+        "related_products": [
+          "电解镍"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "川能动力",
+    "location": "深圳证券交易所",
+    "fullname": "四川省新能源动力股份有限公司",
+    "time": "2000-09-26",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "复合肥",
+          "三聚氰胺"
+        ]
+      },
+      {
+        "product_name": "复合肥",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "三聚氰胺",
+        "related_products": [
+          "尿素"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "祁连山",
+    "location": "上海证券交易所",
+    "fullname": "甘肃祁连山水泥集团股份有限公司",
+    "time": "1996-07-16",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "水泥",
+          "骨料"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "陕西黑猫",
+    "location": "上海证券交易所",
+    "fullname": "陕西黑猫焦化股份有限公司",
+    "time": "2014-11-05",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "金钼股份",
+    "location": "上海证券交易所",
+    "fullname": "金堆城钼业股份有限公司",
+    "time": "2008-04-17",
+    "main_products": [
+      {
+        "product_name": "电解镍",
+        "related_products": [
+          "硫酸"
+        ]
+      },
+      {
+        "product_name": "硫酸",
+        "related_products": [
+          "电解镍"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "*ST百花",
+    "location": "上海证券交易所",
+    "fullname": "新疆百花村股份有限公司",
+    "time": "1996-06-26",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "尿素"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "天山股份",
+    "location": "深圳证券交易所",
+    "fullname": "新疆天山水泥股份有限公司",
+    "time": "1999-01-07",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "水泥"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "宝丰能源",
+    "location": "上海证券交易所",
+    "fullname": "宁夏宝丰能源集团股份有限公司",
+    "time": "2019-05-16",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "MTBE"
+        ]
+      },
+      {
+        "product_name": "MTBE",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "宁夏建材",
+    "location": "上海证券交易所",
+    "fullname": "宁夏建材集团股份有限公司",
+    "time": "2003-08-29",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "骨料"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "岳阳兴长",
+    "location": "深圳证券交易所",
+    "fullname": "岳阳兴长石化股份有限公司",
+    "time": "1997-06-25",
+    "main_products": [
+      {
+        "product_name": "丙烯",
+        "related_products": [
+          "液化气"
+        ]
+      },
+      {
+        "product_name": "液化气",
+        "related_products": [
+          "丙烯"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "兴发集团",
+    "location": "上海证券交易所",
+    "fullname": "湖北兴发化工集团股份有限公司",
+    "time": "1999-06-16",
+    "main_products": [
+      {
+        "product_name": "草甘膦",
+        "related_products": [
+          "草甘膦",
+          "草甘膦"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "*ST柳化",
+    "location": "上海证券交易所",
+    "fullname": "柳州化工股份有限公司",
+    "time": "2003-07-17",
+    "main_products": [
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "液氨"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "ST南化",
+    "location": "上海证券交易所",
+    "fullname": "南宁化工股份有限公司",
+    "time": "2000-07-12",
+    "main_products": [
+      {
+        "product_name": "电石",
+        "related_products": [
+          "水泥",
+          "聚氯乙烯"
+        ]
+      },
+      {
+        "product_name": "水泥",
+        "related_products": [
+          "电石"
+        ]
+      },
+      {
+        "product_name": "聚氯乙烯",
+        "related_products": [
+          "电石"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "塔牌集团",
+    "location": "深圳证券交易所",
+    "fullname": "广东塔牌集团股份有限公司",
+    "time": "2008-05-16",
+    "main_products": [
+      {
+        "product_name": "商品混凝土",
+        "related_products": [
+          "水泥"
+        ]
+      },
+      {
+        "product_name": "石灰石",
+        "related_products": [
+          "水泥"
+        ]
+      },
+      {
+        "product_name": "水泥",
+        "related_products": [
+          "石灰石"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "金禾实业",
+    "location": "深圳证券交易所",
+    "fullname": "安徽金禾实业股份有限公司",
+    "time": "2011-07-07",
+    "main_products": [
+      {
+        "product_name": "硫酸",
+        "related_products": [
+          "浓硫酸"
+        ]
+      },
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "硝酸"
+        ]
+      },
+      {
+        "product_name": "硝酸",
+        "related_products": [
+          "液氨"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "六国化工",
+    "location": "上海证券交易所",
+    "fullname": "安徽六国化工股份有限公司",
+    "time": "2004-03-05",
+    "main_products": [
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "复合肥",
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "磷酸二铵",
+        "related_products": [
+          "复合肥",
+          "液氨"
+        ]
+      },
+      {
+        "product_name": "复合肥",
+        "related_products": [
+          "尿素",
+          "磷酸二铵"
+        ]
+      },
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素",
+          "磷酸二铵"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "金能科技",
+    "location": "上海证券交易所",
+    "fullname": "金能科技股份有限公司",
+    "time": "2017-05-11",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "山东海化",
+    "location": "深圳证券交易所",
+    "fullname": "山东海化股份有限公司",
+    "time": "1998-07-03",
+    "main_products": [
+      {
+        "product_name": "纯碱",
+        "related_products": [
+          "溴素",
+          "烧碱"
+        ]
+      },
+      {
+        "product_name": "烧碱",
+        "related_products": [
+          "溴素",
+          "纯碱"
+        ]
+      },
+      {
+        "product_name": "溴素",
+        "related_products": [
+          "纯碱",
+          "烧碱"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "滨化股份",
+    "location": "上海证券交易所",
+    "fullname": "滨化集团股份有限公司",
+    "time": "2010-02-23",
+    "main_products": [
+      {
+        "product_name": "三氯乙烯",
+        "related_products": [
+          "四氯乙烯",
+          "三氯乙烯",
+          "三氯乙烯"
+        ]
+      },
+      {
+        "product_name": "烧碱",
+        "related_products": [
+          "溴素",
+          "环氧丙烷"
+        ]
+      },
+      {
+        "product_name": "溴素",
+        "related_products": [
+          "烧碱"
+        ]
+      },
+      {
+        "product_name": "环氧丙烷",
+        "related_products": [
+          "烧碱"
+        ]
+      },
+      {
+        "product_name": "四氯乙烯",
+        "related_products": [
+          "三氯乙烯"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "江山股份",
+    "location": "上海证券交易所",
+    "fullname": "南通江山农药化工股份有限公司",
+    "time": "2001-01-10",
+    "main_products": [
+      {
+        "product_name": "草甘膦",
+        "related_products": [
+          "草甘膦",
+          "草甘膦",
+          "烧碱"
+        ]
+      },
+      {
+        "product_name": "烧碱",
+        "related_products": [
+          "草甘膦"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "亿利洁能",
+    "location": "上海证券交易所",
+    "fullname": "亿利洁能股份有限公司",
+    "time": "2000-07-25",
+    "main_products": [
+      {
+        "product_name": "乙二醇",
+        "related_products": [
+          "甲醇"
+        ]
+      },
+      {
+        "product_name": "聚氯乙烯",
+        "related_products": [
+          "电石"
+        ]
+      },
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "乙二醇"
+        ]
+      },
+      {
+        "product_name": "电石",
+        "related_products": [
+          "聚氯乙烯"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "君正集团",
+    "location": "上海证券交易所",
+    "fullname": "内蒙古君正能源化工集团股份有限公司",
+    "time": "2011-02-22",
+    "main_products": [
+      {
+        "product_name": "聚氯乙烯",
+        "related_products": [
+          "电石"
+        ]
+      },
+      {
+        "product_name": "电石",
+        "related_products": [
+          "聚氯乙烯"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "ST明科",
+    "location": "上海证券交易所",
+    "fullname": "包头明天科技股份有限公司",
+    "time": "1997-07-04",
+    "main_products": [
+      {
+        "product_name": "烧碱",
+        "related_products": [
+          "苯酚"
+        ]
+      },
+      {
+        "product_name": "苯酚",
+        "related_products": [
+          "烧碱"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "state enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "山西焦化",
+    "location": "上海证券交易所",
+    "fullname": "山西焦化股份有限公司",
+    "time": "1996-08-08",
+    "main_products": [
+      {
+        "product_name": "甲醇",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "甲醇"
+        ]
+      }
+    ],
+    "culture": "Innovative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "蓝焰控股",
+    "location": "深圳证券交易所",
+    "fullname": "山西蓝焰控股股份有限公司",
+    "time": "2000-06-22",
+    "main_products": [
+      {
+        "product_name": "煤气",
+        "related_products": [
+          "焦炭"
+        ]
+      },
+      {
+        "product_name": "焦炭",
+        "related_products": [
+          "煤气"
+        ]
+      }
+    ],
+    "culture": "Aggressive",
+    "ownership_type": "state enterprise",
+    "stock_status": "Public"
+  },
+  {
+    "name": "沧州大化",
+    "location": "上海证券交易所",
+    "fullname": "沧州大化股份有限公司",
+    "time": "2000-04-06",
+    "main_products": [
+      {
+        "product_name": "液氨",
+        "related_products": [
+          "尿素"
+        ]
+      },
+      {
+        "product_name": "尿素",
+        "related_products": [
+          "液氨"
+        ]
+      }
+    ],
+    "culture": "Conservative",
+    "ownership_type": "private enterprise",
+    "stock_status": "Private"
+  },
+  {
+    "name": "三友化工",
+    "location": "上海证券交易所",
+    "fullname": "唐山三友化工股份有限公司",
+    "time": "2003-06-18",
+    "main_products": [
+      {
+        "product_name": "烧碱",
+        "related_products": [
+          "纯碱"
+        ]
+      },
+      {
+        "product_name": "纯碱",
+        "related_products": [
+          "烧碱"
+        ]
+      }
+    ],
+    "culture": "Collaborative",
+    "ownership_type": "foreign enterprise",
+    "stock_status": "Public"
+  }
+]

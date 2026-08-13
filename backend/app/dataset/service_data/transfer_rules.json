@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "dataset_id": "transfer_rules_v1",
+    "note": "같은 location_id 안에서 노드 타입이 바뀔 때 드는 비용과 시간. 원본 v3에 없어 추가함.",
+    "why": "항만에서 철도터미널로 옮기는 것은 공짜가 아니다. 하역·야드 이동·재적재가 필요하다. 이 값이 없으면 철도가 실제보다 유리하게 계산된다.",
+    "synthetic_demo_data": true,
+    "currency": "USD",
+    "basis": "per_vehicle"
+  },
+  "transfers": [
+    {
+      "from_node_type": "seaport",
+      "to_node_type": "rail_terminal",
+      "cost_usd_per_vehicle": 38.0,
+      "hours": 9,
+      "description": "항만 하역 후 야드 이동, 철도 화차 적재. 완성차는 개별 자주 이동이라 시간이 걸린다."
+    },
+    {
+      "from_node_type": "rail_terminal",
+      "to_node_type": "seaport",
+      "cost_usd_per_vehicle": 38.0,
+      "hours": 9,
+      "description": "화차 하차 후 항만 야드 반입."
+    },
+    {
+      "from_node_type": "seaport",
+      "to_node_type": "vehicle_yard",
+      "cost_usd_per_vehicle": 22.0,
+      "hours": 5,
+      "description": "항만 인접 완성차 야드로 자주 이동."
+    },
+    {
+      "from_node_type": "vehicle_yard",
+      "to_node_type": "seaport",
+      "cost_usd_per_vehicle": 22.0,
+      "hours": 5,
+      "description": "야드에서 항만 선적 대기 구역으로 이동."
+    },
+    {
+      "from_node_type": "seaport",
+      "to_node_type": "distribution_center",
+      "cost_usd_per_vehicle": 26.0,
+      "hours": 6,
+      "description": "항만에서 인근 물류센터로 셔틀 이동."
+    },
+    {
+      "from_node_type": "distribution_center",
+      "to_node_type": "seaport",
+      "cost_usd_per_vehicle": 26.0,
+      "hours": 6,
+      "description": "물류센터에서 항만 반입."
+    },
+    {
+      "from_node_type": "rail_terminal",
+      "to_node_type": "vehicle_yard",
+      "cost_usd_per_vehicle": 18.0,
+      "hours": 4,
+      "description": "철도터미널 하차 후 완성차 야드 이동."
+    },
+    {
+      "from_node_type": "vehicle_yard",
+      "to_node_type": "rail_terminal",
+      "cost_usd_per_vehicle": 18.0,
+      "hours": 4,
+      "description": "야드에서 화차 적재."
+    },
+    {
+      "from_node_type": "rail_terminal",
+      "to_node_type": "distribution_center",
+      "cost_usd_per_vehicle": 20.0,
+      "hours": 5,
+      "description": "철도터미널에서 물류센터 이동."
+    },
+    {
+      "from_node_type": "distribution_center",
+      "to_node_type": "rail_terminal",
+      "cost_usd_per_vehicle": 20.0,
+      "hours": 5,
+      "description": "물류센터에서 화차 적재."
+    },
+    {
+      "from_node_type": "airport",
+      "to_node_type": "distribution_center",
+      "cost_usd_per_vehicle": 45.0,
+      "hours": 4,
+      "description": "공항 화물터미널에서 물류센터 반출. 항공 화물은 개별 취급이라 단가가 높다."
+    },
+    {
+      "from_node_type": "distribution_center",
+      "to_node_type": "airport",
+      "cost_usd_per_vehicle": 45.0,
+      "hours": 4,
+      "description": "물류센터에서 공항 화물터미널 반입."
+    },
+    {
+      "from_node_type": "airport",
+      "to_node_type": "vehicle_yard",
+      "cost_usd_per_vehicle": 48.0,
+      "hours": 5,
+      "description": "공항에서 완성차 야드 이동."
+    },
+    {
+      "from_node_type": "vehicle_yard",
+      "to_node_type": "airport",
+      "cost_usd_per_vehicle": 48.0,
+      "hours": 5,
+      "description": "야드에서 공항 반입."
+    },
+    {
+      "from_node_type": "airport",
+      "to_node_type": "rail_terminal",
+      "cost_usd_per_vehicle": 42.0,
+      "hours": 5,
+      "description": "공항에서 철도터미널 이동."
+    },
+    {
+      "from_node_type": "rail_terminal",
+      "to_node_type": "airport",
+      "cost_usd_per_vehicle": 42.0,
+      "hours": 5,
+      "description": "철도터미널에서 공항 반입."
+    },
+    {
+      "from_node_type": "plant",
+      "to_node_type": "vehicle_yard",
+      "cost_usd_per_vehicle": 12.0,
+      "hours": 2,
+      "description": "생산공장에서 출하 야드로 자주 이동."
+    },
+    {
+      "from_node_type": "vehicle_yard",
+      "to_node_type": "plant",
+      "cost_usd_per_vehicle": 12.0,
+      "hours": 2,
+      "description": "야드에서 공장 반입."
+    },
+    {
+      "from_node_type": "warehouse",
+      "to_node_type": "distribution_center",
+      "cost_usd_per_vehicle": 15.0,
+      "hours": 3,
+      "description": "창고와 물류센터 간 이동."
+    },
+    {
+      "from_node_type": "distribution_center",
+      "to_node_type": "warehouse",
+      "cost_usd_per_vehicle": 15.0,
+      "hours": 3,
+      "description": "물류센터에서 창고 반입."
+    },
+    {
+      "from_node_type": "seaport",
+      "to_node_type": "seaport",
+      "cost_usd_per_vehicle": 0.0,
+      "hours": 0,
+      "description": "동일 항만 내 이동. 비용 없음."
+    },
+    {
+      "from_node_type": "rail_terminal",
+      "to_node_type": "rail_terminal",
+      "cost_usd_per_vehicle": 0.0,
+      "hours": 0,
+      "description": "동일 터미널 내 이동."
+    },
+    {
+      "from_node_type": "distribution_center",
+      "to_node_type": "distribution_center",
+      "cost_usd_per_vehicle": 0.0,
+      "hours": 0,
+      "description": "동일 센터 내 이동."
+    },
+    {
+      "from_node_type": "airport",
+      "to_node_type": "airport",
+      "cost_usd_per_vehicle": 0.0,
+      "hours": 0,
+      "description": "동일 공항 내 이동."
+    },
+    {
+      "from_node_type": "vehicle_yard",
+      "to_node_type": "vehicle_yard",
+      "cost_usd_per_vehicle": 0.0,
+      "hours": 0,
+      "description": "동일 야드 내 이동."
+    }
+  ]
+}
