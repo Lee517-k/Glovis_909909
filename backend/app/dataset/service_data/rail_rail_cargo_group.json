@@ -1,0 +1,4604 @@
+{
+  "metadata": {
+    "dataset_id": "rail_cargo_group_rail_demo_v1",
+    "carrier_name": "Rail Cargo Group",
+    "carrier_group": "rail",
+    "record_count": 42,
+    "generated_at": "2026-08-06T00:00:00+09:00",
+    "synthetic_demo_data": true,
+    "data_note": "노선·거점·운송수단 구조는 공개 네트워크와 물류 관행을 참고했으며, 운임·가용량·정시율·할증료는 해커톤 시뮬레이션용 합성값입니다.",
+    "source_basis": "Official Europe–Asia and intermodal network descriptions were used as reference.",
+    "schema_version": "3.0",
+    "node_id_policy": {
+      "version": "2.0",
+      "rules": [
+        "location_id는 도시/지역 공통 식별자이다.",
+        "node_id는 실제 시설 식별자이다.",
+        "항만은 UN/LOCODE를 node_id로 사용한다.",
+        "공항은 IATA를 node_id로 사용하고 도시 location_id를 별도로 둔다.",
+        "철도터미널은 _RAIL, 물류센터는 _DC, 차량야드는 _YARD 접미어를 사용한다."
+      ]
+    },
+    "validation_summary": {
+      "node_records_updated": 60,
+      "sea_ev_consistency_fixes": 0,
+      "air_service_aircraft_consistency_fixes": 0
+    },
+    "currency_policy": {
+      "base_currency": "USD",
+      "all_monetary_values_normalized": true,
+      "fx_fields_included": false,
+      "note": "MVP 비교 단순화를 위해 모든 합성 비용을 USD 기준으로 정규화했으며 환율 계산 기능은 포함하지 않습니다."
+    },
+    "realism_adjustments": {
+      "rail_time_records_adjusted": 30,
+      "road_pricing_records_adjusted": 0,
+      "sea_pricing_records_sanity_checked": 0,
+      "air_pricing_records_sanity_checked": 0
+    }
+  },
+  "carrier": {
+    "carrier_id": "RAIL_CARGO_GROUP",
+    "carrier_name": "Rail Cargo Group",
+    "group": "rail"
+  },
+  "services": [
+    {
+      "service_id": "RCG-AUTO-NLRTM_RAIL-DEHAM_RAIL-01",
+      "origin": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "FRI",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 41,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.72,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 2.04,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.05,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 181,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 155.52,
+        "rate_per_wagon": 4688.28,
+        "cost_usd_per_vehicle": 136.4,
+        "cost_usd_per_vehicle_all_in": 179.6,
+        "valid_from": "2026-03-05",
+        "valid_to": "2026-09-04",
+        "min_charge_usd": 152.7,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 28
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 43.2,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 293.76,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.99,
+        "distance_km_estimate": 928
+      },
+      "performance": {
+        "on_time_rate": 0.832,
+        "damage_rate": 0.003,
+        "cancellation_rate": 0.0138,
+        "delay_probability": 0.227,
+        "reliability_source": "measured",
+        "on_time_sample_size": 137
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 10.4
+      },
+      "distance_km": 557,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-BEANR_RAIL-ATVIE_RAIL-02",
+      "origin": {
+        "node_id": "BEANR_RAIL",
+        "name": "Antwerp Rail Terminal",
+        "country": "BE",
+        "node_type": "rail_terminal",
+        "location_id": "BEANR"
+      },
+      "destination": {
+        "node_id": "ATVIE_RAIL",
+        "name": "Vienna South",
+        "country": "AT",
+        "node_type": "rail_terminal",
+        "location_id": "ATVIE"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "FRI",
+          "TUE"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 71,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.94,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 3.34,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.75,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 20,
+          "40GP": 15,
+          "40HC": 11
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 259.2,
+          "40GP": 932.04,
+          "40HC": 734.4
+        },
+        "cost_usd_per_vehicle": 194.9,
+        "cost_usd_per_vehicle_all_in": 194.9,
+        "valid_from": "2026-07-29",
+        "valid_to": "2026-08-25",
+        "min_charge_usd": 165.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 18
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 124.2,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 214.92,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.75,
+        "distance_km_estimate": 917
+      },
+      "performance": {
+        "on_time_rate": 0.872,
+        "damage_rate": 0.0039,
+        "cancellation_rate": 0.0209,
+        "delay_probability": 0.173,
+        "reliability_source": "measured",
+        "on_time_sample_size": 268
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 23.3
+      },
+      "distance_km": 1245,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEBRV_RAIL-HUBUD_RAIL-03",
+      "origin": {
+        "node_id": "DEBRV_RAIL",
+        "name": "Bremerhaven Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "HUBUD_RAIL",
+        "name": "Budapest",
+        "country": "HU",
+        "node_type": "rail_terminal",
+        "location_id": "HUBUD"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "SAT"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 74,
+        "average_wait_hours": 18.9,
+        "transit_days": 3.07,
+        "average_wait_days": 0.79,
+        "total_days_with_wait": 3.86,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.47,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 7,
+          "40GP": 4,
+          "40HC": 10
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 806.76,
+          "40GP": 575.64,
+          "40HC": 606.96
+        },
+        "cost_usd_per_vehicle": 202.8,
+        "cost_usd_per_vehicle_all_in": 202.8,
+        "valid_from": "2026-08-01",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 172.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 68.04,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 216.0,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.92,
+        "distance_km_estimate": 927
+      },
+      "performance": {
+        "on_time_rate": 0.875,
+        "damage_rate": 0.002,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.169,
+        "reliability_source": "measured",
+        "on_time_sample_size": 282
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 25.2
+      },
+      "distance_km": 1346,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEHAM_RAIL-DEBRV_RAIL-04",
+      "origin": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "destination": {
+        "node_id": "DEBRV_RAIL",
+        "name": "Bremerhaven Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEBRV"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "MON",
+          "TUE",
+          "SAT"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 20,
+        "average_wait_hours": 9.5,
+        "transit_days": 0.82,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 1.22,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 1.8,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 5,
+          "40GP": 5,
+          "40HC": 5
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 719.28,
+          "40GP": 1047.6,
+          "40HC": 757.08
+        },
+        "cost_usd_per_vehicle": 92.3,
+        "cost_usd_per_vehicle_all_in": 92.3,
+        "valid_from": "2026-07-24",
+        "valid_to": "2026-08-27",
+        "min_charge_usd": 78.5,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 20
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 126.36,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 243.0,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.77,
+        "distance_km_estimate": 902
+      },
+      "performance": {
+        "on_time_rate": 0.844,
+        "damage_rate": 0.0029,
+        "cancellation_rate": 0.0122,
+        "delay_probability": 0.211,
+        "reliability_source": "measured",
+        "on_time_sample_size": 354
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 2.4
+      },
+      "distance_km": 126,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEDUI-DEMUC_RAIL-05",
+      "origin": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "TUE",
+          "MON"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 36,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.5,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.82,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.51,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 18,
+          "40GP": 13,
+          "40HC": 9
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 361.8,
+          "40GP": 616.68,
+          "40HC": 659.88
+        },
+        "cost_usd_per_vehicle": 147.8,
+        "cost_usd_per_vehicle_all_in": 147.8,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-09-07",
+        "min_charge_usd": 125.6,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 31
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 96.12,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 373.68,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.81,
+        "distance_km_estimate": 650
+      },
+      "performance": {
+        "on_time_rate": 0.894,
+        "damage_rate": 0.0024,
+        "cancellation_rate": 0.012,
+        "delay_probability": 0.143,
+        "reliability_source": "measured",
+        "on_time_sample_size": 170
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 680,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-DEKOL-SIKOP_RAIL-06",
+      "origin": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "destination": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "FRI",
+          "WED"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 56,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.33,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 2.73,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.74,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 144,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 252.72,
+        "rate_per_wagon": 2892.24,
+        "cost_usd_per_vehicle": 179.6,
+        "cost_usd_per_vehicle_all_in": 240.1,
+        "valid_from": "2026-03-15",
+        "valid_to": "2026-09-14",
+        "min_charge_usd": 204.1,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 38
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 60.48,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 93.96,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.81,
+        "distance_km_estimate": 980
+      },
+      "performance": {
+        "on_time_rate": 0.9,
+        "damage_rate": 0.0036,
+        "cancellation_rate": 0.0187,
+        "delay_probability": 0.135,
+        "reliability_source": "measured",
+        "on_time_sample_size": 344
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 19.7
+      },
+      "distance_km": 1054,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEFRA_RAIL-BEANR_RAIL-07",
+      "origin": {
+        "node_id": "DEFRA_RAIL",
+        "name": "Frankfurt Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEFRA"
+      },
+      "destination": {
+        "node_id": "BEANR_RAIL",
+        "name": "Antwerp Rail Terminal",
+        "country": "BE",
+        "node_type": "rail_terminal",
+        "location_id": "BEANR"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "MON",
+          "TUE"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 38,
+        "average_wait_hours": 9.5,
+        "transit_days": 1.58,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 1.98,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.67,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 21,
+          "40GP": 10,
+          "40HC": 9
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 330.48,
+          "40GP": 1249.56,
+          "40HC": 1177.2
+        },
+        "cost_usd_per_vehicle": 124.4,
+        "cost_usd_per_vehicle_all_in": 124.4,
+        "valid_from": "2026-07-29",
+        "valid_to": "2026-08-26",
+        "min_charge_usd": 105.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 19
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 90.72,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 278.64,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.96,
+        "distance_km_estimate": 420
+      },
+      "performance": {
+        "on_time_rate": 0.911,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.0184,
+        "delay_probability": 0.12,
+        "reliability_source": "measured",
+        "on_time_sample_size": 383
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 8.2
+      },
+      "distance_km": 440,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEMUC_RAIL-DEFRA_RAIL-08",
+      "origin": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DEFRA_RAIL",
+        "name": "Frankfurt Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEFRA"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "FRI",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 28,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.17,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.49,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.05,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 13,
+          "40GP": 10,
+          "40HC": 10
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 819.72,
+          "40GP": 1154.52,
+          "40HC": 1196.64
+        },
+        "cost_usd_per_vehicle": 120.9,
+        "cost_usd_per_vehicle_all_in": 120.9,
+        "valid_from": "2026-06-24",
+        "valid_to": "2026-09-23",
+        "min_charge_usd": 102.8,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 47
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 142.56,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 106.92,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.84,
+        "distance_km_estimate": 900
+      },
+      "performance": {
+        "on_time_rate": 0.895,
+        "damage_rate": 0.0017,
+        "cancellation_rate": 0.0162,
+        "delay_probability": 0.142,
+        "reliability_source": "measured",
+        "on_time_sample_size": 252
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 7.7
+      },
+      "distance_km": 411,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-ATVIE_RAIL-ITVER_RAIL-09",
+      "origin": {
+        "node_id": "ATVIE_RAIL",
+        "name": "Vienna South",
+        "country": "AT",
+        "node_type": "rail_terminal",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ITVER_RAIL",
+        "name": "Verona",
+        "country": "IT",
+        "node_type": "rail_terminal",
+        "location_id": "ITVER"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "SAT"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 54,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.26,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 2.66,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.73,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 7,
+          "40GP": 8,
+          "40HC": 3
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 534.6,
+          "40GP": 811.08,
+          "40HC": 926.64
+        },
+        "cost_usd_per_vehicle": 148.8,
+        "cost_usd_per_vehicle_all_in": 148.8,
+        "valid_from": "2026-07-22",
+        "valid_to": "2026-08-26",
+        "min_charge_usd": 126.5,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 19
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 99.36,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 190.08,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 0,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.81,
+        "distance_km_estimate": 951
+      },
+      "performance": {
+        "on_time_rate": 0.882,
+        "damage_rate": 0.0021,
+        "cancellation_rate": 0.0159,
+        "delay_probability": 0.159,
+        "reliability_source": "measured",
+        "on_time_sample_size": 351
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.9
+      },
+      "distance_km": 691,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-CZPRG_RAIL-NLRTM_RAIL-10",
+      "origin": {
+        "node_id": "CZPRG_RAIL",
+        "name": "Prague",
+        "country": "CZ",
+        "node_type": "rail_terminal",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "SAT",
+          "MON"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 63,
+        "average_wait_hours": 18.9,
+        "transit_days": 2.62,
+        "average_wait_days": 0.79,
+        "total_days_with_wait": 3.41,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.99,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 14,
+          "40GP": 11,
+          "40HC": 5
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 766.8,
+          "40GP": 1013.04,
+          "40HC": 788.4
+        },
+        "cost_usd_per_vehicle": 173.6,
+        "cost_usd_per_vehicle_all_in": 173.6,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-08-14",
+        "min_charge_usd": 147.6,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 7
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 62.64,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 259.2,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.76,
+        "distance_km_estimate": 967
+      },
+      "performance": {
+        "on_time_rate": 0.85,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0119,
+        "delay_probability": 0.203,
+        "reliability_source": "measured",
+        "on_time_sample_size": 213
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 18.3
+      },
+      "distance_km": 980,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-PLWAW_RAIL-DEKOL-11",
+      "origin": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "SAT",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 73,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.04,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 3.36,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.74,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 61,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 11
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 120.96,
+        "rate_per_wagon": 4246.56,
+        "cost_usd_per_vehicle": 201.0,
+        "cost_usd_per_vehicle_all_in": 349.0,
+        "valid_from": "2026-03-04",
+        "valid_to": "2026-09-03",
+        "min_charge_usd": 296.6,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 27
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 147.96,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 129.6,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 942
+      },
+      "performance": {
+        "on_time_rate": 0.878,
+        "damage_rate": 0.0016,
+        "cancellation_rate": 0.0169,
+        "delay_probability": 0.165,
+        "reliability_source": "measured",
+        "on_time_sample_size": 337
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.7
+      },
+      "distance_km": 1323,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-ITVER_RAIL-PLWAW_RAIL-12",
+      "origin": {
+        "node_id": "ITVER_RAIL",
+        "name": "Verona",
+        "country": "IT",
+        "node_type": "rail_terminal",
+        "location_id": "ITVER"
+      },
+      "destination": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 85,
+        "average_wait_hours": 12.6,
+        "transit_days": 3.53,
+        "average_wait_days": 0.53,
+        "total_days_with_wait": 4.06,
+        "border_crossings": 3,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.94,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 17,
+          "40GP": 5,
+          "40HC": 4
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 867.24,
+          "40GP": 1014.12,
+          "40HC": 1260.36
+        },
+        "cost_usd_per_vehicle": 208.4,
+        "cost_usd_per_vehicle_all_in": 208.4,
+        "valid_from": "2026-08-02",
+        "valid_to": "2026-08-30",
+        "min_charge_usd": 177.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 23
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 69.12,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 208.44,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.82,
+        "distance_km_estimate": 969
+      },
+      "performance": {
+        "on_time_rate": 0.85,
+        "damage_rate": 0.0017,
+        "cancellation_rate": 0.0053,
+        "delay_probability": 0.203,
+        "reliability_source": "measured",
+        "on_time_sample_size": 365
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 26.5
+      },
+      "distance_km": 1418,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-SIKOP_RAIL-TRIST_RAIL-13",
+      "origin": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "destination": {
+        "node_id": "TRIST_RAIL",
+        "name": "Istanbul",
+        "country": "TR",
+        "node_type": "rail_terminal",
+        "location_id": "TRIST"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "FRI",
+          "SAT",
+          "TUE"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 35,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.44,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.76,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.49,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 5,
+          "40GP": 13,
+          "40HC": 11
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 400.68,
+          "40GP": 1103.76,
+          "40HC": 1365.12
+        },
+        "cost_usd_per_vehicle": 81.6,
+        "cost_usd_per_vehicle_all_in": 81.6,
+        "valid_from": "2026-07-30",
+        "valid_to": "2026-08-17",
+        "min_charge_usd": 69.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 10
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 130.68,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 248.4,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": true,
+        "electrified_ratio": 0.85,
+        "distance_km_estimate": 976
+      },
+      "performance": {
+        "on_time_rate": 0.877,
+        "damage_rate": 0.0024,
+        "cancellation_rate": 0.0093,
+        "delay_probability": 0.166,
+        "reliability_source": "measured",
+        "on_time_sample_size": 152
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 0.3
+      },
+      "distance_km": 16,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-HUBUD_RAIL-DEDUI-14",
+      "origin": {
+        "node_id": "HUBUD_RAIL",
+        "name": "Budapest",
+        "country": "HU",
+        "node_type": "rail_terminal",
+        "location_id": "HUBUD"
+      },
+      "destination": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "MON",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 73,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.05,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 3.37,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.65,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 23,
+          "40GP": 12,
+          "40HC": 6
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 247.32,
+          "40GP": 1109.16,
+          "40HC": 1315.44
+        },
+        "cost_usd_per_vehicle": 201.8,
+        "cost_usd_per_vehicle_all_in": 201.8,
+        "valid_from": "2026-06-16",
+        "valid_to": "2026-09-15",
+        "min_charge_usd": 171.5,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 39
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 102.6,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 276.48,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.96,
+        "distance_km_estimate": 919
+      },
+      "performance": {
+        "on_time_rate": 0.894,
+        "damage_rate": 0.003,
+        "cancellation_rate": 0.0164,
+        "delay_probability": 0.143,
+        "reliability_source": "measured",
+        "on_time_sample_size": 256
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.9
+      },
+      "distance_km": 1333,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-ROCUR_RAIL-CZPRG_RAIL-15",
+      "origin": {
+        "node_id": "ROCUR_RAIL",
+        "name": "Curtici",
+        "country": "RO",
+        "node_type": "rail_terminal",
+        "location_id": "ROCUR"
+      },
+      "destination": {
+        "node_id": "CZPRG_RAIL",
+        "name": "Prague",
+        "country": "CZ",
+        "node_type": "rail_terminal",
+        "location_id": "CZPRG"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "MON",
+          "SAT"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 84,
+        "average_wait_hours": 18.9,
+        "transit_days": 3.5,
+        "average_wait_days": 0.79,
+        "total_days_with_wait": 4.29,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.88,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 23,
+          "40GP": 2,
+          "40HC": 6
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 723.6,
+          "40GP": 487.08,
+          "40HC": 848.88
+        },
+        "cost_usd_per_vehicle": 229.5,
+        "cost_usd_per_vehicle_all_in": 229.5,
+        "valid_from": "2026-03-22",
+        "valid_to": "2026-09-21",
+        "min_charge_usd": 195.1,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 45
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 82.08,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 105.84,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.88,
+        "distance_km_estimate": 965
+      },
+      "performance": {
+        "on_time_rate": 0.899,
+        "damage_rate": 0.0034,
+        "cancellation_rate": 0.0146,
+        "delay_probability": 0.136,
+        "reliability_source": "measured",
+        "on_time_sample_size": 375
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 31.7
+      },
+      "distance_km": 1696,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-TRIST_RAIL-ROCUR_RAIL-16",
+      "origin": {
+        "node_id": "TRIST_RAIL",
+        "name": "Istanbul",
+        "country": "TR",
+        "node_type": "rail_terminal",
+        "location_id": "TRIST"
+      },
+      "destination": {
+        "node_id": "ROCUR_RAIL",
+        "name": "Curtici",
+        "country": "RO",
+        "node_type": "rail_terminal",
+        "location_id": "ROCUR"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "SAT",
+          "THU"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 99,
+        "average_wait_hours": 9.5,
+        "transit_days": 4.12,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 4.52,
+        "border_crossings": 4,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.96,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 168,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 8
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 124.2,
+        "rate_per_wagon": 5240.16,
+        "cost_usd_per_vehicle": 221.9,
+        "cost_usd_per_vehicle_all_in": 262.9,
+        "valid_from": "2026-06-02",
+        "valid_to": "2026-09-01",
+        "min_charge_usd": 223.5,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 25
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 41.04,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 299.16,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.5,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.84,
+        "distance_km_estimate": 981
+      },
+      "performance": {
+        "on_time_rate": 0.927,
+        "damage_rate": 0.0029,
+        "cancellation_rate": 0.0155,
+        "delay_probability": 0.099,
+        "reliability_source": "measured",
+        "on_time_sample_size": 309
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 29.8
+      },
+      "distance_km": 1595,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-NLRTM_RAIL-DEHAM_RAIL-17",
+      "origin": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "FRI",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 41,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.72,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 2.04,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.62,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 13,
+          "40GP": 13,
+          "40HC": 10
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 631.8,
+          "40GP": 1101.6,
+          "40HC": 1029.24
+        },
+        "cost_usd_per_vehicle": 136.4,
+        "cost_usd_per_vehicle_all_in": 136.4,
+        "valid_from": "2026-07-22",
+        "valid_to": "2026-08-22",
+        "min_charge_usd": 115.9,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 15
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 109.08,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 240.84,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.96,
+        "distance_km_estimate": 928
+      },
+      "performance": {
+        "on_time_rate": 0.946,
+        "damage_rate": 0.0029,
+        "cancellation_rate": 0.0136,
+        "delay_probability": 0.073,
+        "reliability_source": "measured",
+        "on_time_sample_size": 169
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 10.4
+      },
+      "distance_km": 557,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-BEANR_RAIL-ATVIE_RAIL-18",
+      "origin": {
+        "node_id": "BEANR_RAIL",
+        "name": "Antwerp Rail Terminal",
+        "country": "BE",
+        "node_type": "rail_terminal",
+        "location_id": "BEANR"
+      },
+      "destination": {
+        "node_id": "ATVIE_RAIL",
+        "name": "Vienna South",
+        "country": "AT",
+        "node_type": "rail_terminal",
+        "location_id": "ATVIE"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "FRI"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 71,
+        "average_wait_hours": 18.9,
+        "transit_days": 2.94,
+        "average_wait_days": 0.79,
+        "total_days_with_wait": 3.73,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.13,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 5,
+          "40GP": 15,
+          "40HC": 6
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 708.48,
+          "40GP": 1242.0,
+          "40HC": 1175.04
+        },
+        "cost_usd_per_vehicle": 194.9,
+        "cost_usd_per_vehicle_all_in": 194.9,
+        "valid_from": "2026-07-30",
+        "valid_to": "2026-08-19",
+        "min_charge_usd": 165.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 12
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 140.4,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 122.04,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 0,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.96,
+        "distance_km_estimate": 917
+      },
+      "performance": {
+        "on_time_rate": 0.897,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.015,
+        "delay_probability": 0.139,
+        "reliability_source": "measured",
+        "on_time_sample_size": 219
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 23.3
+      },
+      "distance_km": 1245,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEBRV_RAIL-HUBUD_RAIL-19",
+      "origin": {
+        "node_id": "DEBRV_RAIL",
+        "name": "Bremerhaven Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "HUBUD_RAIL",
+        "name": "Budapest",
+        "country": "HU",
+        "node_type": "rail_terminal",
+        "location_id": "HUBUD"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 74,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.07,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 3.39,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.99,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 4,
+          "40GP": 6,
+          "40HC": 4
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 726.84,
+          "40GP": 720.36,
+          "40HC": 1461.24
+        },
+        "cost_usd_per_vehicle": 202.8,
+        "cost_usd_per_vehicle_all_in": 202.8,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-30",
+        "min_charge_usd": 172.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 23
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 113.4,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 347.76,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.77,
+        "distance_km_estimate": 927
+      },
+      "performance": {
+        "on_time_rate": 0.845,
+        "damage_rate": 0.0014,
+        "cancellation_rate": 0.0117,
+        "delay_probability": 0.209,
+        "reliability_source": "measured",
+        "on_time_sample_size": 330
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 25.2
+      },
+      "distance_km": 1346,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEHAM_RAIL-DEBRV_RAIL-20",
+      "origin": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "destination": {
+        "node_id": "DEBRV_RAIL",
+        "name": "Bremerhaven Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEBRV"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "MON",
+          "THU"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 20,
+        "average_wait_hours": 18.9,
+        "transit_days": 0.82,
+        "average_wait_days": 0.79,
+        "total_days_with_wait": 1.61,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.24,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 5,
+          "40GP": 7,
+          "40HC": 11
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 739.8,
+          "40GP": 1071.36,
+          "40HC": 504.36
+        },
+        "cost_usd_per_vehicle": 92.3,
+        "cost_usd_per_vehicle_all_in": 92.3,
+        "valid_from": "2026-07-22",
+        "valid_to": "2026-08-07",
+        "min_charge_usd": 78.5,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 0
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 41.04,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 317.52,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 1.0,
+        "distance_km_estimate": 902
+      },
+      "performance": {
+        "on_time_rate": 0.888,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.0191,
+        "delay_probability": 0.151,
+        "reliability_source": "measured",
+        "on_time_sample_size": 194
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 2.4
+      },
+      "distance_km": 126,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-DEDUI-DEMUC_RAIL-21",
+      "origin": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "MON"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 36,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.5,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.82,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.44,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 87,
+        "vehicles_per_wagon": 10,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 159.84,
+        "rate_per_wagon": 3462.48,
+        "cost_usd_per_vehicle": 147.8,
+        "cost_usd_per_vehicle_all_in": 185.6,
+        "valid_from": "2026-06-01",
+        "valid_to": "2026-08-31",
+        "min_charge_usd": 157.8,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 24
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 37.8,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 100.44,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 650
+      },
+      "performance": {
+        "on_time_rate": 0.916,
+        "damage_rate": 0.0043,
+        "cancellation_rate": 0.0163,
+        "delay_probability": 0.113,
+        "reliability_source": "measured",
+        "on_time_sample_size": 350
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 680,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEKOL-SIKOP_RAIL-22",
+      "origin": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "destination": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "SAT",
+          "THU"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 56,
+        "average_wait_hours": 7.6,
+        "transit_days": 2.33,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 2.65,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.84,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 15,
+          "40GP": 7,
+          "40HC": 7
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 693.36,
+          "40GP": 651.24,
+          "40HC": 1294.92
+        },
+        "cost_usd_per_vehicle": 179.6,
+        "cost_usd_per_vehicle_all_in": 179.6,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-08-23",
+        "min_charge_usd": 152.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 16
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 63.72,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 354.24,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.85,
+        "distance_km_estimate": 980
+      },
+      "performance": {
+        "on_time_rate": 0.857,
+        "damage_rate": 0.003,
+        "cancellation_rate": 0.0182,
+        "delay_probability": 0.193,
+        "reliability_source": "measured",
+        "on_time_sample_size": 127
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 19.7
+      },
+      "distance_km": 1054,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEFRA_RAIL-BEANR_RAIL-23",
+      "origin": {
+        "node_id": "DEFRA_RAIL",
+        "name": "Frankfurt Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEFRA"
+      },
+      "destination": {
+        "node_id": "BEANR_RAIL",
+        "name": "Antwerp Rail Terminal",
+        "country": "BE",
+        "node_type": "rail_terminal",
+        "location_id": "BEANR"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "WED",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 38,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.58,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.9,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.62,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 14,
+          "40GP": 3,
+          "40HC": 9
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 589.68,
+          "40GP": 881.28,
+          "40HC": 1149.12
+        },
+        "cost_usd_per_vehicle": 124.4,
+        "cost_usd_per_vehicle_all_in": 124.4,
+        "valid_from": "2026-07-24",
+        "valid_to": "2026-08-09",
+        "min_charge_usd": 105.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 2
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 86.4,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 279.72,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.86,
+        "distance_km_estimate": 420
+      },
+      "performance": {
+        "on_time_rate": 0.894,
+        "damage_rate": 0.0024,
+        "cancellation_rate": 0.0196,
+        "delay_probability": 0.143,
+        "reliability_source": "measured",
+        "on_time_sample_size": 167
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 8.2
+      },
+      "distance_km": 440,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-DEMUC_RAIL-DEFRA_RAIL-24",
+      "origin": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DEFRA_RAIL",
+        "name": "Frankfurt Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEFRA"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "FRI",
+          "THU"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 28,
+        "average_wait_hours": 12.6,
+        "transit_days": 1.17,
+        "average_wait_days": 0.53,
+        "total_days_with_wait": 1.7,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.23,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 18,
+          "40GP": 9,
+          "40HC": 6
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 531.36,
+          "40GP": 1075.68,
+          "40HC": 1204.2
+        },
+        "cost_usd_per_vehicle": 120.9,
+        "cost_usd_per_vehicle_all_in": 120.9,
+        "valid_from": "2026-03-08",
+        "valid_to": "2027-03-07",
+        "min_charge_usd": 102.8,
+        "rate_validity_type": "ANNUAL_CONTRACT",
+        "days_until_expiry": 212
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 116.64,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 251.64,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.77,
+        "distance_km_estimate": 900
+      },
+      "performance": {
+        "on_time_rate": 0.93,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.017,
+        "delay_probability": 0.094,
+        "reliability_source": "measured",
+        "on_time_sample_size": 120
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 7.7
+      },
+      "distance_km": 411,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-ATVIE_RAIL-ITVER_RAIL-25",
+      "origin": {
+        "node_id": "ATVIE_RAIL",
+        "name": "Vienna South",
+        "country": "AT",
+        "node_type": "rail_terminal",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ITVER_RAIL",
+        "name": "Verona",
+        "country": "IT",
+        "node_type": "rail_terminal",
+        "location_id": "ITVER"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "MON",
+          "FRI"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 54,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.26,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 2.66,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.55,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 23,
+          "40GP": 2,
+          "40HC": 10
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 705.24,
+          "40GP": 414.72,
+          "40HC": 643.68
+        },
+        "cost_usd_per_vehicle": 148.8,
+        "cost_usd_per_vehicle_all_in": 148.8,
+        "valid_from": "2026-07-20",
+        "valid_to": "2026-08-09",
+        "min_charge_usd": 126.5,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 2
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 93.96,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 345.6,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.74,
+        "distance_km_estimate": 951
+      },
+      "performance": {
+        "on_time_rate": 0.919,
+        "damage_rate": 0.0011,
+        "cancellation_rate": 0.0139,
+        "delay_probability": 0.109,
+        "reliability_source": "measured",
+        "on_time_sample_size": 351
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.9
+      },
+      "distance_km": 691,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-CZPRG_RAIL-NLRTM_RAIL-26",
+      "origin": {
+        "node_id": "CZPRG_RAIL",
+        "name": "Prague",
+        "country": "CZ",
+        "node_type": "rail_terminal",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 63,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.62,
+        "average_wait_days": 0.4,
+        "total_days_with_wait": 3.02,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.23,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 52,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 129.6,
+        "rate_per_wagon": 2992.68,
+        "cost_usd_per_vehicle": 173.6,
+        "cost_usd_per_vehicle_all_in": 298.9,
+        "valid_from": "2026-06-21",
+        "valid_to": "2026-09-20",
+        "min_charge_usd": 254.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 44
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 125.28,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 182.52,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.97,
+        "distance_km_estimate": 967
+      },
+      "performance": {
+        "on_time_rate": 0.884,
+        "damage_rate": 0.0031,
+        "cancellation_rate": 0.009,
+        "delay_probability": 0.157,
+        "reliability_source": "measured",
+        "on_time_sample_size": 417
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 18.3
+      },
+      "distance_km": 980,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-PLWAW_RAIL-DEKOL-27",
+      "origin": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "MON",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 73,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.04,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 3.36,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.55,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 11,
+          "40GP": 6,
+          "40HC": 5
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 470.88,
+          "40GP": 1204.2,
+          "40HC": 778.68
+        },
+        "cost_usd_per_vehicle": 201.0,
+        "cost_usd_per_vehicle_all_in": 201.0,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-08-21",
+        "min_charge_usd": 170.8,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 14
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 104.76,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 367.2,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 32000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 0,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.91,
+        "distance_km_estimate": 942
+      },
+      "performance": {
+        "on_time_rate": 0.908,
+        "damage_rate": 0.0021,
+        "cancellation_rate": 0.0121,
+        "delay_probability": 0.124,
+        "reliability_source": "measured",
+        "on_time_sample_size": 399
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.7
+      },
+      "distance_km": 1323,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-ITVER_RAIL-PLWAW_RAIL-28",
+      "origin": {
+        "node_id": "ITVER_RAIL",
+        "name": "Verona",
+        "country": "IT",
+        "node_type": "rail_terminal",
+        "location_id": "ITVER"
+      },
+      "destination": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "service_type": "intermodal_train",
+      "schedule": {
+        "departure_days": [
+          "MON",
+          "TUE",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 85,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.53,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 3.85,
+        "border_crossings": 3,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.72,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 9,
+          "40GP": 5,
+          "40HC": 4
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 437.4,
+          "40GP": 619.92,
+          "40HC": 1192.32
+        },
+        "cost_usd_per_vehicle": 208.4,
+        "cost_usd_per_vehicle_all_in": 208.4,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-08-28",
+        "min_charge_usd": 177.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 21
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 133.92,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 96.12,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 28000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.8,
+        "distance_km_estimate": 969
+      },
+      "performance": {
+        "on_time_rate": 0.838,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0185,
+        "delay_probability": 0.219,
+        "reliability_source": "measured",
+        "on_time_sample_size": 162
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 26.5
+      },
+      "distance_km": 1418,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-SIKOP_RAIL-TRIST_RAIL-29",
+      "origin": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "destination": {
+        "node_id": "TRIST_RAIL",
+        "name": "Istanbul",
+        "country": "TR",
+        "node_type": "rail_terminal",
+        "location_id": "TRIST"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "SAT",
+          "THU"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 35,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.44,
+        "average_wait_days": 0.32,
+        "total_days_with_wait": 1.76,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.65,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 16,
+          "40GP": 15,
+          "40HC": 6
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 673.92,
+          "40GP": 963.36,
+          "40HC": 792.72
+        },
+        "cost_usd_per_vehicle": 81.6,
+        "cost_usd_per_vehicle_all_in": 81.6,
+        "valid_from": "2026-07-24",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 69.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 76.68,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 247.32,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "INTERMODAL_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": true,
+        "electrified_ratio": 0.78,
+        "distance_km_estimate": 976
+      },
+      "performance": {
+        "on_time_rate": 0.829,
+        "damage_rate": 0.0026,
+        "cancellation_rate": 0.016,
+        "delay_probability": 0.231,
+        "reliability_source": "measured",
+        "on_time_sample_size": 221
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 0.3
+      },
+      "distance_km": 16,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-CNTR-HUBUD_RAIL-DEDUI-30",
+      "origin": {
+        "node_id": "HUBUD_RAIL",
+        "name": "Budapest",
+        "country": "HU",
+        "node_type": "rail_terminal",
+        "location_id": "HUBUD"
+      },
+      "destination": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "service_type": "block_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "SAT"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 73,
+        "average_wait_hours": 12.6,
+        "transit_days": 3.05,
+        "average_wait_days": 0.53,
+        "total_days_with_wait": 3.58,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.99,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "container_slot",
+        "available": {
+          "20GP": 9,
+          "40GP": 14,
+          "40HC": 12
+        }
+      },
+      "pricing": {
+        "pricing_model": "per_container",
+        "currency": "USD",
+        "rates": {
+          "20GP": 483.84,
+          "40GP": 858.6,
+          "40HC": 524.88
+        },
+        "cost_usd_per_vehicle": 201.8,
+        "cost_usd_per_vehicle_all_in": 201.8,
+        "valid_from": "2026-03-21",
+        "valid_to": "2026-09-20",
+        "min_charge_usd": 171.5,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 44
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_container",
+          "amount": 52.92,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 301.32,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "max_container_weight_kg": 30000
+      },
+      "mode_details": {
+        "train_type": "BLOCK_TRAIN",
+        "wagon_type": "CONTAINER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.89,
+        "distance_km_estimate": 919
+      },
+      "performance": {
+        "on_time_rate": 0.886,
+        "damage_rate": 0.0011,
+        "cancellation_rate": 0.0098,
+        "delay_probability": 0.154,
+        "reliability_source": "measured",
+        "on_time_sample_size": 246
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.9
+      },
+      "distance_km": 1333,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "RCG-AUTO-NLRTM_RAIL-DEHAM_RAIL-01-ECO",
+      "origin": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "FRI",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 41,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.86,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 2.28,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.62,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 181,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 155.52,
+        "rate_per_wagon": 4688.28,
+        "cost_usd_per_vehicle": 117.3,
+        "cost_usd_per_vehicle_all_in": 154.5,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-09-01",
+        "min_charge_usd": 152.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 25
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 43.2,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 293.76,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.99,
+        "distance_km_estimate": 928
+      },
+      "performance": {
+        "on_time_rate": 0.799,
+        "damage_rate": 0.003,
+        "cancellation_rate": 0.0138,
+        "delay_probability": 0.271,
+        "reliability_source": "measured",
+        "on_time_sample_size": 137
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 10.4
+      },
+      "distance_km": 557,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-NLRTM_RAIL-DEHAM_RAIL-01-EXP",
+      "origin": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "DEHAM_RAIL",
+        "name": "Hamburg Rail Terminal",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEHAM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "FRI",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 41,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.51,
+        "average_wait_days": 0.19,
+        "total_days_with_wait": 1.7,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.34,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 181,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 155.52,
+        "rate_per_wagon": 4688.28,
+        "cost_usd_per_vehicle": 166.4,
+        "cost_usd_per_vehicle_all_in": 219.1,
+        "valid_from": "2026-05-13",
+        "valid_to": "2026-09-12",
+        "min_charge_usd": 152.7,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 36
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 43.2,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 293.76,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.99,
+        "distance_km_estimate": 928
+      },
+      "performance": {
+        "on_time_rate": 0.874,
+        "damage_rate": 0.003,
+        "cancellation_rate": 0.0138,
+        "delay_probability": 0.17,
+        "reliability_source": "measured",
+        "on_time_sample_size": 137
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 10.4
+      },
+      "distance_km": 557,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "RCG-AUTO-DEKOL-SIKOP_RAIL-06-ECO",
+      "origin": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "destination": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "FRI",
+          "WED"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 56,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.52,
+        "average_wait_days": 0.52,
+        "total_days_with_wait": 3.04,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.41,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 144,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 252.72,
+        "rate_per_wagon": 2892.24,
+        "cost_usd_per_vehicle": 154.5,
+        "cost_usd_per_vehicle_all_in": 206.5,
+        "valid_from": "2026-08-02",
+        "valid_to": "2026-08-28",
+        "min_charge_usd": 204.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 21
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 60.48,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 93.96,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.81,
+        "distance_km_estimate": 980
+      },
+      "performance": {
+        "on_time_rate": 0.864,
+        "damage_rate": 0.0036,
+        "cancellation_rate": 0.0187,
+        "delay_probability": 0.184,
+        "reliability_source": "measured",
+        "on_time_sample_size": 344
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 19.7
+      },
+      "distance_km": 1054,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-DEKOL-SIKOP_RAIL-06-EXP",
+      "origin": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "destination": {
+        "node_id": "SIKOP_RAIL",
+        "name": "Koper Rail Terminal",
+        "country": "SI",
+        "node_type": "rail_terminal",
+        "location_id": "SIKOP"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "FRI",
+          "WED"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 56,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.05,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 2.29,
+        "border_crossings": 1,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.88,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 144,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 252.72,
+        "rate_per_wagon": 2892.24,
+        "cost_usd_per_vehicle": 219.1,
+        "cost_usd_per_vehicle_all_in": 292.9,
+        "valid_from": "2026-04-21",
+        "valid_to": "2026-11-20",
+        "min_charge_usd": 204.1,
+        "rate_validity_type": "ANNUAL_CONTRACT",
+        "days_until_expiry": 105
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 60.48,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 93.96,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 2,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.81,
+        "distance_km_estimate": 980
+      },
+      "performance": {
+        "on_time_rate": 0.945,
+        "damage_rate": 0.0036,
+        "cancellation_rate": 0.0187,
+        "delay_probability": 0.074,
+        "reliability_source": "measured",
+        "on_time_sample_size": 344
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 19.7
+      },
+      "distance_km": 1054,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "RCG-AUTO-PLWAW_RAIL-DEKOL-11-ECO",
+      "origin": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "SAT",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 73,
+        "average_wait_hours": 7.6,
+        "transit_days": 3.28,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 3.7,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 5.53,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 61,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 11
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 120.96,
+        "rate_per_wagon": 4246.56,
+        "cost_usd_per_vehicle": 172.9,
+        "cost_usd_per_vehicle_all_in": 300.1,
+        "valid_from": "2026-07-17",
+        "valid_to": "2027-05-16",
+        "min_charge_usd": 296.6,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 282
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 147.96,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 129.6,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 942
+      },
+      "performance": {
+        "on_time_rate": 0.843,
+        "damage_rate": 0.0016,
+        "cancellation_rate": 0.0169,
+        "delay_probability": 0.212,
+        "reliability_source": "measured",
+        "on_time_sample_size": 337
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.7
+      },
+      "distance_km": 1323,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-PLWAW_RAIL-DEKOL-11-EXP",
+      "origin": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "country": "PL",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "DEKOL_RAIL",
+        "name": "Cologne",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEKOL"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "TUE",
+          "SAT",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 73,
+        "average_wait_hours": 7.6,
+        "transit_days": 2.68,
+        "average_wait_days": 0.19,
+        "total_days_with_wait": 2.87,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.72,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 61,
+        "vehicles_per_wagon": 8,
+        "available_wagons": 11
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 120.96,
+        "rate_per_wagon": 4246.56,
+        "cost_usd_per_vehicle": 245.2,
+        "cost_usd_per_vehicle_all_in": 425.8,
+        "valid_from": "2026-05-07",
+        "valid_to": "2026-09-06",
+        "min_charge_usd": 296.6,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 30
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 147.96,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 129.6,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 4,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 942
+      },
+      "performance": {
+        "on_time_rate": 0.922,
+        "damage_rate": 0.0016,
+        "cancellation_rate": 0.0169,
+        "delay_probability": 0.105,
+        "reliability_source": "measured",
+        "on_time_sample_size": 337
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 24.7
+      },
+      "distance_km": 1323,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "RCG-AUTO-TRIST_RAIL-ROCUR_RAIL-16-ECO",
+      "origin": {
+        "node_id": "TRIST_RAIL",
+        "name": "Istanbul",
+        "country": "TR",
+        "node_type": "rail_terminal",
+        "location_id": "TRIST"
+      },
+      "destination": {
+        "node_id": "ROCUR_RAIL",
+        "name": "Curtici",
+        "country": "RO",
+        "node_type": "rail_terminal",
+        "location_id": "ROCUR"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "SAT",
+          "THU"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 99,
+        "average_wait_hours": 9.5,
+        "transit_days": 4.45,
+        "average_wait_days": 0.52,
+        "total_days_with_wait": 4.97,
+        "border_crossings": 4,
+        "gauge_changes": 0,
+        "transit_days_p90": 6.94,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 168,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 8
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 124.2,
+        "rate_per_wagon": 5240.16,
+        "cost_usd_per_vehicle": 190.8,
+        "cost_usd_per_vehicle_all_in": 226.1,
+        "valid_from": "2026-08-01",
+        "valid_to": "2026-09-01",
+        "min_charge_usd": 223.5,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 25
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 41.04,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 299.16,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.5,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.84,
+        "distance_km_estimate": 981
+      },
+      "performance": {
+        "on_time_rate": 0.89,
+        "damage_rate": 0.0029,
+        "cancellation_rate": 0.0155,
+        "delay_probability": 0.148,
+        "reliability_source": "measured",
+        "on_time_sample_size": 309
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 29.8
+      },
+      "distance_km": 1595,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-TRIST_RAIL-ROCUR_RAIL-16-EXP",
+      "origin": {
+        "node_id": "TRIST_RAIL",
+        "name": "Istanbul",
+        "country": "TR",
+        "node_type": "rail_terminal",
+        "location_id": "TRIST"
+      },
+      "destination": {
+        "node_id": "ROCUR_RAIL",
+        "name": "Curtici",
+        "country": "RO",
+        "node_type": "rail_terminal",
+        "location_id": "ROCUR"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "SAT",
+          "THU"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 99,
+        "average_wait_hours": 9.5,
+        "transit_days": 3.63,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 3.87,
+        "border_crossings": 4,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.69,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 168,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 8
+      },
+      "pricing": {
+        "pricing_model": "per_wagon",
+        "currency": "USD",
+        "rate_per_vehicle": 124.2,
+        "rate_per_wagon": 5240.16,
+        "cost_usd_per_vehicle": 270.7,
+        "cost_usd_per_vehicle_all_in": 320.7,
+        "valid_from": "2026-07-28",
+        "valid_to": "2026-09-27",
+        "min_charge_usd": 223.5,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 51
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 41.04,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 299.16,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.5,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.84,
+        "distance_km_estimate": 981
+      },
+      "performance": {
+        "on_time_rate": 0.973,
+        "damage_rate": 0.0029,
+        "cancellation_rate": 0.0155,
+        "delay_probability": 0.036,
+        "reliability_source": "measured",
+        "on_time_sample_size": 309
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 29.8
+      },
+      "distance_km": 1595,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "RCG-AUTO-DEDUI-DEMUC_RAIL-21-ECO",
+      "origin": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "MON"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 36,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.62,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 2.04,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 2.89,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 87,
+        "vehicles_per_wagon": 10,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 159.84,
+        "rate_per_wagon": 3462.48,
+        "cost_usd_per_vehicle": 127.1,
+        "cost_usd_per_vehicle_all_in": 159.6,
+        "valid_from": "2026-07-29",
+        "valid_to": "2026-08-27",
+        "min_charge_usd": 157.8,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 20
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 37.8,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 100.44,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 650
+      },
+      "performance": {
+        "on_time_rate": 0.879,
+        "damage_rate": 0.0043,
+        "cancellation_rate": 0.0163,
+        "delay_probability": 0.163,
+        "reliability_source": "measured",
+        "on_time_sample_size": 350
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 680,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-DEDUI-DEMUC_RAIL-21-EXP",
+      "origin": {
+        "node_id": "DEDUI_RAIL",
+        "name": "Duisburg",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "DEMUC_RAIL",
+        "name": "Munich Rail Hub",
+        "country": "DE",
+        "node_type": "rail_terminal",
+        "location_id": "DEMUC"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "THU",
+          "MON"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 36,
+        "average_wait_hours": 7.6,
+        "transit_days": 1.32,
+        "average_wait_days": 0.19,
+        "total_days_with_wait": 1.51,
+        "border_crossings": 0,
+        "gauge_changes": 0,
+        "transit_days_p90": 1.86,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 87,
+        "vehicles_per_wagon": 10,
+        "available_wagons": 17
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 159.84,
+        "rate_per_wagon": 3462.48,
+        "cost_usd_per_vehicle": 180.3,
+        "cost_usd_per_vehicle_all_in": 226.4,
+        "valid_from": "2026-05-10",
+        "valid_to": "2026-09-09",
+        "min_charge_usd": 157.8,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 33
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 37.8,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 100.44,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.2,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 3,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.83,
+        "distance_km_estimate": 650
+      },
+      "performance": {
+        "on_time_rate": 0.962,
+        "damage_rate": 0.0043,
+        "cancellation_rate": 0.0163,
+        "delay_probability": 0.051,
+        "reliability_source": "measured",
+        "on_time_sample_size": 350
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 680,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "RCG-AUTO-CZPRG_RAIL-NLRTM_RAIL-26-ECO",
+      "origin": {
+        "node_id": "CZPRG_RAIL",
+        "name": "Prague",
+        "country": "CZ",
+        "node_type": "rail_terminal",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 63,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.83,
+        "average_wait_days": 0.52,
+        "total_days_with_wait": 3.35,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 4.97,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 52,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 129.6,
+        "rate_per_wagon": 2992.68,
+        "cost_usd_per_vehicle": 149.3,
+        "cost_usd_per_vehicle_all_in": 257.1,
+        "valid_from": "2026-07-03",
+        "valid_to": "2027-05-02",
+        "min_charge_usd": 254.1,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 268
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 125.28,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 182.52,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.97,
+        "distance_km_estimate": 967
+      },
+      "performance": {
+        "on_time_rate": 0.849,
+        "damage_rate": 0.0031,
+        "cancellation_rate": 0.009,
+        "delay_probability": 0.204,
+        "reliability_source": "measured",
+        "on_time_sample_size": 417
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 18.3
+      },
+      "distance_km": 980,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "ECONOMY"
+    },
+    {
+      "service_id": "RCG-AUTO-CZPRG_RAIL-NLRTM_RAIL-26-EXP",
+      "origin": {
+        "node_id": "CZPRG_RAIL",
+        "name": "Prague",
+        "country": "CZ",
+        "node_type": "rail_terminal",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "NLRTM_RAIL",
+        "name": "Rotterdam Rail Terminal",
+        "country": "NL",
+        "node_type": "rail_terminal",
+        "location_id": "NLRTM"
+      },
+      "service_type": "auto_train",
+      "schedule": {
+        "departure_days": [
+          "WED",
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 63,
+        "average_wait_hours": 9.5,
+        "transit_days": 2.31,
+        "average_wait_days": 0.24,
+        "total_days_with_wait": 2.55,
+        "border_crossings": 2,
+        "gauge_changes": 0,
+        "transit_days_p90": 3.28,
+        "booking_lead_days": 3,
+        "cargo_closing_hours": 24
+      },
+      "capacity": {
+        "capacity_type": "vehicle_slot",
+        "available_vehicle_slots": 52,
+        "vehicles_per_wagon": 12,
+        "available_wagons": 10
+      },
+      "pricing": {
+        "pricing_model": "per_vehicle",
+        "currency": "USD",
+        "rate_per_vehicle": 129.6,
+        "rate_per_wagon": 2992.68,
+        "cost_usd_per_vehicle": 211.8,
+        "cost_usd_per_vehicle_all_in": 364.7,
+        "valid_from": "2026-07-18",
+        "valid_to": "2026-11-17",
+        "min_charge_usd": 254.1,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 102
+      },
+      "surcharges": [
+        {
+          "name": "TERMINAL_HANDLING",
+          "basis": "per_vehicle",
+          "amount": 125.28,
+          "currency": "USD"
+        },
+        {
+          "name": "ENERGY_SURCHARGE",
+          "basis": "per_service",
+          "amount": 182.52,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "vehicle_securement_available": true,
+        "max_vehicle_height_m": 2.0,
+        "operable_vehicle_required": false
+      },
+      "mode_details": {
+        "train_type": "AUTO_TRAIN",
+        "wagon_type": "CAR_CARRIER_WAGON",
+        "border_crossings": 1,
+        "gauge_change_required": false,
+        "electrified_ratio": 0.97,
+        "distance_km_estimate": 967
+      },
+      "performance": {
+        "on_time_rate": 0.928,
+        "damage_rate": 0.0031,
+        "cancellation_rate": 0.009,
+        "delay_probability": 0.097,
+        "reliability_source": "measured",
+        "on_time_sample_size": 417
+      },
+      "environment": {
+        "grade": "A",
+        "co2_g_per_tonkm": 11.0,
+        "co2_kg_per_vehicle": 18.3
+      },
+      "distance_km": 980,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 4,
+        "demurrage_usd_per_unit_day": 28,
+        "detention_usd_per_unit_day": 22
+      },
+      "service_tier": "EXPRESS"
+    }
+  ]
+}

@@ -1,0 +1,5402 @@
+{
+  "metadata": {
+    "dataset_id": "dsv_road_road_demo_v1",
+    "carrier_name": "DSV Road",
+    "carrier_group": "road",
+    "record_count": 45,
+    "generated_at": "2026-08-06T00:00:00+09:00",
+    "synthetic_demo_data": true,
+    "data_note": "노선·거점·운송수단 구조는 공개 네트워크와 물류 관행을 참고했으며, 운임·가용량·정시율·할증료는 해커톤 시뮬레이션용 합성값입니다.",
+    "source_basis": "Official DSV pan-European road network, groupage, part-load and full-load service patterns were used as reference.",
+    "schema_version": "3.0",
+    "node_id_policy": {
+      "version": "2.0",
+      "rules": [
+        "location_id는 도시/지역 공통 식별자이다.",
+        "node_id는 실제 시설 식별자이다.",
+        "항만은 UN/LOCODE를 node_id로 사용한다.",
+        "공항은 IATA를 node_id로 사용하고 도시 location_id를 별도로 둔다.",
+        "철도터미널은 _RAIL, 물류센터는 _DC, 차량야드는 _YARD 접미어를 사용한다."
+      ]
+    },
+    "validation_summary": {
+      "node_records_updated": 60,
+      "sea_ev_consistency_fixes": 0,
+      "air_service_aircraft_consistency_fixes": 0
+    },
+    "currency_policy": {
+      "base_currency": "USD",
+      "all_monetary_values_normalized": true,
+      "fx_fields_included": false,
+      "note": "MVP 비교 단순화를 위해 모든 합성 비용을 USD 기준으로 정규화했으며 환율 계산 기능은 포함하지 않습니다."
+    },
+    "realism_adjustments": {
+      "rail_time_records_adjusted": 0,
+      "road_pricing_records_adjusted": 30,
+      "sea_pricing_records_sanity_checked": 0,
+      "air_pricing_records_sanity_checked": 0
+    }
+  },
+  "carrier": {
+    "carrier_id": "DSV_ROAD",
+    "carrier_name": "DSV Road",
+    "group": "road"
+  },
+  "services": [
+    {
+      "service_id": "DSV-CAR-01",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 2,
+        "average_speed_kmh": 55,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.38,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.08,
+        "total_days_with_wait": 0.46,
+        "border_crossings": 0,
+        "transit_days_p90": 0.58,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 7,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1125.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.55,
+        "cost_usd_per_vehicle": 40.3,
+        "cost_usd_per_vehicle_all_in": 46.4,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-25",
+        "min_charge_usd": 39.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 18
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.076,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.904,
+        "damage_rate": 0.0028,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.13,
+        "reliability_source": "measured",
+        "on_time_sample_size": 181
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-02",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "destination": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 11,
+        "average_speed_kmh": 69,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.61,
+        "driving_hours_total": 7.6,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.46,
+        "total_days_with_wait": 1.07,
+        "border_crossings": 0,
+        "transit_days_p90": 1.23,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "TRAILER",
+          "available_count": 5,
+          "max_weight_kg": 24000,
+          "max_volume_cbm": 82
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 169.56,
+        "rate_per_km": 1.37,
+        "minimum_charge": 436.32,
+        "cost_usd_per_vehicle": 90.1,
+        "cost_usd_per_vehicle_all_in": 102.2,
+        "valid_from": "2026-07-22",
+        "valid_to": "2026-08-11",
+        "min_charge_usd": 86.9,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 4
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.15,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.045,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.966,
+        "damage_rate": 0.0036,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.046,
+        "reliability_source": "measured",
+        "on_time_sample_size": 142
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 44.1
+      },
+      "distance_km": 412,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-03",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 12,
+        "average_speed_kmh": 65,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.72,
+        "driving_hours_total": 8.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.5,
+        "total_days_with_wait": 1.22,
+        "border_crossings": 1,
+        "transit_days_p90": 1.47,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 4,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.84,
+        "cost_usd_per_vehicle": 100.4,
+        "cost_usd_per_vehicle_all_in": 127.1,
+        "valid_from": "2026-06-08",
+        "valid_to": "2026-09-07",
+        "min_charge_usd": 108.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 31
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.103,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.935,
+        "damage_rate": 0.001,
+        "cancellation_rate": 0.0165,
+        "delay_probability": 0.088,
+        "reliability_source": "measured",
+        "on_time_sample_size": 399
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 51.0
+      },
+      "distance_km": 476,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-04",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "destination": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 70,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.43,
+        "driving_hours_total": 1.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 0.85,
+        "border_crossings": 1,
+        "transit_days_p90": 1.02,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "TRAILER",
+          "available_count": 12,
+          "max_weight_kg": 5000,
+          "max_volume_cbm": 82
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 171.72,
+        "rate_per_km": 2.33,
+        "minimum_charge": 303.48,
+        "cost_usd_per_vehicle": 37.1,
+        "cost_usd_per_vehicle_all_in": 41.9,
+        "valid_from": "2026-07-26",
+        "valid_to": "2026-08-10",
+        "min_charge_usd": 35.6,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 3
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.061,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.938,
+        "damage_rate": 0.0033,
+        "cancellation_rate": 0.0123,
+        "delay_probability": 0.084,
+        "reliability_source": "measured",
+        "on_time_sample_size": 257
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 10.7
+      },
+      "distance_km": 100,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-05",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.65,
+        "driving_hours_total": 8.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.21,
+        "total_days_with_wait": 0.86,
+        "border_crossings": 0,
+        "transit_days_p90": 1.0,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 8,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.34,
+        "cost_usd_per_vehicle": 98.0,
+        "cost_usd_per_vehicle_all_in": 115.3,
+        "valid_from": "2026-07-24",
+        "valid_to": "2026-08-26",
+        "min_charge_usd": 98.0,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 19
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.058,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.955,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.0074,
+        "delay_probability": 0.061,
+        "reliability_source": "measured",
+        "on_time_sample_size": 302
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 49.4
+      },
+      "distance_km": 461,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-06",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "destination": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 56,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.21,
+        "total_days_with_wait": 1.53,
+        "border_crossings": 1,
+        "transit_days_p90": 1.87,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "5T_TRUCK",
+          "available_count": 2,
+          "max_weight_kg": 24000,
+          "max_volume_cbm": 82
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 263.52,
+        "rate_per_km": 1.27,
+        "minimum_charge": 410.4,
+        "cost_usd_per_vehicle": 129.3,
+        "cost_usd_per_vehicle_all_in": 155.8,
+        "valid_from": "2026-08-02",
+        "valid_to": "2026-08-21",
+        "min_charge_usd": 132.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 14
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.24,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.044,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.925,
+        "damage_rate": 0.0017,
+        "cancellation_rate": 0.0212,
+        "delay_probability": 0.101,
+        "reliability_source": "measured",
+        "on_time_sample_size": 199
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-07",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 4,
+        "average_speed_kmh": 65,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.52,
+        "driving_hours_total": 3.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.17,
+        "total_days_with_wait": 0.69,
+        "border_crossings": 1,
+        "transit_days_p90": 0.78,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 6,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2000.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.87,
+        "cost_usd_per_vehicle": 55.6,
+        "cost_usd_per_vehicle_all_in": 68.6,
+        "valid_from": "2026-07-26",
+        "valid_to": "2026-08-18",
+        "min_charge_usd": 58.3,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 11
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.27,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.093,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.0049,
+        "cancellation_rate": 0.018,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 122
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 22.7
+      },
+      "distance_km": 212,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-08",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "destination": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 3,
+        "average_speed_kmh": 56,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.26,
+        "driving_hours_total": 10.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.12,
+        "total_days_with_wait": 1.38,
+        "border_crossings": 1,
+        "transit_days_p90": 1.76,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "5T_TRUCK",
+          "available_count": 12,
+          "max_weight_kg": 5000,
+          "max_volume_cbm": 45
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 100.44,
+        "rate_per_km": 2.49,
+        "minimum_charge": 381.24,
+        "cost_usd_per_vehicle": 116.1,
+        "cost_usd_per_vehicle_all_in": 149.9,
+        "valid_from": "2026-05-12",
+        "valid_to": "2026-08-11",
+        "min_charge_usd": 127.4,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 4
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.28,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.1,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.895,
+        "damage_rate": 0.0038,
+        "cancellation_rate": 0.0075,
+        "delay_probability": 0.142,
+        "reliability_source": "measured",
+        "on_time_sample_size": 280
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 61.8
+      },
+      "distance_km": 577,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-09",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 4.16,
+        "driving_hours_total": 42.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 4.41,
+        "border_crossings": 4,
+        "transit_days_p90": 5.26,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 6,
+          "vehicle_capacity": 5,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.4,
+        "cost_usd_per_vehicle": 355.6,
+        "cost_usd_per_vehicle_all_in": 416.9,
+        "valid_from": "2026-07-20",
+        "valid_to": "2026-08-04",
+        "min_charge_usd": 354.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": -3
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.03,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.941,
+        "damage_rate": 0.0039,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.08,
+        "reliability_source": "measured",
+        "on_time_sample_size": 418
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 247.9
+      },
+      "distance_km": 2315,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-10",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 4,
+        "average_speed_kmh": 49,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.65,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.17,
+        "total_days_with_wait": 0.82,
+        "border_crossings": 1,
+        "transit_days_p90": 1.06,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "TRAILER",
+          "available_count": 6,
+          "max_weight_kg": 5000,
+          "max_volume_cbm": 45
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 225.72,
+        "rate_per_km": 1.37,
+        "minimum_charge": 406.08,
+        "cost_usd_per_vehicle": 85.5,
+        "cost_usd_per_vehicle_all_in": 101.7,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-09-02",
+        "min_charge_usd": 86.4,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 26
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.23,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.053,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.883,
+        "damage_rate": 0.0014,
+        "cancellation_rate": 0.0215,
+        "delay_probability": 0.158,
+        "reliability_source": "measured",
+        "on_time_sample_size": 414
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 41.1
+      },
+      "distance_km": 384,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-11",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 4,
+        "average_speed_kmh": 72,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.17,
+        "total_days_with_wait": 1.49,
+        "border_crossings": 1,
+        "transit_days_p90": 1.7,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 3,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.46,
+        "cost_usd_per_vehicle": 128.8,
+        "cost_usd_per_vehicle_all_in": 143.5,
+        "valid_from": "2026-08-01",
+        "valid_to": "2026-08-23",
+        "min_charge_usd": 122.0,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 16
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.11,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.041,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.971,
+        "damage_rate": 0.0033,
+        "cancellation_rate": 0.0145,
+        "delay_probability": 0.039,
+        "reliability_source": "measured",
+        "on_time_sample_size": 371
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 70.8
+      },
+      "distance_km": 661,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-12",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "destination": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 72,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.54,
+        "driving_hours_total": 16.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 1.96,
+        "border_crossings": 2,
+        "transit_days_p90": 2.33,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "5T_TRUCK",
+          "available_count": 10,
+          "max_weight_kg": 5000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 185.76,
+        "rate_per_km": 1.09,
+        "minimum_charge": 349.92,
+        "cost_usd_per_vehicle": 159.0,
+        "cost_usd_per_vehicle_all_in": 199.0,
+        "valid_from": "2026-07-07",
+        "valid_to": "2026-10-06",
+        "min_charge_usd": 169.2,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 60
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.21,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.095,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.943,
+        "damage_rate": 0.0027,
+        "cancellation_rate": 0.0139,
+        "delay_probability": 0.077,
+        "reliability_source": "measured",
+        "on_time_sample_size": 189
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 92.9
+      },
+      "distance_km": 867,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-13",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "destination": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 1.57,
+        "border_crossings": 1,
+        "transit_days_p90": 1.84,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 5,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 2.8,
+        "cost_usd_per_vehicle": 129.3,
+        "cost_usd_per_vehicle_all_in": 160.1,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-20",
+        "min_charge_usd": 136.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 13
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.26,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.061,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.954,
+        "damage_rate": 0.0033,
+        "cancellation_rate": 0.0176,
+        "delay_probability": 0.062,
+        "reliability_source": "measured",
+        "on_time_sample_size": 399
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-14",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "destination": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 12,
+        "average_speed_kmh": 48,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 5.61,
+        "driving_hours_total": 54.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.5,
+        "total_days_with_wait": 6.11,
+        "border_crossings": 5,
+        "transit_days_p90": 7.31,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "BOX_TRUCK",
+          "available_count": 4,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 91.8,
+        "rate_per_km": 1.08,
+        "minimum_charge": 232.2,
+        "cost_usd_per_vehicle": 434.9,
+        "cost_usd_per_vehicle_all_in": 562.8,
+        "valid_from": "2026-07-26",
+        "valid_to": "2026-08-25",
+        "min_charge_usd": 478.4,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 18
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.069,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.939,
+        "damage_rate": 0.0019,
+        "cancellation_rate": 0.0077,
+        "delay_probability": 0.082,
+        "reliability_source": "measured",
+        "on_time_sample_size": 234
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 313.8
+      },
+      "distance_km": 2930,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-15",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 7,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.38,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.29,
+        "total_days_with_wait": 0.67,
+        "border_crossings": 0,
+        "transit_days_p90": 0.8,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.88,
+        "cost_usd_per_vehicle": 40.3,
+        "cost_usd_per_vehicle_all_in": 47.2,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-08-20",
+        "min_charge_usd": 40.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 13
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.101,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.943,
+        "damage_rate": 0.0024,
+        "cancellation_rate": 0.0124,
+        "delay_probability": 0.077,
+        "reliability_source": "measured",
+        "on_time_sample_size": 362
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-16",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "destination": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 11,
+        "average_speed_kmh": 53,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.61,
+        "driving_hours_total": 7.6,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.46,
+        "total_days_with_wait": 1.07,
+        "border_crossings": 0,
+        "transit_days_p90": 1.39,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "BOX_TRUCK",
+          "available_count": 9,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 45
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 167.4,
+        "rate_per_km": 2.39,
+        "minimum_charge": 219.24,
+        "cost_usd_per_vehicle": 90.1,
+        "cost_usd_per_vehicle_all_in": 113.3,
+        "valid_from": "2026-06-06",
+        "valid_to": "2026-09-05",
+        "min_charge_usd": 96.3,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 29
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.26,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.095,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.881,
+        "damage_rate": 0.0043,
+        "cancellation_rate": 0.011,
+        "delay_probability": 0.161,
+        "reliability_source": "measured",
+        "on_time_sample_size": 187
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 44.1
+      },
+      "distance_km": 412,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-17",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 52,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.72,
+        "driving_hours_total": 8.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 1.14,
+        "border_crossings": 1,
+        "transit_days_p90": 1.44,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 12,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.8,
+        "cost_usd_per_vehicle": 100.4,
+        "cost_usd_per_vehicle_all_in": 114.6,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-08-24",
+        "min_charge_usd": 97.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 17
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.14,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.054,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.903,
+        "damage_rate": 0.0016,
+        "cancellation_rate": 0.0076,
+        "delay_probability": 0.131,
+        "reliability_source": "measured",
+        "on_time_sample_size": 378
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 51.0
+      },
+      "distance_km": 476,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-18",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "destination": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 2,
+        "average_speed_kmh": 55,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.43,
+        "driving_hours_total": 1.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.08,
+        "total_days_with_wait": 0.51,
+        "border_crossings": 1,
+        "transit_days_p90": 0.6,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "BOX_TRUCK",
+          "available_count": 9,
+          "max_weight_kg": 5000,
+          "max_volume_cbm": 82
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 203.04,
+        "rate_per_km": 1.1,
+        "minimum_charge": 243.0,
+        "cost_usd_per_vehicle": 37.1,
+        "cost_usd_per_vehicle_all_in": 42.5,
+        "valid_from": "2026-07-28",
+        "valid_to": "2026-10-27",
+        "min_charge_usd": 36.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 81
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.056,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.953,
+        "damage_rate": 0.0041,
+        "cancellation_rate": 0.01,
+        "delay_probability": 0.063,
+        "reliability_source": "measured",
+        "on_time_sample_size": 268
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 10.7
+      },
+      "distance_km": 100,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-19",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 50,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.65,
+        "driving_hours_total": 8.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 1.07,
+        "border_crossings": 0,
+        "transit_days_p90": 1.34,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 7,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.75,
+        "cost_usd_per_vehicle": 98.0,
+        "cost_usd_per_vehicle_all_in": 109.1,
+        "valid_from": "2026-07-23",
+        "valid_to": "2026-08-13",
+        "min_charge_usd": 92.7,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 6
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.13,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.034,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.908,
+        "damage_rate": 0.0039,
+        "cancellation_rate": 0.0095,
+        "delay_probability": 0.124,
+        "reliability_source": "measured",
+        "on_time_sample_size": 163
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 49.4
+      },
+      "distance_km": 461,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-20",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "destination": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 11,
+        "average_speed_kmh": 52,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.46,
+        "total_days_with_wait": 1.78,
+        "border_crossings": 1,
+        "transit_days_p90": 2.17,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "TRAILER",
+          "available_count": 4,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 45
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 128.52,
+        "rate_per_km": 2.05,
+        "minimum_charge": 475.2,
+        "cost_usd_per_vehicle": 129.3,
+        "cost_usd_per_vehicle_all_in": 168.6,
+        "valid_from": "2026-03-01",
+        "valid_to": "2026-08-31",
+        "min_charge_usd": 143.3,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 24
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.29,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.099,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.925,
+        "damage_rate": 0.0043,
+        "cancellation_rate": 0.0156,
+        "delay_probability": 0.101,
+        "reliability_source": "measured",
+        "on_time_sample_size": 333
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-21",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 12,
+        "average_speed_kmh": 52,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.52,
+        "driving_hours_total": 3.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.5,
+        "total_days_with_wait": 1.02,
+        "border_crossings": 1,
+        "transit_days_p90": 1.22,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 4,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.67,
+        "cost_usd_per_vehicle": 55.6,
+        "cost_usd_per_vehicle_all_in": 67.2,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-08-17",
+        "min_charge_usd": 57.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 10
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.08,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.94,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.0076,
+        "delay_probability": 0.081,
+        "reliability_source": "measured",
+        "on_time_sample_size": 201
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 22.7
+      },
+      "distance_km": 212,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-22",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "destination": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 53,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.26,
+        "driving_hours_total": 10.7,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 1.51,
+        "border_crossings": 1,
+        "transit_days_p90": 1.72,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "5T_TRUCK",
+          "available_count": 8,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 150.12,
+        "rate_per_km": 1.51,
+        "minimum_charge": 281.88,
+        "cost_usd_per_vehicle": 116.1,
+        "cost_usd_per_vehicle_all_in": 144.0,
+        "valid_from": "2026-07-30",
+        "valid_to": "2026-08-30",
+        "min_charge_usd": 122.4,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 23
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.109,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.973,
+        "damage_rate": 0.0008,
+        "cancellation_rate": 0.002,
+        "delay_probability": 0.036,
+        "reliability_source": "measured",
+        "on_time_sample_size": 189
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 61.8
+      },
+      "distance_km": 577,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-23",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 61,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 4.16,
+        "driving_hours_total": 42.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 4.41,
+        "border_crossings": 4,
+        "transit_days_p90": 5.33,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 5,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2000.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.5,
+        "cost_usd_per_vehicle": 355.6,
+        "cost_usd_per_vehicle_all_in": 441.2,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-09-08",
+        "min_charge_usd": 375.0,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 32
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.932,
+        "damage_rate": 0.004,
+        "cancellation_rate": 0.0168,
+        "delay_probability": 0.092,
+        "reliability_source": "measured",
+        "on_time_sample_size": 420
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 247.9
+      },
+      "distance_km": 2315,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-24",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "destination": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 3,
+        "average_speed_kmh": 61,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.65,
+        "driving_hours_total": 7.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.12,
+        "total_days_with_wait": 0.77,
+        "border_crossings": 1,
+        "transit_days_p90": 0.87,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "5T_TRUCK",
+          "available_count": 8,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 273.24,
+        "rate_per_km": 1.97,
+        "minimum_charge": 194.4,
+        "cost_usd_per_vehicle": 85.5,
+        "cost_usd_per_vehicle_all_in": 99.2,
+        "valid_from": "2026-07-28",
+        "valid_to": "2026-08-29",
+        "min_charge_usd": 84.3,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 22
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.1,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.099,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.976,
+        "damage_rate": 0.0047,
+        "cancellation_rate": 0.0143,
+        "delay_probability": 0.032,
+        "reliability_source": "measured",
+        "on_time_sample_size": 276
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 41.1
+      },
+      "distance_km": 384,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-25",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 9,
+        "average_speed_kmh": 64,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.38,
+        "total_days_with_wait": 1.7,
+        "border_crossings": 1,
+        "transit_days_p90": 2.01,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 13,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.3
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1125.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.97,
+        "cost_usd_per_vehicle": 128.8,
+        "cost_usd_per_vehicle_all_in": 161.0,
+        "valid_from": "2026-06-26",
+        "valid_to": "2026-09-25",
+        "min_charge_usd": 136.8,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 49
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.077,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.947,
+        "damage_rate": 0.0048,
+        "cancellation_rate": 0.0082,
+        "delay_probability": 0.072,
+        "reliability_source": "measured",
+        "on_time_sample_size": 379
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 70.8
+      },
+      "distance_km": 661,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-26",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "destination": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 66,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.54,
+        "driving_hours_total": 16.1,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.21,
+        "total_days_with_wait": 1.75,
+        "border_crossings": 2,
+        "transit_days_p90": 2.15,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "BOX_TRUCK",
+          "available_count": 4,
+          "max_weight_kg": 24000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 217.08,
+        "rate_per_km": 2.01,
+        "minimum_charge": 258.12,
+        "cost_usd_per_vehicle": 159.0,
+        "cost_usd_per_vehicle_all_in": 187.3,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-08-27",
+        "min_charge_usd": 159.2,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 20
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.16,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.062,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.92,
+        "damage_rate": 0.0026,
+        "cancellation_rate": 0.0082,
+        "delay_probability": 0.108,
+        "reliability_source": "measured",
+        "on_time_sample_size": 330
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 92.9
+      },
+      "distance_km": 867,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-27",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "destination": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 53,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.32,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.21,
+        "total_days_with_wait": 1.53,
+        "border_crossings": 1,
+        "transit_days_p90": 1.8,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 2,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 1.65,
+        "cost_usd_per_vehicle": 129.3,
+        "cost_usd_per_vehicle_all_in": 157.9,
+        "valid_from": "2026-07-27",
+        "valid_to": "2026-08-13",
+        "min_charge_usd": 134.2,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 6
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.22,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.07,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.951,
+        "damage_rate": 0.0021,
+        "cancellation_rate": 0.0148,
+        "delay_probability": 0.066,
+        "reliability_source": "measured",
+        "on_time_sample_size": 319
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-28",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "destination": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 59,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 5.61,
+        "driving_hours_total": 54.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 6.03,
+        "border_crossings": 5,
+        "transit_days_p90": 7.67,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "BOX_TRUCK",
+          "available_count": 2,
+          "max_weight_kg": 12000,
+          "max_volume_cbm": 82
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 93.96,
+        "rate_per_km": 1.35,
+        "minimum_charge": 235.44,
+        "cost_usd_per_vehicle": 434.9,
+        "cost_usd_per_vehicle_all_in": 518.7,
+        "valid_from": "2026-07-26",
+        "valid_to": "2026-08-22",
+        "min_charge_usd": 440.9,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 15
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.16,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.051,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.896,
+        "damage_rate": 0.002,
+        "cancellation_rate": 0.0137,
+        "delay_probability": 0.14,
+        "reliability_source": "measured",
+        "on_time_sample_size": 196
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 313.8
+      },
+      "distance_km": 2930,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-29",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 71,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.38,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 0.8,
+        "border_crossings": 0,
+        "transit_days_p90": 0.99,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 12,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 2.72,
+        "cost_usd_per_vehicle": 40.3,
+        "cost_usd_per_vehicle_all_in": 44.8,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-29",
+        "min_charge_usd": 38.1,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 22
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.1,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.071,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.912,
+        "damage_rate": 0.0019,
+        "cancellation_rate": 0.0188,
+        "delay_probability": 0.119,
+        "reliability_source": "measured",
+        "on_time_sample_size": 386
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-GEN-30",
+      "service_type": "general_truck",
+      "origin": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "destination": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 7,
+        "average_speed_kmh": 53,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.61,
+        "driving_hours_total": 7.6,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.29,
+        "total_days_with_wait": 0.9,
+        "border_crossings": 0,
+        "transit_days_p90": 1.03,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "TRAILER",
+          "available_count": 9,
+          "max_weight_kg": 24000,
+          "max_volume_cbm": 28
+        }
+      ],
+      "pricing": {
+        "pricing_model": "base_plus_distance",
+        "currency": "USD",
+        "base_fee": 276.48,
+        "rate_per_km": 2.29,
+        "minimum_charge": 362.88,
+        "cost_usd_per_vehicle": 90.1,
+        "cost_usd_per_vehicle_all_in": 103.9,
+        "valid_from": "2026-07-29",
+        "valid_to": "2026-08-12",
+        "min_charge_usd": 88.3,
+        "rate_validity_type": "PROMOTIONAL",
+        "days_until_expiry": 5
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.13,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.073,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.968,
+        "damage_rate": 0.0023,
+        "cancellation_rate": 0.0136,
+        "delay_probability": 0.043,
+        "reliability_source": "measured",
+        "on_time_sample_size": 220
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 44.1
+      },
+      "distance_km": 412,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "DSV-CAR-01-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 2,
+        "average_speed_kmh": 55,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.31,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.05,
+        "total_days_with_wait": 0.36,
+        "border_crossings": 0,
+        "transit_days_p90": 0.42,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 7,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1125.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.55,
+        "cost_usd_per_vehicle": 51.6,
+        "cost_usd_per_vehicle_all_in": 59.4,
+        "valid_from": "2026-07-21",
+        "valid_to": "2026-09-20",
+        "min_charge_usd": 39.4,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 44
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.076,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.949,
+        "damage_rate": 0.0028,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.069,
+        "reliability_source": "measured",
+        "on_time_sample_size": 181
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-03-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 12,
+        "average_speed_kmh": 65,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.59,
+        "driving_hours_total": 8.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.3,
+        "total_days_with_wait": 0.89,
+        "border_crossings": 1,
+        "transit_days_p90": 0.99,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 4,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.84,
+        "cost_usd_per_vehicle": 128.5,
+        "cost_usd_per_vehicle_all_in": 162.7,
+        "valid_from": "2026-07-05",
+        "valid_to": "2026-09-04",
+        "min_charge_usd": 108.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 28
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.103,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.982,
+        "damage_rate": 0.001,
+        "cancellation_rate": 0.0165,
+        "delay_probability": 0.024,
+        "reliability_source": "measured",
+        "on_time_sample_size": 399
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 51.0
+      },
+      "distance_km": 476,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-05-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.53,
+        "driving_hours_total": 8.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.13,
+        "total_days_with_wait": 0.66,
+        "border_crossings": 0,
+        "transit_days_p90": 0.71,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 8,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.34,
+        "cost_usd_per_vehicle": 125.4,
+        "cost_usd_per_vehicle_all_in": 147.6,
+        "valid_from": "2026-08-07",
+        "valid_to": "2026-10-06",
+        "min_charge_usd": 98.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 60
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.19,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.058,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.0074,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 302
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 49.4
+      },
+      "distance_km": 461,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-07-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 4,
+        "average_speed_kmh": 65,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.43,
+        "driving_hours_total": 3.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.1,
+        "total_days_with_wait": 0.53,
+        "border_crossings": 1,
+        "transit_days_p90": 0.55,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 6,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2000.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.87,
+        "cost_usd_per_vehicle": 71.2,
+        "cost_usd_per_vehicle_all_in": 87.8,
+        "valid_from": "2026-06-13",
+        "valid_to": "2026-08-12",
+        "min_charge_usd": 58.3,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 5
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.27,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.093,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0049,
+        "cancellation_rate": 0.018,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 122
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 22.7
+      },
+      "distance_km": 212,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-09-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 3.41,
+        "driving_hours_total": 42.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.15,
+        "total_days_with_wait": 3.56,
+        "border_crossings": 4,
+        "transit_days_p90": 3.91,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 6,
+          "vehicle_capacity": 5,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.4,
+        "cost_usd_per_vehicle": 455.2,
+        "cost_usd_per_vehicle_all_in": 533.6,
+        "valid_from": "2026-06-02",
+        "valid_to": "2026-10-01",
+        "min_charge_usd": 354.4,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 55
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.03,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0039,
+        "cancellation_rate": 0.0132,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 418
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 247.9
+      },
+      "distance_km": 2315,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-11-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 4,
+        "average_speed_kmh": 72,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.08,
+        "driving_hours_total": 12.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.1,
+        "total_days_with_wait": 1.18,
+        "border_crossings": 1,
+        "transit_days_p90": 1.24,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 3,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.46,
+        "cost_usd_per_vehicle": 164.9,
+        "cost_usd_per_vehicle_all_in": 183.7,
+        "valid_from": "2026-06-20",
+        "valid_to": "2026-08-19",
+        "min_charge_usd": 122.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 12
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.11,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.041,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0033,
+        "cancellation_rate": 0.0145,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 371
+      },
+      "environment": {
+        "grade": "B",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 70.8
+      },
+      "distance_km": 661,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-13-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "destination": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 67,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.08,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.15,
+        "total_days_with_wait": 1.23,
+        "border_crossings": 1,
+        "transit_days_p90": 1.32,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 5,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 2.8,
+        "cost_usd_per_vehicle": 165.5,
+        "cost_usd_per_vehicle_all_in": 204.9,
+        "valid_from": "2026-07-03",
+        "valid_to": "2026-09-02",
+        "min_charge_usd": 136.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 26
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.26,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.061,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0033,
+        "cancellation_rate": 0.0176,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 399
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-15-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 7,
+        "average_speed_kmh": 58,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.31,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.17,
+        "total_days_with_wait": 0.48,
+        "border_crossings": 0,
+        "transit_days_p90": 0.53,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 14,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.88,
+        "cost_usd_per_vehicle": 51.6,
+        "cost_usd_per_vehicle_all_in": 60.4,
+        "valid_from": "2026-05-03",
+        "valid_to": "2026-09-02",
+        "min_charge_usd": 40.1,
+        "rate_validity_type": "SEMI_ANNUAL",
+        "days_until_expiry": 26
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.101,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0024,
+        "cancellation_rate": 0.0124,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 362
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-17-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "NLRTM",
+        "name": "Rotterdam Port",
+        "country": "NL",
+        "node_type": "seaport",
+        "location_id": "NLRTM"
+      },
+      "destination": {
+        "node_id": "FRPAR_DC",
+        "name": "Paris DC",
+        "country": "FR",
+        "node_type": "distribution_center",
+        "location_id": "FRPAR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 800
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 52,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.59,
+        "driving_hours_total": 8.8,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 0.84,
+        "border_crossings": 1,
+        "transit_days_p90": 0.97,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 12,
+          "vehicle_capacity": 8,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1500.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.8,
+        "cost_usd_per_vehicle": 128.5,
+        "cost_usd_per_vehicle_all_in": 146.7,
+        "valid_from": "2026-07-25",
+        "valid_to": "2026-08-24",
+        "min_charge_usd": 97.4,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 17
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.14,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.054,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.948,
+        "damage_rate": 0.0016,
+        "cancellation_rate": 0.0076,
+        "delay_probability": 0.07,
+        "reliability_source": "measured",
+        "on_time_sample_size": 378
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 51.0
+      },
+      "distance_km": 476,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-19-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEMUC_YARD",
+        "name": "Munich Vehicle Yard",
+        "country": "DE",
+        "node_type": "vehicle_yard",
+        "location_id": "DEMUC"
+      },
+      "destination": {
+        "node_id": "DELEI_DC",
+        "name": "Leipzig DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DELEI"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 50,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.53,
+        "driving_hours_total": 8.5,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 0.78,
+        "border_crossings": 0,
+        "transit_days_p90": 0.9,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 7,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.75,
+        "cost_usd_per_vehicle": 125.4,
+        "cost_usd_per_vehicle_all_in": 139.6,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-10-02",
+        "min_charge_usd": 92.7,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 56
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.13,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.034,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.953,
+        "damage_rate": 0.0039,
+        "cancellation_rate": 0.0095,
+        "delay_probability": 0.063,
+        "reliability_source": "measured",
+        "on_time_sample_size": 163
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 49.4
+      },
+      "distance_km": 461,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-21-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEDUI_DC",
+        "name": "Duisburg DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEDUI"
+      },
+      "destination": {
+        "node_id": "BEANR",
+        "name": "Antwerp Port",
+        "country": "BE",
+        "node_type": "seaport",
+        "location_id": "BEANR"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1600
+      },
+      "schedule": {
+        "dispatch_lead_hours": 12,
+        "average_speed_kmh": 52,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.43,
+        "driving_hours_total": 3.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.3,
+        "total_days_with_wait": 0.73,
+        "border_crossings": 1,
+        "transit_days_p90": 0.8,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 4,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2200,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 2.67,
+        "cost_usd_per_vehicle": 71.2,
+        "cost_usd_per_vehicle_all_in": 86.0,
+        "valid_from": "2026-08-02",
+        "valid_to": "2026-10-01",
+        "min_charge_usd": 57.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 55
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.08,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0022,
+        "cancellation_rate": 0.0076,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 201
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 22.7
+      },
+      "distance_km": 212,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-23-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ATVIE_DC",
+        "name": "Vienna DC",
+        "country": "AT",
+        "node_type": "distribution_center",
+        "location_id": "ATVIE"
+      },
+      "destination": {
+        "node_id": "ESMAD_DC",
+        "name": "Madrid DC",
+        "country": "ES",
+        "node_type": "distribution_center",
+        "location_id": "ESMAD"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 1200
+      },
+      "schedule": {
+        "dispatch_lead_hours": 6,
+        "average_speed_kmh": 61,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 3.41,
+        "driving_hours_total": 42.9,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.15,
+        "total_days_with_wait": 3.56,
+        "border_crossings": 4,
+        "transit_days_p90": 3.96,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 5,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.1
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 2000.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.5,
+        "cost_usd_per_vehicle": 455.2,
+        "cost_usd_per_vehicle_all_in": 564.7,
+        "valid_from": "2026-07-01",
+        "valid_to": "2026-08-31",
+        "min_charge_usd": 375.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 24
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.17,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.09,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.979,
+        "damage_rate": 0.004,
+        "cancellation_rate": 0.0168,
+        "delay_probability": 0.028,
+        "reliability_source": "measured",
+        "on_time_sample_size": 420
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 247.9
+      },
+      "distance_km": 2315,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-25-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "PLWAW_DC",
+        "name": "Warsaw DC",
+        "country": "PL",
+        "node_type": "distribution_center",
+        "location_id": "PLWAW"
+      },
+      "destination": {
+        "node_id": "CZPRG_DC",
+        "name": "Prague DC",
+        "country": "CZ",
+        "node_type": "distribution_center",
+        "location_id": "CZPRG"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 500
+      },
+      "schedule": {
+        "dispatch_lead_hours": 9,
+        "average_speed_kmh": 64,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.08,
+        "driving_hours_total": 12.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.23,
+        "total_days_with_wait": 1.31,
+        "border_crossings": 1,
+        "transit_days_p90": 1.43,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 13,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.3
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 1125.0,
+        "included_distance_km": 500,
+        "additional_rate_per_km": 1.97,
+        "cost_usd_per_vehicle": 164.9,
+        "cost_usd_per_vehicle_all_in": 206.1,
+        "valid_from": "2026-07-20",
+        "valid_to": "2026-09-19",
+        "min_charge_usd": 136.8,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 43
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.25,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.077,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": true
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0048,
+        "cancellation_rate": 0.0082,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 379
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 70.8
+      },
+      "distance_km": 661,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-27-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "ITMIL_DC",
+        "name": "Milan DC",
+        "country": "IT",
+        "node_type": "distribution_center",
+        "location_id": "ITMIL"
+      },
+      "destination": {
+        "node_id": "DEFRA_DC",
+        "name": "Frankfurt DC",
+        "country": "DE",
+        "node_type": "distribution_center",
+        "location_id": "DEFRA"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 5,
+        "average_speed_kmh": 53,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 1.08,
+        "driving_hours_total": 12.3,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.13,
+        "total_days_with_wait": 1.21,
+        "border_crossings": 1,
+        "transit_days_p90": 1.31,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 2,
+          "vehicle_capacity": 6,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 1.65,
+        "cost_usd_per_vehicle": 165.5,
+        "cost_usd_per_vehicle_all_in": 202.1,
+        "valid_from": "2026-06-24",
+        "valid_to": "2026-08-23",
+        "min_charge_usd": 134.2,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 16
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.22,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.07,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": false,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.985,
+        "damage_rate": 0.0021,
+        "cancellation_rate": 0.0148,
+        "delay_probability": 0.02,
+        "reliability_source": "measured",
+        "on_time_sample_size": 319
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 71.1
+      },
+      "distance_km": 664,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    },
+    {
+      "service_id": "DSV-CAR-29-EXP",
+      "service_type": "car_carrier",
+      "origin": {
+        "node_id": "DEBRV",
+        "name": "Bremerhaven Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEBRV"
+      },
+      "destination": {
+        "node_id": "DEHAM",
+        "name": "Hamburg Port",
+        "country": "DE",
+        "node_type": "seaport",
+        "location_id": "DEHAM"
+      },
+      "service_area": {
+        "countries": [
+          "DE",
+          "NL",
+          "BE",
+          "AT",
+          "CZ",
+          "PL",
+          "FR",
+          "IT",
+          "ES"
+        ],
+        "max_distance_km": 300
+      },
+      "schedule": {
+        "dispatch_lead_hours": 10,
+        "average_speed_kmh": 71,
+        "max_driving_hours_per_day": 9,
+        "transit_days": 0.31,
+        "driving_hours_total": 2.2,
+        "frequency_per_week": 7,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 0.56,
+        "border_crossings": 0,
+        "transit_days_p90": 0.64,
+        "booking_lead_days": 1,
+        "cargo_closing_hours": 12
+      },
+      "fleet": [
+        {
+          "vehicle_type": "CAR_CARRIER",
+          "available_count": 12,
+          "vehicle_capacity": 10,
+          "max_vehicle_height_m": 2.0
+        }
+      ],
+      "pricing": {
+        "pricing_model": "per_transporter",
+        "currency": "USD",
+        "rate_per_transporter": 875.0,
+        "included_distance_km": 300,
+        "additional_rate_per_km": 2.72,
+        "cost_usd_per_vehicle": 51.6,
+        "cost_usd_per_vehicle_all_in": 57.3,
+        "valid_from": "2026-07-06",
+        "valid_to": "2026-09-05",
+        "min_charge_usd": 38.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 29
+      },
+      "surcharges": [
+        {
+          "name": "TOLL",
+          "basis": "per_km",
+          "amount": 0.1,
+          "currency": "USD"
+        },
+        {
+          "name": "FUEL_ADJUSTMENT",
+          "basis": "percentage",
+          "amount": 0.071,
+          "currency": "RATIO"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "FINISHED_VEHICLE"
+        ],
+        "allowed_vehicle_types": [
+          "SEDAN",
+          "SUV",
+          "EV"
+        ],
+        "operable_vehicle_required": true
+      },
+      "mode_details": {
+        "cross_border_available": true,
+        "gps_tracking": true,
+        "enclosed_transport_available": true,
+        "driver_team_available": false
+      },
+      "performance": {
+        "on_time_rate": 0.958,
+        "damage_rate": 0.0019,
+        "cancellation_rate": 0.0188,
+        "delay_probability": 0.057,
+        "reliability_source": "measured",
+        "on_time_sample_size": 386
+      },
+      "environment": {
+        "grade": "C",
+        "co2_g_per_tonkm": 63.0,
+        "co2_kg_per_vehicle": 12.7
+      },
+      "distance_km": 119,
+      "carries_finished_vehicle": true,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 0,
+        "detention_usd_per_unit_day": 18
+      },
+      "service_tier": "EXPRESS"
+    }
+  ]
+}
