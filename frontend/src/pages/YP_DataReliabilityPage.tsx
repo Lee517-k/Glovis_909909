@@ -63,7 +63,7 @@ const blank: Detail = {
   impact: "검증 이력이 없습니다.",
 };
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api").replace(/\/$/, "");
+const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? "/api").replace(/\/$/, "");
 const ACTION_STATUS: Record<string, string> = {
   "보정 후보 유지": "correction_candidate",
   "검증 완료": "verified",
