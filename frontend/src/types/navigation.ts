@@ -4,7 +4,7 @@ export type PageId =
   | "saved"
   | "tracking"
   | "network"
-  | "upload"
+  | "yp_data"
   | "yp_data_reliability";
 
 export interface NavigationItem {
@@ -46,15 +46,15 @@ export const NAV_ITEMS: NavigationItem[] = [
     icon: "bookmark",
   },
   {
-    id: "upload",
+    id: "yp_data",
     label: "데이터",
-    description: "운송 계획에 필요한 기준 데이터를 관리하는 화면입니다.",
+    description: "운송사 데이터를 등록하고 가시화하는 화면입니다.",
     icon: "grid",
   },
   {
     id: "yp_data_reliability",
     label: "데이터 신뢰도",
-    description: "등록된 물류 데이터의 품질과 신뢰도를 확인하는 화면입니다.",
+    description: "등록된 데이터의 품질과 신뢰도를 확인하는 화면입니다.",
     icon: "location",
   },
 ];

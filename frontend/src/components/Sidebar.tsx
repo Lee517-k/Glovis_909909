@@ -25,7 +25,7 @@ const NAV: {
   {
     group: "Data",
     items: [
-      { id: "upload", icon: "ti-cloud-upload", label: "데이터" },
+      { id: "yp_data", icon: "ti-cloud-upload", label: "데이터" },
       { id: "yp_data_reliability", icon: "ti-shield-check", label: "데이터 신뢰도" },
     ],
   },
@@ -81,4 +81,3 @@ export function Sidebar({ page, onNavigate, savedCount, trackingCount }: Sidebar
     </aside>
   );
 }
-
