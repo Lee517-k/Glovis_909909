@@ -1,15 +1,48 @@
+import { useEffect, useState } from "react";
+
+import { AppHeader } from "./components/AppHeader";
+import { Sidebar } from "./components/Sidebar";
+import { PlaceholderPage } from "./pages/PlaceholderPage";
+import { NAV_ITEMS, type PageId } from "./types/navigation";
+
+const DEFAULT_PAGE: PageId = "dashboard";
+
+function getPageFromHash(): PageId {
+  const candidate = window.location.hash.replace("#/", "") as PageId;
+  return NAV_ITEMS.some((item) => item.id === candidate) ? candidate : DEFAULT_PAGE;
+}
+
 function App() {
+  const [page, setPage] = useState<PageId>(getPageFromHash);
+
+  useEffect(() => {
+    const handleHashChange = () => setPage(getPageFromHash());
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const activeItem = NAV_ITEMS.find((item) => item.id === page) ?? NAV_ITEMS[0];
+
+  const navigate = (nextPage: PageId) => {
+    window.location.hash = `/${nextPage}`;
+    setPage(nextPage);
+  };
+
   return (
-    <main className="app-shell">
-      <p className="eyebrow">PROJECT SETUP</p>
-      <h1>Multimodal Logistics Agent</h1>
-      <p>
-        프로젝트 초기 구성이 완료되었습니다. 화면과 물류 도메인 기능은 기능 브랜치에서
-        순차적으로 추가합니다.
-      </p>
-    </main>
+    <div className="app-layout">
+      <Sidebar
+        page={page}
+        onNavigate={navigate}
+        savedCount={0}
+        trackingCount={0}
+      />
+
+      <div className="app-main">
+        <AppHeader pageTitle={activeItem.label} />
+        <PlaceholderPage page={activeItem} />
+      </div>
+    </div>
   );
 }
 
 export default App;
-
