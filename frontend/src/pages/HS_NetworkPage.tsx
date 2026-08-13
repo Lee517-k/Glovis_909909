@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getAllocationOverview, getRegions, carriersCsvUrl } from "../api/controlTowerApi";
+import { getAllocationOverview, getRegions, carriersCsvUrl } from "../api/HS_controlTowerApi";
 import { HubMapLibre } from "../components/HubMapLibre";
 import { Badge, Chip, Grade, MODE_HEX, MODE_KO, Prog, type Mode } from "../lib/ui";
 

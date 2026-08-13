@@ -11,7 +11,7 @@ GET /api/allocation/overview       위 항목을 한 번에(탭 전환 시 1회 
 
 from fastapi import APIRouter, Query, Response
 
-from app.repositories import allocation_repository as repo
+from app.repositories import HS_allocation_repository as repo
 
 router = APIRouter(prefix="/allocation")
 

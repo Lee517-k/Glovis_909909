@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from app.db_paths import MERGED_DB_PATH
 
 
 class Settings(BaseSettings):
@@ -8,6 +11,9 @@ class Settings(BaseSettings):
         default="http://localhost:5173",
         validation_alias="CORS_ORIGINS",
     )
+    merged_db_path: Path = MERGED_DB_PATH
+    tracking_db_path: Path = MERGED_DB_PATH
+    allocation_db_path: Path = MERGED_DB_PATH
 
     model_config = SettingsConfigDict(env_file="../.env", extra="ignore")
 

@@ -6,6 +6,8 @@ import { PlaceholderPage } from "./pages/PlaceholderPage";
 import { UploadPage } from "./pages/YP_DataUploadPage";
 import { YpDataReliabilityPage } from "./pages/YP_DataReliabilityPage";
 import { YPDashboardPage } from "./pages/YP_DashboardPage";
+import { TrackingPage } from "./pages/HS_TrackingPage";
+import { NetworkPage } from "./pages/HS_NetworkPage";
 import { NAV_ITEMS, type PageId } from "./types/navigation";
 
 const DEFAULT_PAGE: PageId = "dashboard";
@@ -35,6 +37,8 @@ function App() {
     if (page === "dashboard") {
       return <YPDashboardPage onJump={navigate} />;
     }
+    if (page === "tracking") return <TrackingPage active />;
+    if (page === "network") return <NetworkPage active />;
     if (page === "yp_data") {
       return <UploadPage active />;
     }

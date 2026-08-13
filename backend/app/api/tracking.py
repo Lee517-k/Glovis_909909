@@ -11,7 +11,7 @@ POST /api/tracking/alerts/{alert_id}/resolve   AI 알림 조치 완료
 
 from fastapi import APIRouter, HTTPException, Query
 
-from app.repositories import tracking_repository as repo
+from app.repositories import HS_tracking_repository as repo
 
 router = APIRouter(prefix="/tracking")
 
