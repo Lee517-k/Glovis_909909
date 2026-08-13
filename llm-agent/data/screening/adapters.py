@@ -138,6 +138,11 @@ def _transit_total_days(s):
     return transit_d, wait_d, transit_d + wait_d
 
 
+def _rate_validity(s):
+    p = s.get("pricing", {})
+    return p.get("rate_validity_type"), p.get("valid_from"), p.get("valid_to"), p.get("days_until_expiry")
+
+
 def _capacity(s):
     cap = s.get("capacity", {})
     for k in ("available_vehicle_slots", "available_weight_kg"):
@@ -185,6 +190,7 @@ def _load_node_graph_family(base, subdir, mode_dirs, dataset_tag):
                 transit_d, wait_d, total_d = _transit_total_days(s)
                 if cost is None or total_d is None:
                     continue
+                rate_validity_type, valid_from, valid_to, days_until_expiry = _rate_validity(s)
                 out.append(NormalizedService(
                     service_id=s.get("service_id", ""),
                     carrier_id=carrier.get("carrier_id", "?"), carrier_name=carrier.get("carrier_name", "?"),
@@ -196,6 +202,8 @@ def _load_node_graph_family(base, subdir, mode_dirs, dataset_tag):
                     available_capacity=_capacity(s),
                     allowed_vehicle_types=s.get("cargo_conditions", {}).get("allowed_vehicle_types") or None,
                     carrier_role=carrier.get("role"),
+                    rate_validity_type=rate_validity_type, valid_from=valid_from,
+                    valid_to=valid_to, days_until_expiry=days_until_expiry,
                     source_dataset=dataset_tag, raw=s,
                 ))
     return out

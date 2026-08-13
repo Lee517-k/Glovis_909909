@@ -14,6 +14,7 @@ Explicit round budget (documented, not implicit):
   -> at most 2 LLM calls per leg for the carrier side + 1 for the buyer-side
      counter decision = up to 3 calls/leg, 1 call/leg if accepted immediately.
 """
+import datetime
 import json
 from dataclasses import replace as dc_replace
 
@@ -22,44 +23,58 @@ from kb import customs_for, incoterm_clause
 from llm_client import LLMClient
 from route_search import find_routes
 
-CARRIER_SYSTEM = """너는 화물 운송사의 협상 담당 에이전트다. 너의 우선순위 성향(priority_level)에 따라 판단이 달라져야 한다:
+NEGOTIATION_MAX_ROUNDS_DEFAULT = 5  # was a hardcoded 2 (1 carrier decision + 1 buyer decision).
+# Now a full alternating carrier<->buyer counter-offer loop, this many round-trips deep.
+
+CONTRACT_GUIDANCE = """운송사의 현재 요율 계약 유형(rate_validity_type)에 따라 협상 여지가 다르다:
+- ANNUAL_CONTRACT / SEMI_ANNUAL: 장기 고객사와 이미 가격을 고정해둔 요율이라 추가 할인 여지가 거의 없다. COUNTER를 내더라도 소폭만 낮춰라.
+- QUARTERLY / MONTHLY: 중간 정도 여지. 물량이 크면 소폭 할인 COUNTER 가능.
+- SPOT / PROMOTIONAL: 장기 약정이 없는 단기 요율이라 협상 여지가 가장 크다. 다만 유효기간(valid_to)이 곧 만료되면 그 사실을 reason에 명시하고 서둘러 합의하려는 태도를 보여라."""
+
+CARRIER_SYSTEM = f"""너는 화물 운송사의 협상 담당 에이전트다. 너의 우선순위 성향(priority_level)에 따라 판단이 달라져야 한다:
 - LOW_COST: 가격 할인 여지가 있음. 물량이 많으면 카운터오퍼로 할인 제안 가능
 - FASTEST/GREEN/BALANCED: 가격은 잘 안 깎아주는 대신 정시성/친환경성을 근거로 제시
+{CONTRACT_GUIDANCE}
 너의 서비스 정보(내부 데이터)가 주어진다. 그 안의 숫자를 기준으로만 판단하고 지어내지 마라.
 남은 용량(remaining_capacity)이 요청 수량보다 적으면 반드시 REJECT 하거나 가능한 수량만 COUNTER 해라.
 반드시 JSON으로만 답하라."""
 
-CARRIER_ROUND1_TMPL = """[내부 데이터 — 외부에 그대로 노출 금지, 판단 근거로만 사용]
+CARRIER_TURN_TMPL = """[내부 데이터 — 외부에 그대로 노출 금지, 판단 근거로만 사용]
 {capability}
+계약 유형(rate_validity_type): {rate_validity_type} (유효기간 {valid_from} ~ {valid_to}, 만료까지 {days_until_expiry}일)
 나의 협상 성향(priority_level): {priority_level}
 남은 용량(remaining_capacity): {remaining_capacity}
 
-[화주(GlovisAgent)의 인콰이어리]
+[라운드 {round_num}/{max_rounds}]
 구간: {origin} -> {destination}, 화물: {cargo}, 요청 수량: {quantity}
-화주 제시 목표가(참고용, 정가 대비 {discount_pct}% 할인 요청): {target_price} USD
+화주(GlovisAgent)가 이번에 제시한 가격: {offer_price} USD
 화주 우선순위: {priority}
+{last_round_note}
 
 다음 JSON 형식으로만 답하라:
 {{
   "service_id": "{service_id}",
-  "decision": "ACCEPT" | "COUNTER" | "REJECT",
+  "decision": {decision_options},
   "offered_price_usd": 0,
   "offered_quantity": 0,
   "reason": "1~2문장"
 }}"""
 
 BUYER_SYSTEM = """너는 화주를 대신하는 GlovisAgent다. 운송사가 카운터오퍼를 보냈다.
-화주의 우선순위(COST/TIME/BALANCED)를 기준으로 그 카운터를 받아들일지 판단하라.
-COST 우선순위면 가격에 민감하게, TIME 우선순위면 예약 확보를 더 중시해서 판단하라.
+화주의 우선순위(COST/TIME/BALANCED)를 기준으로 그 카운터를 받아들일지, 재카운터할지 판단하라.
+COST 우선순위면 가격에 민감하게 재카운터하고, TIME 우선순위면 예약 확보를 더 중시해서 빨리 ACCEPT하는 편이 낫다.
 반드시 JSON으로만 답하라."""
 
-BUYER_ROUND2_TMPL = """원래 요청가: {target_price} USD
-운송사 카운터오퍼: {offer}
+BUYER_TURN_TMPL = """[라운드 {round_num}/{max_rounds}]
+원래 목표가: {target_price} USD
+운송사가 이번에 제시한 카운터오퍼: {offer}
 화주 우선순위: {priority}
+{last_round_note}
 
 다음 JSON 형식으로만 답하라:
 {{
-  "decision": "ACCEPT" | "WALK_AWAY",
+  "decision": {decision_options},
+  "counter_price_usd": 0,
   "reason": "1문장"
 }}"""
 
@@ -82,9 +97,11 @@ class CarrierAgent:
     That statefulness is what makes this an agent rather than a lookup function.
     """
 
-    def __init__(self, llm: LLMClient, on_progress=None):
+    def __init__(self, llm: LLMClient, on_progress=None, max_rounds=None, today=None):
         self.llm = llm
         self.on_progress = on_progress
+        self.max_rounds = max_rounds or NEGOTIATION_MAX_ROUNDS_DEFAULT
+        self.today = today or datetime.date.today()
         self.capacity_ledger = {}   # service_id -> remaining capacity
         self.log = []               # full negotiation trace
         self._deal_cache = {}       # (service_id, quantity) -> already-negotiated result
@@ -100,9 +117,13 @@ class CarrierAgent:
         return self.capacity_ledger[leg.service_id]
 
     def negotiate(self, leg, request):
-        """Runs up to NEGOTIATION_ROUNDS. Returns a dict with the final
-        agreed terms (or deal_reached=False if the carrier rejected /
-        the buyer walked away).
+        """Runs an alternating carrier<->buyer counter-offer loop, up to
+        self.max_rounds round-trips (was a hardcoded 2: one carrier decision,
+        one buyer decision). Returns a dict with the final agreed terms, or
+        deal_reached=False if either side rejected/walked away, the rounds
+        ran out without agreement, or the rate contract itself has already
+        expired (checked before any LLM call — no point negotiating a rate
+        that's no longer on offer).
 
         Cached per service_id: when the same leg is reused across several
         *alternative* candidate scenarios for the same request, those are
@@ -114,78 +135,116 @@ class CarrierAgent:
         if cache_key in self._deal_cache:
             return self._deal_cache[cache_key]
 
+        expired_reason = _check_contract_expired(leg, self.today)
+        if expired_reason is not None:
+            result = {"deal_reached": False, "reason": expired_reason, "rounds_used": 0,
+                      "grounded": True, "self_operated": False}
+            self.log.append({"leg_service_id": leg.service_id, "carrier_id": leg.carrier_id, "final": result})
+            self._deal_cache[cache_key] = result
+            _emit(self.on_progress, {"stage": "negotiate_leg", "status": "contract_expired",
+                                       "service_id": leg.service_id, "carrier_id": leg.carrier_id})
+            return result
+
         _emit(self.on_progress, {"stage": "negotiate_leg", "status": "round1_start",
                                    "service_id": leg.service_id, "carrier_id": leg.carrier_id, "mode": leg.mode})
 
         capability = _leg_capability(leg)
-        target_price = round(leg.cost_usd * 0.95, 2)  # buyer opens by asking a 5% discount
         remaining = self._remaining(leg)
+        target_price = round(leg.cost_usd * 0.95, 2)  # buyer opens by asking a 5% discount
 
-        user1 = CARRIER_ROUND1_TMPL.format(
-            capability=json.dumps(capability, ensure_ascii=False),
-            priority_level=leg.priority_level, remaining_capacity=remaining,
-            origin=leg.origin, destination=leg.destination,
-            cargo=request["cargo"], quantity=request["quantity"],
-            target_price=target_price, discount_pct=5, priority=request["priority"],
-            service_id=leg.service_id,
-        )
-        r1, raw1 = self.llm.chat_json(CARRIER_SYSTEM, user1, max_tokens=300)
-        record = {"leg_service_id": leg.service_id, "carrier_id": leg.carrier_id,
-                   "round1_carrier": r1, "rounds_used": 1,
-                   "prompts": {"round1": {"system": CARRIER_SYSTEM, "user": user1, "raw_response": raw1}}}
-        _emit(self.on_progress, {"stage": "negotiate_leg", "status": "round1_done",
-                                   "service_id": leg.service_id, "carrier_id": leg.carrier_id,
-                                   "decision": (r1 or {}).get("decision")})
-
+        record = {"leg_service_id": leg.service_id, "carrier_id": leg.carrier_id, "prompts": {}}
+        current_price = target_price
+        turn = "carrier"          # carrier responds to the buyer's opening ask first
+        last_carrier_msg = None   # kept so a buyer ACCEPT can settle at the carrier's exact offer
         result = None
-        if not r1:
-            result = {"deal_reached": False, "reason": "unparseable_response", "rounds_used": 1,
-                      "grounded": True}
-        elif r1.get("decision") == "REJECT":
-            result = {"deal_reached": False, "reason": r1.get("reason"), "rounds_used": 1,
-                      "grounded": True}
-        elif r1.get("decision") == "ACCEPT":
-            granted_qty = min(request["quantity"], remaining)
-            result = {"deal_reached": granted_qty > 0, "price_usd": leg.cost_usd,
-                      "quantity": granted_qty, "total_days": leg.total_days,
-                      "rounds_used": 1, "grounded": True}
-            if granted_qty <= 0:
-                result["reason"] = "capacity_exhausted_despite_accept"
-        else:  # COUNTER -> round 2, buyer decides
-            _emit(self.on_progress, {"stage": "negotiate_leg", "status": "round2_start",
-                                       "service_id": leg.service_id, "carrier_id": leg.carrier_id})
-            user2 = BUYER_ROUND2_TMPL.format(
-                target_price=target_price, offer=json.dumps(r1, ensure_ascii=False),
-                priority=request["priority"],
-            )
-            r2, raw2 = self.llm.chat_json(BUYER_SYSTEM, user2, max_tokens=200)
-            record["round2_buyer"] = r2
-            record["rounds_used"] = 2
-            record["prompts"]["round2"] = {"system": BUYER_SYSTEM, "user": user2, "raw_response": raw2}
-            if r2 and r2.get("decision") == "ACCEPT":
-                # The deal's actual numbers are computed here, not trusted
-                # verbatim from the LLM: offered_price_usd only wins if it's
-                # within tolerance of the listed rate (else the listed rate
-                # is used), offered_quantity can only ever shrink the deal
-                # (never exceed what's requested or physically available),
-                # and total_days is a property of the leg — not something a
-                # carrier negotiates away, so it's never LLM-supplied at all.
-                grounded = _check_grounding(r1.get("offered_price_usd"), leg)
-                price_usd = r1.get("offered_price_usd") if grounded else leg.cost_usd
-                offered_qty = r1.get("offered_quantity")
-                granted_qty = min(offered_qty, request["quantity"], remaining) \
-                    if isinstance(offered_qty, (int, float)) and offered_qty > 0 \
-                    else min(request["quantity"], remaining)
-                result = {"deal_reached": granted_qty > 0,
-                          "price_usd": price_usd, "quantity": granted_qty,
-                          "total_days": leg.total_days, "rounds_used": 2,
-                          "grounded": grounded}
-                if granted_qty <= 0:
-                    result["reason"] = "capacity_exhausted_despite_accept"
-            else:
-                result = {"deal_reached": False, "reason": (r2 or {}).get("reason", "walked_away"),
-                           "rounds_used": 2, "grounded": True}
 
+        for round_num in range(1, self.max_rounds + 1):
+            is_last = round_num == self.max_rounds
+            decision_options = '"ACCEPT" | "REJECT"' if (is_last and turn == "carrier") else \
+                                '"ACCEPT" | "WALK_AWAY"' if is_last else \
+                                '"ACCEPT" | "COUNTER" | "REJECT"' if turn == "carrier" else \
+                                '"ACCEPT" | "COUNTER" | "WALK_AWAY"'
+            last_round_note = "이번이 마지막 라운드다. 더 이상 COUNTER를 낼 수 없다." if is_last else ""
+
+            if turn == "carrier":
+                user = CARRIER_TURN_TMPL.format(
+                    capability=json.dumps(capability, ensure_ascii=False),
+                    rate_validity_type=leg.rate_validity_type, valid_from=leg.valid_from,
+                    valid_to=leg.valid_to, days_until_expiry=leg.days_until_expiry,
+                    priority_level=leg.priority_level, remaining_capacity=remaining,
+                    round_num=round_num, max_rounds=self.max_rounds,
+                    origin=leg.origin, destination=leg.destination,
+                    cargo=request["cargo"], quantity=request["quantity"],
+                    offer_price=current_price, priority=request["priority"],
+                    last_round_note=last_round_note, decision_options=decision_options,
+                    service_id=leg.service_id,
+                )
+                msg, raw = self.llm.chat_json(CARRIER_SYSTEM, user, max_tokens=300)
+                record["prompts"][f"round{round_num}_carrier"] = {
+                    "system": CARRIER_SYSTEM, "user": user, "raw_response": raw}
+                _emit(self.on_progress, {"stage": "negotiate_leg", "status": f"round{round_num}_done",
+                                           "service_id": leg.service_id, "carrier_id": leg.carrier_id,
+                                           "decision": (msg or {}).get("decision")})
+                decision = (msg or {}).get("decision")
+                if not msg:
+                    result = {"deal_reached": False, "reason": "unparseable_response", "grounded": True}
+                elif decision == "REJECT":
+                    result = {"deal_reached": False, "reason": msg.get("reason"), "grounded": True}
+                elif decision == "ACCEPT":
+                    grounded = _check_grounding(current_price, leg)
+                    price_usd = current_price if grounded else leg.cost_usd
+                    granted_qty = min(request["quantity"], remaining)
+                    result = {"deal_reached": granted_qty > 0, "price_usd": price_usd,
+                               "quantity": granted_qty, "total_days": leg.total_days, "grounded": grounded}
+                    if granted_qty <= 0:
+                        result["reason"] = "capacity_exhausted_despite_accept"
+                else:  # COUNTER
+                    last_carrier_msg = msg
+                    current_price = msg.get("offered_price_usd", current_price)
+                    turn = "buyer"
+                    continue
+            else:  # turn == "buyer"
+                user = BUYER_TURN_TMPL.format(
+                    round_num=round_num, max_rounds=self.max_rounds,
+                    target_price=target_price, offer=json.dumps(last_carrier_msg, ensure_ascii=False),
+                    priority=request["priority"], last_round_note=last_round_note,
+                    decision_options=decision_options,
+                )
+                msg, raw = self.llm.chat_json(BUYER_SYSTEM, user, max_tokens=250)
+                record["prompts"][f"round{round_num}_buyer"] = {
+                    "system": BUYER_SYSTEM, "user": user, "raw_response": raw}
+                _emit(self.on_progress, {"stage": "negotiate_leg", "status": f"round{round_num}_done",
+                                           "service_id": leg.service_id, "carrier_id": leg.carrier_id,
+                                           "decision": (msg or {}).get("decision")})
+                decision = (msg or {}).get("decision")
+                if decision == "ACCEPT":
+                    # The deal's numbers are computed here, not trusted verbatim from the
+                    # LLM: current_price only wins if it's within tolerance of the listed
+                    # rate (else the listed rate is used); offered_quantity can only ever
+                    # shrink the deal; total_days is a leg property, never LLM-supplied.
+                    grounded = _check_grounding(current_price, leg)
+                    price_usd = current_price if grounded else leg.cost_usd
+                    offered_qty = (last_carrier_msg or {}).get("offered_quantity")
+                    granted_qty = min(offered_qty, request["quantity"], remaining) \
+                        if isinstance(offered_qty, (int, float)) and offered_qty > 0 \
+                        else min(request["quantity"], remaining)
+                    result = {"deal_reached": granted_qty > 0, "price_usd": price_usd,
+                               "quantity": granted_qty, "total_days": leg.total_days, "grounded": grounded}
+                    if granted_qty <= 0:
+                        result["reason"] = "capacity_exhausted_despite_accept"
+                elif decision == "COUNTER":
+                    current_price = msg.get("counter_price_usd", current_price)
+                    turn = "carrier"
+                    continue
+                else:  # WALK_AWAY or unparseable
+                    result = {"deal_reached": False,
+                               "reason": (msg or {}).get("reason", "walked_away"), "grounded": True}
+            break  # any branch that set `result` (not `continue`) ends the loop
+
+        if result is None:  # ran out of rounds mid-COUNTER without either side settling
+            result = {"deal_reached": False, "reason": "rounds_exhausted", "grounded": True}
+
+        result["rounds_used"] = round_num
         if result["deal_reached"]:
             self.capacity_ledger[leg.service_id] = max(0, remaining - result["quantity"])
         result["self_operated"] = False
@@ -229,8 +288,12 @@ class CarrierAgent:
 def _leg_capability(leg):
     """carrier_capability plus whatever extra fields this dataset's raw
     record happens to carry (hazmat/temp flags, dwell/demurrage, environment,
-    valid_to, service_tier...) — datasets differ, so we pass through
-    everything present instead of hardcoding one dataset's schema."""
+    service_tier...) — datasets differ, so we pass through everything present
+    instead of hardcoding one dataset's schema. rate_validity_type/valid_to
+    etc. are NOT read from raw here (raw["pricing"]["valid_to"] is nested one
+    level deeper than this passthrough loop checks, so it never matched) —
+    they're first-class NormalizedService fields now (see schema.py) and are
+    formatted directly into CARRIER_TURN_TMPL instead."""
     cap = {
         "carrier_id": leg.carrier_id, "service_id": leg.service_id, "mode": leg.mode,
         "lane": {"from": leg.origin, "to": leg.destination},
@@ -240,7 +303,7 @@ def _leg_capability(leg):
     }
     raw = leg.raw or {}
     for k in ("cargo_conditions", "surcharges", "dwell", "environment", "mode_details",
-              "performance", "valid_to", "service_tier", "cii_grade", "co2_kg_per_unit",
+              "performance", "service_tier", "cii_grade", "co2_kg_per_unit",
               "co2_per_cbm", "hazmat_extra_requirements"):
         if k in raw:
             cap[k] = raw[k]
@@ -258,6 +321,25 @@ def _check_grounding(offered_price, leg, tol=0.15):
     if not isinstance(offered_price, (int, float)):
         return False
     return abs(offered_price - leg.cost_usd) <= tol * max(leg.cost_usd, 1)
+
+
+def _check_contract_expired(leg, today):
+    """None if the leg's rate quote is still open (or carries no validity
+    data at all — older/synthetic legs without rate_validity_type shouldn't
+    be penalized). Otherwise a reason string explaining why it's dead on
+    arrival, so it never even reaches an LLM call."""
+    if not leg.valid_to:
+        return None
+    try:
+        valid_to = datetime.date.fromisoformat(leg.valid_to)
+    except ValueError:
+        return None
+    if valid_to < today:
+        return f"rate_contract_expired ({leg.rate_validity_type}, valid_to={leg.valid_to}, today={today.isoformat()})"
+    return None
+
+
+CONTRACT_EXPIRY_WARNING_DAYS = 14  # flag (not reject) legs whose rate quote is closing soon
 
 
 GLOVIS_MARKERS = ("GLOVIS", "글로비스")
@@ -299,7 +381,8 @@ class GlovisAgent:
         self.on_progress = on_progress  # optional callable(event: dict) -> None
 
     def run(self, services, origin, destination, priority="BALANCED",
-            extra_priorities=None, cargo="SEDAN", quantity=10, top_k=3, max_hops=3):
+            extra_priorities=None, cargo="SEDAN", quantity=10, top_k=3, max_hops=3,
+            max_rounds=None):
         """extra_priorities: additional sort axes (e.g. ["TIME"]) whose top_k
         candidates are merged into the same negotiated batch as `priority`'s,
         so one run() call can return a diverse COST+TIME(+...) spread without
@@ -349,7 +432,7 @@ class GlovisAgent:
 
         request = {"origin": origin, "destination": destination, "cargo": cargo,
                     "priority": priority, "quantity": quantity}
-        carrier_agent = CarrierAgent(self.llm, on_progress=self.on_progress)  # fresh ledger per GlovisAgent run
+        carrier_agent = CarrierAgent(self.llm, on_progress=self.on_progress, max_rounds=max_rounds)  # fresh ledger per GlovisAgent run
 
         scenario_summaries = []
         for i, route in enumerate(picked):
@@ -387,7 +470,13 @@ class GlovisAgent:
                     "reliability": leg.reliability_score,
                     "negotiation_rounds": d.get("rounds_used"),
                     "deal_reached": d.get("deal_reached"),
+                    "rate_validity_type": leg.rate_validity_type,
+                    "rate_valid_to": leg.valid_to,
                 }
+                if not d.get("deal_reached"):
+                    detail["deal_failure_reason"] = d.get("reason")
+                if leg.days_until_expiry is not None:
+                    detail["contract_expiring_soon"] = leg.days_until_expiry < CONTRACT_EXPIRY_WARNING_DAYS
                 if leg.available_capacity is not None:
                     detail["available_capacity"] = leg.available_capacity
                 leg_details.append(detail)

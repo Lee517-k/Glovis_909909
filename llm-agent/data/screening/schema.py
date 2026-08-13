@@ -29,6 +29,10 @@ class NormalizedService:
     vehicle_class: Optional[str] = None          # yum_ver2_all: this row IS one specific vehicle class
     allowed_vehicle_types: Optional[list] = None  # ver5/yubin_ver4/v3: flat price covers this SET of types
     carrier_role: Optional[str] = None           # ver6: "OWN_FLEET" (Glovis) vs "PARTNER", straight from the data
+    rate_validity_type: Optional[str] = None      # ver6: ANNUAL_CONTRACT/SEMI_ANNUAL/QUARTERLY/MONTHLY/SPOT/PROMOTIONAL
+    valid_from: Optional[str] = None               # ver6: ISO date, rate quote opens
+    valid_to: Optional[str] = None                 # ver6: ISO date, rate quote closes (past this, contract is expired)
+    days_until_expiry: Optional[int] = None         # ver6: as computed at dataset-build time, NOT re-derived live
     source_dataset: str = ""
     scenario_group: Optional[str] = None  # Set1/Set2/Set3 for v1_final/v2_fixed — legs from
                                            # different groups must never be chained together

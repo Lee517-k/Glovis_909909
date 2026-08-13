@@ -148,7 +148,11 @@ def _build_route(scenario, used_ids):
             "co2_kg_per_vehicle": leg["co2_kg_per_vehicle"],
             "reliability": leg["reliability"],
             "negotiation_rounds": leg["negotiation_rounds"],
+            "rate_validity_type": leg.get("rate_validity_type"),
+            "rate_valid_to": leg.get("rate_valid_to"),
         }
+        if leg.get("contract_expiring_soon"):
+            entry["contract_expiring_soon"] = True
         if "available_capacity" in leg:
             entry["available_capacity"] = leg["available_capacity"]
         legs.append(entry)
@@ -171,12 +175,14 @@ def _build_route(scenario, used_ids):
 
 def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM",
                           cargo="SEDAN", quantity=10, top_k=3,
-                          priorities=("COST", "TIME"), out_dir=None):
+                          priorities=("COST", "TIME"), out_dir=None, max_rounds=None,
+                          save_trace=True):
     out_dir = out_dir or OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     request_id = f"REQ-{origin}-{destination}-{cargo}-{quantity}"
     progress_path = os.path.join(out_dir, f"{request_id}_progress.json")
     result_path = os.path.join(out_dir, f"{request_id}_result.json")
+    trace_path = os.path.join(out_dir, f"{request_id}_trace.json")
 
     pw = ProgressWriter(progress_path, request_id)
     pw.on_progress({"stage": "loading_data"})
@@ -191,7 +197,14 @@ def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM
     agent = GlovisAgent(llm, kb, standin_carrier_id=standin, on_progress=pw.on_progress)
     out = agent.run(services, origin, destination, priority=priorities[0],
                      extra_priorities=list(priorities[1:]), cargo=cargo,
-                     quantity=quantity, top_k=top_k)
+                     quantity=quantity, top_k=top_k, max_rounds=max_rounds)
+
+    if save_trace and "negotiation_trace" in out:
+        # Every actual LLM system/user prompt + raw response, per leg per round —
+        # not included in result.json (that's frontend-facing only). Written
+        # separately so the prompts used in this run stay inspectable afterward.
+        with open(trace_path, "w", encoding="utf-8") as f:
+            json.dump(out["negotiation_trace"], f, ensure_ascii=False, indent=2)
 
     request_block = {
         "origin": origin, "destination": destination,
@@ -262,12 +275,15 @@ def main():
     ap.add_argument("--top_k", type=int, default=3)
     ap.add_argument("--priorities", default="COST,TIME")
     ap.add_argument("--out-dir", default=OUT_DIR)
+    ap.add_argument("--max_rounds", type=int, default=None,
+                     help="Max carrier<->buyer counter-offer round-trips per leg (default: agents.NEGOTIATION_MAX_ROUNDS_DEFAULT)")
     args = ap.parse_args()
 
     result = run_frontend_request(
         dataset_name=args.dataset, origin=args.origin, destination=args.destination,
         cargo=args.cargo, quantity=args.quantity, top_k=args.top_k,
         priorities=tuple(args.priorities.split(",")), out_dir=args.out_dir,
+        max_rounds=args.max_rounds,
     )
     print(json.dumps({"request_id": result["request_id"], "status": result["status"],
                        "routes_returned": len(result["routes"])}, ensure_ascii=False))
