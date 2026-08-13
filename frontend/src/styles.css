@@ -1,0 +1,36 @@
+:root {
+  font-family: Inter, Pretendard, system-ui, sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(720px, calc(100% - 48px));
+  margin: 20vh auto 0;
+}
+
+.eyebrow {
+  color: #3468d4;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+h1 {
+  margin: 8px 0 16px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.app-shell > p:last-child {
+  max-width: 620px;
+  color: #5c667a;
+  line-height: 1.7;
+}
+

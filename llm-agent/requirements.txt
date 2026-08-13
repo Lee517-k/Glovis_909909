@@ -1,0 +1,3 @@
+# Add provider SDKs after the model and integration approach are agreed.
+pydantic==2.9.2
+
