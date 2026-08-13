@@ -3,10 +3,10 @@ advanced:
   group_size: 100 # skip auto memory-based sizing (needs 12GB free); 18 agents fit in one group anyway
 llm:
 - api_key: unused-see-dotenv # actual key comes from OPENAI_API_KEY in .env, this field is ignored by agentsociety/llm/llm.py
-  base_url: http://localhost:11434/v1 # local Ollama OpenAI-compatible endpoint
-  model: llama3.1:8b
+  base_url: http://127.0.0.1:11500/v1 # our own dedicated Ollama instance (CPU-mode; driver too old for GPU), imported from /data/jiii111 model cache
+  model: qwen2.5-7b-instruct-local
   provider: openai
-  semaphore: 1 # ollama serves one request at a time locally
+  semaphore: 4 # OLLAMA_NUM_PARALLEL=4 on our own instance, not shared with other users
 env:
   avro:
     enabled: false # Whether to enable Avro
@@ -17,8 +17,9 @@ env:
     username: admin # MLflow server username
     password: CHANGE_ME # MLflow server password
   pgsql:
-    enabled: false # disabled for local test run, no Postgres server needed
-    dsn: postgresql://postgres:CHANGE_ME@localhost:5432/postgres # PostgreSQL connection string
+    enabled: true # local Postgres (conda-forge, no docker), started via pg_ctl -D /data/jiii111/pgdata
+    dsn: postgresql://postgres:supplychain@localhost:5432/postgres # PostgreSQL connection string
+    num_workers: 1 # explicit; "auto" (the default) never gets resolved because advanced.group_size is fixed (not "auto"), which short-circuits set_auto_workers() before it reaches num_workers
   redis:
     server: localhost # Redis server address
     port: 6379 # Redis port
