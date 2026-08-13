@@ -8,7 +8,13 @@ const JICON = ["ti-anchor", "ti-plane", "ti-file-check", "ti-truck", "ti-buildin
 type Scope = "all" | "active" | "completed" | "planned";
 type Sort = "eta" | "-eta" | "name" | "-name" | "progress" | "-progress";
 
-export function TrackingPage({ active }: { active: boolean }) {
+export function TrackingPage({
+  active,
+  onAnalyzeAlternative,
+}: {
+  active: boolean;
+  onAnalyzeAlternative: (prompt: string) => void;
+}) {
   const [view, setView] = useState<"map" | "list">("map");
   const [selectedId, setSelectedId] = useState<string | null>(() => sessionStorage.getItem("tracking:selectedShipment"));
   const [searchText, setSearchText] = useState("");
@@ -54,6 +60,21 @@ export function TrackingPage({ active }: { active: boolean }) {
   });
   const detail = overview?.detail;
   const steps = overview?.segments.steps ?? [];
+  const activeShipment = shipments.find((shipment) => shipment.id === activeId);
+
+  const analyzeAlternativeRoute = () => {
+    if (!activeShipment) return;
+
+    const modes = activeShipment.modes.length ? activeShipment.modes.join(", ") : "현재 운송 수단";
+    const prompt = [
+      `현재 운송 중인 ${activeShipment.id} 시나리오의 대안 경로를 분석해줘.`,
+      `출발지는 ${activeShipment.from}, 도착지는 ${activeShipment.to}이고 화물 정보는 ${activeShipment.cargo}야.`,
+      `현재 위치는 ${activeShipment.loc}, 진행률은 ${activeShipment.pct}%, 이용 중인 운송 수단은 ${modes}, 예상 도착일은 ${activeShipment.eta.replace("T", " ")}야.`,
+      "현재 경로와 비교해서 비용, 소요 시간, 탄소 배출량, 신뢰도를 고려한 대안 경로를 찾아주고 운송사 협상까지 진행해줘.",
+    ].join(" ");
+
+    onAnalyzeAlternative(prompt);
+  };
 
   const toggleEtaSort = () => setSort((current) => current === "eta" ? "-eta" : "eta");
   const resetFilters = () => {
@@ -133,7 +154,7 @@ export function TrackingPage({ active }: { active: boolean }) {
               <div className="tracking-detail-grid"><div><span>리스크</span><b>{detail?.riskLabel}</b></div><div><span>탄소 등급</span><b>{detail?.co2Label}</b></div><div><span>현재 위치</span><b>{detail?.location}</b></div><div><span>ETA</span><b>{detail?.eta.replace("T", " ")}</b></div></div>
               <div className="summarykv"><span>운송사</span><b>{detail?.carrierLabel}</b></div>
               {detail?.alert && <div className="aialert"><div className="h"><i className="ti ti-alert-triangle-filled" />AI 알림</div><p>{detail.alert}</p></div>}
-              <button className="btn primary tracking-full-button"><i className="ti ti-route-2" />대안 경로 분석</button>
+              <button className="btn primary tracking-full-button" onClick={analyzeAlternativeRoute} disabled={!activeShipment}><i className="ti ti-route-2" />대안 경로 분석</button>
               <div className="tracking-detail-actions"><button className="btn"><i className="ti ti-mail" />운송사 연락</button><button className="btn"><i className="ti ti-file-text" />서류</button></div>
             </div>
           </aside></div>

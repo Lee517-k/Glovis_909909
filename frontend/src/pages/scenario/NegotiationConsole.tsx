@@ -9,12 +9,24 @@ function formatElapsed(ms: number): string {
 }
 
 const STAGE_LABEL: Record<string, string> = {
+  loading_data: "데이터 준비",
   route_search: "경로 탐색",
+  scenarios_selected: "시나리오 선정",
+  scenario_negotiation: "시나리오 협상",
+  negotiate_leg: "구간별 운송사 협상",
   ranking: "순위 산정",
   complete: "완료 처리",
 };
 
 function eventIcon(ev: NegotiationEvent): string {
+  if (ev.stage === "loading_data") return "ti-database";
+  if (ev.stage === "scenarios_selected") return "ti-list-check";
+  if (ev.stage === "scenario_negotiation") return "ti-topology-star-3";
+  if (ev.stage === "negotiate_leg") {
+    if (ev.status === "self_operated") return "ti-building-warehouse";
+    if (ev.status === "done") return ev.deal_reached ? "ti-circle-check" : "ti-circle-x";
+    return "ti-messages";
+  }
   if (ev.stage === "route_search") return "ti-route";
   if (ev.stage === "ranking") return "ti-list-numbers";
   if (ev.stage === "complete") return "ti-flag-check";
@@ -58,14 +70,14 @@ export function NegotiationConsole({
         <div>
           <h4>
             <i className="ti ti-topology-star-3" />
-            규칙 기반 경로 탐색 · {STAGE_LABEL[stage] ?? stage}
+            AI 멀티에이전트 협상 · {STAGE_LABEL[stage] ?? stage}
           </h4>
           <div className="cs">{message || "대기 중..."}</div>
         </div>
         <div style={{ marginLeft: "auto", textAlign: "right" }}>
           <div style={{ fontSize: 28, fontWeight: 750, letterSpacing: -1 }}>{Math.round(progress)}%</div>
           <div style={{ fontSize: 9.5, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)", fontWeight: 700 }}>
-            {status === "PROCESSING" ? "Searching" : status === "COMPLETED" ? "Done" : "Failed"}
+            {status === "PROCESSING" ? "Negotiating" : status === "COMPLETED" ? "Done" : "Failed"}
           </div>
         </div>
       </div>
@@ -75,14 +87,14 @@ export function NegotiationConsole({
       {status === "PROCESSING" && (
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11.5, color: "rgba(255,255,255,.65)", margin: "8px 0 4px" }}>
           <i className="ti ti-clock" />
-          경과 {elapsed} · LLM 협상 없이 결정론적으로 계산해서 보통 1초 안에 끝납니다.
+          경과 {elapsed} · 각 운송사 에이전트가 구간별 조건을 검토하고 협상하고 있습니다.
         </div>
       )}
       <div className="cgrid">
         <div className="cbox" style={{ gridColumn: "span 3" }}>
           <h6>
             <i className="ti ti-activity" />
-            탐색 로그 ({events.length}건)
+            실시간 탐색·협상 로그 ({events.length}건)
           </h6>
           <div ref={feedRef} style={{ maxHeight: 260, overflowY: "auto", display: "flex", flexDirection: "column", gap: 6, paddingRight: 4 }}>
             {events.length === 0 && <div className="coordwait">탐색 시작을 기다리는 중입니다…</div>}

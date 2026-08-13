@@ -134,7 +134,12 @@ function App() {
     if (page === "dashboard") {
       return <YPDashboardPage onJump={navigate} />;
     }
-    if (page === "tracking") return <TrackingPage active />;
+    if (page === "tracking") {
+      return <TrackingPage active onAnalyzeAlternative={(prompt) => {
+        sessionStorage.setItem("scenario:promptDraft", prompt);
+        navigate("scenario");
+      }} />;
+    }
     if (page === "network") return <NetworkPage active />;
     if (page === "yp_data") {
       return <UploadPage active />;

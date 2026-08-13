@@ -129,6 +129,7 @@ export interface RouteResponse {
     mode: string;
     color: string;
     state: "done" | "active" | "pending";
+    progress_ratio: number;
     distance_km: number | null;
   }[];
   // 이 스키마엔 노드 좌표가 없어 프론트가 node_id로 worldmap.ts의 좌표를 직접 찾는다.

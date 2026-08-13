@@ -1,0 +1,79 @@
+{"kind":"deck","id":"pr/ek5i03","name":"Deck"}
+{"kind":"layout","layoutId":"774072c2-0483-4500-aa9e-e77701872886","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"e9695cd2-27cc-44a1-809a-e5dd51c5e1ca","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/ru9j92","slide":1,"title":"서비스 구성도","textShapes":40}
+{"kind":"textbox","id":"sh/1wjqxg7u","slide":1,"name":"title","text":"서비스 구성도","textPreview":"서비스 구성도","textChars":7,"textLines":1,"bbox":[35,18,360,58]}
+{"kind":"shape","id":"sh/ets7m183","slide":1,"name":"flow-banner","bbox":[405,48,820,52]}
+{"kind":"textbox","id":"sh/fu18v6po","slide":1,"name":"flow-text","text":"운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관","textPreview":"운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관","textChars":36,"textLines":1,"bbox":[425,52,780,43]}
+{"kind":"shape","id":"sh/ozapsb65","slide":1,"name":"frontend","bbox":[38,138,305,530]}
+{"kind":"shape","id":"sh/p03q1g7q","slide":1,"name":"backend","bbox":[405,128,330,550]}
+{"kind":"shape","id":"sh/2xs7q18z","slide":1,"name":"ai","bbox":[800,128,450,550]}
+{"kind":"shape","id":"sh/3y18z6pk","slide":1,"name":"verified-data","bbox":[1305,236,260,400]}
+{"kind":"shape","id":"sh/43qpgrq1","slide":1,"name":"memory-store","bbox":[370,704,365,52]}
+{"kind":"shape","id":"sh/54zqpc7m","slide":1,"name":"sqlite","bbox":[375,790,855,86]}
+{"kind":"shape","id":"sh/x4je1sfe","slide":1,"bbox":[343,403,62,0]}
+{"kind":"shape","id":"sh/w3ax8nyt","slide":1,"bbox":[735,403,65,0]}
+{"kind":"shape","id":"sh/v21wzix8","slide":1,"bbox":[735,403,65,0]}
+{"kind":"shape","id":"sh/a1sf6dgn","slide":1,"bbox":[1250,403,55,33]}
+{"kind":"shape","id":"sh/583e5cfa","slide":1,"bbox":[343,403,62,0]}
+{"kind":"shape","id":"sh/k7uxc7yp","slide":1,"bbox":[552.5,678,17.5,26]}
+{"kind":"shape","id":"sh/j6lw32x4","slide":1,"bbox":[570,678,232.5,112]}
+{"kind":"shape","id":"sh/i5sfaxgz","slide":1,"bbox":[1230,636,205,197]}
+{"kind":"textbox","id":"sh/tw3e9cfm","slide":1,"name":"front-heading","text":"▣  Frontend (React)","textPreview":"▣  Frontend (React)","textChars":19,"textLines":1,"bbox":[60,155,260,43]}
+{"kind":"shape","id":"sh/sbuxg7y1","slide":1,"name":"scenario-card","bbox":[55,226,270,195]}
+{"kind":"textbox","id":"sh/sf2hcb6x","slide":1,"name":"scenario-card-title","text":"운송 시나리오","textPreview":"운송 시나리오","textChars":7,"textLines":1,"bbox":[67,234,246,29]}
+{"kind":"textbox","id":"sh/dgby5gni","slide":1,"name":"scenario-card-body","text":"• 운송 조건 입력\n• 진행 상태 조회\n• 후보 경로 비교·선택","textPreview":"• 운송 조건 입력 | • 진행 상태 조회 | • 후보 경로 비교·선택","textChars":35,"textLines":3,"bbox":[70,265,240,148]}
+{"kind":"shape","id":"sh/qdkzalo7","slide":1,"name":"saved-card","bbox":[55,449,270,165]}
+{"kind":"textbox","id":"sh/retg3q5s","slide":1,"name":"saved-card-title","text":"제안서 보관함","textPreview":"제안서 보관함","textChars":7,"textLines":1,"bbox":[67,457,246,29]}
+{"kind":"textbox","id":"sh/03mhgv69","slide":1,"name":"saved-card-body","text":"• 선택 경로 저장·조회\n• 즐겨찾기·삭제","textPreview":"• 선택 경로 저장·조회 | • 즐겨찾기·삭제","textChars":23,"textLines":2,"bbox":[70,488,240,118]}
+{"kind":"textbox","id":"sh/14vy90nu","slide":1,"name":"back-heading","text":"⚙  Backend (FastAPI)","textPreview":"⚙  Backend (FastAPI)","textChars":20,"textLines":1,"bbox":[425,145,290,43]}
+{"kind":"shape","id":"sh/eh4zelo3","slide":1,"name":"run-api","bbox":[425,198,290,190]}
+{"kind":"textbox","id":"sh/fidg7q5o","slide":1,"name":"run-api-title","text":"시나리오 실행 API","textPreview":"시나리오 실행 API","textChars":11,"textLines":1,"bbox":[437,206,266,29]}
+{"kind":"textbox","id":"sh/g7ix4r65","slide":1,"name":"run-api-body","text":"GET   /nodes\nPOST  /negotiate\nGET   /negotiate/{request_id}\nPOST  /negotiate/{request_id}/save","textPreview":"GET   /nodes | POST  /negotiate | GET   /negotiate/{request_id} | POST  /negotiate/{request_id}/save","textChars":94,"textLines":4,"bbox":[440,237,260,143]}
+{"kind":"shape","id":"sh/h8ryxwna","slide":1,"name":"saved-api","bbox":[425,403,290,190]}
+{"kind":"textbox","id":"sh/j2hk3ups","slide":1,"name":"saved-api-title","text":"제안서 보관 API","textPreview":"제안서 보관 API","textChars":10,"textLines":1,"bbox":[437,411,266,29]}
+{"kind":"textbox","id":"sh/y18ja98n","slide":1,"name":"saved-api-body","text":"GET     /saved\nGET     /saved/{scenario_id}\nPATCH  /saved/{scenario_id}/favorite\nDELETE /saved/{scenario_id}","textPreview":"GET     /saved | GET     /saved/{scenario_id} | PATCH  /saved/{scenario_id}/favorite | DELETE /saved/{scenario_id}","textChars":108,"textLines":4,"bbox":[440,442,260,143]}
+{"kind":"textbox","id":"sh/l4z2547y","slide":1,"name":"api-base","text":"Base: /api/scenarios/yum","textPreview":"Base: /api/scenarios/yum","textChars":24,"textLines":1,"bbox":[442,594,256,24]}
+{"kind":"textbox","id":"sh/k3q1czqd","slide":1,"name":"backend-process","text":"✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling\n▣ 결과 변환·시나리오 저장","textPreview":"✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling | ▣ 결과 변환·시나리오 저장","textChars":48,"textLines":2,"bbox":[438,622,265,45]}
+{"kind":"textbox","id":"sh/byxkzupw","slide":1,"name":"rest-label","text":"REST API","textPreview":"REST API","textChars":8,"textLines":1,"bbox":[348,287,58,28]}
+{"kind":"textbox","id":"sh/axoj6p8b","slide":1,"name":"request-label","text":"구조화\n실행 요청","textPreview":"구조화 | 실행 요청","textChars":9,"textLines":2,"bbox":[742,270,55,58]}
+{"kind":"textbox","id":"sh/x0z21472","slide":1,"name":"response-label","text":"진행 이벤트·추천 경로\n/ 상태·결과 응답","textPreview":"진행 이벤트·추천 경로 | / 상태·결과 응답","textChars":23,"textLines":2,"bbox":[740,470,60,76]}
+{"kind":"textbox","id":"sh/wz618zqh","slide":1,"name":"ai-heading","text":"▣  AI (Multi-Agent)","textPreview":"▣  AI (Multi-Agent)","textChars":19,"textLines":1,"bbox":[830,145,390,43]}
+{"kind":"shape","id":"sh/nax0vap0","slide":1,"name":"glovis-agent","bbox":[865,205,320,82]}
+{"kind":"textbox","id":"sh/29oj2p8f","slide":1,"name":"glovis-agent-title","text":"Glovis Agent","textPreview":"Glovis Agent","textChars":12,"textLines":1,"bbox":[877,213,296,29]}
+{"kind":"textbox","id":"sh/2h8n6d4z","slide":1,"name":"glovis-agent-body","text":"경로 조정 · 자사 구간 판단","textPreview":"경로 조정 · 자사 구간 판단","textChars":16,"textLines":1,"bbox":[880,244,290,35]}
+{"kind":"shape","id":"sh/3ihofilk","slide":1,"name":"route-search","bbox":[825,340,125,105]}
+{"kind":"textbox","id":"sh/4jq58nm5","slide":1,"name":"route-search-title","text":"Route Search","textPreview":"Route Search","textChars":12,"textLines":1,"bbox":[837,348,101,29]}
+{"kind":"textbox","id":"sh/pkz6hs3a","slide":1,"name":"route-search-body","text":"후보 경로·납기 검증","textPreview":"후보 경로·납기 검증","textChars":11,"textLines":1,"bbox":[840,379,95,58]}
+{"kind":"shape","id":"sh/udon2d4n","slide":1,"name":"carrier-agent","bbox":[965,340,130,105]}
+{"kind":"textbox","id":"sh/fex4bil8","slide":1,"name":"carrier-agent-title","text":"Carrier Agent","textPreview":"Carrier Agent","textChars":13,"textLines":1,"bbox":[977,348,106,29]}
+{"kind":"textbox","id":"sh/gfq543mt","slide":1,"name":"carrier-agent-body","text":"운송사별 제안·협상","textPreview":"운송사별 제안·협상","textChars":10,"textLines":1,"bbox":[980,379,100,58]}
+{"kind":"shape","id":"sh/hgz6d83e","slide":1,"name":"ollama","bbox":[1110,340,125,105]}
+{"kind":"textbox","id":"sh/6ponyt4r","slide":1,"name":"ollama-title","text":"Ollama LLM","textPreview":"Ollama LLM","textChars":10,"textLines":1,"bbox":[1122,348,101,29]}
+{"kind":"textbox","id":"sh/7ax47ylc","slide":1,"name":"ollama-body","text":"협상 판단·JSON 응답","textPreview":"협상 판단·JSON 응답","textChars":13,"textLines":1,"bbox":[1125,379,95,58]}
+{"kind":"shape","id":"sh/9gnit0r6","slide":1,"name":"grounding","bbox":[825,478,155,95]}
+{"kind":"textbox","id":"sh/8feh0val","slide":1,"name":"grounding-title","text":"Grounding","textPreview":"Grounding","textChars":9,"textLines":1,"bbox":[837,486,131,29]}
+{"kind":"textbox","id":"sh/ne50rq90","slide":1,"name":"grounding-body","text":"협상값 ↔ 원본 운임 검증","textPreview":"협상값 ↔ 원본 운임 검증","textChars":14,"textLines":1,"bbox":[840,517,125,48]}
+{"kind":"shape","id":"sh/mdwzylsf","slide":1,"name":"result-ranking","bbox":[1010,500,220,92]}
+{"kind":"textbox","id":"sh/lcnypgru","slide":1,"name":"result-ranking-title","text":"Result Ranking","textPreview":"Result Ranking","textChars":14,"textLines":1,"bbox":[1022,508,196,29]}
+{"kind":"textbox","id":"sh/0behwba9","slide":1,"name":"result-ranking-body","text":"비용 · 시간 · 탄소 · 신뢰도","textPreview":"비용 · 시간 · 탄소 · 신뢰도","textChars":18,"textLines":1,"bbox":[1025,539,190,45]}
+{"kind":"shape","id":"sh/zqlgnq9o","slide":1,"bbox":[887.5,287,137.5,53]}
+{"kind":"shape","id":"sh/ypczulsj","slide":1,"bbox":[1025,287,5,53]}
+{"kind":"shape","id":"sh/do3ylgry","slide":1,"bbox":[1095,392.5,15,0]}
+{"kind":"shape","id":"sh/cnuhsbad","slide":1,"bbox":[887.5,445,232.5,55]}
+{"kind":"shape","id":"sh/4ryh8bi9","slide":1,"bbox":[1030,445,90,55]}
+{"kind":"shape","id":"sh/ps7i1gzu","slide":1,"bbox":[980,525.5,30,20.5]}
+{"kind":"textbox","id":"sh/25gz6103","slide":1,"name":"data-heading","text":"▣  검증 데이터","textPreview":"▣  검증 데이터","textChars":9,"textLines":1,"bbox":[1330,260,210,44]}
+{"kind":"shape","id":"sh/3qp0z6ho","slide":1,"name":"carrier-data","bbox":[1325,330,220,82]}
+{"kind":"textbox","id":"sh/g3eh4bix","slide":1,"name":"carrier-data-title","text":"운송사 데이터","textPreview":"운송사 데이터","textChars":7,"textLines":1,"bbox":[1337,338,196,29]}
+{"kind":"textbox","id":"sh/h4nixwzi","slide":1,"name":"carrier-data-body","text":"운임 · 용량 · 서비스","textPreview":"운임 · 용량 · 서비스","textChars":13,"textLines":1,"bbox":[1340,369,190,35]}
+{"kind":"shape","id":"sh/u1wz2107","slide":1,"name":"rule-data","bbox":[1325,438,220,82]}
+{"kind":"textbox","id":"sh/f25gv6hc","slide":1,"name":"rule-data-title","text":"운송 규칙","textPreview":"운송 규칙","textChars":5,"textLines":1,"bbox":[1337,446,196,29]}
+{"kind":"textbox","id":"sh/0zihgvih","slide":1,"name":"rule-data-body","text":"항만 · 환적 · 통관","textPreview":"항만 · 환적 · 통관","textChars":12,"textLines":1,"bbox":[1340,477,190,35]}
+{"kind":"shape","id":"sh/10ri90z2","slide":1,"name":"history-data","bbox":[1325,546,220,72]}
+{"kind":"textbox","id":"sh/vutkzu14","slide":1,"name":"history-data-title","text":"과거 이력","textPreview":"과거 이력","textChars":5,"textLines":1,"bbox":[1337,554,196,29]}
+{"kind":"textbox","id":"sh/atk36pkj","slide":1,"name":"history-data-body","text":"운송 완료 데이터","textPreview":"운송 완료 데이터","textChars":9,"textLines":1,"bbox":[1340,585,190,25]}
+{"kind":"textbox","id":"sh/xgv214ja","slide":1,"name":"memory-text","text":"▣  In-memory Job Store  |  진행 상태·이벤트","textPreview":"▣  In-memory Job Store  |  진행 상태·이벤트","textChars":36,"textLines":1,"bbox":[386,711,333,36]}
+{"kind":"textbox","id":"sh/wv2l8z2p","slide":1,"name":"db-title","text":"▣  SQLite · glovis_merged.db","textPreview":"▣  SQLite · glovis_merged.db","textChars":28,"textLines":1,"bbox":[500,799,610,35]}
+{"kind":"textbox","id":"sh/jidk3e10","slide":1,"name":"db-body","text":"운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과","textPreview":"운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과","textChars":38,"textLines":1,"bbox":[490,839,630,27]}
+{"kind":"notes","id":"nt/ru9j92","slide":1,"text":""}

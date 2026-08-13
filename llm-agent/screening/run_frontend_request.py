@@ -179,7 +179,7 @@ def _build_route(scenario, used_ids):
 def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM",
                           cargo="SEDAN", quantity=10, top_k=3,
                           priorities=("COST", "TIME"), out_dir=None, max_rounds=None,
-                          save_trace=True):
+                          save_trace=True, on_progress=None):
     out_dir = out_dir or OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     request_id = f"REQ-{origin}-{destination}-{cargo}-{quantity}"
@@ -188,7 +188,12 @@ def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM
     trace_path = os.path.join(out_dir, f"{request_id}_trace.json")
 
     pw = ProgressWriter(progress_path, request_id)
-    pw.on_progress({"stage": "loading_data"})
+    def emit(event):
+        pw.on_progress(event)
+        if on_progress is not None:
+            on_progress(event)
+
+    emit({"stage": "loading_data", "status": "start"})
 
     services = LOADERS[dataset_name](DATA_ROOT)
     kb = load_kb(DATA_ROOT, DATASET_DIRS[dataset_name])
@@ -197,7 +202,7 @@ def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM
     standin = GLOVIS_STANDIN_BY_DATASET.get(dataset_name)
     llm = LLMClient()
 
-    agent = GlovisAgent(llm, kb, standin_carrier_id=standin, on_progress=pw.on_progress)
+    agent = GlovisAgent(llm, kb, standin_carrier_id=standin, on_progress=emit)
     out = agent.run(services, origin, destination, priority=priorities[0],
                      extra_priorities=list(priorities[1:]), cargo=cargo,
                      quantity=quantity, top_k=top_k, max_rounds=max_rounds)

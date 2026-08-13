@@ -39,7 +39,7 @@ def _dt(value: str | None) -> datetime | None:
 def _compute_tracking(scenario: dict, legs: list[dict], now: datetime) -> dict:
     """ATD/ATA로 진행률·상태·현재위치·지연·리스크를 역산한다. 저장 안 함."""
     leg_states: dict[int, str] = {}
-    elapsed_h = delay_total = 0.0
+    delay_total = 0.0
 
     for leg in legs:
         l_eta = _dt(leg["eta"])
@@ -48,11 +48,9 @@ def _compute_tracking(scenario: dict, legs: list[dict], now: datetime) -> dict:
 
         if l_ata:
             status = "COMPLETED"
-            elapsed_h += span_h
             delay_total += max(0.0, (l_ata - l_eta).total_seconds() / 3600)
         elif l_atd:
             status = "IN_TRANSIT"
-            elapsed_h += min((now - l_atd).total_seconds() / 3600, span_h)
             overdue = max(0.0, (now - l_eta).total_seconds() / 3600)
             delay_total += overdue or (leg.get("expected_delay_hours") or 0.0)
         else:
@@ -60,7 +58,6 @@ def _compute_tracking(scenario: dict, legs: list[dict], now: datetime) -> dict:
             delay_total += leg.get("expected_delay_hours") or 0.0
         leg_states[leg["sequence"]] = status
 
-    total_h = scenario["total_transit_hours"] or 1.0
     statuses = list(leg_states.values())
     if all(s == "COMPLETED" for s in statuses):
         shipment_status, progress = "COMPLETED", 100
@@ -68,7 +65,20 @@ def _compute_tracking(scenario: dict, legs: list[dict], now: datetime) -> dict:
         shipment_status, progress = "PLANNED", 0
     else:
         shipment_status = "IN_TRANSIT"
-        progress = min(99, max(1, round(elapsed_h / total_h * 100)))
+        # The DB records route milestones (leg ATD/ATA), not live GPS coordinates.
+        # Treat every leg as one route step so a long sea leg does not force the
+        # shipment to 97~99% before its inland handoff legs are completed.
+        weights = [1.0 for _ in legs]
+        completed_weight = sum(
+            weight for leg, weight in zip(legs, weights)
+            if leg_states[leg["sequence"]] == "COMPLETED"
+        )
+        active_weight = sum(
+            weight * 0.5
+            for leg, weight in zip(legs, weights)
+            if leg_states[leg["sequence"]] == "IN_TRANSIT"
+        )
+        progress = min(99, max(1, round((completed_weight + active_weight) / (sum(weights) or 1.0) * 100)))
 
     risk = ("HIGH" if delay_total > 24 else "MEDIUM" if delay_total > 8
             else "LOW" if delay_total > 0 else "NONE")
@@ -97,6 +107,13 @@ def _compute_tracking(scenario: dict, legs: list[dict], now: datetime) -> dict:
         "on_schedule": delay_total <= 0,
         "eta_revised": eta_revised.isoformat(timespec="minutes"),
         "leg_status_by_seq": leg_states,
+        "leg_progress_by_seq": {
+            leg["sequence"]: (
+                1.0 if leg_states[leg["sequence"]] == "COMPLETED" else
+                0.5
+                if leg_states[leg["sequence"]] == "IN_TRANSIT" else 0.0
+            ) for leg in legs
+        },
     }
 
 
@@ -406,6 +423,7 @@ def get_shipment_route(shipment_id: str) -> dict | None:
         "color": MODE_HEX.get(l["mode"], "#5FA8FF"),
         "state": ("done" if tr["leg_status_by_seq"][l["sequence"]] == "COMPLETED" else
                   "active" if tr["leg_status_by_seq"][l["sequence"]] == "IN_TRANSIT" else "pending"),
+        "progress_ratio": tr["leg_progress_by_seq"][l["sequence"]],
         "distance_km": l.get("distance_km"),
     } for l in legs]
     return {"shipment_id": shipment_id, "legs": out_legs, "nodes": [], "current": None, "bbox": None}

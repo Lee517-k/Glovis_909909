@@ -160,6 +160,7 @@ class ScenarioTrackingStore:
             return cur.rowcount > 0
 
 
+
 _store: ScenarioTrackingStore | None = None
 _history_store: ScenarioTrackingStore | None = None
 

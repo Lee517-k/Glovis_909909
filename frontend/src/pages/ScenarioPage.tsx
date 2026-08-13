@@ -130,7 +130,12 @@ export function ScenarioPage({
     if (nodes) mergeNodeCoords(nodes.map((nd) => ({ node_id: nd.node_id, longitude: nd.longitude, latitude: nd.latitude, label: nd.name })));
   }, [nodes]);
 
-  const [requestText, setRequestText] = useState(DEFAULT_TEXT);
+  const [requestText, setRequestText] = useState(() => {
+    const transferredPrompt = sessionStorage.getItem("scenario:promptDraft");
+    if (!transferredPrompt) return DEFAULT_TEXT;
+    sessionStorage.removeItem("scenario:promptDraft");
+    return transferredPrompt;
+  });
   const [parseState, setParseState] = useState<"idle" | "parsing" | "done">("done");
   const [pills, setPills] = useState<string[]>(["부산 (KRPUS)", "함부르크 (DEHAM)", "세단 10대", "우선순위 COST"]);
   const [form, setForm] = useState<NegotiationForm>(DEFAULT_FORM);
@@ -467,17 +472,18 @@ export function ScenarioPage({
               </div>
             </div>
             <div className="fcanvas">
-              <div className="frow">
-                <NodeSearchInput label="출발지" nodes={nodes ?? []} value={form.origin} onChange={(nodeId) => updateForm({ origin: nodeId })} wide />
-                <div className="hlink" />
-                <NodeSearchInput label="도착지" nodes={nodes ?? []} value={form.destination} onChange={(nodeId) => updateForm({ destination: nodeId })} wide />
+              <div className="flow-stage-label"><span>ROUTE</span><b>운송 구간 설정</b><em>출발지와 최종 도착지를 연결합니다</em></div>
+              <div className="frow flow-route-row">
+                <NodeSearchInput label="출발지" variant="origin" nodes={nodes ?? []} value={form.origin} onChange={(nodeId) => updateForm({ origin: nodeId })} wide />
+                <div className="hlink"><span><i className="ti ti-arrow-right" /> 운송 경로</span></div>
+                <NodeSearchInput label="도착지" variant="destination" nodes={nodes ?? []} value={form.destination} onChange={(nodeId) => updateForm({ destination: nodeId })} wide />
               </div>
-              <div className="vlink" />
-              <div className="frow">
-                <div className="node green wide">
-                  <div className="nt">
-                    <i className="ti ti-box" />
-                    화물 정보
+              <div className="vlink"><span>화물 연결</span></div>
+              <div className="frow flow-cargo-row">
+                <div className="node green wide flow-cargo-node">
+                  <div className="flow-node-head">
+                    <span className="flow-node-icon"><i className="ti ti-box" /></span>
+                    <div><small>STEP 03</small><div className="nt">화물 정보</div></div>
                   </div>
                   <div className="nrow" style={{ borderTop: 0, paddingTop: 0, marginTop: 9 }}>
                     <div>
@@ -507,9 +513,10 @@ export function ScenarioPage({
                   </div>
                 </div>
               </div>
-              <div className="vlink" />
-              <div className="frow three">
-                <div className="node red">
+              <div className="vlink flow-branch-link"><span>운송 조건</span></div>
+              <div className="frow three flow-condition-row">
+                <div className="flow-stage-label condition"><span>CONDITION</span><b>실행 조건 설정</b><em>일정과 최적화 기준을 적용합니다</em></div>
+                <div className="node red flow-condition-node">
                   <div className="nt">
                     <i className="ti ti-calendar-due" />
                     출발가능일
@@ -517,7 +524,7 @@ export function ScenarioPage({
                   <input type="date" className="nv" value={etd} onChange={(e) => setEtd(e.target.value)} style={{ border: "none", width: "100%", background: "transparent" }} />
                   <div className="ns">이 날짜부터 출발 가능하다고 보고 협상합니다</div>
                 </div>
-                <div className="node purple">
+                <div className="node purple flow-condition-node">
                   <div className="nt">
                     <i className="ti ti-calendar-due" />
                     납기 제약
@@ -529,7 +536,7 @@ export function ScenarioPage({
                       : "출발가능일보다 늦어야 합니다"}
                   </div>
                 </div>
-                <div className="node orange">
+                <div className="node orange flow-condition-node">
                   <div className="nt">
                     <i className="ti ti-adjustments" />
                     우선순위

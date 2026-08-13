@@ -47,6 +47,14 @@ REGION_NAME = {rid: name for rid, name in COUNTRY_REGION.values()} | {DEFAULT_RE
 CARRIER_COLORS = {
     "HMM": "#0B3C71", "MSC": "#1668C4", "DBCARGO": "#12A47B", "CREBLOCK": "#0A7A57",
     "EUTRUCK": "#E08A00", "GLOVISINLAND": "#96610A", "KECARGO": "#7A5AF8",
+    # Current normalized service-data carrier IDs.
+    "HYUNDAI_GLOVIS_SEA": "#0B3C71",
+    "EUROTRANS_AUTO": "#E08A00",
+    "DB_CARGO": "#12A47B",
+    "DSV_ROAD": "#0A7A57",
+    "KOREAN_AIR_CARGO": "#7A5AF8",
+    "LUFTHANSA_CARGO": "#A855F7",
+    "RAIL_CARGO_GROUP": "#D65A4A",
 }
 DEFAULT_COLOR = "#C3CDDA"
 OWN_CARRIER_ID = "GLOVISINLAND"  # 자가 운송(GLOVIS Inland)은 의존도 경고 대상에서 제외

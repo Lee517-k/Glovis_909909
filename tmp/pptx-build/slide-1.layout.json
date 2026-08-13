@@ -1,0 +1,3614 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ru9j92",
+    "id": "ru9j92",
+    "slide": 1,
+    "layoutId": "e9695cd2-27cc-44a1-809a-e5dd51c5e1ca",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "774072c2-0483-4500-aa9e-e77701872886",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e9695cd2-27cc-44a1-809a-e5dd51c5e1ca",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "774072c2-0483-4500-aa9e-e77701872886",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "774072c2-0483-4500-aa9e-e77701872886",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1wjqxg7u",
+      "id": "1",
+      "name": "title",
+      "bbox": [
+        35,
+        18,
+        360,
+        58
+      ],
+      "geometry": "rect",
+      "text": "서비스 구성도",
+      "textPreview": "서비스 구성도",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#F57C00",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "서비스 구성도"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "서비스 구성도",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#F57C00",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "서비스 구성도",
+              "fontSize": 46,
+              "color": "#F57C00",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ets7m183",
+      "id": "2",
+      "name": "flow-banner",
+      "bbox": [
+        405,
+        48,
+        820,
+        52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#64748B",
+      "lineWidth": 2
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fu18v6po",
+      "id": "3",
+      "name": "flow-text",
+      "bbox": [
+        425,
+        52,
+        780,
+        43
+      ],
+      "geometry": "rect",
+      "text": "운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관",
+      "textPreview": "운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송 요청  →  멀티 에이전트 탐색·협상  →  경로 선택·보관",
+              "fontSize": 24,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozapsb65",
+      "id": "4",
+      "name": "frontend",
+      "bbox": [
+        38,
+        138,
+        305,
+        530
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F5F9FF",
+      "lineColor": "#1565C0",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p03q1g7q",
+      "id": "5",
+      "name": "backend",
+      "bbox": [
+        405,
+        128,
+        330,
+        550
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F5FBF6",
+      "lineColor": "#237A35",
+      "lineWidth": 2
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xs7q18z",
+      "id": "6",
+      "name": "ai",
+      "bbox": [
+        800,
+        128,
+        450,
+        550
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FAF7FF",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3y18z6pk",
+      "id": "7",
+      "name": "verified-data",
+      "bbox": [
+        1305,
+        236,
+        260,
+        400
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF9F2",
+      "lineColor": "#F57C00",
+      "lineWidth": 2
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/43qpgrq1",
+      "id": "8",
+      "name": "memory-store",
+      "bbox": [
+        370,
+        704,
+        365,
+        52
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4FBF5",
+      "lineColor": "#237A35",
+      "lineWidth": 2
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54zqpc7m",
+      "id": "9",
+      "name": "sqlite",
+      "bbox": [
+        375,
+        790,
+        855,
+        86
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F7FAFF",
+      "lineColor": "#1565C0",
+      "lineWidth": 2
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4je1sfe",
+      "id": "10",
+      "bbox": [
+        343,
+        403,
+        62,
+        0
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#111827",
+      "lineWidth": 2
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3ax8nyt",
+      "id": "11",
+      "bbox": [
+        735,
+        403,
+        65,
+        0
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#111827",
+      "lineWidth": 2
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v21wzix8",
+      "id": "12",
+      "bbox": [
+        735,
+        403,
+        65,
+        0
+      ],
+      "horizontalFlip": true,
+      "geometry": "straightConnector1",
+      "lineColor": "#111827",
+      "lineWidth": 2
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1sf6dgn",
+      "id": "13",
+      "bbox": [
+        1250,
+        403,
+        55,
+        33
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#111827",
+      "lineWidth": 2
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/583e5cfa",
+      "id": "14",
+      "bbox": [
+        343,
+        403,
+        62,
+        0
+      ],
+      "horizontalFlip": true,
+      "geometry": "straightConnector1",
+      "lineColor": "#111827",
+      "lineWidth": 2
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7uxc7yp",
+      "id": "15",
+      "bbox": [
+        552.5,
+        678,
+        17.5,
+        26
+      ],
+      "horizontalFlip": true,
+      "geometry": "straightConnector1",
+      "lineColor": "#237A35",
+      "lineWidth": 2
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6lw32x4",
+      "id": "16",
+      "bbox": [
+        570,
+        678,
+        232.5,
+        112
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#1565C0",
+      "lineWidth": 2
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i5sfaxgz",
+      "id": "17",
+      "bbox": [
+        1230,
+        636,
+        205,
+        197
+      ],
+      "horizontalFlip": true,
+      "geometry": "bentConnector3",
+      "lineColor": "#1565C0",
+      "lineWidth": 2
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tw3e9cfm",
+      "id": "18",
+      "name": "front-heading",
+      "bbox": [
+        60,
+        155,
+        260,
+        43
+      ],
+      "geometry": "rect",
+      "text": "▣  Frontend (React)",
+      "textPreview": "▣  Frontend (React)",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#1565C0",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "▣  Frontend (React)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "▣  Frontend (React)",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#1565C0",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣  Frontend (React)",
+              "fontSize": 25,
+              "color": "#1565C0",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sbuxg7y1",
+      "id": "19",
+      "name": "scenario-card",
+      "bbox": [
+        55,
+        226,
+        270,
+        195
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8BB8EE",
+      "lineWidth": 2
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sf2hcb6x",
+      "id": "20",
+      "name": "scenario-card-title",
+      "bbox": [
+        67,
+        234,
+        246,
+        29
+      ],
+      "geometry": "rect",
+      "text": "운송 시나리오",
+      "textPreview": "운송 시나리오",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1565C0",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송 시나리오"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송 시나리오",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1565C0",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송 시나리오",
+              "fontSize": 20,
+              "color": "#1565C0",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgby5gni",
+      "id": "21",
+      "name": "scenario-card-body",
+      "bbox": [
+        70,
+        265,
+        240,
+        148
+      ],
+      "geometry": "rect",
+      "text": "• 운송 조건 입력\n• 진행 상태 조회\n• 후보 경로 비교·선택",
+      "textPreview": "• 운송 조건 입력 | • 진행 상태 조회 | • 후보 경로 비교·선택",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 운송 조건 입력"
+          },
+          {
+            "index": 2,
+            "text": "• 진행 상태 조회"
+          },
+          {
+            "index": 3,
+            "text": "• 후보 경로 비교·선택"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• 운송 조건 입력",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• 운송 조건 입력",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "• 진행 상태 조회",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• 진행 상태 조회",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "• 후보 경로 비교·선택",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• 후보 경로 비교·선택",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qdkzalo7",
+      "id": "22",
+      "name": "saved-card",
+      "bbox": [
+        55,
+        449,
+        270,
+        165
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8BB8EE",
+      "lineWidth": 2
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/retg3q5s",
+      "id": "23",
+      "name": "saved-card-title",
+      "bbox": [
+        67,
+        457,
+        246,
+        29
+      ],
+      "geometry": "rect",
+      "text": "제안서 보관함",
+      "textPreview": "제안서 보관함",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#1565C0",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "제안서 보관함"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "제안서 보관함",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#1565C0",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "제안서 보관함",
+              "fontSize": 20,
+              "color": "#1565C0",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03mhgv69",
+      "id": "24",
+      "name": "saved-card-body",
+      "bbox": [
+        70,
+        488,
+        240,
+        118
+      ],
+      "geometry": "rect",
+      "text": "• 선택 경로 저장·조회\n• 즐겨찾기·삭제",
+      "textPreview": "• 선택 경로 저장·조회 | • 즐겨찾기·삭제",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "• 선택 경로 저장·조회"
+          },
+          {
+            "index": 2,
+            "text": "• 즐겨찾기·삭제"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "• 선택 경로 저장·조회",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• 선택 경로 저장·조회",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "• 즐겨찾기·삭제",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "• 즐겨찾기·삭제",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14vy90nu",
+      "id": "25",
+      "name": "back-heading",
+      "bbox": [
+        425,
+        145,
+        290,
+        43
+      ],
+      "geometry": "rect",
+      "text": "⚙  Backend (FastAPI)",
+      "textPreview": "⚙  Backend (FastAPI)",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "color": "#237A35",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "⚙  Backend (FastAPI)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "⚙  Backend (FastAPI)",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#237A35",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "⚙  Backend (FastAPI)",
+              "fontSize": 25,
+              "color": "#237A35",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/eh4zelo3",
+      "id": "26",
+      "name": "run-api",
+      "bbox": [
+        425,
+        198,
+        290,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#82B98A",
+      "lineWidth": 2
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fidg7q5o",
+      "id": "27",
+      "name": "run-api-title",
+      "bbox": [
+        437,
+        206,
+        266,
+        29
+      ],
+      "geometry": "rect",
+      "text": "시나리오 실행 API",
+      "textPreview": "시나리오 실행 API",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#237A35",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "시나리오 실행 API"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "시나리오 실행 API",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#237A35",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "시나리오 실행 API",
+              "fontSize": 20,
+              "color": "#237A35",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7ix4r65",
+      "id": "28",
+      "name": "run-api-body",
+      "bbox": [
+        440,
+        237,
+        260,
+        143
+      ],
+      "geometry": "rect",
+      "text": "GET   /nodes\nPOST  /negotiate\nGET   /negotiate/{request_id}\nPOST  /negotiate/{request_id}/save",
+      "textPreview": "GET   /nodes | POST  /negotiate | GET   /negotiate/{request_id} | POST  /negotiate/{request_id}/save",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GET   /nodes"
+          },
+          {
+            "index": 2,
+            "text": "POST  /negotiate"
+          },
+          {
+            "index": 3,
+            "text": "GET   /negotiate/{request_id}"
+          },
+          {
+            "index": 4,
+            "text": "POST  /negotiate/{request_id}/save"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GET   /nodes",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GET   /nodes",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "POST  /negotiate",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "POST  /negotiate",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "GET   /negotiate/{request_id}",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GET   /negotiate/{request_id}",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "POST  /negotiate/{request_id}/save",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "POST  /negotiate/{request_id}/save",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8ryxwna",
+      "id": "29",
+      "name": "saved-api",
+      "bbox": [
+        425,
+        403,
+        290,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#82B98A",
+      "lineWidth": 2
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2hk3ups",
+      "id": "30",
+      "name": "saved-api-title",
+      "bbox": [
+        437,
+        411,
+        266,
+        29
+      ],
+      "geometry": "rect",
+      "text": "제안서 보관 API",
+      "textPreview": "제안서 보관 API",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#237A35",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "제안서 보관 API"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "제안서 보관 API",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#237A35",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "제안서 보관 API",
+              "fontSize": 20,
+              "color": "#237A35",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y18ja98n",
+      "id": "31",
+      "name": "saved-api-body",
+      "bbox": [
+        440,
+        442,
+        260,
+        143
+      ],
+      "geometry": "rect",
+      "text": "GET     /saved\nGET     /saved/{scenario_id}\nPATCH  /saved/{scenario_id}/favorite\nDELETE /saved/{scenario_id}",
+      "textPreview": "GET     /saved | GET     /saved/{scenario_id} | PATCH  /saved/{scenario_id}/favorite | DELETE /saved/{scenario_id}",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GET     /saved"
+          },
+          {
+            "index": 2,
+            "text": "GET     /saved/{scenario_id}"
+          },
+          {
+            "index": 3,
+            "text": "PATCH  /saved/{scenario_id}/favorite"
+          },
+          {
+            "index": 4,
+            "text": "DELETE /saved/{scenario_id}"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GET     /saved",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GET     /saved",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "GET     /saved/{scenario_id}",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GET     /saved/{scenario_id}",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "PATCH  /saved/{scenario_id}/favorite",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PATCH  /saved/{scenario_id}/favorite",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "DELETE /saved/{scenario_id}",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DELETE /saved/{scenario_id}",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l4z2547y",
+      "id": "32",
+      "name": "api-base",
+      "bbox": [
+        442,
+        594,
+        256,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Base: /api/scenarios/yum",
+      "textPreview": "Base: /api/scenarios/yum",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#475569",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Base: /api/scenarios/yum"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Base: /api/scenarios/yum",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#475569",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Base: /api/scenarios/yum",
+              "fontSize": 14,
+              "color": "#475569",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3q1czqd",
+      "id": "33",
+      "name": "backend-process",
+      "bbox": [
+        438,
+        622,
+        265,
+        45
+      ],
+      "geometry": "rect",
+      "text": "✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling\n▣ 결과 변환·시나리오 저장",
+      "textPreview": "✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling | ▣ 결과 변환·시나리오 저장",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "✓ 입력·제약조건 검증    ↻ 비동기"
+          },
+          {
+            "index": 2,
+            "text": "작업·Polling"
+          },
+          {
+            "index": 3,
+            "text": "▣ 결과 변환·시나리오 저장"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "✓ 입력·제약조건 검증    ↻ 비동기 작업·Polling",
+              "fontSize": 15,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "▣ 결과 변환·시나리오 저장",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣ 결과 변환·시나리오 저장",
+              "fontSize": 15,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/byxkzupw",
+      "id": "34",
+      "name": "rest-label",
+      "bbox": [
+        348,
+        287,
+        58,
+        28
+      ],
+      "geometry": "rect",
+      "text": "REST API",
+      "textPreview": "REST API",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "REST"
+          },
+          {
+            "index": 2,
+            "text": "API"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "REST API",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "REST API",
+              "fontSize": 14,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axoj6p8b",
+      "id": "35",
+      "name": "request-label",
+      "bbox": [
+        742,
+        270,
+        55,
+        58
+      ],
+      "geometry": "rect",
+      "text": "구조화\n실행 요청",
+      "textPreview": "구조화 | 실행 요청",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "구조"
+          },
+          {
+            "index": 2,
+            "text": "화"
+          },
+          {
+            "index": 3,
+            "text": "실행"
+          },
+          {
+            "index": 4,
+            "text": "요청"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "구조화",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "구조화",
+              "fontSize": 14,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "실행 요청",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "실행 요청",
+              "fontSize": 14,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0z21472",
+      "id": "36",
+      "name": "response-label",
+      "bbox": [
+        740,
+        470,
+        60,
+        76
+      ],
+      "geometry": "rect",
+      "text": "진행 이벤트·추천 경로\n/ 상태·결과 응답",
+      "textPreview": "진행 이벤트·추천 경로 | / 상태·결과 응답",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "진행"
+          },
+          {
+            "index": 2,
+            "text": "이벤트"
+          },
+          {
+            "index": 3,
+            "text": "·추천"
+          },
+          {
+            "index": 4,
+            "text": "경로"
+          },
+          {
+            "index": 5,
+            "text": "/"
+          },
+          {
+            "index": 6,
+            "text": "상태·"
+          },
+          {
+            "index": 7,
+            "text": "결과"
+          },
+          {
+            "index": 8,
+            "text": "응답"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "진행 이벤트·추천 경로",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "진행 이벤트·추천 경로",
+              "fontSize": 13,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "/ 상태·결과 응답",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "/ 상태·결과 응답",
+              "fontSize": 13,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wz618zqh",
+      "id": "37",
+      "name": "ai-heading",
+      "bbox": [
+        830,
+        145,
+        390,
+        43
+      ],
+      "geometry": "rect",
+      "text": "▣  AI (Multi-Agent)",
+      "textPreview": "▣  AI (Multi-Agent)",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "▣  AI (Multi-Agent)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "▣  AI (Multi-Agent)",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣  AI (Multi-Agent)",
+              "fontSize": 26,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nax0vap0",
+      "id": "38",
+      "name": "glovis-agent",
+      "bbox": [
+        865,
+        205,
+        320,
+        82
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29oj2p8f",
+      "id": "39",
+      "name": "glovis-agent-title",
+      "bbox": [
+        877,
+        213,
+        296,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Glovis Agent",
+      "textPreview": "Glovis Agent",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Glovis Agent"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Glovis Agent",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Glovis Agent",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2h8n6d4z",
+      "id": "40",
+      "name": "glovis-agent-body",
+      "bbox": [
+        880,
+        244,
+        290,
+        35
+      ],
+      "geometry": "rect",
+      "text": "경로 조정 · 자사 구간 판단",
+      "textPreview": "경로 조정 · 자사 구간 판단",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "경로 조정 · 자사 구간 판단"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "경로 조정 · 자사 구간 판단",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "경로 조정 · 자사 구간 판단",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ihofilk",
+      "id": "41",
+      "name": "route-search",
+      "bbox": [
+        825,
+        340,
+        125,
+        105
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4jq58nm5",
+      "id": "42",
+      "name": "route-search-title",
+      "bbox": [
+        837,
+        348,
+        101,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Route Search",
+      "textPreview": "Route Search",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Route"
+          },
+          {
+            "index": 2,
+            "text": "Search"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Route Search",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Route Search",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pkz6hs3a",
+      "id": "43",
+      "name": "route-search-body",
+      "bbox": [
+        840,
+        379,
+        95,
+        58
+      ],
+      "geometry": "rect",
+      "text": "후보 경로·납기 검증",
+      "textPreview": "후보 경로·납기 검증",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "후보"
+          },
+          {
+            "index": 2,
+            "text": "경로·납기"
+          },
+          {
+            "index": 3,
+            "text": "검증"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "후보 경로·납기 검증",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "후보 경로·납기 검증",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/udon2d4n",
+      "id": "44",
+      "name": "carrier-agent",
+      "bbox": [
+        965,
+        340,
+        130,
+        105
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 45,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fex4bil8",
+      "id": "45",
+      "name": "carrier-agent-title",
+      "bbox": [
+        977,
+        348,
+        106,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Carrier Agent",
+      "textPreview": "Carrier Agent",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Carrier"
+          },
+          {
+            "index": 2,
+            "text": "Agent"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Carrier Agent",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Carrier Agent",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfq543mt",
+      "id": "46",
+      "name": "carrier-agent-body",
+      "bbox": [
+        980,
+        379,
+        100,
+        58
+      ],
+      "geometry": "rect",
+      "text": "운송사별 제안·협상",
+      "textPreview": "운송사별 제안·협상",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송사별"
+          },
+          {
+            "index": 2,
+            "text": "제안·협상"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송사별 제안·협상",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송사별 제안·협상",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 47,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgz6d83e",
+      "id": "47",
+      "name": "ollama",
+      "bbox": [
+        1110,
+        340,
+        125,
+        105
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 48,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6ponyt4r",
+      "id": "48",
+      "name": "ollama-title",
+      "bbox": [
+        1122,
+        348,
+        101,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Ollama LLM",
+      "textPreview": "Ollama LLM",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Ollama"
+          },
+          {
+            "index": 2,
+            "text": "LLM"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Ollama LLM",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Ollama LLM",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 49,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ax47ylc",
+      "id": "49",
+      "name": "ollama-body",
+      "bbox": [
+        1125,
+        379,
+        95,
+        58
+      ],
+      "geometry": "rect",
+      "text": "협상 판단·JSON 응답",
+      "textPreview": "협상 판단·JSON 응답",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "협상"
+          },
+          {
+            "index": 2,
+            "text": "판단·JSON"
+          },
+          {
+            "index": 3,
+            "text": "응답"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "협상 판단·JSON 응답",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "협상 판단·JSON 응답",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 50,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gnit0r6",
+      "id": "50",
+      "name": "grounding",
+      "bbox": [
+        825,
+        478,
+        155,
+        95
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 51,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8feh0val",
+      "id": "51",
+      "name": "grounding-title",
+      "bbox": [
+        837,
+        486,
+        131,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Grounding",
+      "textPreview": "Grounding",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Grounding"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Grounding",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Grounding",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 52,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ne50rq90",
+      "id": "52",
+      "name": "grounding-body",
+      "bbox": [
+        840,
+        517,
+        125,
+        48
+      ],
+      "geometry": "rect",
+      "text": "협상값 ↔ 원본 운임 검증",
+      "textPreview": "협상값 ↔ 원본 운임 검증",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "협상값 ↔ 원본"
+          },
+          {
+            "index": 2,
+            "text": "운임 검증"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "협상값 ↔ 원본 운임 검증",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "협상값 ↔ 원본 운임 검증",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 53,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mdwzylsf",
+      "id": "53",
+      "name": "result-ranking",
+      "bbox": [
+        1010,
+        500,
+        220,
+        92
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#8D6CC7",
+      "lineWidth": 2
+    },
+    {
+      "order": 54,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lcnypgru",
+      "id": "54",
+      "name": "result-ranking-title",
+      "bbox": [
+        1022,
+        508,
+        196,
+        29
+      ],
+      "geometry": "rect",
+      "text": "Result Ranking",
+      "textPreview": "Result Ranking",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#512DA8",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Result Ranking"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Result Ranking",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#512DA8",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Result Ranking",
+              "fontSize": 20,
+              "color": "#512DA8",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 55,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0behwba9",
+      "id": "55",
+      "name": "result-ranking-body",
+      "bbox": [
+        1025,
+        539,
+        190,
+        45
+      ],
+      "geometry": "rect",
+      "text": "비용 · 시간 · 탄소 · 신뢰도",
+      "textPreview": "비용 · 시간 · 탄소 · 신뢰도",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "비용 · 시간 · 탄소 · 신뢰도"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "비용 · 시간 · 탄소 · 신뢰도",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "비용 · 시간 · 탄소 · 신뢰도",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 56,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqlgnq9o",
+      "id": "56",
+      "bbox": [
+        887.5,
+        287,
+        137.5,
+        53
+      ],
+      "horizontalFlip": true,
+      "geometry": "straightConnector1",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 57,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ypczulsj",
+      "id": "57",
+      "bbox": [
+        1025,
+        287,
+        5,
+        53
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 58,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/do3ylgry",
+      "id": "58",
+      "bbox": [
+        1095,
+        392.5,
+        15,
+        0
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 59,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cnuhsbad",
+      "id": "59",
+      "bbox": [
+        887.5,
+        445,
+        232.5,
+        55
+      ],
+      "geometry": "bentConnector4",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 60,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ryh8bi9",
+      "id": "60",
+      "bbox": [
+        1030,
+        445,
+        90,
+        55
+      ],
+      "geometry": "bentConnector4",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 61,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ps7i1gzu",
+      "id": "61",
+      "bbox": [
+        980,
+        525.5,
+        30,
+        20.5
+      ],
+      "geometry": "straightConnector1",
+      "lineColor": "#512DA8",
+      "lineWidth": 2
+    },
+    {
+      "order": 62,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25gz6103",
+      "id": "62",
+      "name": "data-heading",
+      "bbox": [
+        1330,
+        260,
+        210,
+        44
+      ],
+      "geometry": "rect",
+      "text": "▣  검증 데이터",
+      "textPreview": "▣  검증 데이터",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#F57C00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "▣  검증 데이터"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "▣  검증 데이터",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#F57C00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣  검증 데이터",
+              "fontSize": 27,
+              "color": "#F57C00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 63,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qp0z6ho",
+      "id": "63",
+      "name": "carrier-data",
+      "bbox": [
+        1325,
+        330,
+        220,
+        82
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#F2A64E",
+      "lineWidth": 2
+    },
+    {
+      "order": 64,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g3eh4bix",
+      "id": "64",
+      "name": "carrier-data-title",
+      "bbox": [
+        1337,
+        338,
+        196,
+        29
+      ],
+      "geometry": "rect",
+      "text": "운송사 데이터",
+      "textPreview": "운송사 데이터",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#F57C00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송사 데이터"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송사 데이터",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#F57C00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송사 데이터",
+              "fontSize": 20,
+              "color": "#F57C00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 65,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4nixwzi",
+      "id": "65",
+      "name": "carrier-data-body",
+      "bbox": [
+        1340,
+        369,
+        190,
+        35
+      ],
+      "geometry": "rect",
+      "text": "운임 · 용량 · 서비스",
+      "textPreview": "운임 · 용량 · 서비스",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운임 · 용량 · 서비스"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운임 · 용량 · 서비스",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운임 · 용량 · 서비스",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 66,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1wz2107",
+      "id": "66",
+      "name": "rule-data",
+      "bbox": [
+        1325,
+        438,
+        220,
+        82
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#F2A64E",
+      "lineWidth": 2
+    },
+    {
+      "order": 67,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f25gv6hc",
+      "id": "67",
+      "name": "rule-data-title",
+      "bbox": [
+        1337,
+        446,
+        196,
+        29
+      ],
+      "geometry": "rect",
+      "text": "운송 규칙",
+      "textPreview": "운송 규칙",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#F57C00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송 규칙"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송 규칙",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#F57C00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송 규칙",
+              "fontSize": 20,
+              "color": "#F57C00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 68,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0zihgvih",
+      "id": "68",
+      "name": "rule-data-body",
+      "bbox": [
+        1340,
+        477,
+        190,
+        35
+      ],
+      "geometry": "rect",
+      "text": "항만 · 환적 · 통관",
+      "textPreview": "항만 · 환적 · 통관",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "항만 · 환적 · 통관"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "항만 · 환적 · 통관",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "항만 · 환적 · 통관",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 69,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10ri90z2",
+      "id": "69",
+      "name": "history-data",
+      "bbox": [
+        1325,
+        546,
+        220,
+        72
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#F2A64E",
+      "lineWidth": 2
+    },
+    {
+      "order": 70,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vutkzu14",
+      "id": "70",
+      "name": "history-data-title",
+      "bbox": [
+        1337,
+        554,
+        196,
+        29
+      ],
+      "geometry": "rect",
+      "text": "과거 이력",
+      "textPreview": "과거 이력",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#F57C00",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "과거 이력"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "과거 이력",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#F57C00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "과거 이력",
+              "fontSize": 20,
+              "color": "#F57C00",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 71,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atk36pkj",
+      "id": "71",
+      "name": "history-data-body",
+      "bbox": [
+        1340,
+        585,
+        190,
+        25
+      ],
+      "geometry": "rect",
+      "text": "운송 완료 데이터",
+      "textPreview": "운송 완료 데이터",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송 완료 데이터"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송 완료 데이터",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#111827",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송 완료 데이터",
+              "fontSize": 15,
+              "color": "#111827",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 72,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xgv214ja",
+      "id": "72",
+      "name": "memory-text",
+      "bbox": [
+        386,
+        711,
+        333,
+        36
+      ],
+      "geometry": "rect",
+      "text": "▣  In-memory Job Store  |  진행 상태·이벤트",
+      "textPreview": "▣  In-memory Job Store  |  진행 상태·이벤트",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "▣  In-memory Job Store  |  진행"
+          },
+          {
+            "index": 2,
+            "text": "상태·이벤트"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "▣  In-memory Job Store  |  진행 상태·이벤트",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣  In-memory Job Store  |  진행 상태·이벤트",
+              "fontSize": 17,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 73,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wv2l8z2p",
+      "id": "73",
+      "name": "db-title",
+      "bbox": [
+        500,
+        799,
+        610,
+        35
+      ],
+      "geometry": "rect",
+      "text": "▣  SQLite · glovis_merged.db",
+      "textPreview": "▣  SQLite · glovis_merged.db",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#1565C0",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "▣  SQLite · glovis_merged.db"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "▣  SQLite · glovis_merged.db",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#1565C0",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "▣  SQLite · glovis_merged.db",
+              "fontSize": 27,
+              "color": "#1565C0",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 74,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jidk3e10",
+      "id": "74",
+      "name": "db-body",
+      "bbox": [
+        490,
+        839,
+        630,
+        27
+      ],
+      "geometry": "rect",
+      "text": "운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과",
+      "textPreview": "운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#111827",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#111827",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "운송 역량 · 선택 시나리오 · 즐겨찾기 · 운송 이력 · 검증 결과",
+              "fontSize": 17,
+              "color": "#111827",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

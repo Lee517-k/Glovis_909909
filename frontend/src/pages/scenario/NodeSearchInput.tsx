@@ -29,12 +29,14 @@ export function NodeSearchInput({
   value,
   onChange,
   wide,
+  variant,
 }: {
   label: string;
   nodes: NegotiationNode[];
   value: string;
   onChange: (nodeId: string) => void;
   wide?: boolean;
+  variant?: "origin" | "destination";
 }) {
   const listId = useId();
   const [text, setText] = useState("");
@@ -67,9 +69,10 @@ export function NodeSearchInput({
   const resolved = nodes.find((n) => nodeOptionLabel(n) === text);
 
   return (
-    <div className={`node${wide ? " wide" : ""}`} style={{ padding: 10 }}>
-      <div className="nt" style={{ fontSize: 11, color: "var(--muted)", marginBottom: 4 }}>
-        {label}
+    <div className={`node flow-location-node${wide ? " wide" : ""}${variant ? ` ${variant}` : ""}`}>
+      <div className="flow-node-head">
+        <span className="flow-node-icon"><i className={`ti ${variant === "destination" ? "ti-flag-3" : "ti-map-pin-filled"}`} /></span>
+        <div><small>{variant === "destination" ? "STEP 02" : "STEP 01"}</small><div className="nt">{label}</div></div>
       </div>
       <input
         className="nv"
@@ -78,14 +81,13 @@ export function NodeSearchInput({
         onChange={(e) => handleInput(e.target.value)}
         onBlur={handleBlur}
         placeholder="지명 검색 (예: 부산, 함부르크)"
-        style={{ width: "100%", border: "1px solid var(--line)", borderRadius: 6, padding: "4px 6px" }}
       />
       <datalist id={listId}>
         {nodes.map((n) => (
           <option key={n.node_id} value={nodeOptionLabel(n)} />
         ))}
       </datalist>
-      <div style={{ fontSize: 10.5, marginTop: 3, color: resolved || nodes.length === 0 ? "var(--muted)" : "var(--danger)" }}>
+      <div className="flow-node-meta" style={{ color: resolved || nodes.length === 0 ? "var(--muted)" : "var(--danger)" }}>
         {nodes.length === 0
           ? "노드 목록 불러오는 중..."
           : resolved

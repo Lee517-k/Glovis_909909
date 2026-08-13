@@ -40,7 +40,6 @@ export function NegotiationResults({
   const [bookmarkStates, setBookmarkStates] = useState<Record<string, SaveState>>({});
   const [selectStates, setSelectStates] = useState<Record<string, SaveState>>({});
   const { routes, recommendation_sets, negotiation } = result;
-  const grounding = negotiation.grounding;
 
   const mapRoutes: ProposalRouteForMap[] = useMemo(
     () =>
@@ -222,20 +221,6 @@ export function NegotiationResults({
               </button>
             );
           })}
-        </div>
-      </section>
-
-      <section className="card" style={{ marginBottom: 14, padding: "10px 16px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", fontSize: 12.5 }}>
-          <Badge tone="ok" icon="ti-calculator">
-            결정론적 계산 · 협상 없음
-          </Badge>
-          <span style={{ color: "var(--muted)" }}>자사(글로비스) 운송 {grounding.legs_self_operated_by_glovis}구간 · 게시가 적용 {grounding.legs_externally_negotiated}구간</span>
-          <span style={{ marginLeft: "auto", color: "var(--muted)" }}>
-            {result.search_summary.elapsed_sec}초 · 후보경로 {result.search_summary.candidate_routes_found}개 중{" "}
-            {result.search_summary.routes_returned}개 비교
-            {!!result.search_summary.excluded_by_deadline && ` · 납기 제약으로 ${result.search_summary.excluded_by_deadline}개 제외`}
-          </span>
         </div>
       </section>
 

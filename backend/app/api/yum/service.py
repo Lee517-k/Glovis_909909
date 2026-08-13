@@ -146,13 +146,13 @@ def _base_request_block(req: NegotiationRequest) -> dict[str, Any]:
     }
 
 
-def _run_real_agent(request_id: str, req: NegotiationRequest) -> dict[str, Any]:
+def _run_real_agent(request_id: str, req: NegotiationRequest, on_progress=None) -> dict[str, Any]:
     """Run the bundled Glovis/Carrier agents and normalize their result for the UI."""
     agent_axis = "BALANCED" if req.selected_axis == "RELIABILITY" else req.selected_axis
     raw = run_frontend_request(
         dataset_name="ver6", origin=req.origin, destination=req.destination,
         cargo=req.vehicle_type, quantity=req.quantity, top_k=req.top_k,
-        priorities=(agent_axis,), save_trace=True,
+        priorities=(agent_axis,), save_trace=True, on_progress=on_progress,
     )
     if raw.get("status") != "completed":
         return {
@@ -223,8 +223,7 @@ def run_negotiation_job(request_id: str, req: NegotiationRequest) -> None:
     on_progress = make_progress(request_id)
     started = time.perf_counter()
     try:
-        on_progress({"stage": "loading_data", "status": "start"})
-        result = _run_real_agent(request_id, req)
+        result = _run_real_agent(request_id, req, on_progress=on_progress)
         on_progress({"stage": "complete", "status": "done"})
         complete_job(request_id, result)
         return
