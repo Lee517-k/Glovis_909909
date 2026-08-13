@@ -5,6 +5,7 @@ import { Sidebar } from "./components/Sidebar";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import { UploadPage } from "./pages/YP_DataUploadPage";
 import { YpDataReliabilityPage } from "./pages/YP_DataReliabilityPage";
+import { YPDashboardPage } from "./pages/YP_DashboardPage";
 import { NAV_ITEMS, type PageId } from "./types/navigation";
 
 const DEFAULT_PAGE: PageId = "dashboard";
@@ -31,6 +32,9 @@ function App() {
   };
 
   const renderPage = () => {
+    if (page === "dashboard") {
+      return <YPDashboardPage onJump={navigate} />;
+    }
     if (page === "yp_data") {
       return <UploadPage active />;
     }
