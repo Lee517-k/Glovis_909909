@@ -13,8 +13,8 @@ import time
 
 import requests
 
-BASE_URL = os.environ.get("LLM_BASE_URL", "http://127.0.0.1:11500/v1")
-MODEL = os.environ.get("LLM_MODEL", "qwen2.5-7b-instruct-local")
+BASE_URL = os.environ.get("LLM_BASE_URL", "http://34.64.204.1:11434/v1").rstrip("/")
+MODEL = os.environ.get("LLM_MODEL", "qwen2.5:7b")
 
 
 class LLMClient:

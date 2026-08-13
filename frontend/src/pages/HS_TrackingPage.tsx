@@ -10,7 +10,7 @@ type Sort = "eta" | "-eta" | "name" | "-name" | "progress" | "-progress";
 
 export function TrackingPage({ active }: { active: boolean }) {
   const [view, setView] = useState<"map" | "list">("map");
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(() => sessionStorage.getItem("tracking:selectedShipment"));
   const [searchText, setSearchText] = useState("");
   const [query, setQuery] = useState("");
   const [showFilter, setShowFilter] = useState(false);
@@ -44,6 +44,9 @@ export function TrackingPage({ active }: { active: boolean }) {
   });
   const shipments = shipmentsResp?.items ?? [];
   const activeId = shipments.some((s) => s.id === selectedId) ? selectedId : shipments[0]?.id ?? null;
+  useEffect(() => {
+    if (activeId) sessionStorage.removeItem("tracking:selectedShipment");
+  }, [activeId]);
   const { data: overview } = useQuery({
     queryKey: ["tracking-overview", activeId],
     queryFn: () => getShipmentOverview(activeId as string),

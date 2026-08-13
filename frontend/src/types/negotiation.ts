@@ -83,7 +83,7 @@ export interface RecommendationSet {
   recommended_route_id: string;
   ranked_route_ids: string[];
   summary: string;
-  source: "computed";
+  source: "computed" | "llm";
 }
 
 export interface NegotiationTraceEntry {

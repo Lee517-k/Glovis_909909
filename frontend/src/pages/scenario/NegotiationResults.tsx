@@ -31,7 +31,7 @@ export function NegotiationResults({
   onEtdChange: (etd: string) => void;
   onSave: (routeId: string, isFavorite: boolean) => Promise<SavedScenario>;
   onOpenTrace: (route: RouteOption) => void;
-  onNavigateToTracking: () => void;
+  onNavigateToTracking: (scenarioId: string) => void;
 }) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("map");
@@ -72,7 +72,7 @@ export function NegotiationResults({
       const saved = await onSave(routeId, false);
       setSelectStates((s) => ({ ...s, [routeId]: { kind: "saved", scenarioId: saved.scenario_id } }));
       const goTracking = window.confirm(`운송 일정이 저장됐습니다 (${saved.scenario_id}).\n운송 추적 화면으로 이동할까요?`);
-      if (goTracking) onNavigateToTracking();
+      if (goTracking) onNavigateToTracking(saved.scenario_id);
     } catch (e) {
       setSelectStates((s) => ({ ...s, [routeId]: { kind: "error", message: e instanceof Error ? e.message : "저장 실패" } }));
     }

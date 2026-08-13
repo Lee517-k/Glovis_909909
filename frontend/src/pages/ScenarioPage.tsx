@@ -9,7 +9,7 @@ import { mergeNodeCoords } from "../lib/worldmap";
 import type { DrawerContent } from "../components/Drawer";
 import "./YP_glovis_primitives.css";
 
-const DEFAULT_TEXT = "부산에서 독일 함부르크까지 세단 10대를 비용 우선으로 운송하고 싶어.";
+const DEFAULT_TEXT = "부산에서 독일 함부르크까지 세단 10대를 비용 우선으로 운송하고 싶어. 실제 운송사들과 협상까지 맡겨줘.";
 
 interface NegotiationForm {
   origin: string;
@@ -72,29 +72,35 @@ const EMPTY_JOB: NegotiationJob = {
   started_at: "",
 };
 
-function buildTraceDrawer(route: RouteOption): DrawerContent {
+function buildTraceDrawer(route: RouteOption, job: NegotiationJob): DrawerContent {
+  const trace = job.result?.negotiation.trace ?? [];
   const steps = route.legs.map((leg) => {
-    if (leg.self_operated) {
+    const t = trace.find((x) => x.leg_service_id === leg.service_id);
+    if (!t || leg.self_operated) {
       return {
         title: `${leg.sequence}구간 · ${leg.carrier_name}`,
         detail: ["자사(글로비스) 운송이라 협상 없이 바로 배차했습니다."],
         icon: "ti-building-warehouse",
       };
     }
+    const r1 = t.round1_carrier;
+    const r2 = t.round2_buyer;
+    const lines = [
+      r1 && `1차 제안: ${r1.decision}${r1.reason ? ` — ${r1.reason}` : ""}`,
+      r2 && `2차(화주) 판단: ${r2.decision}${r2.reason ? ` — ${r2.reason}` : ""}`,
+      `최종: ${t.final.deal_reached ? `타결 · $${t.final.price_usd}/대` : `결렬 (${t.final.reason ?? "사유 없음"})`}`,
+    ].filter(Boolean);
     return {
       title: `${leg.sequence}구간 · ${leg.carrier_name}`,
-      detail: [
-        `협상 없이 게시가를 그대로 적용했습니다: $${leg.listed_cost_usd_per_vehicle}/대 · ${leg.days}일.`,
-        `정시율 ${Math.round(leg.reliability * 100)}% · CO2 ${leg.co2_kg_per_vehicle}kg/대`,
-      ],
-      icon: "ti-file-invoice",
-      tone: "ok" as const,
+      detail: lines.filter((line): line is string => Boolean(line)),
+      icon: "ti-message-2-bolt",
+      tone: t.final.deal_reached ? ("ok" as const) : ("warn" as const),
     };
   });
   return {
-    title: `${route.label} · 구간별 산정 근거`,
-    icon: "ti-list-details",
-    meta: `Route ID: ${route.route_id} · 구간 ${route.legs.length}개 · 규칙 기반 계산 (LLM 협상 없음)`,
+    title: `${route.label} · LLM 협상 로그`,
+    icon: "ti-message-2-bolt",
+    meta: `Route ID: ${route.route_id}<br>구간 ${route.legs.length}개 · 검증(grounding) ${job.result?.negotiation.grounding.grounded}/${job.result?.negotiation.grounding.total_leg_negotiations}`,
     steps,
   };
 }
@@ -108,7 +114,7 @@ export function ScenarioPage({
   active: boolean;
   onOpenDrawer: (c: DrawerContent) => void;
   onSave: () => void;
-  onNavigateToTracking: () => void;
+  onNavigateToTracking: (scenarioId: string) => void;
 }) {
   const [nodes, setNodes] = useState<NegotiationNode[] | undefined>(undefined);
 
@@ -221,7 +227,7 @@ export function ScenarioPage({
           stopPolling();
           setLoading(false);
           if (latest.status === "FAILED") {
-            setError(latest.error ?? "탐색 중 오류가 발생했습니다.");
+            setError(latest.error ?? "협상 중 오류가 발생했습니다.");
             return;
           }
 
@@ -239,7 +245,7 @@ export function ScenarioPage({
           setLoading(false);
           setError(e instanceof Error ? e.message : "진행 상황 조회 중 오류가 발생했습니다.");
         }
-      }, 400);
+      }, 1500);
     } catch (e) {
       setLoading(false);
       setError(e instanceof Error ? e.message : "요청 처리 중 오류가 발생했습니다.");
@@ -301,15 +307,15 @@ export function ScenarioPage({
       <div className="phead">
         <div>
           <div className="eyebrow">
-            <i className="ti ti-route" />
-            Rule-based Route Search
+            <i className="ti ti-sparkles" />
+            LLM Multi-Agent Negotiation
           </div>
           <h3>운송 시나리오 빌더</h3>
           <p>
-            실제 운송사 데이터에서 후보 경로를 탐색하고, 축별(운임·시간·탄소·신뢰도)로 규칙 기반 추천을 계산합니다.
+            실제 LLM이 운송사 에이전트 역할을 맡아 구간별로 협상하고, 근거와 함께 경로를 추천합니다.
             <br />
             <span style={{ color: "var(--muted)", fontSize: 12 }}>
-              <i className="ti ti-clock" /> LLM 협상 없이 결정론적으로 계산해서 보통 1초 안에 끝납니다.
+              <i className="ti ti-clock" /> 보통 1~5분 걸리며, 화면을 이동해도 백엔드에서 계속 진행됩니다.
             </span>
           </p>
         </div>
@@ -338,7 +344,7 @@ export function ScenarioPage({
         </div>
         <div className={`step ${step === 3 ? "on" : step > 3 ? "done" : ""}`} data-s="3">
           <span className="n">3</span>
-          <span className="t">경로 탐색</span>
+          <span className="t">에이전트 협상</span>
         </div>
         <div className={`stepsep ${step > 3 ? "done" : ""}`}>
           <i />
@@ -408,7 +414,7 @@ export function ScenarioPage({
           </button>
           <button className="btn blue" onClick={() => startAnalysis()} disabled={loading}>
             <i className="ti ti-player-play-filled" />
-            {loading ? "탐색 진행 중..." : "경로 탐색 시작"}
+            {loading ? "협상 진행 중..." : "AI 분석 시작"}
           </button>
         </div>
         <div className="buildersum">
@@ -509,7 +515,7 @@ export function ScenarioPage({
                     출발가능일
                   </div>
                   <input type="date" className="nv" value={etd} onChange={(e) => setEtd(e.target.value)} style={{ border: "none", width: "100%", background: "transparent" }} />
-                  <div className="ns">이 날짜부터 출발 가능하다고 보고 탐색합니다</div>
+                  <div className="ns">이 날짜부터 출발 가능하다고 보고 협상합니다</div>
                 </div>
                 <div className="node purple">
                   <div className="nt">
@@ -540,7 +546,7 @@ export function ScenarioPage({
                       </option>
                     ))}
                   </select>
-                  <div className="ns">경로 순위 산정 기준</div>
+                  <div className="ns">협상 시 최적화 기준</div>
                 </div>
               </div>
             </div>
@@ -572,7 +578,7 @@ export function ScenarioPage({
             if (t) setEtdTime(t);
           }}
           onSave={handleSave}
-          onOpenTrace={(route) => onOpenDrawer(buildTraceDrawer(route))}
+          onOpenTrace={(route) => onOpenDrawer(buildTraceDrawer(route, job))}
           onNavigateToTracking={onNavigateToTracking}
         />
       )}

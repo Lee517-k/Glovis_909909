@@ -260,6 +260,11 @@ def run_frontend_request(dataset_name="ver6", origin="KRPUS", destination="DEHAM
                 "version": (out.get("incoterm_clause") or {}).get("version", "Incoterms 2020"),
             },
             "warnings": warnings,
+            "negotiation": {
+                "trace": out.get("negotiation_trace", []),
+                "grounding": out.get("grounding_check", {}),
+            },
+            "agent_metrics": out.get("cost_metrics", {}),
         }
 
     with open(result_path, "w", encoding="utf-8") as f:

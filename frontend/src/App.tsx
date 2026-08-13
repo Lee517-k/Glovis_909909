@@ -126,7 +126,7 @@ function App() {
       window.alert("아직 실행 확정(경로 선택)되지 않은 시나리오라 운송 추적에는 없습니다.\n운송 시나리오에서 '이 경로 선택'을 먼저 눌러주세요.");
       return;
     }
-    void scenarioId;
+    sessionStorage.setItem("tracking:selectedShipment", scenarioId);
     navigate("tracking");
   }
 
@@ -150,7 +150,10 @@ function App() {
           active
           onOpenDrawer={setDrawerContent}
           onSave={refreshSaved}
-          onNavigateToTracking={() => navigate("tracking")}
+          onNavigateToTracking={(scenarioId) => {
+            sessionStorage.setItem("tracking:selectedShipment", scenarioId);
+            navigate("tracking");
+          }}
         />
       );
     }

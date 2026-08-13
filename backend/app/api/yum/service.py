@@ -29,6 +29,7 @@ from app.scenario import ranking
 from app.scenario.store import ScenarioStore
 
 from .glovis_bridge import list_nodes  # noqa: F401  (re-exported for router parity)
+from .llm_bridge import run_frontend_request
 from .progress import complete_job, fail_job, make_progress
 from .schemas import NegotiationRequest, SaveRouteRequest
 from .store_bridge import find_by_source, get_store
@@ -145,6 +146,74 @@ def _base_request_block(req: NegotiationRequest) -> dict[str, Any]:
     }
 
 
+def _run_real_agent(request_id: str, req: NegotiationRequest) -> dict[str, Any]:
+    """Run the bundled Glovis/Carrier agents and normalize their result for the UI."""
+    agent_axis = "BALANCED" if req.selected_axis == "RELIABILITY" else req.selected_axis
+    raw = run_frontend_request(
+        dataset_name="ver6", origin=req.origin, destination=req.destination,
+        cargo=req.vehicle_type, quantity=req.quantity, top_k=req.top_k,
+        priorities=(agent_axis,), save_trace=True,
+    )
+    if raw.get("status") != "completed":
+        return {
+            "schema_version": "1.0.0", "request_id": request_id, "status": "no_route",
+            "error": "; ".join(raw.get("warnings", [])) or "No feasible route found.",
+            "request": _base_request_block(req), "search_summary": raw.get("search_summary", {}),
+            "recommendation_sets": {}, "routes": [], "customs": raw.get("customs", {}),
+            "incoterm": raw.get("incoterm", {}), "negotiation": raw.get("negotiation", {"trace": [], "grounding": {}}),
+            "warnings": raw.get("warnings", []),
+        }
+
+    services = {service.service_id: service for service in loader.get_services()}
+    routes: list[dict[str, Any]] = []
+    for route in raw.get("routes", []):
+        legs, self_operated = [], 0
+        for sequence, leg in enumerate(route.get("legs", []), 1):
+            service = services.get(leg["service_id"])
+            origin_raw = (service.raw.get("origin", {}) if service else {}) or {}
+            destination_raw = (service.raw.get("destination", {}) if service else {}) or {}
+            is_self = bool(leg.get("self_operated"))
+            self_operated += int(is_self)
+            legs.append({
+                "sequence": sequence,
+                "carrier_id": leg["carrier_id"], "carrier_name": leg["carrier_name"],
+                "service_id": leg["service_id"], "mode": leg["mode"], "self_operated": is_self,
+                "origin": leg["origin"], "destination": leg["destination"],
+                "origin_node_id": origin_raw.get("node_id", leg["origin"]),
+                "destination_node_id": destination_raw.get("node_id", leg["destination"]),
+                "listed_cost_usd_per_vehicle": leg.get("agreed_cost_usd_per_vehicle") or leg.get("listed_cost_usd_per_vehicle", 0),
+                "days": leg.get("days", 0), "co2_kg_per_vehicle": leg.get("co2_kg_per_vehicle", 0),
+                "reliability": leg.get("reliability", 0),
+            })
+        metrics = dict(route["metrics"])
+        metrics["shipment_co2_kg"] = round(metrics.get("co2_kg_per_vehicle", 0) * req.quantity, 2)
+        routes.append({**route, "metrics": metrics, "legs": legs, "legs_self_operated": self_operated})
+
+    if req.max_transit_days is not None:
+        routes = [route for route in routes if route["metrics"]["total_days"] <= req.max_transit_days]
+    agent_metrics = raw.get("agent_metrics", {})
+    if not routes:
+        return {
+            "schema_version": "1.0.0", "request_id": request_id, "status": "no_route",
+            "error": f"납기 제약(최대 {req.max_transit_days}일)을 만족하는 경로가 없습니다.",
+            "request": _base_request_block(req), "search_summary": raw.get("search_summary", {}),
+            "recommendation_sets": {}, "routes": [], "customs": raw.get("customs", {}),
+            "incoterm": raw.get("incoterm", {}), "negotiation": raw.get("negotiation", {"trace": [], "grounding": {}}),
+            "warnings": raw.get("warnings", []),
+        }
+    return {
+        "schema_version": "1.0.0", "request_id": request_id, "status": "completed", "error": None,
+        "request": _base_request_block(req),
+        "search_summary": {**raw.get("search_summary", {}), "excluded_by_deadline": 0,
+                           "llm_calls": agent_metrics.get("llm_calls", 0),
+                           "elapsed_sec": agent_metrics.get("wall_clock_sec", 0)},
+        "recommendation_sets": ranking.build_recommendation_sets(routes),
+        "routes": routes, "customs": raw.get("customs", {}), "incoterm": raw.get("incoterm", {}),
+        "negotiation": raw.get("negotiation", {"trace": [], "grounding": {}}),
+        "warnings": raw.get("warnings", []),
+    }
+
+
 def run_negotiation_job(request_id: str, req: NegotiationRequest) -> None:
     """BackgroundTasks에서 돌아간다. 예외를 밖으로 던지면 안 된다 — 호출부에
     아무도 못 받는다(job 상태로만 알린다). 실제로는 LLM 협상이 없어서
@@ -154,6 +223,12 @@ def run_negotiation_job(request_id: str, req: NegotiationRequest) -> None:
     on_progress = make_progress(request_id)
     started = time.perf_counter()
     try:
+        on_progress({"stage": "loading_data", "status": "start"})
+        result = _run_real_agent(request_id, req)
+        on_progress({"stage": "complete", "status": "done"})
+        complete_job(request_id, result)
+        return
+
         on_progress({"stage": "route_search", "status": "start",
                      "origin": req.origin, "destination": req.destination})
 
