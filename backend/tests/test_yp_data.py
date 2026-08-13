@@ -15,9 +15,11 @@ def create_test_db(path: Path) -> None:
             carrier_name TEXT,
             mode TEXT,
             origin_location_id TEXT,
+            origin_node_id TEXT,
             origin_name TEXT,
             origin_country TEXT,
             destination_location_id TEXT,
+            destination_node_id TEXT,
             destination_name TEXT,
             destination_country TEXT,
             currency TEXT,
@@ -37,12 +39,24 @@ def create_test_db(path: Path) -> None:
         """
     )
     connection.executemany(
-        "INSERT INTO carrier_capabilities VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO carrier_capabilities VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         [
-            ("cap-1", "carrier-1", "Carrier One", "sea", "KR", "Busan", "KR", "DE", "Hamburg", "DE", "USD", 100, 240, 10, "TEU", .95, "approved", "verified", 90, "", "2026-08-01", 1, 1),
-            ("cap-2", "carrier-1", "Carrier One", "road", "DE", "Hamburg", "DE", "CZ", "Prague", "CZ", "USD", 200, 10, 20, "ton", .92, "approved", "unverified", 70, "", None, 1, 1),
+            ("cap-1", "carrier-1", "Carrier One", "sea", "KR", None, "Busan", "KR", "DE", None, "Hamburg", "DE", "USD", 100, 240, 10, "TEU", .95, "approved", "verified", 0, "", "2026-08-01", 1, 1),
+            ("cap-2", "carrier-1", "Carrier One", "road", "DE", None, "Hamburg", "DE", "CZ", None, "Prague", "CZ", "USD", 200, 10, 20, "ton", .92, "approved", "unverified", 70, "", None, 1, 1),
         ],
     )
+    connection.execute("CREATE TABLE scenarios (scenario_id TEXT, status TEXT)")
+    connection.execute("INSERT INTO scenarios VALUES ('scenario-1', 'COMPLETED')")
+    connection.execute("""CREATE TABLE scenario_legs (
+        leg_id TEXT, scenario_id TEXT, carrier_id TEXT, mode TEXT,
+        origin_location_id TEXT, origin_node_id TEXT,
+        destination_location_id TEXT, destination_node_id TEXT,
+        settled_cost_usd_per_vehicle REAL, atd TEXT, ata TEXT
+    )""")
+    connection.execute("""INSERT INTO scenario_legs VALUES (
+        'leg-1','scenario-1','carrier-1','sea','KR',NULL,'DE',NULL,
+        100,'2026-08-01T00:00:00','2026-08-11T00:00:00'
+    )""")
     connection.commit()
     connection.close()
 
@@ -57,7 +71,7 @@ def test_summary_and_reliability(tmp_path: Path) -> None:
 
     assert summary["carriers"] == 1
     assert summary["services"] == 2
-    assert reliability[0]["score"] == 80.0
+    assert reliability[0]["score"] == 65.0
     assert reliability[0]["candidates"] == 1
 
 

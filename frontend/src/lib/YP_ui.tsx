@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 
-export type Mode = "sea" | "air" | "rail" | "truck" | "express";
+export type Mode = "sea" | "air" | "rail" | "road" | "truck" | "express";
 
-export const MODE_KO: Record<Mode, string> = { sea: "해상", air: "항공", rail: "철도", truck: "육상", express: "특송" };
+export const MODE_KO: Record<Mode, string> = { sea: "해상", air: "항공", rail: "철도", road: "도로", truck: "육상", express: "특송" };
 export const MODE_HEX: Record<Mode, string> = {
   sea: "#1687D9",
   air: "#8559D9",
   rail: "#15966F",
+  road: "#D98200",
   truck: "#D98200",
   express: "#D8443C",
 };
@@ -97,5 +98,4 @@ export function Prog({ pct }: { pct: number }) {
     </div>
   );
 }
-
 

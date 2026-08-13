@@ -84,6 +84,9 @@ class YPDataRepository:
         return [dict(row) for row in rows]
 
     def reliability(self) -> list[dict[str, object]]:
+        from app.services.YP_reliability_service import YPReliabilityService
+
+        return YPReliabilityService(self.db_path).list_carriers()
         with self.connect() as connection:
             rows = connection.execute(
                 """
@@ -105,6 +108,9 @@ class YPDataRepository:
         return [dict(row) for row in rows]
 
     def reliability_detail(self, carrier_id: str) -> dict[str, object] | None:
+        from app.services.YP_reliability_service import YPReliabilityService
+
+        return YPReliabilityService(self.db_path).detail(carrier_id)
         with self.connect() as connection:
             rows = connection.execute(
                 """
