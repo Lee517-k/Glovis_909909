@@ -19,20 +19,27 @@ def create_test_db(path: Path) -> None:
             destination_location_id TEXT,
             destination_name TEXT,
             destination_country TEXT,
+            currency TEXT,
+            typical_base_rate REAL,
             typical_transit_hours REAL,
+            capacity_value REAL,
+            capacity_unit TEXT,
             on_time_rate REAL,
+            mapping_status TEXT,
             validation_status TEXT,
             validation_score REAL,
+            validation_summary TEXT,
             last_validated_at TEXT,
+            carries_finished_vehicle INTEGER,
             is_active INTEGER
         )
         """
     )
     connection.executemany(
-        "INSERT INTO carrier_capabilities VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "INSERT INTO carrier_capabilities VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         [
-            ("cap-1", "carrier-1", "Carrier One", "sea", "KR", "Busan", "KR", "DE", "Hamburg", "DE", 240, .95, "verified", 90, "2026-08-01", 1),
-            ("cap-2", "carrier-1", "Carrier One", "road", "DE", "Hamburg", "DE", "CZ", "Prague", "CZ", 10, .92, "unverified", 70, None, 1),
+            ("cap-1", "carrier-1", "Carrier One", "sea", "KR", "Busan", "KR", "DE", "Hamburg", "DE", "USD", 100, 240, 10, "TEU", .95, "approved", "verified", 90, "", "2026-08-01", 1, 1),
+            ("cap-2", "carrier-1", "Carrier One", "road", "DE", "Hamburg", "DE", "CZ", "Prague", "CZ", "USD", 200, 10, 20, "ton", .92, "approved", "unverified", 70, "", None, 1, 1),
         ],
     )
     connection.commit()
@@ -50,5 +57,4 @@ def test_summary_and_reliability(tmp_path: Path) -> None:
     assert summary["carriers"] == 1
     assert summary["services"] == 2
     assert reliability[0]["score"] == 80.0
-    assert reliability[0]["review_count"] == 1
-
+    assert reliability[0]["candidates"] == 1

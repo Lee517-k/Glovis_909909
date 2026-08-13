@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { AppHeader } from "./components/AppHeader";
 import { Sidebar } from "./components/Sidebar";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
-import { YP_DataUploadPage } from "./pages/YP_DataUploadPage";
-import { YP_DataReliabilityPage } from "./pages/YP_DataReliabilityPage";
+import { UploadPage } from "./pages/YP_DataUploadPage";
+import { YpDataReliabilityPage } from "./pages/YP_DataReliabilityPage";
 import { NAV_ITEMS, type PageId } from "./types/navigation";
 
 const DEFAULT_PAGE: PageId = "dashboard";
@@ -32,11 +32,11 @@ function App() {
 
   const renderPage = () => {
     if (page === "yp_data") {
-      return <YP_DataUploadPage />;
+      return <UploadPage active />;
     }
 
     if (page === "yp_data_reliability") {
-      return <YP_DataReliabilityPage />;
+      return <YpDataReliabilityPage active />;
     }
 
     return <PlaceholderPage page={activeItem} />;
