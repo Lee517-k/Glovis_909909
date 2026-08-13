@@ -102,7 +102,7 @@ button{cursor:pointer;background:none;border:0}
 .pill i{font-size:14px}
 .chip{display:inline-flex;align-items:center;font-size:10.5px;font-weight:750;border-radius:6px;padding:3px 8px;color:#fff!important;letter-spacing:.02em;text-shadow:0 1px 1px rgba(0,0,0,.2);border:1px solid rgba(0,0,0,.06)}
 .c-sea{background:var(--sea)}.c-air{background:var(--air)}.c-rail{background:var(--rail)}
-.c-truck{background:var(--truck)}.c-express{background:var(--express)}
+.c-truck,.c-road{background:var(--truck)}.c-express{background:var(--express)}
 .sep{color:var(--faint);font-size:10px;margin:0 4px}
 .grade{display:inline-flex;align-items:center;gap:5px}
 .grade i{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800;font-style:normal}
@@ -500,7 +500,6 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border:3px solid #fff
 @media(max-width:1080px){.savedgrid{grid-template-columns:1fr}.frow{flex-direction:column;align-items:center;gap:0}
  .hlink{flex:0 0 26px;width:2px;height:26px;background:var(--line-2)}.bus{display:none}.frow.three{gap:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
 
 
 
