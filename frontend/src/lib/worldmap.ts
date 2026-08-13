@@ -3,9 +3,9 @@ import { LANDGEO } from "./landgeo";
 export type LonLat = [number, number];
 export type NodeKey = string;
 
-// Curated demo-scenario nodes with approximate real-world coordinates,
-// merged at runtime with the backend's actual coordinates (ver6 coords.json
-// based) via mergeNodeCoords — see below.
+// Original mockup's world cities (kept for the decorative dashboard/network
+// maps) plus our real demo-scenario nodes with approximate real-world
+// coordinates (the Agent_Json dataset carries no lat/lon - see ASSUMPTIONS.md).
 export const NODE: Record<NodeKey, [number, number, string]> = {
   KRPUS: [129.04, 35.1, "부산항"],
   KRICN: [126.44, 37.46, "인천공항"],
@@ -23,6 +23,7 @@ export const NODE: Record<NodeKey, [number, number, string]> = {
   USLAX: [-118.25, 33.74, "LA"],
   AEJEA: [55.06, 25.0, "제벨알리"],
   GBFXT: [1.29, 51.95, "펠릭스토"],
+  // Real flagship-scenario nodes
   KRUSN_YARD: [129.31, 35.54, "울산 출고장"],
   KRUSN: [129.39, 35.5, "울산항"],
   KRINC: [126.6, 37.45, "인천항"],
@@ -39,9 +40,9 @@ export const NODE: Record<NodeKey, [number, number, string]> = {
   DEFRA_RAIL: [8.56, 50.04, "프랑크푸르트 철도"],
 };
 
-// 백엔드 /api/scenarios/yum/nodes가 실제 위경도를 주므로, 그걸 받아서 이
-// 표에 병합해둔다 — 위에 미리 박아둔 좌표표 밖의 노드도 정확한 좌표로
-// 지도에 찍히게 된다.
+// 백엔드 /api/scenarios/yum/nodes가 실제 위경도(ver6 coords.json 기반)를 주므로,
+// 그걸 받아서 이 표에 병합해둔다 — 위에 미리 박아둔 21개짜리 표 밖의 노드도
+// (ATVIE, ITGOA, SGSIN 등 나머지 60여 개) 정확한 좌표로 지도에 찍히게 된다.
 export function mergeNodeCoords(entries: { node_id: string; longitude?: number | null; latitude?: number | null; label: string }[]): void {
   for (const e of entries) {
     if (e.longitude == null || e.latitude == null) continue;
@@ -49,8 +50,10 @@ export function mergeNodeCoords(entries: { node_id: string; longitude?: number |
   }
 }
 
-// Falls back to a neutral point rather than throwing when a node has no
-// plotted coordinate.
+// Falls back to a neutral point rather than throwing when a node outside the
+// curated demo set (e.g. a user-picked node from the full /api/nodes list) has
+// no plotted coordinate - the dataset itself carries no lat/lon (see
+// ASSUMPTIONS.md), so any node beyond the flagship-scenario set is approximate.
 export function getNode(key: NodeKey): [number, number, string] {
   return NODE[key] ?? [20, 25, key];
 }

@@ -1080,4 +1080,12 @@
   }
 }
 
+.yp-similarity-notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0;
+  color: var(--faint);
+  font-size: 11px;
+}
 

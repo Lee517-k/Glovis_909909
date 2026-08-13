@@ -36,6 +36,14 @@ type Detail = Carrier & {
   impact: string;
 };
 
+type Similarity = {
+  capability_id: string;
+  similar: boolean;
+  confidence: number;
+  reason: string;
+  reference_leg_ids: string[];
+};
+
 const blank: Detail = {
   carrier_id: "",
   carrier_name: "",
@@ -86,6 +94,10 @@ export function YpDataReliabilityPage({ active }: { active: boolean }) {
   const [view, setView] = useState<"candidates" | "verified">("candidates");
   const [expanded, setExpanded] = useState("");
   const [llmLoading, setLlmLoading] = useState(false);
+  const [similarities, setSimilarities] = useState<Record<string, Similarity>>({});
+  const [llmModel, setLlmModel] = useState("");
+  const [similarityMode, setSimilarityMode] = useState<"ollama" | "rule_based" | "">("");
+  const [similarityNotice, setSimilarityNotice] = useState("");
 
   async function loadCarriers() {
     const response = await fetch(`${API_BASE}/yp/reliability`);
@@ -105,19 +117,41 @@ export function YpDataReliabilityPage({ active }: { active: boolean }) {
     setChecked(new Set());
     setView("candidates");
     setExpanded("");
-    previewSimilarCases();
+    void previewSimilarCases(carrierId, data.metrics.map((metric) => metric.capability_id));
   }
 
-  function previewSimilarCases() {
+  async function previewSimilarCases(carrierId = selected, capabilityIds = detail.metrics.map((metric) => metric.capability_id)) {
+    if (!carrierId || capabilityIds.length === 0) {
+      setSimilarities({});
+      return;
+    }
     setLlmLoading(true);
-    window.setTimeout(() => setLlmLoading(false), 650);
+    try {
+      const response = await fetch(`${API_BASE}/yp/reliability/similarity`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ carrier_id: carrierId, capability_ids: capabilityIds }),
+      });
+      if (!response.ok) throw new Error(`Ollama 분석 실패 (${response.status})`);
+      const data = await response.json();
+      setSimilarities(Object.fromEntries((data.items ?? []).map((item: Similarity) => [item.capability_id, item])));
+      setLlmModel(data.model ?? "");
+      setSimilarityMode(data.mode ?? "ollama");
+      setSimilarityNotice(data.notice ?? "");
+      setError("");
+    } catch (reason) {
+      setSimilarities({});
+      setError(reason instanceof Error ? reason.message : "Ollama 분석 실패");
+    } finally {
+      setLlmLoading(false);
+    }
   }
 
   function changeView(next: "candidates" | "verified") {
     setView(next);
     setChecked(new Set());
     setExpanded("");
-    if (next === "candidates") previewSimilarCases();
+    if (next === "candidates") void previewSimilarCases();
   }
 
   async function persistActions(entries: [string, string][], successMessage: string) {
@@ -282,10 +316,11 @@ export function YpDataReliabilityPage({ active }: { active: boolean }) {
             </div>
 
             {message && <div className="yp-save-message">{message}</div>}
+            {similarityNotice && <div className="yp-similarity-notice"><i className="ti ti-info-circle" />{similarityNotice}</div>}
             <div className="yp-table-mode">
               <b>{view === "candidates" ? "보정 후보" : "검증 완료 구간"}</b>
               {view === "candidates" && <>
-                <span className={llmLoading ? "is-loading" : ""}><i className={`ti ${llmLoading ? "ti-loader-2 yp-spin" : "ti-sparkles"}`} />{llmLoading ? "유사 사례 분석 준비 중" : "LLM 유사 사례 UI · 연결 예정"}</span>
+                <span className={llmLoading ? "is-loading" : ""}><i className={`ti ${llmLoading ? "ti-loader-2 yp-spin" : similarityMode === "rule_based" ? "ti-database" : "ti-sparkles"}`} />{llmLoading ? "Ollama 유사 사례 분석 중" : similarityMode === "rule_based" ? "DB 단순 비교 완료" : llmModel ? `${llmModel} 분석 완료` : "Ollama 연결 대기"}</span>
               </>}
             </div>
             <div className="tablewrap yp-reliability-tablewrap">
@@ -299,17 +334,18 @@ export function YpDataReliabilityPage({ active }: { active: boolean }) {
                   <thead><tr><th className="yp-checkcell"><input type="checkbox" aria-label="전체 선택" checked={detail.metrics.length > 0 && checked.size === detail.metrics.length} onChange={toggleAll} /></th><th>검증 구간</th><th>운송사 DB 값</th><th>과거 실제 결과</th><th>판정 근거</th><th>조치</th></tr></thead>
                   <tbody>
                     {detail.metrics.map((metric) => {
-                    const similar = !metric.actual_value.includes("사례 없음");
+                    const analysis = similarities[metric.capability_id];
+                    const similar = analysis?.similar ?? false;
                     return <Fragment key={metric.capability_id}>
                       <tr className={similar ? "yp-expandable-row" : ""} onClick={() => similar && setExpanded((current) => current === metric.capability_id ? "" : metric.capability_id)}>
                         <td className="yp-checkcell"><input type="checkbox" aria-label={`${metric.metric} 선택`} checked={checked.has(metric.capability_id)} onClick={(event) => event.stopPropagation()} onChange={() => toggleOne(metric.capability_id)} /></td>
                         <td><b>{metric.metric}</b>{similar && <i className={`ti ti-chevron-${expanded === metric.capability_id ? "up" : "down"}`} />}</td>
                         <td><DbValue value={metric.db_value} /></td>
-                        <td>{similar ? <Badge tone="blue">유사 사례 존재</Badge> : "동일 사례 없음"}</td>
+                        <td>{llmLoading ? "분석 중" : similar ? <Badge tone="blue">유사 사례 {analysis?.confidence ?? 0}%</Badge> : analysis ? "유사 사례 없음" : "분석 대기"}</td>
                         <td>{metric.reason}</td>
                         <td onClick={(event) => event.stopPropagation()}><select className="yp-actsel" value={actions[metric.capability_id] ?? metric.action} onChange={(event) => setActions((current) => ({ ...current, [metric.capability_id]: event.target.value }))}><option>보정 후보 유지</option><option>검증 완료</option><option>운송사 응답 대기 중</option><option>계산 제외</option></select></td>
                       </tr>
-                      {similar && expanded === metric.capability_id && <tr className="yp-similar-detail"><td colSpan={6}><i className="ti ti-sparkles" /><div><b>유사 사례 판단 근거</b><p>동일 운송사의 관련 구간 운송 이력이 확인됐습니다. 향후 RAG·LLM 연결 시 거리, 운송수단, 화물 유형과 경유지 유사도를 종합한 상세 근거가 이 영역에 표시됩니다.</p></div></td></tr>}
+                      {similar && analysis && expanded === metric.capability_id && <tr className="yp-similar-detail"><td colSpan={6}><i className="ti ti-sparkles" /><div><b>Ollama 유사 사례 판단 근거</b><p>{analysis.reason}</p>{analysis.reference_leg_ids.length > 0 && <small>참조 이력: {analysis.reference_leg_ids.join(", ")}</small>}</div></td></tr>}
                     </Fragment>;
                   })}</tbody>
                 </table>
@@ -323,4 +359,3 @@ export function YpDataReliabilityPage({ active }: { active: boolean }) {
     </section>
   );
 }
-

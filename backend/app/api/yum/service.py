@@ -21,7 +21,7 @@ from dataclasses import replace
 from datetime import datetime, timedelta
 from typing import Any, Optional
 
-from app.dataset import loader
+from app.dataset import yum_loader as loader
 from app.dataset.schema import NormalizedService
 from app.planning.ceu import ceu_multiplier
 from app.planning.route_search import RouteCandidate, find_routes

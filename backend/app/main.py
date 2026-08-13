@@ -5,6 +5,9 @@ from app.core.config import settings
 from app.api.yp_data import router as yp_data_router
 from app.api.yp_upload import router as yp_upload_router
 from app.api.yum.router import router as yum_router
+from app.api.YP_dashboard import router as yp_dashboard_router
+from app.api.tracking import router as tracking_router
+from app.api.allocation import router as allocation_router
 
 
 app = FastAPI(
@@ -23,6 +26,9 @@ app.add_middleware(
 app.include_router(yp_data_router, prefix="/api")
 app.include_router(yp_upload_router, prefix="/api")
 app.include_router(yum_router, prefix="/api")
+app.include_router(yp_dashboard_router, prefix="/api")
+app.include_router(tracking_router, prefix="/api")
+app.include_router(allocation_router, prefix="/api")
 
 
 @app.get("/health", tags=["system"])

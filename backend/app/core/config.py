@@ -2,10 +2,7 @@ from pathlib import Path
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
-# backend/app/core/config.py -> parents[0]=core, [1]=app, [2]=backend, [3]=project root
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DATA_DIR = PROJECT_ROOT / "Data"
+from app.db_paths import MERGED_DB_PATH, PROJECT_ROOT
 
 
 class Settings(BaseSettings):
@@ -15,7 +12,9 @@ class Settings(BaseSettings):
         validation_alias="CORS_ORIGINS",
     )
     dataset_dir: Path = PROJECT_ROOT / "backend" / "app" / "dataset" / "service_data"
-    merged_db_path: Path = DATA_DIR / "glovis_merged.db"
+    merged_db_path: Path = MERGED_DB_PATH
+    tracking_db_path: Path = MERGED_DB_PATH
+    allocation_db_path: Path = MERGED_DB_PATH
 
     model_config = SettingsConfigDict(env_file="../.env", extra="ignore")
 
