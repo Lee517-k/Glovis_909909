@@ -22,6 +22,7 @@ dist/
 *.sqlite
 *.sqlite3
 *.log
+backend/YP_upload_stages/
 Data/*
 !Data/README.md
 !Data/.gitkeep
@@ -31,4 +32,3 @@ Data/*
 .vscode/
 .DS_Store
 Thumbs.db
-

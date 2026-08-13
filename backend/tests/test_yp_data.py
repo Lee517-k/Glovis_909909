@@ -2,6 +2,7 @@ from pathlib import Path
 import sqlite3
 
 from app.repositories.yp_data_repository import YPDataRepository
+from app.api.yp_upload import auto_mappings, validate_rows
 
 
 def create_test_db(path: Path) -> None:
@@ -58,3 +59,16 @@ def test_summary_and_reliability(tmp_path: Path) -> None:
     assert summary["services"] == 2
     assert reliability[0]["score"] == 80.0
     assert reliability[0]["candidates"] == 1
+
+
+def test_upload_alias_mapping_and_validation() -> None:
+    headers = ["운송수단", "출발지", "도착지", "기본 운임", "소요시간", "정시율"]
+    mappings = auto_mappings(headers)
+    rows, issues = validate_rows(
+        [{"운송수단": "sea", "출발지": "Busan", "도착지": "Hamburg", "기본 운임": "1,200", "소요시간": 360, "정시율": "92%"}],
+        mappings,
+    )
+
+    assert not issues
+    assert rows[0]["typical_base_rate"] == 1200
+    assert rows[0]["on_time_rate"] == 0.92
