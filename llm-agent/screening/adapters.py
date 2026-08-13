@@ -222,7 +222,7 @@ def load_v3(base):
 # ---------------------------------------------------------------------------
 # 4. all_mixed_ver5  (flat files, most fully pre-enriched)
 #    RETIRED — this dataset folder no longer exists on disk (superseded by
-#    fina_data(ver6) below). Left in place only as a reference for the
+#    ver6 below). Left in place only as a reference for the
 #    _load_node_graph_family shape; calling this will raise FileNotFoundError.
 # ---------------------------------------------------------------------------
 def load_ver5(base):
@@ -230,11 +230,12 @@ def load_ver5(base):
 
 
 # ---------------------------------------------------------------------------
-# 4b. fina_data(ver6)  (flat files — same shape as ver5, plus carrier.role
-#     ("OWN_FLEET" for Glovis vs "PARTNER") and staggered rate validity)
+# 4b. ver6, at ../data/ relative to this file (flat files — same shape as
+#     ver5, plus carrier.role ("OWN_FLEET" for Glovis vs "PARTNER") and
+#     staggered rate validity)
 # ---------------------------------------------------------------------------
 def load_ver6(base):
-    return _load_node_graph_family(base, "fina_data(ver6)", ["."], "ver6")
+    return _load_node_graph_family(base, "data", ["."], "ver6")
 
 
 # ---------------------------------------------------------------------------

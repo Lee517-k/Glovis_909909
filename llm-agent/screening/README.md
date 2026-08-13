@@ -1,4 +1,4 @@
-# 운송 스크리닝 & 협상 엔진 (`data/screening/`)
+# 운송 스크리닝 & 협상 엔진 (`screening/`)
 
 **화주(Hyundai Glovis) 요청 1건을 받아서, 여러 운송사 데이터를 조합해 경로 후보를 찾고,
 LLM 기반 에이전트끼리 실제로 가격 협상을 벌인 다음, 협상이 끝난 경로들을 프론트엔드가
@@ -16,7 +16,7 @@ LLM 기반 에이전트끼리 실제로 가격 협상을 벌인 다음, 협상�
 | Python 3.9+ | 표준 라이브러리 + `requests`만 사용 |
 | `pip install requests` | 유일한 외부 패키지 |
 | OpenAI 호환 chat 엔드포인트를 서빙하는 로컬/원격 LLM | 아래 참고 |
-| `data/fina_data(ver6)/` 폴더 | 이 레포에 이미 포함되어 있음 (서비스·통관·인코텀즈·좌표 데이터) |
+| `data/` 폴더 (screening과 형제 폴더) | 이 레포에 이미 포함되어 있음 (서비스·통관·인코텀즈·좌표 데이터) |
 
 ### LLM 서버
 
@@ -63,8 +63,6 @@ OpenAI API, vLLM, LM Studio 등 `/v1/chat/completions`를 지원하는 아무 �
 | `llm_client.py` | 로컬/원격 LLM에 대한 얇은 OpenAI 호환 wrapper |
 | `agents.py` | **핵심.** `CarrierAgent`(운송사 역) + `GlovisAgent`(화주 역) 2자 협상 엔진 |
 | `run_frontend_request.py` | **요청 1건 → 결과 1건.** 프론트엔드용 최종 JSON을 만드는 진입점 |
-| `run_phase2.py` | 여러 데이터셋/우선순위를 한 번에 돌려 비교하는 내부 진단용 배치 스크립트 |
-| `screen.py` | Layer-1 데이터 품질 스크리닝 (LLM 없이 원본 데이터 이상 유무만 확인) |
 
 ---
 
@@ -73,7 +71,7 @@ OpenAI API, vLLM, LM Studio 등 `/v1/chat/completions`를 지원하는 아무 �
 ### 3-1. 요청 1건 → 결과 1건 (프론트엔드가 받는 것)
 
 ```bash
-cd data/screening
+cd screening
 python3 run_frontend_request.py \
   --origin KRPUS --destination DEHAM \
   --cargo SEDAN --quantity 10 \
@@ -90,21 +88,12 @@ python3 run_frontend_request.py \
 | `--top_k` | `3` | COST·TIME 각 축에서 뽑아 협상까지 붙일 후보 개수 (중복 경로는 자동 제외) |
 | `--priorities` | `COST,TIME` | 후보를 뽑을 정렬 축. 콤마로 구분해 여러 개 지정 가능 (`COST`/`TIME`/`CO2`) |
 | `--dataset` | `ver6` | 사용할 데이터셋 (현재는 `ver6`만 실제로 동작함) |
-| `--out-dir` | `data/screening/frontend_results/` | 결과·진행상황 파일을 쓸 폴더 |
+| `--out-dir` | `screening/frontend_results/` | 결과·진행상황 파일을 쓸 폴더 |
+| `--max_rounds` | `agents.NEGOTIATION_MAX_ROUNDS_DEFAULT`(5) | leg당 carrier↔buyer 카운터오퍼 최대 라운드 수 |
 
 **주의**: `top_k`나 `priorities` 개수를 늘리면 그만큼 협상해야 할 leg가 늘어나서 LLM 호출
 횟수와 실행 시간이 같이 늘어난다. 로컬 CPU Ollama 기준 `top_k=3, priorities=COST,TIME`
 정도면 보통 1~3분 안에 끝난다.
-
-### 3-2. 여러 데이터셋 비교 (내부 진단용, 프론트엔드와 무관)
-
-```bash
-python3 run_phase2.py --top_k 3 --priorities COST,TIME --datasets ver6
-```
-
-`phase2_results/{dataset}.json`, `phase2_results/_summary.json`에 협상 로그·grounding
-체크(가격을 지어내지 않았는지) 등 내부 검증용 정보가 저장된다. 프론트엔드로 보내는 파일이
-아니다.
 
 ---
 
@@ -199,7 +188,7 @@ python3 run_phase2.py --top_k 3 --priorities COST,TIME --datasets ver6
 }
 ```
 
-**대당 비용 vs 총액**: 원본 운송사 데이터(`fina_data(ver6)`)는 전부 **대당(per-vehicle)**
+**대당 비용 vs 총액**: 원본 운송사 데이터(`data/`)는 전부 **대당(per-vehicle)**
 가격으로 들어있다. `cost_usd_per_vehicle`가 그 값이고, `shipment_cost_usd`는 여기에 확보
 수량(`quantity.agreed`)을 곱한 **이번 요청 전체 물량 기준 총액**이다. 두 값이 같이 있으니
 프론트에서 "대당 $481.5 · 총 10대 $4,815" 식으로 바로 보여줄 수 있다.
@@ -253,8 +242,8 @@ python3 run_phase2.py --top_k 3 --priorities COST,TIME --datasets ver6
 - 같은 leg(`service_id`+수량)가 여러 후보 경로에 겹쳐 등장해도 협상은 한 번만 하고 결과를
   캐시해서 재사용한다 — LLM 호출을 불필요하게 중복하지 않기 위함.
 - 협상가가 실제로 근거 데이터(`leg.cost_usd`) 대비 너무 크게 벗어나면 내부적으로
-  grounding 체크에 걸리도록 되어 있다(수치를 지어내는지 검증용, `run_phase2.py` 결과에서
-  확인 가능. 프론트용 결과 파일에는 포함하지 않음).
+  grounding 체크에 걸리도록 되어 있다(수치를 지어내는지 검증용. 프론트용 결과 파일에는
+  포함하지 않음).
 
 ---
 
@@ -262,6 +251,6 @@ python3 run_phase2.py --top_k 3 --priorities COST,TIME --datasets ver6
 
 - 로컬 CPU Ollama 기준 협상 1건(leg당 LLM 호출)마다 수 초~수십 초 걸릴 수 있다 —
   `top_k`·`priorities` 개수를 늘릴수록 leg 협상 건수가 늘어 전체 실행 시간이 길어진다.
-- 현재 실제로 동작하는 데이터셋은 `ver6`(`data/fina_data(ver6)/`) 하나뿐이다. 그 외
+- 현재 실제로 동작하는 데이터셋은 `ver6`(`data/`) 하나뿐이다. 그 외
   `LOADERS`에 남아있는 항목들은 원본 폴더가 삭제된 과거 데이터셋 참고용으로, 호출하면
   `FileNotFoundError`가 난다.

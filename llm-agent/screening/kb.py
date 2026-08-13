@@ -58,7 +58,7 @@ def load_coords(base, dataset_dir):
 
 
 DATASET_DIRS = {
-    "ver6": "fina_data(ver6)",
+    "ver6": "data",
     "v1_final": "dataset_v1_final",
     "v2_fixed": "dataset_v2_fixed",
     "v3_usd_realistic": "glovis_multi_agent_dataset_v3_usd_realistic",
