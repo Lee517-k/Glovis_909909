@@ -18,11 +18,9 @@ dist/
 .vite/
 
 # Local data and logs
-*.db
 *.sqlite
 *.sqlite3
 *.log
-Data/*
 !Data/README.md
 !Data/.gitkeep
 
