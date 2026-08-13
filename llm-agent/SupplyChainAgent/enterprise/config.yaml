@@ -1,0 +1,48 @@
+addr: 0.0.0.0:8080
+advanced:
+  group_size: 100 # skip auto memory-based sizing (needs 12GB free); 18 agents fit in one group anyway
+llm:
+- api_key: unused-see-dotenv # actual key comes from OPENAI_API_KEY in .env, this field is ignored by agentsociety/llm/llm.py
+  base_url: http://127.0.0.1:11500/v1 # our own dedicated Ollama instance (CPU-mode; driver too old for GPU), imported from /data/jiii111 model cache
+  model: qwen2.5-7b-instruct-local
+  provider: openai
+  semaphore: 4 # OLLAMA_NUM_PARALLEL=4 on our own instance, not shared with other users
+env:
+  avro:
+    enabled: false # Whether to enable Avro
+    path: <AVRO-OUTPUT-PATH> # Path to the Avro output file
+  mlflow:
+    enabled: false # disabled for local test run, no MLflow server needed
+    mlflow_uri: http://localhost:59000 # MLflow server URI
+    username: admin # MLflow server username
+    password: CHANGE_ME # MLflow server password
+  pgsql:
+    enabled: true # local Postgres (conda-forge, no docker), started via pg_ctl -D /data/jiii111/pgdata
+    dsn: postgresql://postgres:supplychain@localhost:5432/postgres # PostgreSQL connection string
+    num_workers: 1 # explicit; "auto" (the default) never gets resolved because advanced.group_size is fixed (not "auto"), which short-circuits set_auto_workers() before it reaches num_workers
+  redis:
+    server: localhost # Redis server address
+    port: 6379 # Redis port
+    password: null # local redis-server has no auth configured
+map:
+  file_path: "./data/beijing_map.pb" # Path to the map file
+  # cache_path: ./data/beijing_map.pb # Cache path for accelerating map file loading
+agents:
+  citizens:
+  - agent_class: citizen # The class of the agent
+    number: 1 # The number of the agents
+  firms:
+  - agent_class: firm
+    number: 16
+  goverment:
+  - agent_class: goverment
+    number: 1
+exp:
+  name: enterprise-simulation # Experiment name
+  environment:
+    start_tick: 28800 # Start time in seconds
+    total_tick: 7200 # Total time in seconds
+  workflow:
+  - type: step # bumped up from 3; each real negotiation step took ~5-11 min on CPU inference, watch pace and stop early if it balloons
+    steps: 8
+    ticks_per_step: 300

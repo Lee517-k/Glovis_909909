@@ -1,0 +1,370 @@
+:root {
+    font-weight: normal;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --primary-color: #3366ff;
+    --primary-light: #e6f7ff;
+    --primary-dark: #0033cc;
+    --secondary-color: #6c757d;
+    --success-color: #52c41a;
+    --warning-color: #faad14;
+    --error-color: #ff4d4f;
+    --background-color: #f5f7fa;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-background: rgba(255, 255, 255, 0.9);
+    --card-border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Layout Components */
+.ant-layout {
+    background-color: var(--background-color);
+}
+
+.ant-layout-header {
+    z-index: 10;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+}
+
+.ant-menu {
+    background: transparent;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+}
+
+.ant-menu-horizontal {
+    border-bottom: 0;
+    line-height: 64px;
+}
+
+.ant-menu-item:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.ant-menu-item-selected {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--border-radius);
+}
+
+.ant-divider {
+    margin: 0 16px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ant-typography {
+    margin: 16px 0;
+}
+
+/* Utility Classes */
+.w-full {
+    width: 100%;
+}
+
+/* Map and Visualization */
+.deck {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    z-index: 0;
+}
+
+/* Left Panel */
+.left {
+    position: absolute;
+    top: 84px;
+    left: 20px;
+    z-index: 5;
+    transition: all var(--transition-speed);
+}
+
+.left-inner {
+    background: var(--card-background);
+    border: var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    width: 320px;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+    backdrop-filter: blur(10px);
+    transition: transform var(--transition-speed);
+}
+
+.left-inner.collapsed {
+    transform: translateX(-110%);
+}
+
+.left-info-block {
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.02);
+    transition: background-color var(--transition-speed);
+}
+
+.left-info-block.selected {
+    background-color: var(--primary-light);
+    border-left: 3px solid var(--primary-color);
+}
+
+.left-info-block:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.left-info-history-card {
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.02);
+    margin: 8px 0;
+    width: 100%;
+    transition: transform 0.2s;
+}
+
+.left-info-history-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-info-history-inner {
+    padding: 12px;
+}
+
+/* Right Panel */
+.right {
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    z-index: 5;
+    overflow: hidden;
+    width: 320px;
+    transition: all var(--transition-speed);
+}
+
+.right-inner {
+    background: var(--card-background);
+    border: var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    width: 320px;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+    backdrop-filter: blur(10px);
+    transition: transform var(--transition-speed);
+}
+
+.right-inner.collapsed {
+    transform: translateX(110%);
+}
+
+.right-inner .ant-sender {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+    width: 100%;
+}
+
+.right-inner .ant-select {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.right-inner .tabs {
+    max-width: 100%;
+    padding: 0;
+}
+
+.bubble-no-input {
+    padding: 0 8px 8px 0;
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.bubble-input {
+    padding: 0 8px 8px 0;
+    height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+
+/* Global Prompt */
+.global-prompt {
+    position: absolute;
+    background: var(--card-background);
+    border: var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    top: 84px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+}
+
+.global-prompt-inner {
+    padding: 12px 24px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+/* Control Progress */
+.control-progress {
+    position: absolute;
+    background: var(--card-background);
+    border: var(--card-border);
+    border-radius: 28px;
+    box-shadow: var(--box-shadow);
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    padding: 12px 24px;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+}
+
+.status {
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.05);
+    height: 32px;
+    margin: 0 0 0 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.player {
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.05);
+    height: 32px;
+    margin: 0 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* Slider Customization */
+.ant-slider .ant-slider-track {
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+}
+
+.ant-slider:hover .ant-slider-track {
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+}
+
+.circle-wrap > .ant-select .ant-select-selector {
+    border-radius: 16px;
+}
+
+/* Button Styles */
+.ant-btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.ant-btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Card Styles */
+.ant-card {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: var(--card-border);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Table Styles */
+.ant-table {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+/* Form Styles */
+.ant-form-item-label > label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .left-inner, .right-inner {
+        width: 280px;
+    }
+    
+    .control-progress {
+        width: 90%;
+    }
+    
+    .global-prompt {
+        width: 90%;
+        max-width: none;
+    }
+}

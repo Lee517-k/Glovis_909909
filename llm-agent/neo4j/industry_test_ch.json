@@ -1,0 +1,2197 @@
+
+{
+  "level_1": [
+    {
+      "id": 1,
+      "name": "用户",
+      "level": 1,
+      "company_capacity": 40,
+      "initial_capital": 99286,
+      "main_products": [
+        {
+          "product_name": "用户需求1",
+          "product_id": 1,
+          "related_materials": [
+            {
+              "product_name": "营销产品1",
+              "product_id": 3
+            },
+            {
+              "product_name": "精益产品1",
+              "product_id": 6
+            },
+            {
+              "product_name": "研发产品1",
+              "product_id": 9
+            }
+          ],
+          "base_price": 123.93114441107502,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "营销产品1*12%+精益产品1*64%+研发产品1*24%",
+          "manufacturing_cost": 79.58125879155477,
+          "material_cost": 0,
+          "net_manufacturing_cost": 63.33602799065369,
+          "profit_margin": 18.813743863009243
+        },
+        {
+          "product_name": "用户需求2",
+          "product_id": 2,
+          "related_materials": [],
+          "base_price": 185.60958728028868,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 95.76253058834479,
+          "material_cost": 0,
+          "net_manufacturing_cost": 102.80023923975162,
+          "profit_margin": 10.140472501483591
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "用户需求1",
+          "product_id": 1
+        },
+        {
+          "product_name": "用户需求2",
+          "product_id": 2
+        }
+      ],
+      "inventory_factor": 0.7742437052811556,
+      "recipe_complexity": "complex",
+      "inventory_system": {
+        "products": {
+          "1": {
+            "product_name": "用户需求1",
+            "quantity": 498
+          },
+          "2": {
+            "product_name": "用户需求2",
+            "quantity": 911
+          }
+        },
+        "materials": {
+          "9": {
+            "product_name": "研发产品1",
+            "quantity": 705
+          },
+          "6": {
+            "product_name": "精益产品1",
+            "quantity": 899
+          },
+          "3": {
+            "product_name": "营销产品1",
+            "quantity": 628
+          }
+        }
+      },
+      "intelligence_level": 4
+    }
+  ],
+  "level_2": [
+    {
+      "id": 2,
+      "name": "营销部",
+      "level": 2,
+      "company_capacity": 70,
+      "initial_capital": 89054,
+      "main_products": [
+        {
+          "product_name": "营销部_基础产品",
+          "product_id": 1001,
+          "related_materials": [
+            {
+              "product_name": "用户需求1",
+              "product_id": 1
+            },
+            {
+              "product_name": "用户需求2",
+              "product_id": 2
+            },
+            {
+              "product_name": "主机产品1",
+              "product_id": 12
+            }
+          ],
+          "base_price": 206.32120960165568,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 131.2605777950389,
+          "material_cost": 93.478404490761,
+          "net_manufacturing_cost": 56.22375122059419,
+          "profit_margin": 12.174921739209928,
+          "product_construct": "用户需求1*37%+用户需求2*12%+主机产品1*51%"
+        },
+        {
+          "product_name": "营销产品1",
+          "product_id": 3,
+          "related_materials": [],
+          "base_price": 78.68577781856933,
+          "is_terminal_product": true,
+          "product_type": "end_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 143.64049812382285,
+          "material_cost": 0,
+          "net_manufacturing_cost": 41.52005636455981,
+          "profit_margin": 13.917813074652983,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.36,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:2.36%"
+          }
+        },
+        {
+          "product_name": "市场信息1",
+          "product_id": 4,
+          "related_materials": [],
+          "base_price": 72.40172352127382,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 135.51246894549462,
+          "material_cost": 0,
+          "net_manufacturing_cost": 120.81055774386317,
+          "profit_margin": 10.243005006519287
+        },
+        {
+          "product_name": "市场信息2",
+          "product_id": 5,
+          "related_materials": [],
+          "base_price": 93.85735229955806,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 53.81557711132183,
+          "material_cost": 0,
+          "net_manufacturing_cost": 117.02606684296315,
+          "profit_margin": 16.659461868080033
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "营销产品1",
+          "product_id": 3
+        },
+        {
+          "product_name": "市场信息1",
+          "product_id": 4
+        },
+        {
+          "product_name": "市场信息2",
+          "product_id": 5
+        },
+        {
+          "product_name": "product_4",
+          "product_id": 4
+        }
+      ],
+      "inventory_factor": 0.7100828459561471,
+      "recipe_complexity": "standard",
+      "inventory_system": {
+        "products": {
+          "1001": {
+            "product_name": "营销部_基础产品",
+            "quantity": 412
+          },
+          "3": {
+            "product_name": "营销产品1",
+            "quantity": 318
+          },
+          "4": {
+            "product_name": "市场信息1",
+            "quantity": 373
+          },
+          "5": {
+            "product_name": "市场信息2",
+            "quantity": 248
+          }
+        },
+        "materials": {
+          "1": {
+            "product_name": "用户需求1",
+            "quantity": 630
+          },
+          "12": {
+            "product_name": "主机产品1",
+            "quantity": 283
+          },
+          "2": {
+            "product_name": "用户需求2",
+            "quantity": 193
+          }
+        }
+      },
+      "intelligence_level": 2
+    },
+    {
+      "id": 3,
+      "name": "研究院",
+      "level": 2,
+      "company_capacity": 43,
+      "initial_capital": 62299,
+      "main_products": [
+        {
+          "product_name": "研究院_基础产品",
+          "product_id": 1004,
+          "related_materials": [
+            {
+              "product_name": "市场信息1",
+              "product_id": 4
+            },
+            {
+              "product_name": "市场信息2",
+              "product_id": 5
+            }
+          ],
+          "base_price": 178.75444246220283,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 133.9368696664453,
+          "material_cost": 47.43999636797311,
+          "net_manufacturing_cost": 69.5675611796071,
+          "profit_margin": 15.786901379798461,
+          "product_construct": "市场信息1*22%+市场信息2*78%"
+        },
+        {
+          "product_name": "研发产品1",
+          "product_id": 9,
+          "related_materials": [],
+          "base_price": 152.98954231949085,
+          "is_terminal_product": true,
+          "product_type": "end_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 45.06785333309668,
+          "material_cost": 0,
+          "net_manufacturing_cost": 47.83527665620155,
+          "profit_margin": 16.368503958840716,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.68,
+            "consumption_type": "fast consum",
+            "description": "consumption_rate:2.68%"
+          }
+        },
+        {
+          "product_name": "技术方案1",
+          "product_id": 10,
+          "related_materials": [],
+          "base_price": 86.70932517542126,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 78.01910667252338,
+          "material_cost": 0,
+          "net_manufacturing_cost": 117.51339080317821,
+          "profit_margin": 12.206661177064134
+        },
+        {
+          "product_name": "设计图纸1",
+          "product_id": 11,
+          "related_materials": [],
+          "base_price": 57.16564495726279,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 124.9979915193668,
+          "material_cost": 0,
+          "net_manufacturing_cost": 122.03016035172736,
+          "profit_margin": 10.174004470386262
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "研发产品1",
+          "product_id": 9
+        },
+        {
+          "product_name": "技术方案1",
+          "product_id": 10
+        },
+        {
+          "product_name": "设计图纸1",
+          "product_id": 11
+        }
+      ],
+      "inventory_factor": 0.7742437052811556,
+      "recipe_complexity": "medium",
+      "inventory_system": {
+        "products": {
+          "1004": {
+            "product_name": "研究院_基础产品",
+            "quantity": 345
+          },
+          "9": {
+            "product_name": "研发产品1",
+            "quantity": 676
+          },
+          "10": {
+            "product_name": "技术方案1",
+            "quantity": 128
+          },
+          "11": {
+            "product_name": "设计图纸1",
+            "quantity": 300
+          }
+        },
+        "materials": {
+          "5": {
+            "product_name": "市场信息2",
+            "quantity": 361
+          },
+          "4": {
+            "product_name": "市场信息1",
+            "quantity": 1111
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 4,
+      "name": "一号主机厂",
+      "level": 2,
+      "company_capacity": 99,
+      "initial_capital": 43320,
+      "main_products": [
+        {
+          "product_name": "一号主机厂_基础产品",
+          "product_id": 1011,
+          "related_materials": [
+            {
+              "product_name": "设计图纸1",
+              "product_id": 11
+            },
+            {
+              "product_name": "生产件1",
+              "product_id": 14
+            },
+            {
+              "product_name": "采购件1",
+              "product_id": 15
+            }
+          ],
+          "base_price": 111.31007171907851,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 66.03750524916481,
+          "material_cost": 27.651001266518147,
+          "net_manufacturing_cost": 137.57595051867492,
+          "profit_margin": 11.653057834297933,
+          "product_construct": "设计图纸1*52%+生产件1*20%+采购件1*28%"
+        },
+        {
+          "product_name": "主机产品1",
+          "product_id": 12,
+          "related_materials": [],
+          "base_price": 75.08045632732231,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 50.039643802015334,
+          "material_cost": 0,
+          "net_manufacturing_cost": 36.50052885637079,
+          "profit_margin": 13.735576561329097
+        },
+        {
+          "product_name": "主机部件1",
+          "product_id": 13,
+          "related_materials": [],
+          "base_price": 181.65131494252236,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 61.34460242348197,
+          "material_cost": 0,
+          "net_manufacturing_cost": 65.11506832514216,
+          "profit_margin": 19.03623601500952
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "主机产品1",
+          "product_id": 12
+        },
+        {
+          "product_name": "主机部件1",
+          "product_id": 13
+        }
+      ],
+      "inventory_factor": 0.810041584807644,
+      "recipe_complexity": "standard",
+      "inventory_system": {
+        "products": {
+          "1011": {
+            "product_name": "一号主机厂_基础产品",
+            "quantity": 763
+          },
+          "12": {
+            "product_name": "主机产品1",
+            "quantity": 239
+          },
+          "13": {
+            "product_name": "主机部件1",
+            "quantity": 686
+          }
+        },
+        "materials": {
+          "15": {
+            "product_name": "采购件1",
+            "quantity": 192
+          },
+          "11": {
+            "product_name": "设计图纸1",
+            "quantity": 302
+          },
+          "14": {
+            "product_name": "生产件1",
+            "quantity": 596
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 5,
+      "name": "精益制造部",
+      "level": 2,
+      "company_capacity": 92,
+      "initial_capital": 78957,
+      "main_products": [
+        {
+          "product_name": "精益产品1",
+          "product_id": 6,
+          "related_materials": [
+            {
+              "product_name": "技术方案1",
+              "product_id": 10
+            },
+            {
+              "product_name": "主机部件1",
+              "product_id": 13
+            }
+          ],
+          "base_price": 155.09256767222442,
+          "is_terminal_product": true,
+          "product_type": "end_stuff",
+          "product_construct": "技术方案1*75%+主机部件1*25%",
+          "manufacturing_cost": 30.36434195933975,
+          "material_cost": 0,
+          "net_manufacturing_cost": 63.47445072763107,
+          "profit_margin": 10.349564736116616,
+          "consumption_rate": {
+            "daily_consumption_rate": 0.95,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:0.95%"
+          }
+        },
+        {
+          "product_name": "制造指令1",
+          "product_id": 7,
+          "related_materials": [],
+          "base_price": 192.02945280123524,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 133.90786708296187,
+          "material_cost": 0,
+          "net_manufacturing_cost": 127.4943426290084,
+          "profit_margin": 11.79193860268168
+        },
+        {
+          "product_name": "采购需求1",
+          "product_id": 8,
+          "related_materials": [],
+          "base_price": 192.57732243397714,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 72.49737440344708,
+          "material_cost": 0,
+          "net_manufacturing_cost": 56.80800813751435,
+          "profit_margin": 19.18654978944346
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "精益产品1",
+          "product_id": 6
+        },
+        {
+          "product_name": "制造指令1",
+          "product_id": 7
+        },
+        {
+          "product_name": "采购需求1",
+          "product_id": 8
+        }
+      ],
+      "recipe_complexity": "standard",
+      "inventory_factor": 0.42025201038046883,
+      "inventory_system": {
+        "products": {
+          "6": {
+            "product_name": "精益产品1",
+            "quantity": 802
+          },
+          "7": {
+            "product_name": "制造指令1",
+            "quantity": 346
+          },
+          "8": {
+            "product_name": "采购需求1",
+            "quantity": 132
+          }
+        },
+        "materials": {
+          "10": {
+            "product_name": "技术方案1",
+            "quantity": 463
+          },
+          "13": {
+            "product_name": "主机部件1",
+            "quantity": 173
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 6,
+      "name": "生产车间",
+      "level": 2,
+      "company_capacity": 58,
+      "initial_capital": 66980,
+      "main_products": [
+        {
+          "product_name": "生产车间_基础产品",
+          "product_id": 1007,
+          "related_materials": [
+            {
+              "product_name": "制造指令1",
+              "product_id": 7
+            }
+          ],
+          "base_price": 205.36570374677382,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 138.073773577719,
+          "material_cost": 96.97299990583267,
+          "net_manufacturing_cost": 105.85355586879625,
+          "profit_margin": 17.700146992284452,
+          "product_construct": "制造指令1*100%"
+        },
+        {
+          "product_name": "生产件1",
+          "product_id": 14,
+          "related_materials": [],
+          "base_price": 89.3666842006539,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 98.4187103986918,
+          "material_cost": 0,
+          "net_manufacturing_cost": 81.50184562715376,
+          "profit_margin": 19.94947717844553
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "生产件1",
+          "product_id": 14
+        }
+      ],
+      "inventory_factor": 0.810041584807644,
+      "recipe_complexity": "standard",
+      "inventory_system": {
+        "products": {
+          "1007": {
+            "product_name": "生产车间_基础产品",
+            "quantity": 90
+          },
+          "14": {
+            "product_name": "生产件1",
+            "quantity": 750
+          }
+        },
+        "materials": {
+          "7": {
+            "product_name": "制造指令1",
+            "quantity": 606
+          }
+        }
+      },
+      "intelligence_level": 3
+    },
+    {
+      "id": 7,
+      "name": "采购部",
+      "level": 2,
+      "company_capacity": 45,
+      "initial_capital": 45988,
+      "main_products": [
+        {
+          "product_name": "采购部_基础产品",
+          "product_id": 1008,
+          "related_materials": [
+            {
+              "product_name": "采购需求1",
+              "product_id": 8
+            },
+            {
+              "product_name": "供应商产品1",
+              "product_id": 17
+            }
+          ],
+          "base_price": 264.2749064927335,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 187.7654063567666,
+          "material_cost": 95.77281010621113,
+          "net_manufacturing_cost": 96.70067179712188,
+          "profit_margin": 14.03636629115065,
+          "product_construct": "采购需求1*31%+供应商产品1*69%"
+        },
+        {
+          "product_name": "采购件1",
+          "product_id": 15,
+          "related_materials": [],
+          "base_price": 108.2217715539681,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 78.15587638813615,
+          "material_cost": 0,
+          "net_manufacturing_cost": 127.87293897738954,
+          "profit_margin": 16.585730741443648
+        },
+        {
+          "product_name": "采购订单1",
+          "product_id": 16,
+          "related_materials": [],
+          "base_price": 91.27136383689071,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 140.70680828642452,
+          "material_cost": 0,
+          "net_manufacturing_cost": 48.19027590211003,
+          "profit_margin": 13.394845228041358
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "采购件1",
+          "product_id": 15
+        },
+        {
+          "product_name": "采购订单1",
+          "product_id": 16
+        }
+      ],
+      "inventory_system": {
+        "products": {
+          "1008": {
+            "product_name": "采购部_基础产品",
+            "quantity": 222
+          },
+          "15": {
+            "product_name": "采购件1",
+            "quantity": 164
+          },
+          "16": {
+            "product_name": "采购订单1",
+            "quantity": 647
+          }
+        },
+        "materials": {
+          "17": {
+            "product_name": "供应商产品1",
+            "quantity": 1029
+          },
+          "8": {
+            "product_name": "采购需求1",
+            "quantity": 276
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 8,
+      "name": "外部供应商总部",
+      "level": 2,
+      "company_capacity": 95,
+      "initial_capital": 98568,
+      "main_products": [
+        {
+          "product_name": "外部供应商总部_基础产品",
+          "product_id": 1016,
+          "related_materials": [
+            {
+              "product_name": "采购订单1",
+              "product_id": 16
+            }
+          ],
+          "base_price": 219.96768405054456,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 140.35898626456313,
+          "material_cost": 58.45409778215523,
+          "net_manufacturing_cost": 142.870212742128,
+          "profit_margin": 15.154682329808349,
+          "product_construct": "采购订单1*100%"
+        },
+        {
+          "product_name": "供应商产品1",
+          "product_id": 17,
+          "related_materials": [],
+          "base_price": 140.34811877107967,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 127.32392946861825,
+          "material_cost": 0,
+          "net_manufacturing_cost": 74.88773769800858,
+          "profit_margin": 11.244473552509394
+        },
+        {
+          "product_name": "外部供应商产品1",
+          "product_id": 18,
+          "related_materials": [],
+          "base_price": 155.61821192030567,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 141.80666269511568,
+          "material_cost": 0,
+          "net_manufacturing_cost": 63.81959919245605,
+          "profit_margin": 12.015043361999513
+        },
+        {
+          "product_name": "外部供应商产品2",
+          "product_id": 19,
+          "related_materials": [],
+          "base_price": 166.6829326725724,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 101.68664893106977,
+          "material_cost": 0,
+          "net_manufacturing_cost": 35.712812284616064,
+          "profit_margin": 10.236799304347958
+        },
+        {
+          "product_name": "外部供应商产品3",
+          "product_id": 20,
+          "related_materials": [],
+          "base_price": 71.56207226446078,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 106.36074375151185,
+          "material_cost": 0,
+          "net_manufacturing_cost": 71.60187600033501,
+          "profit_margin": 11.69373949906198
+        },
+        {
+          "product_name": "外部供应商产品4",
+          "product_id": 21,
+          "related_materials": [],
+          "base_price": 139.13539972968277,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 133.9043660860491,
+          "material_cost": 0,
+          "net_manufacturing_cost": 119.5088920703813,
+          "profit_margin": 15.713306130482206
+        },
+        {
+          "product_name": "外部供应商产品5",
+          "product_id": 22,
+          "related_materials": [],
+          "base_price": 83.49627004184903,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 53.207734713831485,
+          "material_cost": 0,
+          "net_manufacturing_cost": 108.13114033276078,
+          "profit_margin": 17.85679210982769
+        },
+        {
+          "product_name": "外部供应商产品6",
+          "product_id": 23,
+          "related_materials": [],
+          "base_price": 67.21672066378976,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 146.98797435427872,
+          "material_cost": 0,
+          "net_manufacturing_cost": 98.72880378601876,
+          "profit_margin": 18.96759146926217
+        },
+        {
+          "product_name": "外部供应商产品7",
+          "product_id": 24,
+          "related_materials": [],
+          "base_price": 93.26153542800822,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 30.86076051920212,
+          "material_cost": 0,
+          "net_manufacturing_cost": 148.69337899638208,
+          "profit_margin": 19.225850089337115
+        },
+        {
+          "product_name": "外部供应商产品8",
+          "product_id": 25,
+          "related_materials": [],
+          "base_price": 118.51870054207828,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 75.25610370595851,
+          "material_cost": 0,
+          "net_manufacturing_cost": 115.89643524818095,
+          "profit_margin": 17.42264329947408
+        },
+        {
+          "product_name": "外部供应商产品9",
+          "product_id": 26,
+          "related_materials": [],
+          "base_price": 186.12364538178048,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 114.44286658131766,
+          "material_cost": 0,
+          "net_manufacturing_cost": 52.77492897607088,
+          "profit_margin": 14.624671263466531
+        },
+        {
+          "product_name": "外部供应商产品10",
+          "product_id": 27,
+          "related_materials": [],
+          "base_price": 52.43228249323765,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 139.84869732764628,
+          "material_cost": 0,
+          "net_manufacturing_cost": 137.40434482347553,
+          "profit_margin": 10.676696160377672
+        },
+        {
+          "product_name": "外部供应商产品11",
+          "product_id": 28,
+          "related_materials": [],
+          "base_price": 180.126486673999,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 91.77222657737562,
+          "material_cost": 0,
+          "net_manufacturing_cost": 94.39080182500365,
+          "profit_margin": 19.1711280200372
+        },
+        {
+          "product_name": "外部供应商产品12",
+          "product_id": 29,
+          "related_materials": [],
+          "base_price": 187.42665486066537,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 96.86740973008138,
+          "material_cost": 0,
+          "net_manufacturing_cost": 114.0572070389143,
+          "profit_margin": 13.888642353516047
+        },
+        {
+          "product_name": "外部供应商产品13",
+          "product_id": 30,
+          "related_materials": [],
+          "base_price": 163.47804956729962,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 49.37879373520701,
+          "material_cost": 0,
+          "net_manufacturing_cost": 125.05195715634434,
+          "profit_margin": 18.1314635007638
+        },
+        {
+          "product_name": "外部供应商产品14",
+          "product_id": 31,
+          "related_materials": [],
+          "base_price": 58.395080100579364,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 105.28133625766716,
+          "material_cost": 0,
+          "net_manufacturing_cost": 81.23929933717426,
+          "profit_margin": 18.19564843861834
+        },
+        {
+          "product_name": "外部供应商产品15",
+          "product_id": 32,
+          "related_materials": [],
+          "base_price": 104.52384461360646,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 108.99160269115593,
+          "material_cost": 0,
+          "net_manufacturing_cost": 77.91372031447347,
+          "profit_margin": 10.747546357494054
+        },
+        {
+          "product_name": "外部供应商产品16",
+          "product_id": 33,
+          "related_materials": [],
+          "base_price": 187.93397550686305,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 87.509003124563,
+          "material_cost": 0,
+          "net_manufacturing_cost": 144.74549749054373,
+          "profit_margin": 15.26878541760535
+        },
+        {
+          "product_name": "外部供应商产品17",
+          "product_id": 34,
+          "related_materials": [],
+          "base_price": 134.13304685174256,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 114.97348458699534,
+          "material_cost": 0,
+          "net_manufacturing_cost": 100.46964778429269,
+          "profit_margin": 10.059023382001959
+        },
+        {
+          "product_name": "外部供应商产品18",
+          "product_id": 35,
+          "related_materials": [],
+          "base_price": 181.0042839476384,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 137.84129594803179,
+          "material_cost": 0,
+          "net_manufacturing_cost": 96.72844941371955,
+          "profit_margin": 14.831914823868717
+        },
+        {
+          "product_name": "外部供应商产品19",
+          "product_id": 36,
+          "related_materials": [],
+          "base_price": 72.26070188254445,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 109.46109710587614,
+          "material_cost": 0,
+          "net_manufacturing_cost": 30.52674355340331,
+          "profit_margin": 18.959301593564
+        },
+        {
+          "product_name": "外部供应商产品20",
+          "product_id": 37,
+          "related_materials": [],
+          "base_price": 189.2121697180042,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 51.87918903385623,
+          "material_cost": 0,
+          "net_manufacturing_cost": 66.61331198314656,
+          "profit_margin": 12.397643371363127
+        },
+        {
+          "product_name": "外部供应商产品21",
+          "product_id": 38,
+          "related_materials": [],
+          "base_price": 180.21986364540018,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 140.09209025276425,
+          "material_cost": 0,
+          "net_manufacturing_cost": 40.74391943594101,
+          "profit_margin": 11.459583050993379
+        },
+        {
+          "product_name": "外部供应商产品22",
+          "product_id": 39,
+          "related_materials": [],
+          "base_price": 128.7901009484451,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "基础加工",
+          "manufacturing_cost": 106.34049287642725,
+          "material_cost": 0,
+          "net_manufacturing_cost": 38.96780365642411,
+          "profit_margin": 16.174107350770477
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "供应商产品1",
+          "product_id": 17
+        },
+        {
+          "product_name": "外部供应商产品1",
+          "product_id": 18
+        },
+        {
+          "product_name": "外部供应商产品2",
+          "product_id": 19
+        },
+        {
+          "product_name": "外部供应商产品3",
+          "product_id": 20
+        },
+        {
+          "product_name": "外部供应商产品4",
+          "product_id": 21
+        },
+        {
+          "product_name": "外部供应商产品5",
+          "product_id": 22
+        },
+        {
+          "product_name": "外部供应商产品6",
+          "product_id": 23
+        },
+        {
+          "product_name": "外部供应商产品7",
+          "product_id": 24
+        },
+        {
+          "product_name": "外部供应商产品8",
+          "product_id": 25
+        },
+        {
+          "product_name": "外部供应商产品9",
+          "product_id": 26
+        },
+        {
+          "product_name": "外部供应商产品10",
+          "product_id": 27
+        },
+        {
+          "product_name": "外部供应商产品11",
+          "product_id": 28
+        },
+        {
+          "product_name": "外部供应商产品12",
+          "product_id": 29
+        },
+        {
+          "product_name": "外部供应商产品13",
+          "product_id": 30
+        },
+        {
+          "product_name": "外部供应商产品14",
+          "product_id": 31
+        },
+        {
+          "product_name": "外部供应商产品15",
+          "product_id": 32
+        },
+        {
+          "product_name": "外部供应商产品16",
+          "product_id": 33
+        },
+        {
+          "product_name": "外部供应商产品17",
+          "product_id": 34
+        },
+        {
+          "product_name": "外部供应商产品18",
+          "product_id": 35
+        },
+        {
+          "product_name": "外部供应商产品19",
+          "product_id": 36
+        },
+        {
+          "product_name": "外部供应商产品20",
+          "product_id": 37
+        },
+        {
+          "product_name": "外部供应商产品21",
+          "product_id": 38
+        },
+        {
+          "product_name": "外部供应商产品22",
+          "product_id": 39
+        }
+      ],
+      "inventory_factor": 0.810041584807644,
+      "recipe_complexity": "standard",
+      "inventory_system": {
+        "products": {
+          "1016": {
+            "product_name": "外部供应商总部_基础产品",
+            "quantity": 406
+          },
+          "17": {
+            "product_name": "供应商产品1",
+            "quantity": 344
+          },
+          "18": {
+            "product_name": "外部供应商产品1",
+            "quantity": 111
+          },
+          "19": {
+            "product_name": "外部供应商产品2",
+            "quantity": 158
+          },
+          "20": {
+            "product_name": "外部供应商产品3",
+            "quantity": 113
+          },
+          "21": {
+            "product_name": "外部供应商产品4",
+            "quantity": 514
+          },
+          "22": {
+            "product_name": "外部供应商产品5",
+            "quantity": 323
+          },
+          "23": {
+            "product_name": "外部供应商产品6",
+            "quantity": 281
+          },
+          "24": {
+            "product_name": "外部供应商产品7",
+            "quantity": 838
+          },
+          "25": {
+            "product_name": "外部供应商产品8",
+            "quantity": 441
+          },
+          "26": {
+            "product_name": "外部供应商产品9",
+            "quantity": 321
+          },
+          "27": {
+            "product_name": "外部供应商产品10",
+            "quantity": 484
+          },
+          "28": {
+            "product_name": "外部供应商产品11",
+            "quantity": 643
+          },
+          "29": {
+            "product_name": "外部供应商产品12",
+            "quantity": 315
+          },
+          "30": {
+            "product_name": "外部供应商产品13",
+            "quantity": 145
+          },
+          "31": {
+            "product_name": "外部供应商产品14",
+            "quantity": 225
+          },
+          "32": {
+            "product_name": "外部供应商产品15",
+            "quantity": 307
+          },
+          "33": {
+            "product_name": "外部供应商产品16",
+            "quantity": 723
+          },
+          "34": {
+            "product_name": "外部供应商产品17",
+            "quantity": 714
+          },
+          "35": {
+            "product_name": "外部供应商产品18",
+            "quantity": 382
+          },
+          "36": {
+            "product_name": "外部供应商产品19",
+            "quantity": 803
+          },
+          "37": {
+            "product_name": "外部供应商产品20",
+            "quantity": 799
+          },
+          "38": {
+            "product_name": "外部供应商产品21",
+            "quantity": 205
+          },
+          "39": {
+            "product_name": "外部供应商产品22",
+            "quantity": 238
+          }
+        },
+        "materials": {
+          "16": {
+            "product_name": "采购订单1",
+            "quantity": 234
+          }
+        }
+      },
+      "intelligence_level": 1
+    }
+  ],
+  "level_3": [
+    {
+      "id": 9,
+      "name": "一汽解放柳州特种汽车有限公司",
+      "level": 3,
+      "company_capacity": 37,
+      "initial_capital": 23093,
+      "main_products": [
+        {
+          "product_name": "一汽解放柳州特种汽车有限公司_基础产品",
+          "product_id": 1018,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品1",
+              "product_id": 18
+            }
+          ],
+          "base_price": 98.08999678121981,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 105.90175884081788,
+          "material_cost": 97.7194275493518,
+          "net_manufacturing_cost": 72.11458401926542,
+          "profit_margin": 17.740743882623725,
+          "product_construct": "外部供应商产品1*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1018": {
+            "product_name": "一汽解放柳州特种汽车有限公司_基础产品",
+            "quantity": 613
+          }
+        },
+        "materials": {
+          "18": {
+            "product_name": "外部供应商产品1",
+            "quantity": 728
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 10,
+      "name": "上海大众汽车有限公司",
+      "level": 3,
+      "company_capacity": 91,
+      "initial_capital": 28822,
+      "main_products": [
+        {
+          "product_name": "上海大众汽车有限公司_基础产品",
+          "product_id": 1019,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品2",
+              "product_id": 19
+            }
+          ],
+          "base_price": 210.2260595508833,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 244.8553923642205,
+          "material_cost": 28.88969158193983,
+          "net_manufacturing_cost": 117.89654703086491,
+          "profit_margin": 11.63601948477204,
+          "product_construct": "外部供应商产品2*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1019": {
+            "product_name": "上海大众汽车有限公司_基础产品",
+            "quantity": 128
+          }
+        },
+        "materials": {
+          "19": {
+            "product_name": "外部供应商产品2",
+            "quantity": 607
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 11,
+      "name": "中国重型汽车集团有限公司",
+      "level": 3,
+      "company_capacity": 99,
+      "initial_capital": 88448,
+      "main_products": [
+        {
+          "product_name": "中国重型汽车集团有限公司_基础产品",
+          "product_id": 1020,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品3",
+              "product_id": 20
+            }
+          ],
+          "base_price": 82.19084071372315,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 178.9958940323438,
+          "material_cost": 72.56366748696169,
+          "net_manufacturing_cost": 126.02182838939468,
+          "profit_margin": 11.80157598536335,
+          "product_construct": "外部供应商产品3*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1020": {
+            "product_name": "中国重型汽车集团有限公司_基础产品",
+            "quantity": 611
+          }
+        },
+        "materials": {
+          "20": {
+            "product_name": "外部供应商产品3",
+            "quantity": 587
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 12,
+      "name": "中国重汽集团青岛重工有限公司",
+      "level": 3,
+      "company_capacity": 32,
+      "initial_capital": 32725,
+      "main_products": [
+        {
+          "product_name": "中国重汽集团青岛重工有限公司_基础产品",
+          "product_id": 1021,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品4",
+              "product_id": 21
+            }
+          ],
+          "base_price": 249.7741453530904,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 105.6646047621864,
+          "material_cost": 62.24851425115091,
+          "net_manufacturing_cost": 113.0022113227308,
+          "profit_margin": 15.358179523970255,
+          "product_construct": "外部供应商产品4*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1021": {
+            "product_name": "中国重汽集团青岛重工有限公司_基础产品",
+            "quantity": 88
+          }
+        },
+        "materials": {
+          "21": {
+            "product_name": "外部供应商产品4",
+            "quantity": 221
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 13,
+      "name": "包头北奔重型汽车有限公司",
+      "level": 3,
+      "company_capacity": 31,
+      "initial_capital": 41394,
+      "main_products": [
+        {
+          "product_name": "包头北奔重型汽车有限公司_基础产品",
+          "product_id": 1022,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品5",
+              "product_id": 22
+            }
+          ],
+          "base_price": 284.78745832979666,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 222.17280368060295,
+          "material_cost": 50.888608790327766,
+          "net_manufacturing_cost": 88.13973319191597,
+          "profit_margin": 16.670005469374285,
+          "product_construct": "外部供应商产品5*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1022": {
+            "product_name": "包头北奔重型汽车有限公司_基础产品",
+            "quantity": 404
+          }
+        },
+        "materials": {
+          "22": {
+            "product_name": "外部供应商产品5",
+            "quantity": 120
+          }
+        }
+      },
+      "intelligence_level": 3
+    },
+    {
+      "id": 14,
+      "name": "北京中资燕京汽车有限公司",
+      "level": 3,
+      "company_capacity": 41,
+      "initial_capital": 99507,
+      "main_products": [
+        {
+          "product_name": "北京中资燕京汽车有限公司_基础产品",
+          "product_id": 1023,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品6",
+              "product_id": 23
+            }
+          ],
+          "base_price": 176.04666358905843,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 130.11329734701468,
+          "material_cost": 60.88006929084827,
+          "net_manufacturing_cost": 47.784533964273564,
+          "profit_margin": 13.259549795537005,
+          "product_construct": "外部供应商产品6*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1023": {
+            "product_name": "北京中资燕京汽车有限公司_基础产品",
+            "quantity": 620
+          }
+        },
+        "materials": {
+          "23": {
+            "product_name": "外部供应商产品6",
+            "quantity": 491
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 15,
+      "name": "山推工程机械股份有限公司",
+      "level": 3,
+      "company_capacity": 61,
+      "initial_capital": 58526,
+      "main_products": [
+        {
+          "product_name": "山推工程机械股份有限公司_基础产品",
+          "product_id": 1024,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品7",
+              "product_id": 24
+            }
+          ],
+          "base_price": 126.30829021223218,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 240.23871675698982,
+          "material_cost": 38.488587725815464,
+          "net_manufacturing_cost": 90.24144457095858,
+          "profit_margin": 19.643984131422815,
+          "product_construct": "外部供应商产品7*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1024": {
+            "product_name": "山推工程机械股份有限公司_基础产品",
+            "quantity": 518
+          }
+        },
+        "materials": {
+          "24": {
+            "product_name": "外部供应商产品7",
+            "quantity": 565
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 16,
+      "name": "山推建友机械股份有限公司",
+      "level": 3,
+      "company_capacity": 69,
+      "initial_capital": 75660,
+      "main_products": [
+        {
+          "product_name": "山推建友机械股份有限公司_基础产品",
+          "product_id": 1025,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品8",
+              "product_id": 25
+            }
+          ],
+          "base_price": 209.15448960159952,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 96.93913559339195,
+          "material_cost": 29.301569549426738,
+          "net_manufacturing_cost": 140.83353829580756,
+          "profit_margin": 14.23198911130498,
+          "product_construct": "外部供应商产品8*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1025": {
+            "product_name": "山推建友机械股份有限公司_基础产品",
+            "quantity": 900
+          }
+        },
+        "materials": {
+          "25": {
+            "product_name": "外部供应商产品8",
+            "quantity": 483
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 17,
+      "name": "广东永强奥林宝国际消防汽车有限公司",
+      "level": 3,
+      "company_capacity": 100,
+      "initial_capital": 36854,
+      "main_products": [
+        {
+          "product_name": "广东永强奥林宝国际消防汽车有限公司_基础产品",
+          "product_id": 1026,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品9",
+              "product_id": 26
+            }
+          ],
+          "base_price": 206.72894895758202,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 126.83633831500545,
+          "material_cost": 71.14077269938821,
+          "net_manufacturing_cost": 49.89914702809085,
+          "profit_margin": 19.889224014473232,
+          "product_construct": "外部供应商产品9*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1026": {
+            "product_name": "广东永强奥林宝国际消防汽车有限公司_基础产品",
+            "quantity": 476
+          }
+        },
+        "materials": {
+          "26": {
+            "product_name": "外部供应商产品9",
+            "quantity": 174
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 18,
+      "name": "明君汽车有限公司",
+      "level": 3,
+      "company_capacity": 77,
+      "initial_capital": 58669,
+      "main_products": [
+        {
+          "product_name": "明君汽车有限公司_基础产品",
+          "product_id": 1027,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品10",
+              "product_id": 27
+            }
+          ],
+          "base_price": 149.10649622735187,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 221.35503089644678,
+          "material_cost": 84.67538072761076,
+          "net_manufacturing_cost": 50.66282192204491,
+          "profit_margin": 19.001378205558368,
+          "product_construct": "外部供应商产品10*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1027": {
+            "product_name": "明君汽车有限公司_基础产品",
+            "quantity": 321
+          }
+        },
+        "materials": {
+          "27": {
+            "product_name": "外部供应商产品10",
+            "quantity": 252
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 19,
+      "name": "杭州专用汽车有限公司",
+      "level": 3,
+      "company_capacity": 51,
+      "initial_capital": 77480,
+      "main_products": [
+        {
+          "product_name": "杭州专用汽车有限公司_基础产品",
+          "product_id": 1028,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品11",
+              "product_id": 28
+            }
+          ],
+          "base_price": 236.8377558143941,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 202.2292280845419,
+          "material_cost": 73.58252200671916,
+          "net_manufacturing_cost": 124.05855627479202,
+          "profit_margin": 11.437107804950836,
+          "product_construct": "外部供应商产品11*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1028": {
+            "product_name": "杭州专用汽车有限公司_基础产品",
+            "quantity": 597
+          }
+        },
+        "materials": {
+          "28": {
+            "product_name": "外部供应商产品11",
+            "quantity": 115
+          }
+        }
+      },
+      "intelligence_level": 2
+    },
+    {
+      "id": 20,
+      "name": "杭州长江汽车有限公司",
+      "level": 3,
+      "company_capacity": 49,
+      "initial_capital": 62336,
+      "main_products": [
+        {
+          "product_name": "杭州长江汽车有限公司_基础产品",
+          "product_id": 1029,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品12",
+              "product_id": 29
+            }
+          ],
+          "base_price": 194.32340682520896,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 245.37683991649584,
+          "material_cost": 72.93039537248683,
+          "net_manufacturing_cost": 40.680147650705834,
+          "profit_margin": 15.620305942978277,
+          "product_construct": "外部供应商产品12*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1029": {
+            "product_name": "杭州长江汽车有限公司_基础产品",
+            "quantity": 492
+          }
+        },
+        "materials": {
+          "29": {
+            "product_name": "外部供应商产品12",
+            "quantity": 186
+          }
+        }
+      },
+      "intelligence_level": 2
+    },
+    {
+      "id": 21,
+      "name": "比亚迪汽车工业有限公司",
+      "level": 3,
+      "company_capacity": 94,
+      "initial_capital": 44915,
+      "main_products": [
+        {
+          "product_name": "比亚迪汽车工业有限公司_基础产品",
+          "product_id": 1030,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品13",
+              "product_id": 30
+            }
+          ],
+          "base_price": 252.5829655096614,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 227.79966251598134,
+          "material_cost": 20.97868391676417,
+          "net_manufacturing_cost": 88.43605882955472,
+          "profit_margin": 16.221879047342206,
+          "product_construct": "外部供应商产品13*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1030": {
+            "product_name": "比亚迪汽车工业有限公司_基础产品",
+            "quantity": 114
+          }
+        },
+        "materials": {
+          "30": {
+            "product_name": "外部供应商产品13",
+            "quantity": 374
+          }
+        }
+      },
+      "intelligence_level": 2
+    },
+    {
+      "id": 22,
+      "name": "洛阳北方大河三轮摩托车有限公司",
+      "level": 3,
+      "company_capacity": 47,
+      "initial_capital": 44616,
+      "main_products": [
+        {
+          "product_name": "洛阳北方大河三轮摩托车有限公司_基础产品",
+          "product_id": 1031,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品14",
+              "product_id": 31
+            }
+          ],
+          "base_price": 219.07021460801596,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 171.854887808012,
+          "material_cost": 48.35150920548182,
+          "net_manufacturing_cost": 62.33744679170427,
+          "profit_margin": 14.147464875525833,
+          "product_construct": "外部供应商产品14*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1031": {
+            "product_name": "洛阳北方大河三轮摩托车有限公司_基础产品",
+            "quantity": 782
+          }
+        },
+        "materials": {
+          "31": {
+            "product_name": "外部供应商产品14",
+            "quantity": 793
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 23,
+      "name": "浙江钱江摩托股份有限公司",
+      "level": 3,
+      "company_capacity": 53,
+      "initial_capital": 55943,
+      "main_products": [
+        {
+          "product_name": "浙江钱江摩托股份有限公司_基础产品",
+          "product_id": 1032,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品15",
+              "product_id": 32
+            }
+          ],
+          "base_price": 203.1272584053137,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 180.41860705952013,
+          "material_cost": 45.15028648282833,
+          "net_manufacturing_cost": 125.5013825784244,
+          "profit_margin": 18.819961983032933,
+          "product_construct": "外部供应商产品15*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1032": {
+            "product_name": "浙江钱江摩托股份有限公司_基础产品",
+            "quantity": 648
+          }
+        },
+        "materials": {
+          "32": {
+            "product_name": "外部供应商产品15",
+            "quantity": 830
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 24,
+      "name": "湖北三环专用汽车有限公司",
+      "level": 3,
+      "company_capacity": 63,
+      "initial_capital": 46586,
+      "main_products": [
+        {
+          "product_name": "湖北三环专用汽车有限公司_基础产品",
+          "product_id": 1033,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品16",
+              "product_id": 33
+            }
+          ],
+          "base_price": 127.52500676064976,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 68.3486062919255,
+          "material_cost": 73.97393351079457,
+          "net_manufacturing_cost": 87.46199391150995,
+          "profit_margin": 14.790849263460391,
+          "product_construct": "外部供应商产品16*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1033": {
+            "product_name": "湖北三环专用汽车有限公司_基础产品",
+            "quantity": 68
+          }
+        },
+        "materials": {
+          "33": {
+            "product_name": "外部供应商产品16",
+            "quantity": 136
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 25,
+      "name": "潍柴动力集团有限公司",
+      "level": 3,
+      "company_capacity": 33,
+      "initial_capital": 83909,
+      "main_products": [
+        {
+          "product_name": "潍柴动力集团有限公司_基础产品",
+          "product_id": 1034,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品17",
+              "product_id": 34
+            }
+          ],
+          "base_price": 202.4364640774524,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 141.388622081022,
+          "material_cost": 94.74847703462424,
+          "net_manufacturing_cost": 84.69181806871254,
+          "profit_margin": 19.990062083518346,
+          "product_construct": "外部供应商产品17*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1034": {
+            "product_name": "潍柴动力集团有限公司_基础产品",
+            "quantity": 204
+          }
+        },
+        "materials": {
+          "34": {
+            "product_name": "外部供应商产品17",
+            "quantity": 370
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 26,
+      "name": "苏州市捷达消防车辆装备有限公司",
+      "level": 3,
+      "company_capacity": 68,
+      "initial_capital": 40983,
+      "main_products": [
+        {
+          "product_name": "苏州市捷达消防车辆装备有限公司_基础产品",
+          "product_id": 1035,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品18",
+              "product_id": 35
+            }
+          ],
+          "base_price": 115.54792412798092,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 166.1344503516239,
+          "material_cost": 76.92387486394571,
+          "net_manufacturing_cost": 83.9727150921191,
+          "profit_margin": 14.537790810966357,
+          "product_construct": "外部供应商产品18*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1035": {
+            "product_name": "苏州市捷达消防车辆装备有限公司_基础产品",
+            "quantity": 551
+          }
+        },
+        "materials": {
+          "35": {
+            "product_name": "外部供应商产品18",
+            "quantity": 387
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 27,
+      "name": "荣成市双庆海山车业有限公司",
+      "level": 3,
+      "company_capacity": 81,
+      "initial_capital": 67712,
+      "main_products": [
+        {
+          "product_name": "荣成市双庆海山车业有限公司_基础产品",
+          "product_id": 1036,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品19",
+              "product_id": 36
+            }
+          ],
+          "base_price": 270.0736550706279,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 90.30620517364812,
+          "material_cost": 67.86296879597172,
+          "net_manufacturing_cost": 88.41082330799952,
+          "profit_margin": 16.157809087724424,
+          "product_construct": "外部供应商产品19*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1036": {
+            "product_name": "荣成市双庆海山车业有限公司_基础产品",
+            "quantity": 211
+          }
+        },
+        "materials": {
+          "36": {
+            "product_name": "外部供应商产品19",
+            "quantity": 380
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 28,
+      "name": "郑州宇通集团有限公司",
+      "level": 3,
+      "company_capacity": 79,
+      "initial_capital": 65766,
+      "main_products": [
+        {
+          "product_name": "郑州宇通集团有限公司_基础产品",
+          "product_id": 1037,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品20",
+              "product_id": 37
+            }
+          ],
+          "base_price": 147.384294927346,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 98.63277755333114,
+          "material_cost": 48.13488786228695,
+          "net_manufacturing_cost": 41.04947985769872,
+          "profit_margin": 12.759483684841939,
+          "product_construct": "外部供应商产品20*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1037": {
+            "product_name": "郑州宇通集团有限公司_基础产品",
+            "quantity": 138
+          }
+        },
+        "materials": {
+          "37": {
+            "product_name": "外部供应商产品20",
+            "quantity": 348
+          }
+        }
+      },
+      "intelligence_level": 3
+    },
+    {
+      "id": 29,
+      "name": "重庆银钢科技(集团)有限公司",
+      "level": 3,
+      "company_capacity": 84,
+      "initial_capital": 55519,
+      "main_products": [
+        {
+          "product_name": "重庆银钢科技(集团)有限公司_基础产品",
+          "product_id": 1038,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品21",
+              "product_id": 38
+            }
+          ],
+          "base_price": 94.55622672947328,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 241.30512215907527,
+          "material_cost": 48.1040159104517,
+          "net_manufacturing_cost": 140.51699862592125,
+          "profit_margin": 16.22000989750493,
+          "product_construct": "外部供应商产品21*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1038": {
+            "product_name": "重庆银钢科技(集团)有限公司_基础产品",
+            "quantity": 293
+          }
+        },
+        "materials": {
+          "38": {
+            "product_name": "外部供应商产品21",
+            "quantity": 498
+          }
+        }
+      },
+      "intelligence_level": 4
+    },
+    {
+      "id": 30,
+      "name": "重庆长安跨越车辆有限公司",
+      "level": 3,
+      "company_capacity": 32,
+      "initial_capital": 92629,
+      "main_products": [
+        {
+          "product_name": "重庆长安跨越车辆有限公司_基础产品",
+          "product_id": 1039,
+          "related_materials": [
+            {
+              "product_name": "外部供应商产品22",
+              "product_id": 39
+            }
+          ],
+          "base_price": 247.3261422289089,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "manufacturing_cost": 203.44512515365668,
+          "material_cost": 93.13386113241927,
+          "net_manufacturing_cost": 99.40555588356588,
+          "profit_margin": 19.719300819791535,
+          "product_construct": "外部供应商产品22*100%"
+        }
+      ],
+      "available_materials": [],
+      "inventory_system": {
+        "products": {
+          "1039": {
+            "product_name": "重庆长安跨越车辆有限公司_基础产品",
+            "quantity": 604
+          }
+        },
+        "materials": {
+          "39": {
+            "product_name": "外部供应商产品22",
+            "quantity": 98
+          }
+        }
+      },
+      "intelligence_level": 3
+    }
+  ]
+}
