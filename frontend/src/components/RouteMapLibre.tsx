@@ -3,6 +3,7 @@ import { Map as MapLibreMap, LngLatBounds, type Map as MapLibreMapType } from "m
 import "maplibre-gl/dist/maplibre-gl.css";
 import { getNode } from "../lib/YP_worldmap";
 import type { RouteResponse } from "../api/HS_controlTowerApi";
+import { ypSeaGeometry } from "../lib/YP_seaRoutes";
 
 const STYLE_URL = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
@@ -45,7 +46,7 @@ export function RouteMapLibre({ route }: { route?: RouteResponse | null }) {
         return {
           type: "Feature" as const,
           properties: { state: leg.state, color: leg.color },
-          geometry: { type: "LineString" as const, coordinates: [[from[0], from[1]], [to[0], to[1]]] },
+          geometry: leg.mode === "sea" ? ypSeaGeometry([from[0], from[1]], [to[0], to[1]]) : { type: "LineString" as const, coordinates: [[from[0], from[1]], [to[0], to[1]]] },
         };
       });
       map.addSource("route-lines", { type: "geojson", data: { type: "FeatureCollection", features: lineFeatures } });
@@ -83,7 +84,12 @@ export function RouteMapLibre({ route }: { route?: RouteResponse | null }) {
       });
 
       const bounds = new LngLatBounds();
-      lineFeatures.forEach((f) => f.geometry.coordinates.forEach((c) => bounds.extend(c as [number, number])));
+      lineFeatures.forEach((feature) => {
+        const sections = feature.geometry.type === "MultiLineString"
+          ? feature.geometry.coordinates
+          : [feature.geometry.coordinates];
+        sections.forEach((section) => section.forEach((coordinate) => bounds.extend(coordinate as [number, number])));
+      });
       if (!bounds.isEmpty()) map.fitBounds(bounds, { padding: 60, maxZoom: 6 });
     };
 

@@ -22,8 +22,24 @@ function App() {
 
   useEffect(() => {
     const handleHashChange = () => setPage(getPageFromHash());
+    const handleDashboardShipment = (event: MouseEvent) => {
+      if ((event.target as HTMLElement).closest(".yp-dashboard-kpis .kpi")) {
+        window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId: null } }));
+        return;
+      }
+      const row = (event.target as HTMLElement).closest(".yp-dashboard-table tbody tr");
+      if (!row) return;
+      const shipmentId = row.querySelector(".mono")?.textContent?.trim();
+      if (!shipmentId) return;
+      document.querySelectorAll<HTMLElement>(".yp-dashboard-kpis .kpi:not(.active)").forEach((card) => card.click());
+      window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId } }));
+    };
     window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    document.addEventListener("click", handleDashboardShipment);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      document.removeEventListener("click", handleDashboardShipment);
+    };
   }, []);
 
   const activeItem = NAV_ITEMS.find((item) => item.id === page) ?? NAV_ITEMS[0];

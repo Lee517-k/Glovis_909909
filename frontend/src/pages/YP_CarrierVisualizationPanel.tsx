@@ -4,6 +4,7 @@ import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&ur
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Badge, Chip, type Mode } from "../lib/YP_ui";
 import "./YP_data.css";
+import { ypSeaGeometry } from "../lib/YP_seaRoutes";
 
 export type YpService = {
   carrier_id: string;
@@ -182,13 +183,9 @@ function InteractiveCapabilityMap({ services }: { services: YpService[] }) {
       type: "FeatureCollection" as const,
       features: routes.map(({ service, origin, destination }) => ({
         type: "Feature" as const,
-        geometry: {
-          type: "LineString" as const,
-          coordinates: [
-            [origin[1], origin[0]],
-            [destination[1], destination[0]],
-          ],
-        },
+        geometry: String(service.mode) === "sea"
+          ? ypSeaGeometry([origin[1], origin[0]], [destination[1], destination[0]])
+          : { type: "LineString" as const, coordinates: [[origin[1], origin[0]], [destination[1], destination[0]]] },
         properties: {
           carrier: service.carrier_name,
           route: `${service.origin_name} → ${service.destination_name}`,

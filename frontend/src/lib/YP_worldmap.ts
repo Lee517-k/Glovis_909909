@@ -4,8 +4,20 @@ export const NODE: Record<string, [number, number]> = {
   NLRTM:[4.14,51.95], CNSHA:[121.47,31.23], CNQIN:[120.38,36.07], SGSIN:[103.85,1.29],
   ATVIE:[16.57,48.11], ITGOA:[8.93,44.41], USLAX:[-118.25,33.74], AEJEA:[55.06,25], GBFXT:[1.29,51.95],
   ALA:[76.89,43.24], MUC:[11.79,48.35], SIN:[103.85,1.29],
+  ICN:[126.44,37.46], NRT:[140.39,35.77], KIX:[135.24,34.43], PVG:[121.81,31.14], HKG:[114.17,22.32],
+  BKK:[100.50,13.76], HAN:[105.83,21.03], VIE:[16.37,48.21], LHR:[-0.45,51.47], MAD:[-3.70,40.42],
+  AMS:[4.90,52.37], MXP:[8.73,45.63], FRA:[8.57,50.04], BRU:[4.48,50.90], CDG:[2.55,49.01],
+  BEANR:[4.40,51.22], BEZEE:[3.21,51.33], CNNGB:[121.54,29.87], CNTAO:[120.38,36.07],
+  CZPRG:[14.44,50.08], DEKOL:[6.96,50.94], DELEI:[12.37,51.34], DESTR:[9.18,48.78],
+  ESVLC:[-0.38,39.47], FRLEH:[0.11,49.49], FRPAR:[2.35,48.86], GBSOU:[-1.40,50.91],
+  HUBUD:[19.04,47.50], ITMIL:[9.19,45.46], ITVER:[10.99,45.44],
+  JPNGO:[136.91,35.18], JPYOK:[139.64,35.44], KRGJU:[126.85,35.16], KRHWA:[126.83,37.20],
+  KRPTK:[126.83,36.99], KRSEL:[126.98,37.57], PLGDN:[18.65,54.35], PLWAW:[21.01,52.23],
+  ROCUR:[21.31,46.35], SEGOT:[11.97,57.71], SIKOP:[13.73,45.55], TRIST:[28.98,41.01],
 };
 export function getNode(id: string): [number, number] {
-  const base = id.replace(/_(RAIL|YARD|DC)$/, "");
+  const aliases: Record<string,string> = { ATVIE:"VIE", KRINC:"ICN", KRICN:"ICN", CNSHA:"PVG", ESMAD:"MAD", NLAMS:"AMS", DEMUC:"MUC", DEFRA:"FRA", GBLON:"LHR" };
+  const stripped = id.replace(/_(RAIL|YARD|DC|WH|PLANT)$/, "");
+  const base = aliases[stripped] ?? stripped;
   return NODE[id] ?? NODE[base] ?? [20,25];
 }
