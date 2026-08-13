@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Query
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.repositories.yp_data_repository import YPDataRepository
 
@@ -16,6 +16,11 @@ class ValidationAction(BaseModel):
 class ValidationActionBatch(BaseModel):
     carrier_id: str
     actions: list[ValidationAction]
+
+
+class SimilarityRequest(BaseModel):
+    carrier_id: str
+    capability_ids: list[str] = Field(default_factory=list)
 
 
 @router.get("/capabilities/summary")
@@ -56,3 +61,10 @@ def save_reliability_actions(payload: ValidationActionBatch) -> dict[str, int]:
         raise HTTPException(status_code=400, detail="Invalid validation status")
     updated = repository.update_validation_actions(payload.carrier_id, [(action.capability_id, action.status) for action in payload.actions])
     return {"updated": updated}
+
+
+@router.post("/reliability/similarity")
+def analyze_similarity(payload: SimilarityRequest) -> dict[str, object]:
+    from app.services.YP_ollama_similarity_service import YPOllamaSimilarityService
+
+    return YPOllamaSimilarityService(repository.db_path).analyze_with_fallback(payload.carrier_id, payload.capability_ids)
