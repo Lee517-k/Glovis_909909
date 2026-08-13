@@ -474,9 +474,10 @@ class NewFirmAgent(NewFirmAgentBase):
 
     async def upload_static_parameters_to_mlflow(self):
         # 上传企业静态参数到MLflow parameters中，只在初始化时执行一次
+        agent_name = None
         try:
             # 检查MLflow是否启用
-            if not self.mlflow_client.enabled:
+            if self.mlflow_client is None or not self.mlflow_client.enabled:
                 return
 
             # 直接从memory中获取agent的数据
@@ -640,9 +641,10 @@ class NewFirmAgent(NewFirmAgentBase):
 
     async def monitor_and_log_inventory(self):
         """监控库存数量、订单份额和金额并上传到MLflow"""
+        agent_name = None
         try:
             # 检查MLflow是否启用
-            if not self.mlflow_client.enabled:
+            if self.mlflow_client is None or not self.mlflow_client.enabled:
                 return
 
             # 获取agent基本信息
@@ -708,7 +710,7 @@ class NewFirmAgent(NewFirmAgentBase):
             Unfinished_order = await self.memory.status.get("Unfinished_order")
             for order in Unfinished_order:
                 await self.mlflow_client.log_metric(
-                    key=f"{agent_name}_Unfinished_{order["product_name"]}",
+                    key=f"{agent_name}_Unfinished_{order['product_name']}",
                     value=float(order["Undelivered_portion"]),
                     step=current_step
                 )
@@ -730,7 +732,7 @@ class NewFirmAgent(NewFirmAgentBase):
             produce_count = await self.memory.status.get("produce_count")
             for count in produce_count:
                 await self.mlflow_client.log_metric(
-                key=f"company_{agent_name}_{count["product_name"]}_produce",
+                key=f"company_{agent_name}_{count['product_name']}_produce",
                 value=float(count["count"]),
                 step=current_step
                 )

@@ -344,9 +344,9 @@ def generate_enterprise_distributions(json_path: str, limit: int) -> Dict[str, A
 
 
 def get_enterprise_distributioons(limit):
-    json_file = get_project_path("agentsociety-enterprise/neo4j/industry_test.json")
+    json_file = get_project_path("neo4j/industry_test.json")
     return generate_enterprise_distributions(json_file, limit)
-    json_file = get_project_path("agentsociety-enterprise/neo4j/industry_test.json")
+    json_file = get_project_path("neo4j/industry_test.json")
     return generate_enterprise_distributions(json_file, limit)
 
 

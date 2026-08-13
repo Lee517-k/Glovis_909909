@@ -13,7 +13,7 @@ class QueryConfig(BaseModel):
     @classmethod
     def from_config_file(cls, config_path: str = "../config.yaml") -> "QueryConfig":
         """从配置文件加载PostgreSQL配置"""
-        config_file = get_project_path("agentsociety-enterprise/SupplyChainAgent/enterprise/config.yaml")
+        config_file = get_project_path("SupplyChainAgent/enterprise/config.yaml")
         try:
             with open(config_file, 'r', encoding='utf-8') as f:
                 config_data = yaml.safe_load(f)

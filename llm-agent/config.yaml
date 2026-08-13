@@ -1,41 +1,28 @@
 addr: 0.0.0.0:8080
+advanced:
+  group_size: 100 # skip auto memory-based sizing (needs 12GB free); 18 agents fit in one group anyway
 llm:
-- api_key: API-KEY
-  base_url: https://api.vveai.com/v1 
-  model: qwen-plus
+- api_key: unused-see-dotenv # actual key comes from OPENAI_API_KEY in .env, this field is ignored by agentsociety/llm/llm.py
+  base_url: http://localhost:11434/v1 # local Ollama OpenAI-compatible endpoint
+  model: llama3.1:8b
   provider: openai
-  semaphore: 200 
-- api_key: sk-sbadfsaf
-  base_url: https://api.vveai.com/v1 # LLM base URL, used for VLLM
-  model: cc-3-7-sonnet-20250219
-  provider: openai 
-  semaphore: 200 
-- api_key: API-KEY
-  base_url: https://api.vveai.com/v1 
-  model: deepseek-chat
-  provider: openai
-  semaphore: 200 
-- api_key: sk-sbadfsaf
-  base_url: https://api.vveai.com/v1 # LLM base URL, used for VLLM
-  model: qwen-plus
-  provider: openai 
-  semaphore: 200 
+  semaphore: 1 # ollama serves one request at a time locally
 env:
   avro:
     enabled: false # Whether to enable Avro
     path: <AVRO-OUTPUT-PATH> # Path to the Avro output file
   mlflow:
-    enabled: true # Whether to enable MLflow
+    enabled: false # disabled for local test run, no MLflow server needed
     mlflow_uri: http://localhost:59000 # MLflow server URI
     username: admin # MLflow server username
     password: CHANGE_ME # MLflow server password
   pgsql:
-    enabled: true # Whether to enable PostgreSQL
+    enabled: false # disabled for local test run, no Postgres server needed
     dsn: postgresql://postgres:CHANGE_ME@localhost:5432/postgres # PostgreSQL connection string
   redis:
     server: localhost # Redis server address
     port: 6379 # Redis port
-    password: CHANGE_ME # Redis password
+    password: null # local redis-server has no auth configured
 map:
   # file_path: "./data/beijing_map.pb" # Path to the map file
   # cache_path: ./data/beijing_map.pb # Cache path for accelerating map file loading

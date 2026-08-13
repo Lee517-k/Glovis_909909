@@ -65,11 +65,13 @@ class BuildExtension(build_ext):
                 os.chmod(binary_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
                 print(f"Downloaded {binary_name} to {binary_path}")
             else:
-                print(f"Download failed for {binary_name}")
-                raise Exception(f"Download failed for {binary_name}")
+                print(
+                    f"Warning: download failed for {binary_name} "
+                    f"(HTTP {response.status_code}); skipping, "
+                    "city-environment simulation features will be unavailable."
+                )
         else:
-            print(f"No binary found for {binary_name}")
-            raise Exception(f"No binary found for {binary_name}")
+            print(f"Warning: no binary found for {binary_name}; skipping.")
 
 
 setup(

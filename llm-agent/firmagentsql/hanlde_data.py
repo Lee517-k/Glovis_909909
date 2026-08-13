@@ -432,7 +432,7 @@ class DataVisualization:
             product_data = await self.get_metrics_data(self.run_uuid, f'total_product_inventory_{company["name"]}')
             material_data = await self.get_metrics_data(self.run_uuid, f'total_material_inventory_{company["name"]}')
             for i in range(step_length+1):
-                fund = company_fund_dict[f"company_fund_{company["name"]}"].loc[i]
+                fund = company_fund_dict[f"company_fund_{company['name']}"].loc[i]
                 all_fund += fund
                 stock = product_data.loc[product_data["step"] == i, "value"].squeeze()
                 all_product += stock
@@ -1362,7 +1362,7 @@ class DataVisualization:
             all_stock = 0
             all_count = 0
             df = pd.read_csv("./firmagentsql/transactions_deepseek.csv")
-            step_list = df.loc[df["key"] == f"supply_amount_{company['name']}_{company["product_name"]}", "step"].tolist()
+            step_list = df.loc[df["key"] == f"supply_amount_{company['name']}_{company['product_name']}", "step"].tolist()
             print(step_list)
             for i in step_list:
                 stock = inventory_data.loc[inventory_data["step"] == i, "value"].squeeze()
@@ -1550,7 +1550,7 @@ class DataVisualization:
             product_data = await self.get_metrics_data(self.run_uuid, f'total_product_inventory_{company["name"]}')
             material_data = await self.get_metrics_data(self.run_uuid, f'total_material_inventory_{company["name"]}')
             for i in range(step_length+1):
-                fund = company_fund_dict[f"company_fund_{company["name"]}"].loc[i]
+                fund = company_fund_dict[f"company_fund_{company['name']}"].loc[i]
                 all_fund += fund
                 stock = product_data.loc[product_data["step"] == i, "value"].squeeze()
                 all_product += stock
