@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.api.yp_data import router as yp_data_router
 
 
 app = FastAPI(
@@ -17,6 +18,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(yp_data_router, prefix="/api")
+
 
 @app.get("/health", tags=["system"])
 def health_check() -> dict[str, str]:
@@ -26,4 +29,3 @@ def health_check() -> dict[str, str]:
 @app.get("/api", tags=["system"])
 def api_root() -> dict[str, str]:
     return {"message": "API modules will be added during feature development."}
-

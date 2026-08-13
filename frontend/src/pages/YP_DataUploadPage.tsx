@@ -10,15 +10,6 @@ export function YP_DataUploadPage() {
 
   return (
     <main className="yp-data-page">
-      <header className="yp-page-heading yp-data-heading">
-        <div>
-          <span><i className="ti ti-database" /> CARRIER DATA</span>
-          <h1>데이터</h1>
-          <p>운송사 원본 데이터를 등록하고 승인된 역량 데이터를 네트워크로 확인합니다.</p>
-        </div>
-        <button type="button" disabled><i className="ti ti-download" /> 템플릿 받기</button>
-      </header>
-
       <nav className="yp-data-tabs" aria-label="데이터 화면 탭">
         <button className={tab === "upload" ? "active" : ""} type="button" onClick={() => setTab("upload")}>
           <i className="ti ti-upload" /> 데이터 업로드
@@ -86,4 +77,3 @@ function YP_UploadPanel() {
     </>
   );
 }
-

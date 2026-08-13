@@ -1,0 +1,54 @@
+from pathlib import Path
+import sqlite3
+
+from app.repositories.yp_data_repository import YPDataRepository
+
+
+def create_test_db(path: Path) -> None:
+    connection = sqlite3.connect(path)
+    connection.execute(
+        """
+        CREATE TABLE carrier_capabilities (
+            capability_id TEXT,
+            carrier_id TEXT,
+            carrier_name TEXT,
+            mode TEXT,
+            origin_location_id TEXT,
+            origin_name TEXT,
+            origin_country TEXT,
+            destination_location_id TEXT,
+            destination_name TEXT,
+            destination_country TEXT,
+            typical_transit_hours REAL,
+            on_time_rate REAL,
+            validation_status TEXT,
+            validation_score REAL,
+            last_validated_at TEXT,
+            is_active INTEGER
+        )
+        """
+    )
+    connection.executemany(
+        "INSERT INTO carrier_capabilities VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [
+            ("cap-1", "carrier-1", "Carrier One", "sea", "KR", "Busan", "KR", "DE", "Hamburg", "DE", 240, .95, "verified", 90, "2026-08-01", 1),
+            ("cap-2", "carrier-1", "Carrier One", "road", "DE", "Hamburg", "DE", "CZ", "Prague", "CZ", 10, .92, "unverified", 70, None, 1),
+        ],
+    )
+    connection.commit()
+    connection.close()
+
+
+def test_summary_and_reliability(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    create_test_db(db_path)
+    repository = YPDataRepository(db_path)
+
+    summary = repository.summary()
+    reliability = repository.reliability()
+
+    assert summary["carriers"] == 1
+    assert summary["services"] == 2
+    assert reliability[0]["score"] == 80.0
+    assert reliability[0]["review_count"] == 1
+

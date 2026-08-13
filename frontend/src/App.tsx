@@ -52,7 +52,7 @@ function App() {
       />
 
       <div className="app-main">
-        <AppHeader pageTitle={activeItem.label} />
+        <AppHeader />
         {renderPage()}
       </div>
     </div>
