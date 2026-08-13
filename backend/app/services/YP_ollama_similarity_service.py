@@ -19,36 +19,54 @@ class YPOllamaSimilarityService:
         inputs = self._inputs(carrier_id, capability_ids)
         if not inputs:
             return {"model": self.model, "mode": "ollama", "notice": "", "items": []}
-        prompt = json.dumps(inputs, ensure_ascii=False)
-        response = httpx.post(
-            f"{self.base_url}/chat/completions",
-            json={
-                "model": self.model,
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": prompt},
-                ],
-                "temperature": 0.1,
-                "max_tokens": 1800,
-                "response_format": {"type": "json_object"},
-            },
-            timeout=120.0,
-        )
-        response.raise_for_status()
-        raw = response.json()["choices"][0]["message"]["content"]
-        parsed = _extract_json(raw)
         allowed = {item["capability_id"] for item in inputs}
         items = []
-        for item in parsed.get("items", []):
-            if item.get("capability_id") not in allowed:
-                continue
-            items.append({
-                "capability_id": item["capability_id"],
-                "similar": bool(item.get("similar", False)),
-                "confidence": max(0, min(100, int(item.get("confidence", 0)))),
-                "reason": str(item.get("reason", "판단 근거가 없습니다."))[:500],
-                "reference_leg_ids": [str(value) for value in item.get("reference_leg_ids", [])][:5],
-            })
+
+        # 최대 30개 구간과 각 8개 이력을 한 번에 보내면 로컬 7B 모델이
+        # 출력 한도를 넘겨 일부 capability_id를 빼먹는다. 작은 배치로 나눠
+        # 모든 구간이 반드시 판정되게 한다.
+        for start in range(0, len(inputs), 5):
+            batch = inputs[start:start + 5]
+            response = httpx.post(
+                f"{self.base_url}/chat/completions",
+                json={
+                    "model": self.model,
+                    "messages": [
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": json.dumps(batch, ensure_ascii=False)},
+                    ],
+                    "temperature": 0.1,
+                    "max_tokens": 1800,
+                    "stream": False,
+                },
+                timeout=httpx.Timeout(120.0, connect=5.0),
+            )
+            response.raise_for_status()
+            raw = response.json()["choices"][0]["message"]["content"]
+            parsed = _extract_json(raw)
+            for item in parsed.get("items", []):
+                if item.get("capability_id") not in allowed:
+                    continue
+                items.append({
+                    "capability_id": item["capability_id"],
+                    "similar": bool(item.get("similar", False)),
+                    "confidence": max(0, min(100, int(item.get("confidence", 0)))),
+                    "reason": str(item.get("reason", "판단 근거가 없습니다."))[:500],
+                    "reference_leg_ids": [str(value) for value in item.get("reference_leg_ids", [])][:5],
+                })
+
+        # 모델이 명세를 어기고 일부 항목을 누락해도 UI가 영원히 '분석 대기'로
+        # 남지 않도록 명시적인 미판정 결과를 채운다.
+        returned = {item["capability_id"] for item in items}
+        for source in inputs:
+            if source["capability_id"] not in returned:
+                items.append({
+                    "capability_id": source["capability_id"],
+                    "similar": False,
+                    "confidence": 0,
+                    "reason": "Ollama 응답에 해당 구간의 판정 결과가 포함되지 않았습니다.",
+                    "reference_leg_ids": [],
+                })
         return {"model": self.model, "mode": "ollama", "notice": "", "items": items}
 
     def analyze_with_fallback(self, carrier_id: str, capability_ids: list[str] | None = None) -> dict[str, Any]:

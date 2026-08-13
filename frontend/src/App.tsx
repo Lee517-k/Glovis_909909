@@ -189,7 +189,7 @@ function App() {
       />
 
       <div className="app-main">
-        <AppHeader />
+        <AppHeader onNavigate={navigate} />
         {renderPage()}
       </div>
       <Drawer content={drawerContent} onClose={() => setDrawerContent(null)} />
