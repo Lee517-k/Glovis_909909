@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Map as MapLibreMap, LngLatBounds, type Map as MapLibreMapType } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { getNode } from "../lib/worldmap";
-import type { HubBubble } from "../api/controlTowerApi";
+import { getNode } from "../lib/YP_worldmap";
+import type { HubBubble } from "../api/HS_controlTowerApi";
 
 const STYLE_URL = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 

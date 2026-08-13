@@ -1,0 +1,3375 @@
+{
+  "metadata": {
+    "dataset_id": "korean_air_cargo_air_demo_v1",
+    "carrier_name": "Korean Air Cargo",
+    "carrier_group": "air",
+    "record_count": 30,
+    "generated_at": "2026-08-06T00:00:00+09:00",
+    "synthetic_demo_data": true,
+    "data_note": "노선·거점·운송수단 구조는 공개 네트워크와 물류 관행을 참고했으며, 운임·가용량·정시율·할증료는 해커톤 시뮬레이션용 합성값입니다.",
+    "source_basis": "Official cargo scheduling/RFS service structure and global air-cargo operating patterns were used as reference.",
+    "schema_version": "3.0",
+    "node_id_policy": {
+      "version": "2.0",
+      "rules": [
+        "location_id는 도시/지역 공통 식별자이다.",
+        "node_id는 실제 시설 식별자이다.",
+        "항만은 UN/LOCODE를 node_id로 사용한다.",
+        "공항은 IATA를 node_id로 사용하고 도시 location_id를 별도로 둔다.",
+        "철도터미널은 _RAIL, 물류센터는 _DC, 차량야드는 _YARD 접미어를 사용한다."
+      ]
+    },
+    "validation_summary": {
+      "node_records_updated": 60,
+      "sea_ev_consistency_fixes": 0,
+      "air_service_aircraft_consistency_fixes": 9
+    },
+    "currency_policy": {
+      "base_currency": "USD",
+      "all_monetary_values_normalized": true,
+      "fx_fields_included": false,
+      "note": "MVP 비교 단순화를 위해 모든 합성 비용을 USD 기준으로 정규화했으며 환율 계산 기능은 포함하지 않습니다."
+    },
+    "realism_adjustments": {
+      "rail_time_records_adjusted": 0,
+      "road_pricing_records_adjusted": 0,
+      "sea_pricing_records_sanity_checked": 0,
+      "air_pricing_records_sanity_checked": 30
+    }
+  },
+  "carrier": {
+    "carrier_id": "KOREAN_AIR_CARGO",
+    "carrier_name": "Korean Air Cargo",
+    "group": "air"
+  },
+  "services": [
+    {
+      "service_id": "KE-ICN-VIE-01",
+      "origin": {
+        "node_id": "ICN",
+        "name": "Incheon",
+        "node_type": "airport",
+        "location_id": "KRINC"
+      },
+      "destination": {
+        "node_id": "VIE",
+        "name": "Vienna",
+        "node_type": "airport",
+        "location_id": "ATVIE"
+      },
+      "service_type": "belly_cargo",
+      "schedule": {
+        "flight_number": "KE9957",
+        "departure_days": [
+          "FRI",
+          "THU",
+          "SAT"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 17,
+        "average_wait_hours": 13,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.71,
+        "average_wait_days": 0.54,
+        "total_days_with_wait": 1.25,
+        "transit_days_p90": 1.49,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 4486,
+        "available_volume_cbm": 27,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.82,
+        "volume_divisor": 6000,
+        "minimum_charge": 433.65,
+        "cost_usd_per_vehicle": 13294.0,
+        "cost_usd_per_vehicle_all_in": 13294.0,
+        "valid_from": "2026-07-17",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 11299.9,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.12,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 39.03,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 220,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "PAX_BELLY",
+        "direct_flight": false,
+        "uld_types": [
+          "RKN",
+          "PLA",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.923,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0123,
+        "delay_probability": 0.104,
+        "reliability_source": "measured",
+        "on_time_sample_size": 180
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 7950.8
+      },
+      "distance_km": 8661,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-NRT-LHR-02",
+      "origin": {
+        "node_id": "NRT",
+        "name": "Tokyo Narita",
+        "node_type": "airport",
+        "location_id": "JPTYO"
+      },
+      "destination": {
+        "node_id": "LHR",
+        "name": "London Heathrow",
+        "node_type": "airport",
+        "location_id": "GBLON"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7388",
+        "departure_days": [
+          "FRI",
+          "WED",
+          "THU",
+          "MON"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 12,
+        "average_wait_hours": 28,
+        "cutoff_hours_before_departure": 10,
+        "transit_days": 0.5,
+        "average_wait_days": 1.17,
+        "total_days_with_wait": 1.67,
+        "transit_days_p90": 1.93,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 3865,
+        "available_volume_cbm": 43,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.63,
+        "volume_divisor": 6000,
+        "minimum_charge": 357.4,
+        "cost_usd_per_vehicle": 6171.0,
+        "cost_usd_per_vehicle_all_in": 6171.0,
+        "valid_from": "2026-06-05",
+        "valid_to": "2026-09-04",
+        "min_charge_usd": 5245.3,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 28
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.2,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 38.76,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 160,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "PAG",
+          "PLA"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.942,
+        "damage_rate": 0.0009,
+        "cancellation_rate": 0.0136,
+        "delay_probability": 0.078,
+        "reliability_source": "measured",
+        "on_time_sample_size": 283
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9245.2
+      },
+      "distance_km": 10071,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-KIX-MAD-03",
+      "origin": {
+        "node_id": "KIX",
+        "name": "Osaka Kansai",
+        "node_type": "airport",
+        "location_id": "JPOSA"
+      },
+      "destination": {
+        "node_id": "MAD",
+        "name": "Madrid",
+        "node_type": "airport",
+        "location_id": "ESMAD"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7953",
+        "departure_days": [
+          "SAT",
+          "TUE",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 13,
+        "average_wait_hours": 27,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.54,
+        "average_wait_days": 1.12,
+        "total_days_with_wait": 1.66,
+        "transit_days_p90": 2.1,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 7409,
+        "available_volume_cbm": 50,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 6.47,
+        "volume_divisor": 6000,
+        "minimum_charge": 447.28,
+        "cost_usd_per_vehicle": 10999.0,
+        "cost_usd_per_vehicle_all_in": 10999.0,
+        "valid_from": "2026-07-18",
+        "valid_to": "2026-08-17",
+        "min_charge_usd": 9349.1,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 10
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.65,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 74.02,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "AKE",
+          "PLA",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.878,
+        "damage_rate": 0.0018,
+        "cancellation_rate": 0.0099,
+        "delay_probability": 0.165,
+        "reliability_source": "measured",
+        "on_time_sample_size": 377
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 10293.5
+      },
+      "distance_km": 11213,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-PVG-MUC-04",
+      "origin": {
+        "node_id": "PVG",
+        "name": "Shanghai Pudong",
+        "node_type": "airport",
+        "location_id": "CNSHA"
+      },
+      "destination": {
+        "node_id": "MUC",
+        "name": "Munich",
+        "node_type": "airport",
+        "location_id": "DEMUC"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE8795",
+        "departure_days": [
+          "FRI",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 18,
+        "average_wait_hours": 14,
+        "cutoff_hours_before_departure": 8,
+        "transit_days": 0.75,
+        "average_wait_days": 0.58,
+        "total_days_with_wait": 1.33,
+        "transit_days_p90": 1.56,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6330,
+        "available_volume_cbm": 15,
+        "max_piece_weight_kg": 2500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 5.23,
+        "volume_divisor": 6000,
+        "minimum_charge": 460.01,
+        "cost_usd_per_vehicle": 8891.0,
+        "cost_usd_per_vehicle_all_in": 8891.0,
+        "valid_from": "2026-08-14",
+        "valid_to": "2026-09-13",
+        "min_charge_usd": 7557.3,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 37
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.94,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 44.21,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 200,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "PAG",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.932,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0075,
+        "delay_probability": 0.092,
+        "reliability_source": "measured",
+        "on_time_sample_size": 382
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8462.1
+      },
+      "distance_km": 9218,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HKG-AMS-05",
+      "origin": {
+        "node_id": "HKG",
+        "name": "Hong Kong",
+        "node_type": "airport",
+        "location_id": "HKHKG"
+      },
+      "destination": {
+        "node_id": "AMS",
+        "name": "Amsterdam",
+        "node_type": "airport",
+        "location_id": "NLAMS"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4108",
+        "departure_days": [
+          "THU",
+          "SAT",
+          "FRI"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 11,
+        "average_wait_hours": 17,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.46,
+        "average_wait_days": 0.71,
+        "total_days_with_wait": 1.17,
+        "transit_days_p90": 1.4,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 4444,
+        "available_volume_cbm": 30,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.39,
+        "volume_divisor": 6000,
+        "minimum_charge": 380.89,
+        "cost_usd_per_vehicle": 12563.0,
+        "cost_usd_per_vehicle_all_in": 12563.0,
+        "valid_from": "2026-07-14",
+        "valid_to": "2026-10-13",
+        "min_charge_usd": 10678.5,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 67
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.19,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 37.35,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 200,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": false,
+        "uld_types": [
+          "RKN",
+          "PMC",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.917,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0092,
+        "delay_probability": 0.112,
+        "reliability_source": "measured",
+        "on_time_sample_size": 172
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8939.5
+      },
+      "distance_km": 9738,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-SIN-MXP-06",
+      "origin": {
+        "node_id": "SIN",
+        "name": "Singapore",
+        "node_type": "airport",
+        "location_id": "SGSIN"
+      },
+      "destination": {
+        "node_id": "MXP",
+        "name": "Milan Malpensa",
+        "node_type": "airport",
+        "location_id": "ITMIL"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE899",
+        "departure_days": [
+          "SUN",
+          "FRI",
+          "MON",
+          "THU"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 16,
+        "average_wait_hours": 10,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.67,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 1.09,
+        "transit_days_p90": 1.21,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 7720,
+        "available_volume_cbm": 54,
+        "max_piece_weight_kg": 1500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.07,
+        "volume_divisor": 6000,
+        "minimum_charge": 448.75,
+        "cost_usd_per_vehicle": 12019.0,
+        "cost_usd_per_vehicle_all_in": 12019.0,
+        "valid_from": "2026-07-19",
+        "valid_to": "2026-08-18",
+        "min_charge_usd": 10216.1,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 11
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.76,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 57.82,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 220,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "AKE",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.971,
+        "damage_rate": 0.0012,
+        "cancellation_rate": 0.0066,
+        "delay_probability": 0.039,
+        "reliability_source": "measured",
+        "on_time_sample_size": 234
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9936.4
+      },
+      "distance_km": 10824,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-BKK-FRA-07",
+      "origin": {
+        "node_id": "BKK",
+        "name": "Bangkok",
+        "node_type": "airport",
+        "location_id": "THBKK"
+      },
+      "destination": {
+        "node_id": "FRA",
+        "name": "Frankfurt",
+        "node_type": "airport",
+        "location_id": "DEFRA"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7221",
+        "departure_days": [
+          "THU",
+          "TUE"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 18,
+        "average_wait_hours": 13,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.75,
+        "average_wait_days": 0.54,
+        "total_days_with_wait": 1.29,
+        "transit_days_p90": 1.49,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6982,
+        "available_volume_cbm": 42,
+        "max_piece_weight_kg": 1500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.56,
+        "volume_divisor": 6000,
+        "minimum_charge": 407.2,
+        "cost_usd_per_vehicle": 6052.0,
+        "cost_usd_per_vehicle_all_in": 6052.0,
+        "valid_from": "2026-08-26",
+        "valid_to": "2026-09-25",
+        "min_charge_usd": 5144.2,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 49
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.96,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 69.2,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 200,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": true,
+        "uld_types": [
+          "PAG",
+          "RKN",
+          "PLA"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.942,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.0081,
+        "delay_probability": 0.078,
+        "reliability_source": "measured",
+        "on_time_sample_size": 404
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8675.1
+      },
+      "distance_km": 9450,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HAN-BRU-08",
+      "origin": {
+        "node_id": "HAN",
+        "name": "Hanoi",
+        "node_type": "airport",
+        "location_id": "VNHAN"
+      },
+      "destination": {
+        "node_id": "BRU",
+        "name": "Brussels",
+        "node_type": "airport",
+        "location_id": "BEBRU"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4934",
+        "departure_days": [
+          "SUN",
+          "SAT"
+        ],
+        "frequency_per_week": 7,
+        "transit_hours": 12,
+        "average_wait_hours": 8,
+        "cutoff_hours_before_departure": 10,
+        "transit_days": 0.5,
+        "average_wait_days": 0.33,
+        "total_days_with_wait": 0.83,
+        "transit_days_p90": 0.97,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 7179,
+        "available_volume_cbm": 18,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.52,
+        "volume_divisor": 6000,
+        "minimum_charge": 432.14,
+        "cost_usd_per_vehicle": 5984.0,
+        "cost_usd_per_vehicle_all_in": 5984.0,
+        "valid_from": "2026-07-13",
+        "valid_to": "2026-08-12",
+        "min_charge_usd": 5086.4,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 5
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.01,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 38.67,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "PAG",
+          "PLA",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.938,
+        "damage_rate": 0.001,
+        "cancellation_rate": 0.0119,
+        "delay_probability": 0.084,
+        "reliability_source": "measured",
+        "on_time_sample_size": 335
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8625.5
+      },
+      "distance_km": 9396,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-ICN-CDG-09",
+      "origin": {
+        "node_id": "ICN",
+        "name": "Incheon",
+        "node_type": "airport",
+        "location_id": "KRINC"
+      },
+      "destination": {
+        "node_id": "CDG",
+        "name": "Paris CDG",
+        "node_type": "airport",
+        "location_id": "FRPAR"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE1989",
+        "departure_days": [
+          "FRI",
+          "TUE",
+          "THU",
+          "SAT"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 16,
+        "average_wait_hours": 25,
+        "cutoff_hours_before_departure": 8,
+        "transit_days": 0.67,
+        "average_wait_days": 1.04,
+        "total_days_with_wait": 1.71,
+        "transit_days_p90": 2.01,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6059,
+        "available_volume_cbm": 48,
+        "max_piece_weight_kg": 2500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.77,
+        "volume_divisor": 6000,
+        "minimum_charge": 374.77,
+        "cost_usd_per_vehicle": 13209.0,
+        "cost_usd_per_vehicle_all_in": 13209.0,
+        "valid_from": "2026-07-26",
+        "valid_to": "2026-08-25",
+        "min_charge_usd": 11227.6,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 18
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.92,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 75.39,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 160,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": false,
+        "uld_types": [
+          "PAG",
+          "PMC",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.931,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.0101,
+        "delay_probability": 0.093,
+        "reliability_source": "measured",
+        "on_time_sample_size": 413
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8605.3
+      },
+      "distance_km": 9374,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-NRT-WAW-10",
+      "origin": {
+        "node_id": "NRT",
+        "name": "Tokyo Narita",
+        "node_type": "airport",
+        "location_id": "JPTYO"
+      },
+      "destination": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE6422",
+        "departure_days": [
+          "THU",
+          "SAT",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 19,
+        "average_wait_hours": 27,
+        "cutoff_hours_before_departure": 10,
+        "transit_days": 0.79,
+        "average_wait_days": 1.12,
+        "total_days_with_wait": 1.91,
+        "transit_days_p90": 2.29,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6440,
+        "available_volume_cbm": 41,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.3,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 7310.0,
+        "cost_usd_per_vehicle_all_in": 7310.0,
+        "valid_from": "2026-08-03",
+        "valid_to": "2026-09-03",
+        "min_charge_usd": 6213.5,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 27
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.8,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 62.25,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": true,
+        "uld_types": [
+          "PLA",
+          "RKN",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.918,
+        "damage_rate": 0.0007,
+        "cancellation_rate": 0.0135,
+        "delay_probability": 0.111,
+        "reliability_source": "measured",
+        "on_time_sample_size": 400
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8296.0
+      },
+      "distance_km": 9037,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-KIX-VIE-11",
+      "origin": {
+        "node_id": "KIX",
+        "name": "Osaka Kansai",
+        "node_type": "airport",
+        "location_id": "JPOSA"
+      },
+      "destination": {
+        "node_id": "VIE",
+        "name": "Vienna",
+        "node_type": "airport",
+        "location_id": "ATVIE"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4720",
+        "departure_days": [
+          "TUE",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 17,
+        "average_wait_hours": 26,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.71,
+        "average_wait_days": 1.08,
+        "total_days_with_wait": 1.79,
+        "transit_days_p90": 1.96,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 7662,
+        "available_volume_cbm": 65,
+        "max_piece_weight_kg": 2500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.39,
+        "volume_divisor": 6000,
+        "minimum_charge": 463.82,
+        "cost_usd_per_vehicle": 7463.0,
+        "cost_usd_per_vehicle_all_in": 7463.0,
+        "valid_from": "2026-07-10",
+        "valid_to": "2026-08-09",
+        "min_charge_usd": 6343.6,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 2
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.71,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 32.88,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "PMC",
+          "PLA",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.0014,
+        "cancellation_rate": 0.0061,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 371
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8679.7
+      },
+      "distance_km": 9455,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-PVG-LHR-12",
+      "origin": {
+        "node_id": "PVG",
+        "name": "Shanghai Pudong",
+        "node_type": "airport",
+        "location_id": "CNSHA"
+      },
+      "destination": {
+        "node_id": "LHR",
+        "name": "London Heathrow",
+        "node_type": "airport",
+        "location_id": "GBLON"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE2500",
+        "departure_days": [
+          "THU",
+          "TUE"
+        ],
+        "frequency_per_week": 7,
+        "transit_hours": 18,
+        "average_wait_hours": 17,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.75,
+        "average_wait_days": 0.71,
+        "total_days_with_wait": 1.46,
+        "transit_days_p90": 1.77,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 5929,
+        "available_volume_cbm": 50,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 6.98,
+        "volume_divisor": 6000,
+        "minimum_charge": 276.49,
+        "cost_usd_per_vehicle": 11866.0,
+        "cost_usd_per_vehicle_all_in": 11866.0,
+        "valid_from": "2026-07-31",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 10086.1,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.82,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 83.25,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 200,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "PAG",
+          "AKE",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.911,
+        "damage_rate": 0.0007,
+        "cancellation_rate": 0.0038,
+        "delay_probability": 0.12,
+        "reliability_source": "measured",
+        "on_time_sample_size": 420
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8908.3
+      },
+      "distance_km": 9704,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HKG-MAD-13",
+      "origin": {
+        "node_id": "HKG",
+        "name": "Hong Kong",
+        "node_type": "airport",
+        "location_id": "HKHKG"
+      },
+      "destination": {
+        "node_id": "MAD",
+        "name": "Madrid",
+        "node_type": "airport",
+        "location_id": "ESMAD"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE904",
+        "departure_days": [
+          "SUN",
+          "TUE",
+          "THU",
+          "FRI"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 13,
+        "average_wait_hours": 23,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.54,
+        "average_wait_days": 0.96,
+        "total_days_with_wait": 1.5,
+        "transit_days_p90": 1.84,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 2834,
+        "available_volume_cbm": 29,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.93,
+        "volume_divisor": 6000,
+        "minimum_charge": 294.41,
+        "cost_usd_per_vehicle": 8381.0,
+        "cost_usd_per_vehicle_all_in": 8381.0,
+        "valid_from": "2026-05-19",
+        "valid_to": "2026-08-18",
+        "min_charge_usd": 7123.8,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 11
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.03,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 71.51,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 200,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": false,
+        "uld_types": [
+          "AKE",
+          "PLA",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.902,
+        "damage_rate": 0.0008,
+        "cancellation_rate": 0.0074,
+        "delay_probability": 0.132,
+        "reliability_source": "measured",
+        "on_time_sample_size": 345
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 10127.4
+      },
+      "distance_km": 11032,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-SIN-MUC-14",
+      "origin": {
+        "node_id": "SIN",
+        "name": "Singapore",
+        "node_type": "airport",
+        "location_id": "SGSIN"
+      },
+      "destination": {
+        "node_id": "MUC",
+        "name": "Munich",
+        "node_type": "airport",
+        "location_id": "DEMUC"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7833",
+        "departure_days": [
+          "TUE",
+          "WED",
+          "FRI"
+        ],
+        "frequency_per_week": 7,
+        "transit_hours": 19,
+        "average_wait_hours": 28,
+        "cutoff_hours_before_departure": 8,
+        "transit_days": 0.79,
+        "average_wait_days": 1.17,
+        "total_days_with_wait": 1.96,
+        "transit_days_p90": 2.26,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 2675,
+        "available_volume_cbm": 42,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.0,
+        "volume_divisor": 6000,
+        "minimum_charge": 323.24,
+        "cost_usd_per_vehicle": 6800.0,
+        "cost_usd_per_vehicle_all_in": 6800.0,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-11-03",
+        "min_charge_usd": 5780.0,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 88
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.72,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 82.75,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 220,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": true,
+        "uld_types": [
+          "PAG",
+          "RKN",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.945,
+        "damage_rate": 0.0006,
+        "cancellation_rate": 0.0069,
+        "delay_probability": 0.074,
+        "reliability_source": "measured",
+        "on_time_sample_size": 242
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9694.1
+      },
+      "distance_km": 10560,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-BKK-AMS-15",
+      "origin": {
+        "node_id": "BKK",
+        "name": "Bangkok",
+        "node_type": "airport",
+        "location_id": "THBKK"
+      },
+      "destination": {
+        "node_id": "AMS",
+        "name": "Amsterdam",
+        "node_type": "airport",
+        "location_id": "NLAMS"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE3222",
+        "departure_days": [
+          "MON",
+          "WED"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 17,
+        "average_wait_hours": 27,
+        "cutoff_hours_before_departure": 8,
+        "transit_days": 0.71,
+        "average_wait_days": 1.12,
+        "total_days_with_wait": 1.83,
+        "transit_days_p90": 2.01,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6424,
+        "available_volume_cbm": 27,
+        "max_piece_weight_kg": 2500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.5,
+        "volume_divisor": 6000,
+        "minimum_charge": 422.14,
+        "cost_usd_per_vehicle": 5950.0,
+        "cost_usd_per_vehicle_all_in": 5950.0,
+        "valid_from": "2026-07-22",
+        "valid_to": "2026-08-21",
+        "min_charge_usd": 5057.5,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 14
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.06,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 37.9,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 160,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "PMC",
+          "PLA",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.978,
+        "damage_rate": 0.001,
+        "cancellation_rate": 0.0125,
+        "delay_probability": 0.03,
+        "reliability_source": "measured",
+        "on_time_sample_size": 121
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8875.2
+      },
+      "distance_km": 9668,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HAN-MXP-16",
+      "origin": {
+        "node_id": "HAN",
+        "name": "Hanoi",
+        "node_type": "airport",
+        "location_id": "VNHAN"
+      },
+      "destination": {
+        "node_id": "MXP",
+        "name": "Milan Malpensa",
+        "node_type": "airport",
+        "location_id": "ITMIL"
+      },
+      "service_type": "belly_cargo",
+      "schedule": {
+        "flight_number": "KE3285",
+        "departure_days": [
+          "MON",
+          "THU"
+        ],
+        "frequency_per_week": 7,
+        "transit_hours": 11,
+        "average_wait_hours": 16,
+        "cutoff_hours_before_departure": 8,
+        "transit_days": 0.46,
+        "average_wait_days": 0.67,
+        "total_days_with_wait": 1.13,
+        "transit_days_p90": 1.24,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6763,
+        "available_volume_cbm": 37,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.5,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 5950.0,
+        "cost_usd_per_vehicle_all_in": 5950.0,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-09-03",
+        "min_charge_usd": 5057.5,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 27
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.16,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 33.42,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 160,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "PAX_BELLY",
+        "direct_flight": true,
+        "uld_types": [
+          "PLA",
+          "PMC",
+          "RKN"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.0064,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 161
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8545.7
+      },
+      "distance_km": 9309,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-ICN-FRA-17",
+      "origin": {
+        "node_id": "ICN",
+        "name": "Incheon",
+        "node_type": "airport",
+        "location_id": "KRINC"
+      },
+      "destination": {
+        "node_id": "FRA",
+        "name": "Frankfurt",
+        "node_type": "airport",
+        "location_id": "DEFRA"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE2664",
+        "departure_days": [
+          "MON",
+          "WED"
+        ],
+        "frequency_per_week": 7,
+        "transit_hours": 12,
+        "average_wait_hours": 26,
+        "cutoff_hours_before_departure": 10,
+        "transit_days": 0.5,
+        "average_wait_days": 1.08,
+        "total_days_with_wait": 1.58,
+        "transit_days_p90": 1.76,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 7860,
+        "available_volume_cbm": 37,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.58,
+        "volume_divisor": 6000,
+        "minimum_charge": 459.39,
+        "cost_usd_per_vehicle": 7786.0,
+        "cost_usd_per_vehicle_all_in": 7786.0,
+        "valid_from": "2026-07-21",
+        "valid_to": "2026-08-20",
+        "min_charge_usd": 6618.1,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 13
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.25,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 41.88,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 160,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": false,
+        "uld_types": [
+          "RKN",
+          "PLA",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.967,
+        "damage_rate": 0.0009,
+        "cancellation_rate": 0.0103,
+        "delay_probability": 0.045,
+        "reliability_source": "measured",
+        "on_time_sample_size": 176
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8235.4
+      },
+      "distance_km": 8971,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-NRT-BRU-18",
+      "origin": {
+        "node_id": "NRT",
+        "name": "Tokyo Narita",
+        "node_type": "airport",
+        "location_id": "JPTYO"
+      },
+      "destination": {
+        "node_id": "BRU",
+        "name": "Brussels",
+        "node_type": "airport",
+        "location_id": "BEBRU"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE3847",
+        "departure_days": [
+          "SUN",
+          "MON",
+          "TUE",
+          "THU"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 15,
+        "average_wait_hours": 6,
+        "cutoff_hours_before_departure": 10,
+        "transit_days": 0.62,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 0.87,
+        "transit_days_p90": 1.06,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 2403,
+        "available_volume_cbm": 48,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 6.64,
+        "volume_divisor": 6000,
+        "minimum_charge": 277.58,
+        "cost_usd_per_vehicle": 11288.0,
+        "cost_usd_per_vehicle_all_in": 11288.0,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-31",
+        "min_charge_usd": 9594.8,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 24
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.15,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 50.89,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 160,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "PLA",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.907,
+        "damage_rate": 0.0008,
+        "cancellation_rate": 0.0099,
+        "delay_probability": 0.126,
+        "reliability_source": "measured",
+        "on_time_sample_size": 267
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9117.6
+      },
+      "distance_km": 9932,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-KIX-CDG-19",
+      "origin": {
+        "node_id": "KIX",
+        "name": "Osaka Kansai",
+        "node_type": "airport",
+        "location_id": "JPOSA"
+      },
+      "destination": {
+        "node_id": "CDG",
+        "name": "Paris CDG",
+        "node_type": "airport",
+        "location_id": "FRPAR"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE6339",
+        "departure_days": [
+          "MON",
+          "SAT",
+          "TUE"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 14,
+        "average_wait_hours": 13,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.58,
+        "average_wait_days": 0.54,
+        "total_days_with_wait": 1.12,
+        "transit_days_p90": 1.23,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 4235,
+        "available_volume_cbm": 34,
+        "max_piece_weight_kg": 2500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.24,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 7208.0,
+        "cost_usd_per_vehicle_all_in": 7208.0,
+        "valid_from": "2026-07-09",
+        "valid_to": "2026-08-08",
+        "min_charge_usd": 6126.8,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 1
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.97,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 42.22,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 200,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "PMC",
+          "PAG",
+          "PLA"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.0012,
+        "cancellation_rate": 0.0046,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 170
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9278.2
+      },
+      "distance_km": 10107,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-PVG-WAW-20",
+      "origin": {
+        "node_id": "PVG",
+        "name": "Shanghai Pudong",
+        "node_type": "airport",
+        "location_id": "CNSHA"
+      },
+      "destination": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE9328",
+        "departure_days": [
+          "SAT",
+          "TUE",
+          "WED",
+          "SUN"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 14,
+        "average_wait_hours": 10,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.58,
+        "average_wait_days": 0.42,
+        "total_days_with_wait": 1.0,
+        "transit_days_p90": 1.24,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 6374,
+        "available_volume_cbm": 49,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 6.38,
+        "volume_divisor": 6000,
+        "minimum_charge": 422.42,
+        "cost_usd_per_vehicle": 10846.0,
+        "cost_usd_per_vehicle_all_in": 10846.0,
+        "valid_from": "2026-07-28",
+        "valid_to": "2026-08-27",
+        "min_charge_usd": 9219.1,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 20
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.53,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 57.57,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 160,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": true,
+        "uld_types": [
+          "AKE",
+          "PMC",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.893,
+        "damage_rate": 0.002,
+        "cancellation_rate": 0.0097,
+        "delay_probability": 0.144,
+        "reliability_source": "measured",
+        "on_time_sample_size": 350
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 7707.5
+      },
+      "distance_km": 8396,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HKG-VIE-21",
+      "origin": {
+        "node_id": "HKG",
+        "name": "Hong Kong",
+        "node_type": "airport",
+        "location_id": "HKHKG"
+      },
+      "destination": {
+        "node_id": "VIE",
+        "name": "Vienna",
+        "node_type": "airport",
+        "location_id": "ATVIE"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7672",
+        "departure_days": [
+          "SAT",
+          "SUN"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 13,
+        "average_wait_hours": 17,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.54,
+        "average_wait_days": 0.71,
+        "total_days_with_wait": 1.25,
+        "transit_days_p90": 1.43,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 8553,
+        "available_volume_cbm": 21,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.89,
+        "volume_divisor": 6000,
+        "minimum_charge": 278.07,
+        "cost_usd_per_vehicle": 6613.0,
+        "cost_usd_per_vehicle_all_in": 6613.0,
+        "valid_from": "2026-07-30",
+        "valid_to": "2026-08-26",
+        "min_charge_usd": 5621.1,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 19
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.64,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 51.15,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 160,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B777F",
+        "direct_flight": false,
+        "uld_types": [
+          "RKN",
+          "PLA",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.952,
+        "damage_rate": 0.0015,
+        "cancellation_rate": 0.0161,
+        "delay_probability": 0.065,
+        "reliability_source": "measured",
+        "on_time_sample_size": 125
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8386.8
+      },
+      "distance_km": 9136,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-SIN-LHR-22",
+      "origin": {
+        "node_id": "SIN",
+        "name": "Singapore",
+        "node_type": "airport",
+        "location_id": "SGSIN"
+      },
+      "destination": {
+        "node_id": "LHR",
+        "name": "London Heathrow",
+        "node_type": "airport",
+        "location_id": "GBLON"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4372",
+        "departure_days": [
+          "SUN",
+          "FRI",
+          "THU"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 12,
+        "average_wait_hours": 25,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.5,
+        "average_wait_days": 1.04,
+        "total_days_with_wait": 1.54,
+        "transit_days_p90": 1.91,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 9330,
+        "available_volume_cbm": 59,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 5.44,
+        "volume_divisor": 6000,
+        "minimum_charge": 372.74,
+        "cost_usd_per_vehicle": 9248.0,
+        "cost_usd_per_vehicle_all_in": 9248.0,
+        "valid_from": "2026-07-25",
+        "valid_to": "2026-08-22",
+        "min_charge_usd": 7860.8,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 15
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.23,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 64.34,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 200,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "PAG",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.893,
+        "damage_rate": 0.0008,
+        "cancellation_rate": 0.0035,
+        "delay_probability": 0.144,
+        "reliability_source": "measured",
+        "on_time_sample_size": 371
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 10488.1
+      },
+      "distance_km": 11425,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-BKK-MAD-23",
+      "origin": {
+        "node_id": "BKK",
+        "name": "Bangkok",
+        "node_type": "airport",
+        "location_id": "THBKK"
+      },
+      "destination": {
+        "node_id": "MAD",
+        "name": "Madrid",
+        "node_type": "airport",
+        "location_id": "ESMAD"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE9424",
+        "departure_days": [
+          "THU",
+          "FRI",
+          "SUN"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 15,
+        "average_wait_hours": 22,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.62,
+        "average_wait_days": 0.92,
+        "total_days_with_wait": 1.54,
+        "transit_days_p90": 1.68,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 8452,
+        "available_volume_cbm": 23,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.88,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 8296.0,
+        "cost_usd_per_vehicle_all_in": 8296.0,
+        "valid_from": "2026-07-23",
+        "valid_to": "2026-08-22",
+        "min_charge_usd": 7051.6,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 15
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.58,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 29.78,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 350,
+          "width": 160,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "PLA",
+          "RKN",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.002,
+        "cancellation_rate": 0.0083,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 280
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9824.4
+      },
+      "distance_km": 10702,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HAN-MUC-24",
+      "origin": {
+        "node_id": "HAN",
+        "name": "Hanoi",
+        "node_type": "airport",
+        "location_id": "VNHAN"
+      },
+      "destination": {
+        "node_id": "MUC",
+        "name": "Munich",
+        "node_type": "airport",
+        "location_id": "DEMUC"
+      },
+      "service_type": "belly_cargo",
+      "schedule": {
+        "flight_number": "KE6577",
+        "departure_days": [
+          "SUN",
+          "THU",
+          "MON",
+          "SAT"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 12,
+        "average_wait_hours": 27,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.5,
+        "average_wait_days": 1.12,
+        "total_days_with_wait": 1.62,
+        "transit_days_p90": 1.8,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 8116,
+        "available_volume_cbm": 51,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.02,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 11934.0,
+        "cost_usd_per_vehicle_all_in": 11934.0,
+        "valid_from": "2026-07-10",
+        "valid_to": "2026-08-09",
+        "min_charge_usd": 10143.9,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 2
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.3,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 86.59,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 200,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "PAX_BELLY",
+        "direct_flight": true,
+        "uld_types": [
+          "AKE",
+          "PAG",
+          "PMC"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.97,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0098,
+        "delay_probability": 0.041,
+        "reliability_source": "measured",
+        "on_time_sample_size": 227
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8240.0
+      },
+      "distance_km": 8976,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-ICN-AMS-25",
+      "origin": {
+        "node_id": "ICN",
+        "name": "Incheon",
+        "node_type": "airport",
+        "location_id": "KRINC"
+      },
+      "destination": {
+        "node_id": "AMS",
+        "name": "Amsterdam",
+        "node_type": "airport",
+        "location_id": "NLAMS"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4894",
+        "departure_days": [
+          "FRI",
+          "SUN",
+          "THU"
+        ],
+        "frequency_per_week": 2,
+        "transit_hours": 19,
+        "average_wait_hours": 13,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.79,
+        "average_wait_days": 0.54,
+        "total_days_with_wait": 1.33,
+        "transit_days_p90": 1.55,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 1825,
+        "available_volume_cbm": 35,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 7.86,
+        "volume_divisor": 6000,
+        "minimum_charge": 250,
+        "cost_usd_per_vehicle": 13362.0,
+        "cost_usd_per_vehicle_all_in": 13362.0,
+        "valid_from": "2026-07-29",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 11357.7,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.77,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 82.31,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "B747-8F",
+        "direct_flight": false,
+        "uld_types": [
+          "AKE",
+          "PMC",
+          "PLA"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.938,
+        "damage_rate": 0.0017,
+        "cancellation_rate": 0.0105,
+        "delay_probability": 0.084,
+        "reliability_source": "measured",
+        "on_time_sample_size": 323
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8243.6
+      },
+      "distance_km": 8980,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-NRT-MXP-26",
+      "origin": {
+        "node_id": "NRT",
+        "name": "Tokyo Narita",
+        "node_type": "airport",
+        "location_id": "JPTYO"
+      },
+      "destination": {
+        "node_id": "MXP",
+        "name": "Milan Malpensa",
+        "node_type": "airport",
+        "location_id": "ITMIL"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE4288",
+        "departure_days": [
+          "TUE",
+          "SUN"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 17,
+        "average_wait_hours": 23,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.71,
+        "average_wait_days": 0.96,
+        "total_days_with_wait": 1.67,
+        "transit_days_p90": 1.83,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 9078,
+        "available_volume_cbm": 26,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.58,
+        "volume_divisor": 6000,
+        "minimum_charge": 369.92,
+        "cost_usd_per_vehicle": 7786.0,
+        "cost_usd_per_vehicle_all_in": 7786.0,
+        "valid_from": "2026-06-18",
+        "valid_to": "2026-09-17",
+        "min_charge_usd": 6618.1,
+        "rate_validity_type": "QUARTERLY",
+        "days_until_expiry": 41
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.01,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 83.36,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 220,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "PAG",
+          "AKE"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.98,
+        "damage_rate": 0.0011,
+        "cancellation_rate": 0.0061,
+        "delay_probability": 0.027,
+        "reliability_source": "measured",
+        "on_time_sample_size": 248
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9397.6
+      },
+      "distance_km": 10237,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-KIX-FRA-27",
+      "origin": {
+        "node_id": "KIX",
+        "name": "Osaka Kansai",
+        "node_type": "airport",
+        "location_id": "JPOSA"
+      },
+      "destination": {
+        "node_id": "FRA",
+        "name": "Frankfurt",
+        "node_type": "airport",
+        "location_id": "DEFRA"
+      },
+      "service_type": "belly_cargo",
+      "schedule": {
+        "flight_number": "KE2905",
+        "departure_days": [
+          "THU",
+          "SUN",
+          "MON",
+          "FRI"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 16,
+        "average_wait_hours": 6,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.67,
+        "average_wait_days": 0.25,
+        "total_days_with_wait": 0.92,
+        "transit_days_p90": 1.03,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 4125,
+        "available_volume_cbm": 36,
+        "max_piece_weight_kg": 500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 3.55,
+        "volume_divisor": 6000,
+        "minimum_charge": 482.33,
+        "cost_usd_per_vehicle": 6035.0,
+        "cost_usd_per_vehicle_all_in": 6035.0,
+        "valid_from": "2026-07-09",
+        "valid_to": "2026-08-08",
+        "min_charge_usd": 5129.8,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 1
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.01,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 62.42,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 200,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "PAX_BELLY",
+        "direct_flight": true,
+        "uld_types": [
+          "RKN",
+          "AKE",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.966,
+        "damage_rate": 0.0012,
+        "cancellation_rate": 0.0125,
+        "delay_probability": 0.046,
+        "reliability_source": "measured",
+        "on_time_sample_size": 298
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8927.5
+      },
+      "distance_km": 9725,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-PVG-BRU-28",
+      "origin": {
+        "node_id": "PVG",
+        "name": "Shanghai Pudong",
+        "node_type": "airport",
+        "location_id": "CNSHA"
+      },
+      "destination": {
+        "node_id": "BRU",
+        "name": "Brussels",
+        "node_type": "airport",
+        "location_id": "BEBRU"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE1308",
+        "departure_days": [
+          "WED",
+          "FRI",
+          "SAT",
+          "MON"
+        ],
+        "frequency_per_week": 3,
+        "transit_hours": 12,
+        "average_wait_hours": 22,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.5,
+        "average_wait_days": 0.92,
+        "total_days_with_wait": 1.42,
+        "transit_days_p90": 1.61,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 4415,
+        "available_volume_cbm": 35,
+        "max_piece_weight_kg": 1000
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 6.07,
+        "volume_divisor": 6000,
+        "minimum_charge": 388.55,
+        "cost_usd_per_vehicle": 10319.0,
+        "cost_usd_per_vehicle_all_in": 10319.0,
+        "valid_from": "2026-07-10",
+        "valid_to": "2026-08-09",
+        "min_charge_usd": 8771.1,
+        "rate_validity_type": "MONTHLY",
+        "days_until_expiry": 2
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.54,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 50.23,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": true,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 220,
+          "height": 160
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "PMC",
+          "PAG",
+          "RKN"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.955,
+        "damage_rate": 0.0021,
+        "cancellation_rate": 0.0148,
+        "delay_probability": 0.061,
+        "reliability_source": "measured",
+        "on_time_sample_size": 302
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 8699.9
+      },
+      "distance_km": 9477,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-HKG-CDG-29",
+      "origin": {
+        "node_id": "HKG",
+        "name": "Hong Kong",
+        "node_type": "airport",
+        "location_id": "HKHKG"
+      },
+      "destination": {
+        "node_id": "CDG",
+        "name": "Paris CDG",
+        "node_type": "airport",
+        "location_id": "FRPAR"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE7437",
+        "departure_days": [
+          "THU",
+          "MON"
+        ],
+        "frequency_per_week": 4,
+        "transit_hours": 17,
+        "average_wait_hours": 17,
+        "cutoff_hours_before_departure": 6,
+        "transit_days": 0.71,
+        "average_wait_days": 0.71,
+        "total_days_with_wait": 1.42,
+        "transit_days_p90": 1.63,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 3002,
+        "available_volume_cbm": 50,
+        "max_piece_weight_kg": 1500
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 4.17,
+        "volume_divisor": 6000,
+        "minimum_charge": 349.95,
+        "cost_usd_per_vehicle": 7089.0,
+        "cost_usd_per_vehicle_all_in": 7089.0,
+        "valid_from": "2026-08-02",
+        "valid_to": "2026-08-16",
+        "min_charge_usd": 6025.6,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 9
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 1.06,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 37.55,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": false,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 240,
+          "width": 160,
+          "height": 140
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": false,
+        "uld_types": [
+          "AKE",
+          "PAG",
+          "RKN"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.947,
+        "damage_rate": 0.0013,
+        "cancellation_rate": 0.0116,
+        "delay_probability": 0.072,
+        "reliability_source": "measured",
+        "on_time_sample_size": 312
+      },
+      "environment": {
+        "grade": "E",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9243.3
+      },
+      "distance_km": 10069,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    },
+    {
+      "service_id": "KE-SIN-WAW-30",
+      "origin": {
+        "node_id": "SIN",
+        "name": "Singapore",
+        "node_type": "airport",
+        "location_id": "SGSIN"
+      },
+      "destination": {
+        "node_id": "PLWAW_RAIL",
+        "name": "Warsaw",
+        "node_type": "rail_terminal",
+        "location_id": "PLWAW"
+      },
+      "service_type": "scheduled_freighter",
+      "schedule": {
+        "flight_number": "KE6479",
+        "departure_days": [
+          "FRI",
+          "WED",
+          "SAT"
+        ],
+        "frequency_per_week": 5,
+        "transit_hours": 19,
+        "average_wait_hours": 11,
+        "cutoff_hours_before_departure": 12,
+        "transit_days": 0.79,
+        "average_wait_days": 0.46,
+        "total_days_with_wait": 1.25,
+        "transit_days_p90": 1.45,
+        "booking_lead_days": 2,
+        "cargo_closing_hours": 6
+      },
+      "capacity": {
+        "capacity_type": "weight_and_volume",
+        "available_weight_kg": 3416,
+        "available_volume_cbm": 10,
+        "max_piece_weight_kg": 800
+      },
+      "pricing": {
+        "pricing_model": "chargeable_weight",
+        "currency": "USD",
+        "rate_per_kg": 5.62,
+        "volume_divisor": 6000,
+        "minimum_charge": 444.51,
+        "cost_usd_per_vehicle": 9554.0,
+        "cost_usd_per_vehicle_all_in": 9554.0,
+        "valid_from": "2026-08-04",
+        "valid_to": "2026-08-20",
+        "min_charge_usd": 8120.9,
+        "rate_validity_type": "SPOT",
+        "days_until_expiry": 13
+      },
+      "surcharges": [
+        {
+          "name": "FUEL_SURCHARGE",
+          "basis": "chargeable_weight_kg",
+          "amount": 0.65,
+          "currency": "USD"
+        },
+        {
+          "name": "SECURITY_FEE",
+          "basis": "per_shipment",
+          "amount": 55.8,
+          "currency": "USD"
+        }
+      ],
+      "cargo_conditions": {
+        "allowed_cargo_types": [
+          "AUTO_PARTS",
+          "GENERAL"
+        ],
+        "dangerous_goods_allowed": true,
+        "temperature_control_available": false,
+        "max_piece_dimensions_cm": {
+          "length": 300,
+          "width": 160,
+          "height": 180
+        }
+      },
+      "mode_details": {
+        "aircraft_type": "A321F",
+        "direct_flight": true,
+        "uld_types": [
+          "AKE",
+          "RKN",
+          "PAG"
+        ]
+      },
+      "performance": {
+        "on_time_rate": 0.939,
+        "damage_rate": 0.0003,
+        "cancellation_rate": 0.0082,
+        "delay_probability": 0.082,
+        "reliability_source": "measured",
+        "on_time_sample_size": 382
+      },
+      "environment": {
+        "grade": "D",
+        "co2_g_per_tonkm": 540.0,
+        "co2_kg_per_vehicle": 9070.8
+      },
+      "distance_km": 9881,
+      "carries_finished_vehicle": false,
+      "dwell": {
+        "free_time_days": 2,
+        "demurrage_usd_per_unit_day": 55,
+        "detention_usd_per_unit_day": 0
+      },
+      "service_tier": "STANDARD"
+    }
+  ]
+}
