@@ -12,7 +12,7 @@ import httpx
 class YPOllamaSimilarityService:
     def __init__(self, db_path: Path):
         self.db_path = db_path
-        self.base_url = os.getenv("LLM_BASE_URL", "http://34.64.204.1:11434/v1").rstrip("/")
+        self.base_url = os.getenv("LLM_BASE_URL", "http://127.0.0.1:11434/v1").rstrip("/")
         self.model = os.getenv("LLM_MODEL", "qwen2.5:7b")
 
     def analyze(self, carrier_id: str, capability_ids: list[str] | None = None) -> dict[str, Any]:
