@@ -511,6 +511,17 @@ export function YpCarrierNetworkPanel({ refreshKey }: { refreshKey?: unknown } =
     [services, filters],
   );
   const set = (c: string, v: string) => setFilters((f) => ({ ...f, [c]: v }));
+  const exportCsv = () => {
+    const headers = ["carrier_name", "capability_id", "mode", "origin_name", "destination_name", "currency", "base_rate", "transit_hours", "capacity_value", "capacity_unit", "on_time_rate", "validation_status"];
+    const escape = (value: unknown) => `"${String(value ?? "").replaceAll('"', '""')}"`;
+    const csv = [headers.join(","), ...visible.map((service) => headers.map((header) => escape(service[header as keyof YpService])).join(","))].join("\r\n");
+    const url = URL.createObjectURL(new Blob([`\uFEFF${csv}`], { type: "text/csv;charset=utf-8" }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `carrier-capabilities-${new Date().toISOString().slice(0, 10)}.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  };
   return (
     <>
       {error && (
@@ -587,7 +598,7 @@ export function YpCarrierNetworkPanel({ refreshKey }: { refreshKey?: unknown } =
             <h4>운송 서비스 상세</h4>
           </div>
           <div className="spacer" />
-          <button className="btn sm">
+          <button className="btn sm" onClick={exportCsv} disabled={visible.length === 0}>
             <i className="ti ti-download" />
             내보내기
           </button>
@@ -704,4 +715,3 @@ export function YpCarrierNetworkPage({ active }: { active: boolean }) {
     </section>
   );
 }
-

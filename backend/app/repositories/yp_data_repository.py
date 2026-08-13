@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sqlite3
+import hashlib
+from datetime import datetime, timezone
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Iterator
@@ -165,3 +167,50 @@ class YPDataRepository:
             "verified_metrics": verified_metrics,
             "impact": f"승인 역량 {total}개 중 {verified_count}개가 검증 완료 상태입니다.",
         }
+
+    def update_validation_actions(self, carrier_id: str, actions: list[tuple[str, str]]) -> int:
+        connection = sqlite3.connect(self.db_path)
+        try:
+            updated = 0
+            now = datetime.now(timezone.utc).isoformat()
+            for capability_id, status in actions:
+                cursor = connection.execute(
+                    "UPDATE carrier_capabilities SET validation_status=?, last_validated_at=?, updated_at=? WHERE carrier_id=? AND capability_id=? AND is_active=1",
+                    (status, now, now, carrier_id, capability_id),
+                )
+                updated += cursor.rowcount
+            connection.commit()
+            return updated
+        finally:
+            connection.close()
+
+    def insert_upload(self, carrier_name: str, rows: list[dict[str, object]], source_file: str) -> int:
+        carrier_id = "".join(character if character.isalnum() else "_" for character in carrier_name.upper()).strip("_")
+        now = datetime.now(timezone.utc).isoformat()
+        connection = sqlite3.connect(self.db_path)
+        try:
+            for index, row in enumerate(rows):
+                raw_id = f"{carrier_id}:{row.get('mode')}:{row.get('origin_name')}:{row.get('destination_name')}:{index}"
+                capability_id = f"CAP-{carrier_id}-{hashlib.sha1(raw_id.encode()).hexdigest()[:10].upper()}"
+                connection.execute(
+                    """
+                    INSERT INTO carrier_capabilities(
+                        capability_id, carrier_id, carrier_name, mode, origin_name, destination_name,
+                        currency, typical_base_rate, typical_transit_hours, capacity_value, capacity_unit,
+                        on_time_rate, mapping_status, validation_status, validation_score, is_active,
+                        created_at, updated_at
+                    ) VALUES(?,?,?,?,?,?,'USD',?,?,?,?,?,'approved','unverified',0,1,?,?)
+                    ON CONFLICT(capability_id) DO UPDATE SET
+                        typical_base_rate=excluded.typical_base_rate,
+                        typical_transit_hours=excluded.typical_transit_hours,
+                        capacity_value=excluded.capacity_value,
+                        capacity_unit=excluded.capacity_unit,
+                        on_time_rate=excluded.on_time_rate,
+                        updated_at=excluded.updated_at
+                    """,
+                    (capability_id, carrier_id, carrier_name, str(row.get("mode", "")).lower(), row.get("origin_name"), row.get("destination_name"), row.get("typical_base_rate"), row.get("typical_transit_hours"), row.get("capacity_value"), row.get("capacity_unit"), row.get("on_time_rate"), now, now),
+                )
+            connection.commit()
+            return len(rows)
+        finally:
+            connection.close()
