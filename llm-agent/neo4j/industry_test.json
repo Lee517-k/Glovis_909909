@@ -1,0 +1,1012 @@
+{
+  "level_1": [
+    {
+      "id": 1,
+      "name": "A1",
+      "level": 1,
+      "company_capacity": 150,
+      "initial_capital": 95000,
+      "main_products": [
+        {
+          "product_name": "product_5",
+          "product_id": 5,
+          "related_materials": [],
+          "base_price": 18.50,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "no need material",
+          "manufacturing_cost": 16.20,
+          "material_cost": 0,
+          "net_manufacturing_cost": 6.20,
+          "profit_margin": 12.43
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_5",
+          "product_id": 5
+        }
+      ],
+      "inventory_system": {
+        "products": {
+          "5": {
+            "product_name": "product_5",
+            "quantity": 450
+          }
+        },
+        "materials": {}
+      },
+      "inventory_factor": 0.6,
+      "intelligence_level": 1
+    },
+    {
+      "id": 2,
+      "name": "A2",
+      "level": 1,
+      "company_capacity": 140,
+      "initial_capital": 88000,
+      "main_products": [
+        {
+          "product_name": "product_6",
+          "product_id": 6,
+          "related_materials": [],
+          "base_price": 22.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "no need material",
+          "manufacturing_cost": 19.95,
+          "material_cost": 0,
+          "net_manufacturing_cost": 9.95,
+          "profit_margin": 12.50
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_6",
+          "product_id": 6
+        }
+      ],
+      "inventory_system": {
+        "products": {
+          "6": {
+            "product_name": "product_6",
+            "quantity": 420
+          }
+        },
+        "materials": {}
+      },
+      "inventory_factor": 0.6,
+      "intelligence_level": 1
+    },
+    {
+      "id": 3,
+      "name": "A3",
+      "level": 1,
+      "company_capacity": 130,
+      "initial_capital": 82000,
+      "main_products": [
+        {
+          "product_name": "product_5",
+          "product_id": 5,
+          "related_materials": [],
+          "base_price": 18.50,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "no need material",
+          "manufacturing_cost": 16.20,
+          "material_cost": 0,
+          "net_manufacturing_cost": 6.20,
+          "profit_margin": 12.43
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_5",
+          "product_id": 5
+        }
+      ],
+      "inventory_system": {
+        "products": {
+          "5": {
+            "product_name": "product_5",
+            "quantity": 390
+          }
+        },
+        "materials": {}
+      },
+      "inventory_factor": 0.6,
+      "intelligence_level": 1
+    }
+  ],
+  "level_2": [
+    {
+      "id": 4,
+      "name": "B1",
+      "level": 2,
+      "company_capacity": 100,
+      "initial_capital": 65000,
+      "main_products": [
+        {
+          "product_name": "product_11",
+          "product_id": 11,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_11",
+          "product_id": 11
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12
+        }
+      ],
+      "inventory_factor": 0.5,
+      "recipe_complexity": "complex",
+      "inventory_system": {
+        "products": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 100
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 100
+          }
+        },
+        "materials": {
+          "5": {
+            "product_name": "product_5",
+            "quantity": 180
+          },
+          "6": {
+            "product_name": "product_6",
+            "quantity": 120
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 5,
+      "name": "B2",
+      "level": 2,
+      "company_capacity": 100,
+      "initial_capital": 65000,
+      "main_products": [
+        {
+          "product_name": "product_11",
+          "product_id": 11,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_11",
+          "product_id": 11
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12
+        }
+      ],
+      "inventory_factor": 0.5,
+      "recipe_complexity": "complex",
+      "inventory_system": {
+        "products": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 100
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 100
+          }
+        },
+        "materials": {
+          "5": {
+            "product_name": "product_5",
+            "quantity": 180
+          },
+          "6": {
+            "product_name": "product_6",
+            "quantity": 120
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 6,
+      "name": "B3",
+      "level": 2,
+      "company_capacity": 100,
+      "initial_capital": 65000,
+      "main_products": [
+        {
+          "product_name": "product_11",
+          "product_id": 11,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12,
+          "related_materials": [
+            {
+              "product_name": "product_5",
+              "product_id": 5
+            },
+            {
+              "product_name": "product_6",
+              "product_id": 6
+            }
+          ],
+          "base_price": 35.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_5*60%+product_6*40%",
+          "manufacturing_cost": 31.20,
+          "material_cost": 20.22,
+          "net_manufacturing_cost": 5.98,
+          "profit_margin": 12.83
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_11",
+          "product_id": 11
+        },
+        {
+          "product_name": "product_12",
+          "product_id": 12
+        }
+      ],
+      "inventory_factor": 0.5,
+      "recipe_complexity": "complex",
+      "inventory_system": {
+        "products": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 100
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 100
+          }
+        },
+        "materials": {
+          "5": {
+            "product_name": "product_5",
+            "quantity": 180
+          },
+          "6": {
+            "product_name": "product_6",
+            "quantity": 120
+          }
+        }
+      },
+      "intelligence_level": 1
+    }
+  ],
+  "level_3": [
+    {
+      "id": 7,
+      "name": "C1",
+      "level": 3,
+      "company_capacity": 80,
+      "initial_capital": 72000,
+      "main_products": [
+        {
+          "product_name": "product_17",
+          "product_id": 17,
+          "related_materials": [
+            {
+              "product_name": "product_11",
+              "product_id": 11
+            },
+            {
+              "product_name": "product_12",
+              "product_id": 12
+            }
+          ],
+          "base_price": 52.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_11*65%+product_12*35%",
+          "manufacturing_cost": 45.95,
+          "material_cost": 36.40,
+          "net_manufacturing_cost": 4.55,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_17",
+          "product_id": 17
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.4,
+      "inventory_system": {
+        "products": {
+          "17": {
+            "product_name": "product_17",
+            "quantity": 160
+          }
+        },
+        "materials": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 156
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 84
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 8,
+      "name": "C2",
+      "level": 3,
+      "company_capacity": 75,
+      "initial_capital": 68000,
+      "main_products": [
+        {
+          "product_name": "product_18",
+          "product_id": 18,
+          "related_materials": [
+            {
+              "product_name": "product_11",
+              "product_id": 11
+            },
+            {
+              "product_name": "product_12",
+              "product_id": 12
+            }
+          ],
+          "base_price": 52.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_11*65%+product_12*35%",
+          "manufacturing_cost": 45.95,
+          "material_cost": 36.40,
+          "net_manufacturing_cost": 4.55,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_18",
+          "product_id": 18
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.4,
+      "inventory_system": {
+        "products": {
+          "18": {
+            "product_name": "product_18",
+            "quantity": 150
+          }
+        },
+        "materials": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 156
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 84
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 9,
+      "name": "C3",
+      "level": 3,
+      "company_capacity": 85,
+      "initial_capital": 75000,
+      "main_products": [
+        {
+          "product_name": "product_19",
+          "product_id": 19,
+          "related_materials": [
+            {
+              "product_name": "product_11",
+              "product_id": 11
+            },
+            {
+              "product_name": "product_12",
+              "product_id": 12
+            }
+          ],
+          "base_price": 52.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_11*65%+product_12*35%",
+          "manufacturing_cost": 45.95,
+          "material_cost": 36.40,
+          "net_manufacturing_cost": 4.55,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_19",
+          "product_id": 19
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.4,
+      "inventory_system": {
+        "products": {
+          "19": {
+            "product_name": "product_19",
+            "quantity": 170
+          }
+        },
+        "materials": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 156
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 84
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 10,
+      "name": "C4",
+      "level": 3,
+      "company_capacity": 70,
+      "initial_capital": 64000,
+      "main_products": [
+        {
+          "product_name": "product_20",
+          "product_id": 20,
+          "related_materials": [
+            {
+              "product_name": "product_11",
+              "product_id": 11
+            },
+            {
+              "product_name": "product_12",
+              "product_id": 12
+            }
+          ],
+          "base_price": 52.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_11*65%+product_12*35%",
+          "manufacturing_cost": 45.95,
+          "material_cost": 36.40,
+          "net_manufacturing_cost": 4.55,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_20",
+          "product_id": 20
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.4,
+      "inventory_system": {
+        "products": {
+          "20": {
+            "product_name": "product_20",
+            "quantity": 140
+          }
+        },
+        "materials": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 156
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 84
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 11,
+      "name": "C5",
+      "level": 3,
+      "company_capacity": 78,
+      "initial_capital": 70000,
+      "main_products": [
+        {
+          "product_name": "product_21",
+          "product_id": 21,
+          "related_materials": [
+            {
+              "product_name": "product_11",
+              "product_id": 11
+            },
+            {
+              "product_name": "product_12",
+              "product_id": 12
+            }
+          ],
+          "base_price": 52.80,
+          "is_terminal_product": false,
+          "product_type": "process_stuff",
+          "product_construct": "product_11*65%+product_12*35%",
+          "manufacturing_cost": 45.95,
+          "material_cost": 36.40,
+          "net_manufacturing_cost": 4.55,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_21",
+          "product_id": 21
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.4,
+      "inventory_system": {
+        "products": {
+          "21": {
+            "product_name": "product_21",
+            "quantity": 156
+          }
+        },
+        "materials": {
+          "11": {
+            "product_name": "product_11",
+            "quantity": 156
+          },
+          "12": {
+            "product_name": "product_12",
+            "quantity": 84
+          }
+        }
+      },
+      "intelligence_level": 1
+    }
+  ],
+  "level_4": [
+    {
+      "id": 12,
+      "name": "D1",
+      "level": 4,
+      "company_capacity": 60,
+      "initial_capital": 55000,
+      "main_products": [
+        {
+          "product_name": "product_25",
+          "product_id": 25,
+          "related_materials": [
+            {
+              "product_name": "product_17",
+              "product_id": 17
+            },
+            {
+              "product_name": "product_18",
+              "product_id": 18
+            },
+            {
+              "product_name": "product_19",
+              "product_id": 19
+            }
+          ],
+          "base_price": 78.50,
+          "is_terminal_product": true,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.2,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:2.2%"
+          },
+          "product_type": "end_stuff",
+          "product_construct": "product_17*40%+product_18*35%+product_19*25%",
+          "manufacturing_cost": 68.25,
+          "material_cost": 52.02,
+          "net_manufacturing_cost": 8.23,
+          "profit_margin": 13.07
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_25",
+          "product_id": 25
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.3,
+      "inventory_system": {
+        "products": {
+          "25": {
+            "product_name": "product_25",
+            "quantity": 72
+          }
+        },
+        "materials": {
+          "17": {
+            "product_name": "product_17",
+            "quantity": 96
+          },
+          "18": {
+            "product_name": "product_18",
+            "quantity": 84
+          },
+          "19": {
+            "product_name": "product_19",
+            "quantity": 60
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 13,
+      "name": "D2",
+      "level": 4,
+      "company_capacity": 55,
+      "initial_capital": 52000,
+      "main_products": [
+        {
+          "product_name": "product_26",
+          "product_id": 26,
+          "related_materials": [
+            {
+              "product_name": "product_17",
+              "product_id": 17
+            },
+            {
+              "product_name": "product_20",
+              "product_id": 20
+            }
+          ],
+          "base_price": 75.20,
+          "is_terminal_product": true,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.0,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:2.0%"
+          },
+          "product_type": "end_stuff",
+          "product_construct": "product_17*60%+product_20*40%",
+          "manufacturing_cost": 65.45,
+          "material_cost": 52.96,
+          "net_manufacturing_cost": 6.49,
+          "profit_margin": 12.97
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_26",
+          "product_id": 26
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.3,
+      "inventory_system": {
+        "products": {
+          "26": {
+            "product_name": "product_26",
+            "quantity": 66
+          }
+        },
+        "materials": {
+          "17": {
+            "product_name": "product_17",
+            "quantity": 95
+          },
+          "20": {
+            "product_name": "product_20",
+            "quantity": 64
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 14,
+      "name": "D3",
+      "level": 4,
+      "company_capacity": 65,
+      "initial_capital": 58000,
+      "main_products": [
+        {
+          "product_name": "product_27",
+          "product_id": 27,
+          "related_materials": [
+            {
+              "product_name": "product_18",
+              "product_id": 18
+            },
+            {
+              "product_name": "product_19",
+              "product_id": 19
+            },
+            {
+              "product_name": "product_21",
+              "product_id": 21
+            }
+          ],
+          "base_price": 76.80,
+          "is_terminal_product": true,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.3,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:2.3%"
+          },
+          "product_type": "end_stuff",
+          "product_construct": "product_18*35%+product_19*40%+product_21*25%",
+          "manufacturing_cost": 66.85,
+          "material_cost": 51.06,
+          "net_manufacturing_cost": 6.79,
+          "profit_margin": 12.89
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_27",
+          "product_id": 27
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.3,
+      "inventory_system": {
+        "products": {
+          "27": {
+            "product_name": "product_27",
+            "quantity": 78
+          }
+        },
+        "materials": {
+          "18": {
+            "product_name": "product_18",
+            "quantity": 82
+          },
+          "19": {
+            "product_name": "product_19",
+            "quantity": 94
+          },
+          "21": {
+            "product_name": "product_21",
+            "quantity": 59
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 15,
+      "name": "D4",
+      "level": 4,
+      "company_capacity": 58,
+      "initial_capital": 54000,
+      "main_products": [
+        {
+          "product_name": "product_28",
+          "product_id": 28,
+          "related_materials": [
+            {
+              "product_name": "product_19",
+              "product_id": 19
+            },
+            {
+              "product_name": "product_20",
+              "product_id": 20
+            }
+          ],
+          "base_price": 74.60,
+          "is_terminal_product": true,
+          "consumption_rate": {
+            "daily_consumption_rate": 2.1,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:2.1%"
+          },
+          "product_type": "end_stuff",
+          "product_construct": "product_19*55%+product_20*45%",
+          "manufacturing_cost": 64.95,
+          "material_cost": 52.46,
+          "net_manufacturing_cost": 6.49,
+          "profit_margin": 12.94
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_28",
+          "product_id": 28
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.3,
+      "inventory_system": {
+        "products": {
+          "28": {
+            "product_name": "product_28",
+            "quantity": 70
+          }
+        },
+        "materials": {
+          "19": {
+            "product_name": "product_19",
+            "quantity": 91
+          },
+          "20": {
+            "product_name": "product_20",
+            "quantity": 74
+          }
+        }
+      },
+      "intelligence_level": 1
+    },
+    {
+      "id": 16,
+      "name": "D5",
+      "level": 4,
+      "company_capacity": 62,
+      "initial_capital": 56000,
+      "main_products": [
+        {
+          "product_name": "product_29",
+          "product_id": 29,
+          "related_materials": [
+            {
+              "product_name": "product_20",
+              "product_id": 20
+            },
+            {
+              "product_name": "product_21",
+              "product_id": 21
+            }
+          ],
+          "base_price": 73.40,
+          "is_terminal_product": true,
+          "consumption_rate": {
+            "daily_consumption_rate": 1.9,
+            "consumption_type": "normal consum",
+            "description": "consumption_rate:1.9%"
+          },
+          "product_type": "end_stuff",
+          "product_construct": "product_20*50%+product_21*50%",
+          "manufacturing_cost": 63.85,
+          "material_cost": 51.58,
+          "net_manufacturing_cost": 6.27,
+          "profit_margin": 13.01
+        }
+      ],
+      "available_materials": [
+        {
+          "product_name": "product_29",
+          "product_id": 29
+        }
+      ],
+      "recipe_complexity": "complex",
+      "inventory_factor": 0.3,
+      "inventory_system": {
+        "products": {
+          "29": {
+            "product_name": "product_29",
+            "quantity": 74
+          }
+        },
+        "materials": {
+          "20": {
+            "product_name": "product_20",
+            "quantity": 93
+          },
+          "21": {
+            "product_name": "product_21",
+            "quantity": 93
+          }
+        }
+      },
+      "intelligence_level": 1
+    }
+  ]
+}
