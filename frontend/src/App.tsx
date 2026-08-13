@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { AppHeader } from "./components/AppHeader";
 import { Sidebar } from "./components/Sidebar";
@@ -47,6 +47,7 @@ function getPageFromHash(): PageId {
 
 function App() {
   const [page, setPage] = useState<PageId>(getPageFromHash);
+  const dashboardShipmentRef = useRef<string | null>(null);
   const [drawerContent, setDrawerContent] = useState<DrawerContent | null>(null);
   const [allScenarios, setAllScenarios] = useState<SavedScenario[]>([]);
   const [savedRefreshKey, setSavedRefreshKey] = useState(0);
@@ -55,6 +56,7 @@ function App() {
     const handleHashChange = () => setPage(getPageFromHash());
     const handleDashboardShipment = (event: MouseEvent) => {
       if ((event.target as HTMLElement).closest(".yp-dashboard-kpis .kpi")) {
+        dashboardShipmentRef.current = null;
         window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId: null } }));
         return;
       }
@@ -62,8 +64,16 @@ function App() {
       if (!row) return;
       const shipmentId = row.querySelector(".mono")?.textContent?.trim();
       if (!shipmentId) return;
-      document.querySelectorAll<HTMLElement>(".yp-dashboard-kpis .kpi:not(.active)").forEach((card) => card.click());
-      window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId } }));
+      const isSameShipment = dashboardShipmentRef.current === shipmentId;
+      if (isSameShipment) {
+        dashboardShipmentRef.current = null;
+        document.querySelectorAll<HTMLElement>(".yp-dashboard-kpis .kpi").forEach((card) => card.classList.add("active"));
+        window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId: null } }));
+      } else {
+        dashboardShipmentRef.current = shipmentId;
+        document.querySelectorAll<HTMLElement>(".yp-dashboard-kpis .kpi").forEach((card) => card.classList.remove("active"));
+        window.dispatchEvent(new CustomEvent("dashboard:shipment-selected", { detail: { shipmentId } }));
+      }
     };
     window.addEventListener("hashchange", handleHashChange);
     document.addEventListener("click", handleDashboardShipment);
